@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/startbackground"
+    android:orientation="vertical" >
+
+    <!-- Show on Map button -->
+
+
+    <!-- List view -->
+
+    <Button
+        android:id="@+id/btn_instr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="15dp"
+        android:text="Instructions" />
+
+    <Button
+        android:id="@+id/btn_find"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="Find Places Close Together" />
+
+    <!-- do you need this? -->
+
+    <TextView
+        android:id="@+id/TextOut"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    <TextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/autocomplete"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtPlaces2" />
+
+    <ImageView
+        android:id="@+id/imgPlus"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/btn_instr"
+        android:layout_marginLeft="25dp"
+        android:maxHeight="20dp"
+        android:maxWidth="20dp"
+        android:src="@drawable/plus" />
+
+    <EditText
+        android:id="@+id/txtPlaces1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imgPlus"
+        android:layout_below="@+id/imgPlus"
+        android:layout_marginTop="20dp"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/txtPlaces2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imgPlus"
+        android:layout_below="@+id/txtPlaces1"
+        android:ems="10" />
+
+    <ImageView
+        android:id="@+id/imgQ1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/txtPlaces1"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/txtPlaces1"
+        android:src="@drawable/questionmark" />
+
+    <ImageView
+        android:id="@+id/imgQ2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imgQ1"
+        android:layout_alignTop="@+id/txtPlaces2"
+        android:src="@drawable/questionmark" />
+
+    <LinearLayout
+        android:id="@+id/LLTexts"
+        android:layout_width="210dp"
+        android:layout_height="150dp"
+        android:layout_above="@+id/btn_find"
+        android:layout_toLeftOf="@+id/imgQ1"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imgRR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/LLTexts"
+        android:layout_alignParentRight="true"
+        android:contentDescription="pic"
+        android:maxHeight="20dp"
+        android:maxWidth="20dp"
+        android:src="@drawable/sync" />
+
+</RelativeLayout>

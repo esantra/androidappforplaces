@@ -1,0 +1,70 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.androidhive.googleplacesandmaps"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="15" />
+
+    <application
+        android:icon="@drawable/bittorrent_plus"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:name=".GlobalVariables" >
+        
+        <!--  Add Google Map Library -->
+        <uses-library android:name="com.google.android.maps" />
+        
+        
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- SinglePlaceActivity -->
+        <activity android:name=".SinglePlaceActivity" android:label="Place Details">
+		</activity>
+        
+        <!-- PlacesMapActivity -->
+        <activity android:name=".PlacesMapActivity" android:label="Near Places Map View">
+		</activity>
+		
+         <!-- Reviews -->
+        <activity android:name=".Reviews" android:label="Reviews">
+		</activity>
+		
+         <!-- Keywords -->
+        <activity android:name=".KeywordActivity" android:label="Keywords">
+		</activity>
+		
+        <!--  second screen activity / was main activity -->
+        <activity android:name="com.androidhive.googleplacesandmaps.SecondActivity"></activity>
+    </application>
+    
+    <!-- Internet Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+ 
+    <!-- Network State Permissions -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    
+    <!-- Access Location -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    
+    <!-- Make a phone call -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    
+     <!-- Navigate -->
+    <uses-permission android:name="android.permission.ACTION_VIEW" />
+    
+     <!-- Navigate -->
+    <uses-permission android:name="android.permission.FLAG_ACTIVITY_NEW_TASK" />
+    
+
+
+</manifest>

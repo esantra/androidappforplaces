@@ -221,19 +221,7 @@ public class MainActivity extends Activity {
 				
 				SetLocations();
 				
-				//create a database entry with the database manager
-				DatabaseManager dm = new DatabaseManager(getApplicationContext());
-				
-				 SQLiteDatabase db = dm.db;
-			        try {
-			            ContentValues values = new ContentValues();
-			            dm.addRow(loc1, loc2);
-			 
-			        } finally {
-			            if (db != null)
-			                db.close();
-			        }
-				
+	
 
 			}
 		});

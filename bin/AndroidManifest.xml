@@ -64,7 +64,6 @@
     
      <!-- Navigate -->
     <uses-permission android:name="android.permission.FLAG_ACTIVITY_NEW_TASK" />
-    
-
+ 
 
 </manifest>

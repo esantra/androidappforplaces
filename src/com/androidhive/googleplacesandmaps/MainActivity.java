@@ -1,13 +1,16 @@
 package com.androidhive.googleplacesandmaps;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.UUID;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -43,6 +46,15 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.view.ViewGroup.LayoutParams;
 
+import com.androidhive.googleplacesandmaps.MessageConsumer.OnReceiveMessageHandler;
+import com.newrelic.agent.android.NewRelic;
+import com.rabbitmq.client.AMQP.BasicProperties;
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
+import com.rabbitmq.client.QueueingConsumer;
+import com.rabbitmq.client.ShutdownSignalException;
+
 
 public class MainActivity extends Activity {
 
@@ -66,12 +78,25 @@ public class MainActivity extends Activity {
 
 	public String strPlaces1 = ""; // Place type
 	public String strPlaces2 = ""; // Place type
+	private Connection connection;
+	private Channel channel;
+	private String requestQueueName = "rpc_queue";
+	//public static final ByteString emptyString = "";
+	private String replyQueueName;
+	private QueueingConsumer consumer;
+	public static MainActivity ma = new MainActivity();
+
+    public TextView mOutput;
+    public TextView mOutput2;
+	
 	
 	 Bitmap bmScreen;
 	 View screen;
 	 EditText EditTextIn;
 	 public static EditText firstPlace;
 	 public static EditText secondPlace;
+	 private static final String RPC_QUEUE_NAME = "rpc_queue";
+	 
 	 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -82,12 +107,86 @@ public class MainActivity extends Activity {
 		//replaced activity_main.xml with startup screen.xml
 		setContentView(R.layout.startup_screen);
 		
-		
+		NewRelic.withApplicationToken(
+				"AA36f12720d4267840d700de32f8aed7bdd0e2439d"
+				).start(this.getApplication());
 
 		// button show on map
 		btnFindIt = (Button) findViewById(R.id.btn_find);
 		firstPlace = (EditText) findViewById(R.id.txtPlaces1);
 	    secondPlace = (EditText) findViewById(R.id.txtPlaces2);
+		
+		
+		ImageView imgAidm = (ImageView) findViewById(R.id.imgAidm);
+		/** Button click event for shown on map */
+		imgAidm.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				
+				RelativeLayout r1 = (RelativeLayout) findViewById (R.id.RelativeLayout1);
+				//MessageConsumer mConsumer2;
+
+		        //The output TextView we'll use to display messages
+		        mOutput =  (TextView) findViewById(R.id.txtPlaces1);
+		        mOutput2 =  (TextView) findViewById(R.id.txtPlaces2);
+		        
+		        
+		        //Create the consumer
+
+		        try {
+		        	
+		        	 	ConnectionFactory factory = new ConnectionFactory();
+		        	    factory.setHost("54.225.112.221");
+		        	    connection = factory.newConnection();
+		        	    channel = connection.createChannel();
+
+		        	    replyQueueName = channel.queueDeclare().getQueue(); 
+		        	    consumer = new QueueingConsumer(channel);
+		        	    channel.basicConsume(replyQueueName, true, consumer);
+		        	    
+		        	    System.out.println(" [x] Requesting fib()");    
+		        	    String response = call("30");
+		        	    System.out.println(" [.] Got '" + response + "'"); 
+		        	    
+		        	    
+		        
+		        	    String[] str = response.split(",");
+		        	    String str1 = str[0].toString();
+		        	    String[] str2 = str1.split("\\s+");
+
+		        	    String place1 = str2[0].toString();
+		        	    String place2 = str2[1].toString();
+		        	    
+		        	    place1 = place1.replace("\'", "");
+		        	    place2 = place2.replace("\'", "");
+		        	    
+		        	    String arr[] = new String [100];
+		        	    
+		        	    System.out.println(place1);
+		        	    System.out.println(place2);
+
+		        	    //variable that you would use to fill text box
+		        	    // response example 
+		        	    // 'movie_rental'  (31)'spa'  (12),	'church'  (36),	'school'  (48),	'
+		        	    mOutput.setText(place1.toString());
+		        	    mOutput2.setText(place2.toString());
+
+		        	    connection.close();
+ 
+						 
+				
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		        
+		        
+			}//end on click
+		      
+		});
+		
+		
 
 		//-- pull global variable where needed
 		/** Button click event for shown on map */
@@ -97,8 +196,8 @@ public class MainActivity extends Activity {
 			public void onClick(View arg0) {
 
 			    //change this
-				firstPlace.setText("shopping_mall");
-				secondPlace.setText("bar");
+				//firstPlace.setText("shopping_mall");
+				//secondPlace.setText("bar");
 				
 				String loc1 = firstPlace.getText().toString();
 				String loc2 = secondPlace.getText().toString();
@@ -154,22 +253,7 @@ public class MainActivity extends Activity {
 			}
 		});
 		
-		ImageView imgQ2 = (ImageView) findViewById(R.id.imgQ2);
-		/** Button click event for shown on map */
-		imgQ2.setOnClickListener(new View.OnClickListener() {
-
-			@Override
-			public void onClick(View arg0) {
-				
-				
-				//this is the android way of starting a new activity
-	        	Intent i = new Intent(getApplicationContext(),
-						KeywordActivity.class);
-				
-				startActivity(i);
-
-			}
-		});
+	
 		
 		ImageView imgPlus = (ImageView) findViewById(R.id.imgPlus);
 		/** Button click event for shown on map */
@@ -202,12 +286,54 @@ public class MainActivity extends Activity {
 		});
 	
 	}
+	
+	public String call(String message) throws Exception {     
+	    String response = null;
+	    String corrId = java.util.UUID.randomUUID().toString();
+	    BasicProperties props = new BasicProperties
+	                                .Builder()
+	                                .correlationId(corrId)
+	                                .replyTo(replyQueueName)
+	                                .build();
+
+	    channel.basicPublish("", requestQueueName, props, message.getBytes());
+	    int timeout_ms = 30000;
+	      
+	    while (true)
+	    {
+	         
+	       QueueingConsumer.Delivery delivery = consumer.nextDelivery(timeout_ms);
+	       if (delivery == null)
+	       {
+	          if (channel.isOpen() == false)             // Seems to always return true
+	          {   
+	        	   
+	        	  System.out.println("Channel is not open");
+	          }
+	       }
+	       else
+	       {
+	    	     
+	            //... Process message - delivery.getBody()
+		        if (delivery.getProperties().getCorrelationId().equals(corrId)) {
+		            response = new String(delivery.getBody());
+		            break;
+		        }
+	       }
+	    }
+	    
+	    return response; 
+	    //return "response";
+	}
+
+	public void close() throws Exception {
+	    connection.close();
+	}
 
 	int icount1 = 0;
 	int textViewCount = 10;
 	int i = 0;
-	//EditText[] textViewArray = new EditText[textViewCount];
-	//LinearLayout l1 = (LinearLayout) findViewById (R.id.LLTexts);
+
 	
 	public void addTextView(RelativeLayout r1){
 		
@@ -233,7 +359,7 @@ public class MainActivity extends Activity {
 		i++;
 		
 		}//end addTextView method
-	
+
 	
 	public void setTextMethod(String ivalue, int i ){
 		g.setLocationi(ivalue, i);
@@ -251,7 +377,6 @@ public class MainActivity extends Activity {
 	    TextOut.setLayoutParams(textOutLayoutParams);
 	    
 	    RelativeLayout dialogLayout = new RelativeLayout(this);
-	    //dialogLayout.setOrientation(RelativeLayout.CENTER_VERTICAL);
 	    dialogLayout.addView(TextOut);
 	    screenDialog.setView(dialogLayout);
 	    
@@ -329,6 +454,8 @@ public class MainActivity extends Activity {
 	    
 	    return resultList;
 	}
+	
+	
 	
 
 }

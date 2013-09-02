@@ -79,7 +79,7 @@ public class SinglePlaceActivity extends Activity {
 
 		Intent i = getIntent();
 
-		// Place referece id
+		// Place reference id
 		String reference = i.getStringExtra(KEY_REFERENCE);
 
 		// Calling a Async Background thread
@@ -178,14 +178,11 @@ public class SinglePlaceActivity extends Activity {
 								lbl_name.setText(name);
 								lbl_address.setText(address);
 								
-								lbl_name.setTextColor(Color.parseColor("#FFFFFF"));
-								lbl_address.setTextColor(Color.parseColor("#FFFFFF"));
+								lbl_name.setTextColor(Color.parseColor("#000000"));
+								lbl_address.setTextColor(Color.parseColor("#000000"));
 								
 								
 								
-								RatingBar rb=(RatingBar)findViewById(R.id.ratingBar1); 
-								float rating1 = rating.floatValue();
-								rb.setRating(rating1);
 
 
 								//----- check to see if this is an api call and not an image url
@@ -195,8 +192,7 @@ public class SinglePlaceActivity extends Activity {
 
 								String imageString1 = "http://maps.googleapis.com/maps/api/streetview?size=150x150&location="+ Double.toString(placeDetails.result.geometry.location.lat) +","+ Double.toString(placeDetails.result.geometry.location.lng) + "&heading=235&sensor=false";
 								
-								ImageView mImageView = (ImageView)findViewById(R.id.imgPlace);
-
+	
 								URL url;
 								InputStream content;
 								try {
@@ -204,8 +200,6 @@ public class SinglePlaceActivity extends Activity {
 
 									content = (InputStream)url.getContent();
 
-									Drawable d = Drawable.createFromStream(content , "src"); 
-									mImageView.setImageDrawable(d);
 
 								} catch (IOException e) {
 									// TODO Auto-generated catch block
@@ -288,25 +282,6 @@ public class SinglePlaceActivity extends Activity {
 									}
 								});
 									
-								
-								ImageButton btnFav = (ImageButton) findViewById(R.id.btnFav);
-								/** Button click event for shown on map */
-								btnFav.setOnClickListener(new View.OnClickListener() {
-
-									@Override
-									public void onClick(View arg0) {
-									
-														
-										Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q=" +placeDetails.result.geometry.location.lat+","+placeDetails.result.geometry.location.lng));
-										intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-										startActivity(intent);
-
-										
-									}
-								});
-
-
-
 
 							}
 						}

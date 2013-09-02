@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/black"
     android:orientation="vertical"
     tools:context=".SecondActivity" >
 
@@ -21,101 +20,54 @@
             android:id="@+id/btnNextPlace"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/jog_dial_arrow_long_left_yellow" />
-
+            android:src="@drawable/ic_btn_search_go" />
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="310dp"
-        android:layout_above="@+id/linearLayout2"
-        android:layout_alignParentLeft="true"
-        android:orientation="vertical"
-        android:paddingTop="@dimen/padding_medium" >
-
-        <ImageView
-            android:id="@+id/imgPlace"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/padding_large"
-            android:src="@drawable/earth" />
-
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/padding_small"
-            android:paddingRight="@dimen/padding_small" />
-
-        <TextView
-            android:id="@+id/address"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/padding_small"
-            android:paddingRight="@dimen/padding_small" />
-
-        <RatingBar
-            android:id="@+id/ratingBar1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/padding_large"
-            android:paddingRight="@dimen/padding_large" />
-    </LinearLayout>
-
-    <ImageButton
-        android:id="@+id/btnFav"
-        android:layout_width="44dp"
-        android:layout_height="44dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/btn_star_big_off_disable" />
-
-    <ImageButton
-        android:id="@+id/btnNavigate"
-        android:layout_width="44dp"
-        android:layout_height="44dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/google_navigation" />
 
     <ImageButton
         android:id="@+id/btnMap"
-        android:layout_width="46dp"
-        android:layout_height="44dp"
+        android:layout_width="55dp"
+        android:layout_height="53dp"
+        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/btnNavigate"
-        android:src="@drawable/ic_dialog_map" />
-
-    <ImageButton
-        android:id="@+id/btnHist"
-        android:layout_width="46dp"
-        android:layout_height="44dp"
-        android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/btnMap"
-        android:src="@drawable/navigation_history" />
-
-    <ImageButton
-        android:id="@+id/btnChat"
-        android:layout_width="46dp"
-        android:layout_height="44dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/ic_menu_start_conversation" />
+        android:layout_marginRight="48dp"
+        android:layout_marginTop="19dp"
+        android:src="@drawable/maps2" />
 
     <ImageButton
         android:id="@+id/btnCall"
-        android:layout_width="46dp"
-        android:layout_height="44dp"
-        android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/btnChat"
-        android:src="@drawable/ic_menu_call" />
+        android:layout_width="61dp"
+        android:layout_height="54dp"
+        android:layout_alignBottom="@+id/btnNavigate"
+        android:layout_marginRight="36dp"
+        android:layout_toLeftOf="@+id/btnNavigate"
+        android:src="@drawable/phone2" />
 
     <ImageButton
-        android:id="@+id/btnGo"
-        android:layout_width="46dp"
-        android:layout_height="44dp"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/btnFav"
-        android:src="@drawable/ic_menu_goto" />
+        android:id="@+id/btnNavigate"
+        android:layout_width="58dp"
+        android:layout_height="56dp"
+        android:layout_alignTop="@+id/btnMap"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/nav2" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/btnNavigate"
+        android:layout_below="@+id/btnCall"
+        android:layout_marginTop="52dp"
+        android:text="Name"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="78dp"
+        android:text="Address"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

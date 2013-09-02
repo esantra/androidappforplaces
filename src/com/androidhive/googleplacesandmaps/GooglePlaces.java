@@ -22,9 +22,9 @@ public class GooglePlaces {
 	private static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
 
 	// Google API Key
-	//public static final String API_KEY = "AIzaSyCRLa4LQZWNQBcjCYcIVYA45i9i8zfClqc"; // place your API key here
+	//public static final String API_KEY = "AIzaSyATJJ45iIUT1IEF4dv8hnkDY8PTV630jDs"; // place your API key here
 
-	public static final String API_KEY = "AIzaSyAQ9velZGE3xN9auvcBQOzO7Y5tV8tkRf8"; // place your API key here
+	public static final String API_KEY = "AIzaSyCRLa4LQZWNQBcjCYcIVYA45i9i8zfClqc"; // place your API key here
 
 	
 	// Google Places serach url's
@@ -102,7 +102,25 @@ public class GooglePlaces {
 		}
 	}
 	
+	public PlaceDetails getPlacePicture(String reference) throws Exception {
+		try {
 
+			HttpRequestFactory httpRequestFactory = createRequestFactory(HTTP_TRANSPORT);
+			HttpRequest request = httpRequestFactory
+					.buildGetRequest(new GenericUrl(PLACES_PHOTO));
+			request.getUrl().put("key", API_KEY);
+			request.getUrl().put("reference", reference);
+			request.getUrl().put("sensor", "false");
+
+			PlaceDetails place = request.execute().parseAs(PlaceDetails.class);
+			
+			return place;
+
+		} catch (HttpResponseException e) {
+			Log.e("Error in Perform Details", e.getMessage());
+			throw e;
+		}
+	}
 	
 
 	/**

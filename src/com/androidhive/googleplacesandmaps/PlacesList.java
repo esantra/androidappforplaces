@@ -6,8 +6,7 @@ import java.util.List;
 import com.google.api.client.util.Key;
 
 /** Implement this class from "Serializable"
-* So that you can pass this class Object to another using Intents
-* Otherwise you can't pass to another actitivy
+* in this way the object can be passed using INTENTS
 * */
 public class PlacesList implements Serializable {
 

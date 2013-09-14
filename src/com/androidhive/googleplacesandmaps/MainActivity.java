@@ -9,6 +9,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.UUID;
 
@@ -47,7 +48,7 @@ import android.widget.TextView;
 import android.view.ViewGroup.LayoutParams;
 
 import com.androidhive.googleplacesandmaps.MessageConsumer.OnReceiveMessageHandler;
-import com.newrelic.agent.android.NewRelic;
+//import com.newrelic.agent.android.NewRelic;
 import com.rabbitmq.client.AMQP.BasicProperties;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
@@ -107,9 +108,9 @@ public class MainActivity extends Activity {
 		//replaced activity_main.xml with startup screen.xml
 		setContentView(R.layout.startup_screen);
 		
-		NewRelic.withApplicationToken(
+		/*NewRelic.withApplicationToken(
 				"AA36f12720d4267840d700de32f8aed7bdd0e2439d"
-				).start(this.getApplication());
+				).start(this.getApplication());*/
 
 		// button show on map
 		btnFindIt = (Button) findViewById(R.id.btn_find);
@@ -145,21 +146,22 @@ public class MainActivity extends Activity {
 		        	    consumer = new QueueingConsumer(channel);
 		        	    channel.basicConsume(replyQueueName, true, consumer);
 		        	    
-		        	    System.out.println(" [x] Requesting fib()");    
+		        	    System.out.println(" [x] Requesting places()");    
 		        	    String response = call("30");
 		        	    System.out.println(" [.] Got '" + response + "'"); 
 		        	    
-		        	    
+		        	   
 		        
 		        	    String[] str = response.split(",");
 		        	    String str1 = str[0].toString();
-		        	    String[] str2 = str1.split("\\s+");
-
-		        	    String place1 = str2[0].toString();
-		        	    String place2 = str2[1].toString();
+		        
+		        	    String place1 = str[0].toString();
+		        	    String place2 = str[1].toString();
 		        	    
 		        	    place1 = place1.replace("\'", "");
 		        	    place2 = place2.replace("\'", "");
+		        	    place1 = place1.trim();
+		        	    place2 = place2.trim();
 		        	    
 		        	    String arr[] = new String [100];
 		        	    

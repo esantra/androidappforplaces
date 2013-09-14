@@ -43,8 +43,6 @@ public class KeywordActivity extends Activity {
 	PlacesList nearPlaces;
 	PlacesList nearPlaces2;
 
-	// GPS Location
-	GPSTracker gps;
 
 	// Button
 	Button btnShowOnMap;

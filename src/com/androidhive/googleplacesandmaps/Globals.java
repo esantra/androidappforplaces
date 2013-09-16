@@ -37,51 +37,29 @@ public class Globals{
 	   public void setTextKey1(CharSequence d){
 			 this.textKey1=d;
 	   }
-		   
-	 
-	   //-------get and set array variables
-	   public void setLocation3(String d){
-		     this.location3=d;
-	   }
-	   public String getLocation3(){
-		     return this.location3;
-	   }
-	   //-------get and set array variables
-	   public void setLocation4(String d){
-		     this.location3=d;
-	   }
-	   public String getLocation4(){
-		     return this.location3;
-	   }
-	   //-------get and set array variables
-	   public void setLocation5(String d){
-		     this.location3=d;
-	   }
-	   public String getLocation5(){
-		     return this.location3;
-	   }
-	   
+
+
 	   public void setLocationVari(){
-		   
+
 		     counterLocVar++;
 	   }
 	   public int getLocationVari(){
-		     
+
 		     return counterLocVar;
 	   }
-	   
+
 	   public void setLocationi(String d, int i){
-		     
+
 		     this.location_i[i]=d;
 		     counterVar++;
 	   }
-	   
+
 	   public String getLocationi(int i){
 		     //counter variable
 		     //counterVar++;
-		     
+
 		     if(i > -1){
-		    	 
+
 		    	 try{
 		    	 if (this.location_i[i].toString() != null){
 		    	 	return this.location_i[i].toString();
@@ -91,20 +69,20 @@ public class Globals{
 		    	 catch(Exception e){
 		    		 Log.d("one", "this is a null pointer exception for getLocation global method" );
 		    	 }
-		    	 
+
 		     }//end if
 		     else
 		    	 return null;
 		     return null;
 	   }
-	   
+
 	   public void setCounterVar(int i){
-		     
+
 		     this.counterVar = i;
 	   }
-	   
+
 	   public int getCounterVar(){
-		     
+
 		     return counterVar;
 	   }
 
@@ -116,5 +94,4 @@ public class Globals{
 	     return instance;
 	   }
 	}
-
 

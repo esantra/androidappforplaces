@@ -69,22 +69,7 @@ public class Place implements Serializable {
 		@Key
 		public double lng;
 	}
-	/*public static class Reviews implements Serializable
-	{
-		@Key
-		public Aspects aspects;
 
-	}
-	public static class Aspects implements Serializable
-	{
-		@Key
-		public int rating;
-		
-		@Key
-		public String author_name;
-		
-		@Key
-		public String text;
-	}*/
 	
+
 }

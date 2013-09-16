@@ -22,9 +22,9 @@ public class GooglePlaces {
 	private static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
 
 	// Google API Key
-	//public static final String API_KEY = "AIzaSyATJJ45iIUT1IEF4dv8hnkDY8PTV630jDs"; // place your API key here
+	public static final String API_KEY = "AIzaSyAYlKYeI7SYOWMYmuYSu534-ESCeHldmd8"; // place your API key here
 
-	public static final String API_KEY = "AIzaSyCRLa4LQZWNQBcjCYcIVYA45i9i8zfClqc"; // place your API key here
+	//public static final String API_KEY = "AIzaSyCRLa4LQZWNQBcjCYcIVYA45i9i8zfClqc"; // place your API key here
 
 	
 	// Google Places serach url's

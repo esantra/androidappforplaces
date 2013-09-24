@@ -713,7 +713,7 @@ public class SecondActivity extends Activity {
 		    distanceVariable_i[n] = myFormat_i[n].format(distance_i[n]);
 		    nameArr[1] = place_i[n].name;
 
-//-----------
+//--------------------------------------------
 		    //secondPlaceReference[1] = place_i[n].reference;
 		    Log.d("second", "2 secondPlaceReference[nameCount]  " + nameCount);
 		    Log.d("distance", "This is place i under 100  " + place_i[n]);

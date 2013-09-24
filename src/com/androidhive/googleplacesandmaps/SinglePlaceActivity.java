@@ -35,6 +35,7 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.view.View;
@@ -66,9 +67,9 @@ public class SinglePlaceActivity extends Activity {
 	public static String KEY_REFERENCE = "reference"; // id of the place
 
 	public String phone;
-	
+
 	public String address;
-	
+
 	public Double rating;
 
 	@Override
@@ -80,12 +81,11 @@ public class SinglePlaceActivity extends Activity {
 		Intent i = getIntent();
 
 		// Place reference id
-		String reference = i.getStringExtra(KEY_REFERENCE);
+		String reference2 = i.getStringExtra(KEY_REFERENCE);
 
 		// Calling a Async Background thread
-		new LoadSinglePlaceDetails().execute(reference);
+		new LoadSinglePlaceDetails().execute(reference2);
 	}
-
 
 	/**
 	 * Background Async Task to Load Google places
@@ -123,8 +123,6 @@ public class SinglePlaceActivity extends Activity {
 			}
 			return null;
 		}
-		
-		
 
 		/**
 		 * After completing background task Dismiss the progress dialog
@@ -138,115 +136,179 @@ public class SinglePlaceActivity extends Activity {
 					/**
 					 * Updating parsed Places into LISTVIEW
 					 * */
-					if(placeDetails != null){
+					if (placeDetails != null) {
 						String status = placeDetails.status;
 
 						// check place details status
 						// Check for all possible status
-						if(status.equals("OK")){
+						if (status.equals("OK")) {
 							if (placeDetails.result != null) {
 								String name = placeDetails.result.name;
 								address = placeDetails.result.formatted_address;
 								phone = placeDetails.result.formatted_phone_number;
 								rating = placeDetails.result.rating;
-							
-								String latitude = Double.toString(placeDetails.result.geometry.location.lat);
-								String longitude = Double.toString(placeDetails.result.geometry.location.lng);
-								//String rating = placeDetails.result.rating;
+
+								String latitude = Double
+										.toString(placeDetails.result.geometry.location.lat);
+								String longitude = Double
+										.toString(placeDetails.result.geometry.location.lng);
+								// String rating = placeDetails.result.rating;
 								String image = placeDetails.result.icon;
 
 								// Displaying all the details in the view
 								// single_place.xml
 								TextView lbl_name = (TextView) findViewById(R.id.name);
 								TextView lbl_address = (TextView) findViewById(R.id.address);
-								//ImageView imgPlace = (ImageView) findViewById(R.id.imgPlace);
+								// ImageView imgPlace = (ImageView)
+								// findViewById(R.id.imgPlace);
 
-								Log.d("Place ", name + address + phone + latitude + longitude);
+								// Log.d("Place ", name + address + phone +
+								// latitude + longitude);
 
 								// Check for null data from google
 								// Sometimes place details might missing
-								name = name == null ? "Not present" : name; // if name is null display as "Not present"
-								address = address == null ? "Not present" : address;
+								name = name == null ? "Not present" : name; // if
+																			// name
+																			// is
+																			// null
+																			// display
+																			// as
+																			// "Not present"
+								address = address == null ? "Not present"
+										: address;
 								phone = phone == null ? "Not present" : phone;
-								latitude = latitude == null ? "Not present" : latitude;
-								longitude = longitude == null ? "Not present" : longitude;
-								image = image == null ? "Not present" : image; 
+								latitude = latitude == null ? "Not present"
+										: latitude;
+								longitude = longitude == null ? "Not present"
+										: longitude;
+								image = image == null ? "Not present" : image;
 								rating = rating == null ? 0 : rating;
-
-
 
 								lbl_name.setText(name);
 								lbl_address.setText(address);
-								
-								lbl_name.setTextColor(Color.parseColor("#000000"));
-								lbl_address.setTextColor(Color.parseColor("#000000"));
-								
-								
-								
 
+								lbl_name.setTextColor(Color
+										.parseColor("#000000"));
+								lbl_address.setTextColor(Color
+										.parseColor("#000000"));
 
-								//----- check to see if this is an api call and not an image url
-								String imageString2 = 
-										"https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBegAAAFg5U0y-iQEtUVMfqw4KpXYe60QwJC-wl59NZlcaxSQZNgAhGrjmUKD2NkXatfQF1QRap-PQCx3kMfsKQCcxtkZqQ&sensor=true&key=AIzaSyCRLa4LQZWNQBcjCYcIVYA45i9i8zfClqc";
-								//imgString.setText("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CoQBegAAAFg5U0y-iQEtUVMfqw4KpXYe60QwJC-wl59NZlcaxSQZNgAhGrjmUKD2NkXatfQF1QRap-PQCx3kMfsKQCcxtkZqQ&sensor=true&key=AIzaSyCRLa4LQZWNQBcjCYcIVYA45i9i8zfClqc");
+								// ----- check to see if this is an api call and
+								// not an image url
+								String imageString2 = "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBegAAAFg5U0y-iQEtUVMfqw4KpXYe60QwJC-wl59NZlcaxSQZNgAhGrjmUKD2NkXatfQF1QRap-PQCx3kMfsKQCcxtkZqQ&sensor=true&key=AIzaSyCRLa4LQZWNQBcjCYcIVYA45i9i8zfClqc";
+								// imgString.setText("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CoQBegAAAFg5U0y-iQEtUVMfqw4KpXYe60QwJC-wl59NZlcaxSQZNgAhGrjmUKD2NkXatfQF1QRap-PQCx3kMfsKQCcxtkZqQ&sensor=true&key=AIzaSyCRLa4LQZWNQBcjCYcIVYA45i9i8zfClqc");
 
-								String imageString1 = "http://maps.googleapis.com/maps/api/streetview?size=150x150&location="+ Double.toString(placeDetails.result.geometry.location.lat) +","+ Double.toString(placeDetails.result.geometry.location.lng) + "&heading=235&sensor=false";
-								
-	
+								String imageString1 = "http://maps.googleapis.com/maps/api/streetview?size=150x150&location="
+										+ Double.toString(placeDetails.result.geometry.location.lat)
+										+ ","
+										+ Double.toString(placeDetails.result.geometry.location.lng)
+										+ "&heading=235&sensor=false";
+
 								URL url;
 								InputStream content;
 								try {
 									url = new URL(imageString1);
 
-									content = (InputStream)url.getContent();
-
+									content = (InputStream) url.getContent();
 
 								} catch (IOException e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
 								}
 
-
 								// get nearest places
 								try {
-									nearPlaces = googlePlaces.search(placeDetails.result.geometry.location.lat,
-											placeDetails.result.geometry.location.lng, SecondActivity.types);
+									nearPlaces = googlePlaces
+											.search(placeDetails.result.geometry.location.lat,
+													placeDetails.result.geometry.location.lng,
+													SecondActivity.types);
 								} catch (Exception e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
 								}
 
-								
-								ImageButton btnNext = (ImageButton) findViewById(R.id.btnNextPlace);
+								final ImageButton btnNext = (ImageButton) findViewById(R.id.btnNextPlace);
 								/** Button click event for shown on map */
 								btnNext.setOnClickListener(new View.OnClickListener() {
 
 									@Override
 									public void onClick(View arg0) {
-										String a = SecondActivity.name;
 
-										new LoadSinglePlaceDetails().execute(SecondActivity.secondPlaceReference);
-									
+										// if this is more than the first time
+										// that the button has been pushed
+										int lvcount = SecondActivity.lv2
+												.getCount();
+										ListView lv2 = SecondActivity.lv2;
+										//int id = SecondActivity.lvid;
+
+										String a;
+
+										// the first instances are already
+										// covered
+										try {
+											if (Globals.nameCount > 0) {
+												
+												if(Globals.nameCount == 0){
+													push2();
+												}
+
+												Log.d("LV ",
+														"ID is  "
+																+ Globals.pushID
+																+ " Globals.nameCount is "
+																+ Globals.nameCount
+																+ " plus "
+																+ (Globals.nameCount + Globals.pushID));
+
+												// surround with try catch for
+												// when user presses button too
+												// many times
+
+												a = SecondActivity.arrayreferences
+														.get(Globals.nameCount
+																+ Globals.pushID -1).get(0);
+
+												Log.d("LV ",
+														"LV "
+																+ " name array "
+																+ SecondActivity.arrayreferences);
+
+												Log.d("LV ",
+														"LV "
+																+ " name array "
+																+ SecondActivity.arraynames);
+												new LoadSinglePlaceDetails()
+														.execute(a);
+												Globals.nameCount = Globals.nameCount += 100;
+
+											}// end if
+											else {
+
+												push2();
+												
+											}
+										} catch (Exception e) {
+											btnNext.setBackgroundColor(Color.RED);
+											Log.d("load places error",
+													"load places error" + e);
+										}
+										
 									}
-								});								
-								
-
-
+								});
 
 								ImageButton btnMap = (ImageButton) findViewById(R.id.btnMap);
 								/** Button click event for shown on map */
 								btnMap.setOnClickListener(new View.OnClickListener() {
 
-									
 									@Override
 									public void onClick(View arg0) {
 
-										String map = "geo:0,0?q=" +address;
-										Intent callIntent = new Intent(Intent.ACTION_VIEW);
+										String map = "geo:0,0?q=" + address;
+										Intent callIntent = new Intent(
+												Intent.ACTION_VIEW);
 										callIntent.setData(Uri.parse(map));
 										startActivity(callIntent);
 									}
-									
+
 								});
 
 								ImageButton btnPhone = (ImageButton) findViewById(R.id.btnCall);
@@ -257,85 +319,75 @@ public class SinglePlaceActivity extends Activity {
 									public void onClick(View arg0) {
 
 										phone = "tel:" + phone;
-										Intent callIntent = new Intent(Intent.ACTION_CALL);
+										Intent callIntent = new Intent(
+												Intent.ACTION_CALL);
 										callIntent.setData(Uri.parse(phone));
 										startActivity(callIntent);
 									}
 								});
 
-
-
-								
 								ImageButton btnNavigate = (ImageButton) findViewById(R.id.btnNavigate);
 								/** Button click event for shown on map */
-								btnNavigate.setOnClickListener(new View.OnClickListener() {
+								btnNavigate
+										.setOnClickListener(new View.OnClickListener() {
 
-									@Override
-									public void onClick(View arg0) {
-									
-														
-										Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q=" +placeDetails.result.geometry.location.lat+","+placeDetails.result.geometry.location.lng));
-										intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-										startActivity(intent);
+											@Override
+											public void onClick(View arg0) {
 
-										
-									}
-								});
-									
+												Intent intent = new Intent(
+														Intent.ACTION_VIEW,
+														Uri.parse("google.navigation:q="
+																+ placeDetails.result.geometry.location.lat
+																+ ","
+																+ placeDetails.result.geometry.location.lng));
+												intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+												startActivity(intent);
+
+											}
+										});
 
 							}
-						}
-						else if(status.equals("ZERO_RESULTS")){
-							alert.showAlertDialog(SinglePlaceActivity.this, "Near Places",
-									"Sorry no place found.",
+						} else if (status.equals("ZERO_RESULTS")) {
+							alert.showAlertDialog(SinglePlaceActivity.this,
+									"Near Places", "Sorry no place found.",
 									false);
-						}
-						else if(status.equals("UNKNOWN_ERROR"))
-						{
-							alert.showAlertDialog(SinglePlaceActivity.this, "Places Error",
-									"Sorry unknown error occured.",
-									false);
-						}
-						else if(status.equals("OVER_QUERY_LIMIT"))
-						{
-							alert.showAlertDialog(SinglePlaceActivity.this, "Places Error",
+						} else if (status.equals("UNKNOWN_ERROR")) {
+							alert.showAlertDialog(SinglePlaceActivity.this,
+									"Places Error",
+									"Sorry unknown error occured.", false);
+						} else if (status.equals("OVER_QUERY_LIMIT")) {
+							alert.showAlertDialog(
+									SinglePlaceActivity.this,
+									"Places Error",
 									"Sorry query limit to google places is reached",
 									false);
-						}
-						else if(status.equals("REQUEST_DENIED"))
-						{
-							alert.showAlertDialog(SinglePlaceActivity.this, "Places Error",
+						} else if (status.equals("REQUEST_DENIED")) {
+							alert.showAlertDialog(SinglePlaceActivity.this,
+									"Places Error",
 									"Sorry error occured. Request is denied",
 									false);
-						}
-						else if(status.equals("INVALID_REQUEST"))
-						{
-							alert.showAlertDialog(SinglePlaceActivity.this, "Places Error",
+						} else if (status.equals("INVALID_REQUEST")) {
+							alert.showAlertDialog(SinglePlaceActivity.this,
+									"Places Error",
 									"Sorry error occured. Invalid Request",
 									false);
-						}
-						else
-						{
-							alert.showAlertDialog(SinglePlaceActivity.this, "Places Error",
-									"Sorry error occured.",
+						} else {
+							alert.showAlertDialog(SinglePlaceActivity.this,
+									"Places Error", "Sorry error occured.",
 									false);
 						}
-					}else{
-						alert.showAlertDialog(SinglePlaceActivity.this, "Places Error",
-								"Sorry error occured.",
-								false);
+					} else {
+						alert.showAlertDialog(SinglePlaceActivity.this,
+								"Places Error", "Sorry error occured.", false);
 					}
 
-
-
-
 				}
-
 
 				public Drawable drawableFromUrl(String url) throws IOException {
 					Bitmap x;
 
-					HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+					HttpURLConnection connection = (HttpURLConnection) new URL(
+							url).openConnection();
 					connection.connect();
 					InputStream input = connection.getInputStream();
 
@@ -347,5 +399,22 @@ public class SinglePlaceActivity extends Activity {
 		}
 
 	}
+	
+
+public void push2(){
+	Globals.pushID = SecondActivity.lvid;
+	new LoadSinglePlaceDetails()
+	.execute(SecondActivity.secondPlaceReference[Globals.nameCount 
+	                                             + Globals.pushID]);
+	
+	int addint = Globals.nameCount 
+     + Globals.pushID;
+	
+	Log.d("LV",
+			"one two namecount is " + addint);
+	
+	
+	Globals.nameCount++;
+}
 
 }

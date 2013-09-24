@@ -58,12 +58,12 @@ public class SecondActivity extends Activity {
 	public static String name;
 	
 	//name of second place - well reference to it
-	public static String secondPlaceReference;
+	public static String[] secondPlaceReference = new String[10000];
 	
 	
 	// Places ListView
 	ListView lv;
-	ListView lv2;
+	public static ListView lv2;
 	
 	// ListItems data
 	ArrayList<HashMap<String, String>> placesListItems = new ArrayList<HashMap<String,String>>();
@@ -80,10 +80,15 @@ public class SecondActivity extends Activity {
 	//declare a variable array to hold places
 	public static Double[] placesArrayLat =  new Double[1000];
 	public static Double[] placesArrayLng =  new Double[1000];
+	public static Double[] placesArrayLat2 =  new Double[1000];
+	public static Double[] placesArrayLng2 =  new Double[1000];
 	public Double[] p_i_lat =  new Double[1000];
 	public Double[] p_i_lng =  new Double[1000];
 	public static String[] placesName =  new String[1000];
+	public static String[] placesName2 =  new String[1000];
+	public static String[] refArray =  new String[1000];
 	public String name_i;
+	public static String nameArr[] = new String[100];
 	public static String[] distanceVariable_i = new String[100];
 	public Globals g = Globals.getInstance();
 	public static Place place_i[] = new Place[100];
@@ -92,10 +97,15 @@ public class SecondActivity extends Activity {
 	public static Double[] distance_i = new Double[100];
 	public static DecimalFormat[] myFormat_i = new DecimalFormat[100];
 	public static String[] types_i =  new String[100];
-	public HashMap<Integer,ArrayList<String>> arraynames = new HashMap<Integer,ArrayList<String>>();
+	public static HashMap<Integer,ArrayList<String>> arraynames = new HashMap<Integer,ArrayList<String>>();
+	public static HashMap<Integer,ArrayList<String>> arrayreferences = new HashMap<Integer,ArrayList<String>>();
 	public HashMap<Integer,ArrayList<Place>> arrayplaces = new HashMap<Integer,ArrayList<Place>>();
 	public static HashMap<Integer,Place> hm = new HashMap<Integer,Place>();
-	//public static HashMap hm = new HashMap(); 
+	public static int nameCount = 2;
+	public static String[] mapstring = new String[100];
+	public static int lvid;
+	int counter = 0; 
+	
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -165,21 +175,15 @@ public class SecondActivity extends Activity {
 		 * On selecting a listitem SinglePlaceActivity is launched
 		 * */
 		lv.setOnItemClickListener(new OnItemClickListener() {
+			
+			//this part of code is probably inapplicable to the project version
+			//as lv is removed from the class project version
  
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                     int position, long id) {
-            	// getting values from selected ListItem
-                String reference = ((TextView) view.findViewById(R.id.reference)).getText().toString();
-                
-                // Starting new intent
-                Intent in = new Intent(getApplicationContext(),
-                        SinglePlaceActivity.class);
-                
-                // Sending place reference id to single place activity
-                // place reference id used to get "Place full details"
-                in.putExtra(KEY_REFERENCE, reference);
-                startActivity(in);
+            	
+
             }
             
         });
@@ -189,8 +193,22 @@ public class SecondActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                     int position, long id) {
+                lvid = position;
+            	
+            	Log.d("position", "The position is:" + position);
+            	Log.d("position", "The counter is:" + counter);
+            	counter++;
+            	
+            	
+            	refArray[0] = "";
+            	
             	// getting values from selected ListItem
                 String reference = ((TextView) view.findViewById(R.id.reference)).getText().toString();
+                
+                
+                Log.d("position", "The position is:" + counter + " key ref is " + KEY_REFERENCE.toString() + 
+                		" Reference is " + reference);
+            	counter++;
                 
                 // Starting new intent
                 Intent in = new Intent(getApplicationContext(),
@@ -199,6 +217,7 @@ public class SecondActivity extends Activity {
                 // Sending place reference id to single place activity
                 // place reference id used to get "Place full details"
                 in.putExtra(KEY_REFERENCE, reference);
+                //in.putExtra(KEY_REFERENCE, arrayreferences);
                 startActivity(in);
             }
             
@@ -306,12 +325,14 @@ public class SecondActivity extends Activity {
 								placesArrayLng[y] = p.geometry.location.lng;
 								placesName[y] = p.name; 
 								
-								
+								//again you may have to use a hash map here
+								secondPlaceReference[y] = p.reference;
 								
 								// Place reference won't display in listview - it will be hidden
 								// Place reference is used to get "place full details"
 								map.put(KEY_REFERENCE, p.reference);
-								
+							    mapstring[0] = KEY_REFERENCE.toString();
+							    mapstring[1] = p.reference.toString();
 								Double distance = DistanceCalculation.distFrom(gps.getLatitude(), gps.getLongitude(), p.geometry.location.lat, p.geometry.location.lng);
 								
 								DecimalFormat myFormat = new DecimalFormat("0.0");
@@ -321,11 +342,14 @@ public class SecondActivity extends Activity {
 								//--- so one mile needs to be replaced with a variable that tells the 
 								//distance from one point to another
 								 map.put(KEY_NAME, p.name + " " + distanceVariable);
-								
-								
+								 mapstring[2] = KEY_REFERENCE;
+								 mapstring[3] = p.reference;
+								 mapstring[4] = distanceVariable.toString();
 								
 								// adding HashMap to ArrayList
 								placesListItems.add(map);
+								Log.d("map", "This is map  of items " + map.toString());
+								
 								//increment counter
 								y = y + 1;
 							}
@@ -355,14 +379,27 @@ public class SecondActivity extends Activity {
 									for (Place p_i : nearPlaces_i[aa].results) {
 										
 										
+										
 										int uniqueKey = aa *100 + placecount;
 										arraynames.put(uniqueKey, new ArrayList<String>());
 										hm.put(uniqueKey, p_i);
 										
-										String pi = p_i.name.toString(); 
+										//references skipping next iteration for some reason
+										int uniqueKeyRef = aa *100 + placecount;
+										arrayreferences.put(uniqueKeyRef, new ArrayList<String>());
+										
+										
+										//assigns the place to the places array variable
+										placesArrayLat2[uniqueKey] = p_i.geometry.location.lat;
+										placesArrayLng2[uniqueKey] = p_i.geometry.location.lng;
+										placesName2[uniqueKey] = p_i.name; 
+										
+										String pi = p_i.name.toString();
+										String pi_ref = p_i.reference.toString();
 										
 										// then simply access it with
 										arraynames.get(uniqueKey).add(pi);
+										arrayreferences.get(uniqueKeyRef).add(pi_ref);
 										place_i[m] = p_i;
 
 										m++;
@@ -411,9 +448,11 @@ public class SecondActivity extends Activity {
 								// Place reference won't display in listview - it will be hidden
 								// Place reference is used to get "place full details"
 								map2.put(KEY_REFERENCE, p.reference);
+								mapstring[5] = KEY_REFERENCE.toString();
+								mapstring[6] = p.reference;
 								
 								
-								secondPlaceReference = p.reference;
+								//secondPlaceReference[yy] = p.reference;
 
 								Double distance2 = DistanceCalculation.distFrom(gps.getLatitude(), gps.getLongitude(), 
 										p.geometry.location.lat, p.geometry.location.lng);
@@ -424,6 +463,7 @@ public class SecondActivity extends Activity {
 							    		placesArrayLat[yy], placesArrayLng[yy]);
 								DecimalFormat myFormatp = new DecimalFormat("0.0");
 								String distanceFr = myFormatp.format(distancefrom);
+								nameArr[0] = placesName[yy].toString();
 								name = placesName[yy].toString();
 								
 								try{
@@ -444,10 +484,12 @@ public class SecondActivity extends Activity {
 								
 								
 								//--- THIS NEEDS TO RUN ON A LOOP FOR INDUCTION PURPOSES
-								String strMapPut = (p.name + " " +  distanceVariable2 + "\n" + name + " " 
+								//changed strmapput
+								String strMapPut = (p.reference.toString().substring(0,4) + "\n " + p.name + " " +  distanceVariable2 + "\n" + name + " " 
 										+ distanceFr + "\n");
 									
-								
+								mapstring[9] = strMapPut;
+								Log.d("mapstring", "This is mapstring 9 " + mapstring[9]);
 								
 								int uk = wcounter + 100;
 								int multiply = 100;
@@ -459,10 +501,10 @@ public class SecondActivity extends Activity {
 								   if(arraynames.get(wcounter) != null){
 									   distanceVariable_i[wcounter] = distanceVar(n, i, wcounter);
 									   if (distanceVariable_i[wcounter] != null){
-										   strMapPut = strMapPut + arraynames.get(wcounter) + " " + distanceVariable_i[wcounter] + "\n";
+										   strMapPut = strMapPut + wcounter  + "ref " + arrayreferences.get(wcounter).toString().substring(0, 10) + "\n "  +   arraynames.get(wcounter) + " " + distanceVariable_i[wcounter] + "\n";
 									   }//end if 
 									   else{
-										   strMapPut = strMapPut + arraynames.get(wcounter) + " " + "\n";
+										   strMapPut = strMapPut  + wcounter + "ref " + arrayreferences.get(wcounter).toString().substring(0, 10) + "\n " + arraynames.get(wcounter) + " " + "\n";
 									   }//end else
 								   
 										   Log.d("key", "this is the second unique key " + wcounter);
@@ -473,10 +515,12 @@ public class SecondActivity extends Activity {
 									   if(arraynames.get(uk) != null){
 										   distanceVariable_i[wcounter] = distanceVar(n, i, uk);
 										   if(distanceVariable_i[wcounter] != null){
-											   	strMapPut = strMapPut + arraynames.get(uk) + " " + distanceVariable_i[wcounter] + "\n";
+											   	//strMapPut = strMapPut + "\n " + arraynames.get(uk) + " " + distanceVariable_i[wcounter] + "\n";
+											   	strMapPut = strMapPut  + uk  + "ref " + arrayreferences.get(uk).toString().substring(0, 10) + "\n " + arraynames.get(uk) + " " + distanceVariable_i[wcounter] + "\n";
 										   }//end if
 										   else{
-											   strMapPut = strMapPut + arraynames.get(uk) + " " + "\n";
+											   //strMapPut = strMapPut + "ref " + arrayreferences.get(uk) + "\n " + arraynames.get(uk) + " " + "\n";
+											   strMapPut = strMapPut + uk + "ref " + arrayreferences.get(uk).toString().substring(0, 10) + "\n " + arraynames.get(uk) + " " + "\n";
 										   }//end else
 									   
 									   Log.d("key", "this is the third unique key " + uk);
@@ -506,10 +550,24 @@ public class SecondActivity extends Activity {
 								
 								
 								map2.put(KEY_NAME, strMapPut);
+								mapstring[7] = KEY_NAME;
+								mapstring[8] = strMapPut;
 								
+								Log.d("mapstring", "This is mapstring 1 " + mapstring[1]);
+								Log.d("mapstring", "This is mapstring 2 " + mapstring[2]);
+								Log.d("mapstring", "This is mapstring 3 " + mapstring[3]);
+								Log.d("mapstring", "This is mapstring 4 " + mapstring[4]);
+								Log.d("mapstring", "This is mapstring 5 " + mapstring[5]);
+								Log.d("mapstring", "This is mapstring 6 " + mapstring[6]);
+								Log.d("mapstring", "This is mapstring 7 " + mapstring[7]);
+								Log.d("mapstring", "This is mapstring 8 " + mapstring[8]);
 
 								// adding HashMap to ArrayList
 								placesListItems2.add(map2);
+								Log.d("map", "This is map of items 2 " + map2.toString());
+								
+								
+								
 								n++;
 								i = i + 1;
 								yy++;
@@ -527,6 +585,10 @@ public class SecondActivity extends Activity {
 					                        R.id.reference, R.id.name });
 							
 							// Adding data into listview
+							
+							//---------------------------------------------------------------
+							//------------may be able to manipulate adapter 2 somehow  
+							
 							lv2.setAdapter(adapter2);
 						}
 					}
@@ -623,13 +685,40 @@ public class SecondActivity extends Activity {
 		DecimalFormat[] myFormat_i = new DecimalFormat[100];
 		place_i[n] = hm.get(uk);
 		
-
-		distance_i[n] = DistanceCalculation.distFrom(placesArrayLat[i],  placesArrayLng[i], 
-		place_i[n].geometry.location.lat, place_i[n].geometry.location.lng);
-		Log.d("filter", "  place distance calc " + distance_i[n].toString());
+		int befkey = uk;
+		distanceVariable_i[n] = null;
 		
-		 myFormat_i[n] = new DecimalFormat("0.0");
-		distanceVariable_i[n] = myFormat_i[n].format(distance_i[n]);
+		if(uk > 100){
+			befkey = uk - 100;
+		    distance_i[n] = DistanceCalculation.distFrom(placesArrayLat2[befkey],  placesArrayLng2[befkey], 
+		    place_i[n].geometry.location.lat, place_i[n].geometry.location.lng);
+		    Log.d("filter", "  place distance calc " + distance_i[n].toString());
+		    myFormat_i[n] = new DecimalFormat("0.0");
+		    distanceVariable_i[n] = myFormat_i[n].format(distance_i[n]);
+		    nameArr[nameCount] = place_i[n].name;
+		    
+//error - does not get second place reference here because loops through all to get to it
+		    //secondPlaceReference[nameCount] = place_i[n].reference;
+		    Log.d("second", "1 secondPlaceReference[nameCount]  " + nameCount);
+		    nameCount++;
+		    //Log.d("distance", "This is place i over 100  " + place_i[n]);
+		   
+		}
+		else{
+			//this distance variable needs to loop????
+			distance_i[n] = DistanceCalculation.distFrom(placesArrayLat[i],  placesArrayLng[i], 
+			place_i[n].geometry.location.lat, place_i[n].geometry.location.lng);
+			Log.d("filter", "  place distance calc " + distance_i[n].toString());	
+		    myFormat_i[n] = new DecimalFormat("0.0");
+		    distanceVariable_i[n] = myFormat_i[n].format(distance_i[n]);
+		    nameArr[1] = place_i[n].name;
+
+//-----------
+		    //secondPlaceReference[1] = place_i[n].reference;
+		    Log.d("second", "2 secondPlaceReference[nameCount]  " + nameCount);
+		    Log.d("distance", "This is place i under 100  " + place_i[n]);
+		    Log.d("distance", "This is secondPlaceReference[1]  " +  secondPlaceReference[1]);
+		}
 		return distanceVariable_i[n];
 	}
 	

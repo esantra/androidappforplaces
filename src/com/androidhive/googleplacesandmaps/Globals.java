@@ -15,6 +15,9 @@ public class Globals{
 	   public String[] location_i = new String[100];
 	   private CharSequence textKey1 = null;
 	   public static int buttonPushCount = 0;
+	   public static int nameCount = 0;
+	   public static int pushID = 0;
+	   public static int push = 0;
 
 	   // Restrict the constructor from being instantiated
 	   public Globals(){}

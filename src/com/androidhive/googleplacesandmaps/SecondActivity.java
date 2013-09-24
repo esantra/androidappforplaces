@@ -485,7 +485,7 @@ public class SecondActivity extends Activity {
 								
 								//--- THIS NEEDS TO RUN ON A LOOP FOR INDUCTION PURPOSES
 								//changed strmapput
-								String strMapPut = (p.reference.toString().substring(0,4) + "\n " + p.name + " " +  distanceVariable2 + "\n" + name + " " 
+								String strMapPut = ( p.name + " " +  distanceVariable2 + "\n" + name + " " 
 										+ distanceFr + "\n");
 									
 								mapstring[9] = strMapPut;
@@ -501,10 +501,10 @@ public class SecondActivity extends Activity {
 								   if(arraynames.get(wcounter) != null){
 									   distanceVariable_i[wcounter] = distanceVar(n, i, wcounter);
 									   if (distanceVariable_i[wcounter] != null){
-										   strMapPut = strMapPut + wcounter  + "ref " + arrayreferences.get(wcounter).toString().substring(0, 10) + "\n "  +   arraynames.get(wcounter) + " " + distanceVariable_i[wcounter] + "\n";
+										   strMapPut = strMapPut   +   arraynames.get(wcounter).toString() + " " + distanceVariable_i[wcounter] + "\n";
 									   }//end if 
 									   else{
-										   strMapPut = strMapPut  + wcounter + "ref " + arrayreferences.get(wcounter).toString().substring(0, 10) + "\n " + arraynames.get(wcounter) + " " + "\n";
+										   strMapPut = strMapPut   + arraynames.get(wcounter) + " " + "\n";
 									   }//end else
 								   
 										   Log.d("key", "this is the second unique key " + wcounter);
@@ -516,11 +516,11 @@ public class SecondActivity extends Activity {
 										   distanceVariable_i[wcounter] = distanceVar(n, i, uk);
 										   if(distanceVariable_i[wcounter] != null){
 											   	//strMapPut = strMapPut + "\n " + arraynames.get(uk) + " " + distanceVariable_i[wcounter] + "\n";
-											   	strMapPut = strMapPut  + uk  + "ref " + arrayreferences.get(uk).toString().substring(0, 10) + "\n " + arraynames.get(uk) + " " + distanceVariable_i[wcounter] + "\n";
+											   	strMapPut = strMapPut  + arraynames.get(uk) + " " + distanceVariable_i[wcounter] + "\n";
 										   }//end if
 										   else{
 											   //strMapPut = strMapPut + "ref " + arrayreferences.get(uk) + "\n " + arraynames.get(uk) + " " + "\n";
-											   strMapPut = strMapPut + uk + "ref " + arrayreferences.get(uk).toString().substring(0, 10) + "\n " + arraynames.get(uk) + " " + "\n";
+											   strMapPut = strMapPut  + arraynames.get(uk) + " " + "\n";
 										   }//end else
 									   
 									   Log.d("key", "this is the third unique key " + uk);
@@ -528,16 +528,6 @@ public class SecondActivity extends Activity {
 								   
 									}//end for
 								   
-								   /*
-								   if(arraynames.get(uk*2) != null){
-								   strMapPut = strMapPut + arraynames.get(uk * 2) + " " + distanceVariable_i[wcounter] + "\n";
-								   Log.d("key", "this is the third unique key " + uk * 2);
-								   }
-								   
-								   if(arraynames.get(uk*3) != null){
-								   strMapPut = strMapPut + arraynames.get(uk * 3) + " " + distanceVariable_i[wcounter] + "\n";
-								   Log.d("key", "this is the third unique key " + uk * 3);
-								   }*/
 								   
 								   //strMapPut = strMapPut + place_ii[w].name.toString() + " " + distanceVariable_i[w] + "\n";
 									wcounter++;

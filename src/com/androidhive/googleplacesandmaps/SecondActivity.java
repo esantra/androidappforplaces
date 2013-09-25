@@ -313,7 +313,7 @@ public class SecondActivity extends Activity {
 				public void run() {
 					/**
 					 * Updating parsed Places into LISTVIEW
-					 * */
+					 * */ 
 					// Get json response status
 					String status1 = nearPlaces.status;
 					String status2 = nearPlaces2.status;
@@ -357,7 +357,7 @@ public class SecondActivity extends Activity {
 								// Place name
 								// --- so one mile needs to be replaced with a
 								// variable that tells the
-								// distance from one point to another
+								// distance from one point to another a
 								map.put(KEY_NAME, p.name + " "
 										+ distanceVariable);
 								mapstring.add(KEY_REFERENCE);

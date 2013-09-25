@@ -22,10 +22,11 @@ public class PlaceReview implements Parcelable {
 
 	public PlaceReview(JSONObject jsonReview) {
 		try {
-			mRating = jsonReview.getJSONArray("aspects").getJSONObject(0).getInt("rating");
+			mRating = jsonReview.getJSONArray("aspects").getJSONObject(0)
+					.getInt("rating");
 			mAuthorName = jsonReview.getString("author_name");
 			mText = jsonReview.getString("text");
-		} catch(JSONException e) {
+		} catch (JSONException e) {
 			e.printStackTrace();
 		}
 	}

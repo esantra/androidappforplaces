@@ -159,11 +159,6 @@ public class SinglePlaceActivity extends Activity {
 								// single_place.xml
 								TextView lbl_name = (TextView) findViewById(R.id.name);
 								TextView lbl_address = (TextView) findViewById(R.id.address);
-								// ImageView imgPlace = (ImageView)
-								// findViewById(R.id.imgPlace);
-
-								// Log.d("Place ", name + address + phone +
-								// latitude + longitude);
 
 								// Check for null data from google
 								// Sometimes place details might missing
@@ -238,7 +233,7 @@ public class SinglePlaceActivity extends Activity {
 										int lvcount = SecondActivity.lv2
 												.getCount();
 										ListView lv2 = SecondActivity.lv2;
-										//int id = SecondActivity.lvid;
+										// int id = SecondActivity.lvid;
 
 										String a;
 
@@ -246,8 +241,8 @@ public class SinglePlaceActivity extends Activity {
 										// covered
 										try {
 											if (Globals.nameCount > 0) {
-												
-												if(Globals.nameCount == 0){
+
+												if (Globals.nameCount == 0) {
 													push2();
 												}
 
@@ -265,7 +260,8 @@ public class SinglePlaceActivity extends Activity {
 
 												a = SecondActivity.arrayreferences
 														.get(Globals.nameCount
-																+ Globals.pushID -1).get(0);
+																+ Globals.pushID
+																- 1).get(0);
 
 												Log.d("LV ",
 														"LV "
@@ -284,14 +280,14 @@ public class SinglePlaceActivity extends Activity {
 											else {
 
 												push2();
-												
+
 											}
 										} catch (Exception e) {
 											btnNext.setBackgroundColor(Color.RED);
 											Log.d("load places error",
 													"load places error" + e);
 										}
-										
+
 									}
 								});
 
@@ -399,22 +395,18 @@ public class SinglePlaceActivity extends Activity {
 		}
 
 	}
-	
 
-public void push2(){
-	Globals.pushID = SecondActivity.lvid;
-	new LoadSinglePlaceDetails()
-	.execute(SecondActivity.secondPlaceReference[Globals.nameCount 
-	                                             + Globals.pushID]);
-	
-	int addint = Globals.nameCount 
-     + Globals.pushID;
-	
-	Log.d("LV",
-			"one two namecount is " + addint);
-	
-	
-	Globals.nameCount++;
-}
+	public void push2() {
+		Globals.pushID = SecondActivity.lvid;
+		new LoadSinglePlaceDetails()
+				.execute(SecondActivity.secondPlaceReference[Globals.nameCount
+						+ Globals.pushID]);
+
+		int addint = Globals.nameCount + Globals.pushID;
+
+		Log.d("LV", "one two namecount is " + addint);
+
+		Globals.nameCount++;
+	}
 
 }

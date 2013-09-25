@@ -7,10 +7,10 @@ import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 
 /**
- * Base class for objects that connect to a RabbitMQ Broker
- */
+ *  * Base class for objects that connect to a RabbitMQ Broker  
+ */
 public abstract class IConnectToRabbitMQ {
-	  //declare rabbitmq variables
+	// declare rabbitmq variables
 	public String mServer;
 	public String mExchange;
 
@@ -21,45 +21,43 @@ public abstract class IConnectToRabbitMQ {
 
 	protected String MyExchangeType;
 
-	public IConnectToRabbitMQ(String server, String exchange, String exchangeType){
+	public IConnectToRabbitMQ(String server, String exchange,
+			String exchangeType) {
 		mServer = server;
 		mExchange = exchange;
 		MyExchangeType = exchangeType;
 	}
 
-	public void Dispose()
-	{
+	public void Dispose() {
 		Running = false;
-		try{
+		try {
 
-				if (mConnection!=null){
-					mConnection.close();
-				}//end if
-				
-				if (mModel != null){
-					mModel.abort();
-				}//end if
-		}//end try
-		catch(IOException e){
+			if (mConnection != null) {
+				mConnection.close();
+			}// end if
+
+			if (mModel != null) {
+				mModel.abort();
+			}// end if
+		}// end try
+		catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public boolean connectToRabbitMQ(){
-		if(mModel!= null && mModel.isOpen() )//already declared
+	public boolean connectToRabbitMQ() {
+		if (mModel != null && mModel.isOpen())// already declared
 			return true;
-			try
-			{
+		try {
 			ConnectionFactory connectionFactory = new ConnectionFactory();
 			connectionFactory.setHost(mServer);
 			mConnection = connectionFactory.newConnection();
 			mModel = mConnection.createChannel();
 			mModel.exchangeDeclare(mExchange, MyExchangeType, true);
 			return true;
-		  }
-            catch(Exception e){
-				e.printStackTrace();
-				return false;
-            }
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
 		}
 	}
+}

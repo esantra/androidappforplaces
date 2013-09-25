@@ -364,9 +364,9 @@ public class MainActivity extends Activity {
 						Intent in = new Intent(getApplicationContext(),
 								SecondActivity.class);
 
-						//startActivity(i);
-						//in.putExtra(arrayreferences);
-		                startActivity(in);
+						// startActivity(i);
+						// in.putExtra(arrayreferences);
+						startActivity(in);
 
 					}
 				});

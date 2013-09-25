@@ -29,7 +29,7 @@ public class PlacesMapActivity extends MapActivity {
 	GeoPoint geoPoint;
 	// Map controllers
 	MapController mc;
-	
+
 	double latitude;
 	double longitude;
 	OverlayItem overlayitem;
@@ -41,11 +41,11 @@ public class PlacesMapActivity extends MapActivity {
 
 		// Getting intent data
 		Intent i = getIntent();
-		
+
 		// Users current geo location
 		String user_latitude = i.getStringExtra("user_latitude");
 		String user_longitude = i.getStringExtra("user_longitude");
-		
+
 		// Nearplaces list
 		nearPlaces = (PlacesList) i.getSerializableExtra("near_places");
 
@@ -53,30 +53,30 @@ public class PlacesMapActivity extends MapActivity {
 		mapView.setBuiltInZoomControls(true);
 
 		mapOverlays = mapView.getOverlays();
-		
+
 		// Geopoint to place on map
-		geoPoint = new GeoPoint((int) (Double.parseDouble(user_latitude) * 1E6),
+		geoPoint = new GeoPoint(
+				(int) (Double.parseDouble(user_latitude) * 1E6),
 				(int) (Double.parseDouble(user_longitude) * 1E6));
-		
+
 		// Drawable marker icon
-		Drawable drawable_user = this.getResources()
-				.getDrawable(R.drawable.mark_red);
-		
+		Drawable drawable_user = this.getResources().getDrawable(
+				R.drawable.mark_red);
+
 		itemizedOverlay = new AddItemizedOverlay(drawable_user, this);
-		
+
 		// Map overlay item
-		overlayitem = new OverlayItem(geoPoint, "Your Location",
-				"That is you!");
+		overlayitem = new OverlayItem(geoPoint, "Your Location", "That is you!");
 
 		itemizedOverlay.addOverlay(overlayitem);
-		
+
 		mapOverlays.add(itemizedOverlay);
 		itemizedOverlay.populateNow();
-		
+
 		// Drawable marker icon
-		Drawable drawable = this.getResources()
-				.getDrawable(R.drawable.mark_blue);
-		
+		Drawable drawable = this.getResources().getDrawable(
+				R.drawable.mark_blue);
+
 		itemizedOverlay = new AddItemizedOverlay(drawable, this);
 
 		mc = mapView.getController();
@@ -94,35 +94,36 @@ public class PlacesMapActivity extends MapActivity {
 			for (Place place : nearPlaces.results) {
 				latitude = place.geometry.location.lat; // latitude
 				longitude = place.geometry.location.lng; // longitude
-				
+
 				// Geopoint to place on map
 				geoPoint = new GeoPoint((int) (latitude * 1E6),
 						(int) (longitude * 1E6));
-				
+
 				// Map overlay item
 				overlayitem = new OverlayItem(geoPoint, place.name,
 						place.vicinity);
 
 				itemizedOverlay.addOverlay(overlayitem);
-				
-				
+
 				// calculating map boundary area
-				minLat  = (int) Math.min( geoPoint.getLatitudeE6(), minLat );
-			    minLong = (int) Math.min( geoPoint.getLongitudeE6(), minLong);
-			    maxLat  = (int) Math.max( geoPoint.getLatitudeE6(), maxLat );
-			    maxLong = (int) Math.max( geoPoint.getLongitudeE6(), maxLong );
+				minLat = (int) Math.min(geoPoint.getLatitudeE6(), minLat);
+				minLong = (int) Math.min(geoPoint.getLongitudeE6(), minLong);
+				maxLat = (int) Math.max(geoPoint.getLatitudeE6(), maxLat);
+				maxLong = (int) Math.max(geoPoint.getLongitudeE6(), maxLong);
 			}
 			mapOverlays.add(itemizedOverlay);
-			
+
 			// showing all overlay items
 			itemizedOverlay.populateNow();
 		}
-		
+
 		// Adjusting the zoom level so that you can see all the markers on map
-		mapView.getController().zoomToSpan(Math.abs( minLat - maxLat ), Math.abs( minLong - maxLong ));
-		
+		mapView.getController().zoomToSpan(Math.abs(minLat - maxLat),
+				Math.abs(minLong - maxLong));
+
 		// Showing the center of the map
-		mc.animateTo(new GeoPoint((maxLat + minLat)/2, (maxLong + minLong)/2 ));
+		mc.animateTo(new GeoPoint((maxLat + minLat) / 2,
+				(maxLong + minLong) / 2));
 		mapView.postInvalidate();
 
 	}

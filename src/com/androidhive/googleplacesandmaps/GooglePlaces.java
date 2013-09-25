@@ -22,36 +22,45 @@ public class GooglePlaces {
 	private static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
 
 	// Google API Key
-	public static final String API_KEY = "AIzaSyAYlKYeI7SYOWMYmuYSu534-ESCeHldmd8"; // place your API key here
+	public static final String API_KEY = "AIzaSyAYlKYeI7SYOWMYmuYSu534-ESCeHldmd8"; // place
+																					// your
+																					// API
+																					// key
+																					// here
 
-	//public static final String API_KEY = "AIzaSyCRLa4LQZWNQBcjCYcIVYA45i9i8zfClqc"; // place your API key here
+	// public static final String API_KEY =
+	// "AIzaSyCRLa4LQZWNQBcjCYcIVYA45i9i8zfClqc"; // place your API key here
 
-	
 	// Google Places serach url's
 	private static final String PLACES_SEARCH_URL = "https://maps.googleapis.com/maps/api/place/search/json?rankby=distance&";
-    private static final String PLACES_TEXT_SEARCH_URL = "https://maps.googleapis.com/maps/api/place/search/json?rankby=distance&";
+	private static final String PLACES_TEXT_SEARCH_URL = "https://maps.googleapis.com/maps/api/place/search/json?rankby=distance&";
 	private static final String PLACES_DETAILS_URL = "https://maps.googleapis.com/maps/api/place/details/json?rankby=distance&extensions=review_summary&";
-    private static final String PLACES_PHOTO = "https://maps.googleapis.com/maps/api/place/photo?";
-	
+	private static final String PLACES_PHOTO = "https://maps.googleapis.com/maps/api/place/photo?";
+
 	private double _latitude;
 	private double _longitude;
 	private double _radius;
-	
+
 	/**
 	 * Searching places
-	 * @param latitude - latitude of place
+	 * 
+	 * @param latitude
+	 *            - latitude of place
 	 * @params longitude - longitude of place
-	 * @param radius - radius of searchable area
-	 * @param types - type of place to search
+	 * @param radius
+	 *            - radius of searchable area
+	 * @param types
+	 *            - type of place to search
 	 * @return list of places
 	 * */
-	//public PlacesList search(double latitude, double longitude, double radius, String types)
+	// public PlacesList search(double latitude, double longitude, double
+	// radius, String types)
 	public PlacesList search(double latitude, double longitude, String types)
 			throws Exception {
 
 		this._latitude = latitude;
 		this._longitude = longitude;
-		//this._radius = radius;
+		// this._radius = radius;
 
 		try {
 
@@ -61,7 +70,7 @@ public class GooglePlaces {
 			request.getUrl().put("key", API_KEY);
 			request.getUrl().put("location", _latitude + "," + _longitude);
 			request.getUrl().put("sensor", "false");
-			if(types != null)
+			if (types != null)
 				request.getUrl().put("types", types);
 
 			PlacesList list = request.execute().parseAs(PlacesList.class);
@@ -75,12 +84,13 @@ public class GooglePlaces {
 		}
 
 	}
-	
 
 	/**
 	 * Searching single place full details
-	 * @param refrence - reference id of place
-	 * 				   - which you will get in search api request
+	 * 
+	 * @param refrence
+	 *            - reference id of place - which you will get in search api
+	 *            request
 	 * */
 	public PlaceDetails getPlaceDetails(String reference) throws Exception {
 		try {
@@ -93,7 +103,7 @@ public class GooglePlaces {
 			request.getUrl().put("sensor", "false");
 
 			PlaceDetails place = request.execute().parseAs(PlaceDetails.class);
-			
+
 			return place;
 
 		} catch (HttpResponseException e) {
@@ -101,7 +111,7 @@ public class GooglePlaces {
 			throw e;
 		}
 	}
-	
+
 	public PlaceDetails getPlacePicture(String reference) throws Exception {
 		try {
 
@@ -113,7 +123,7 @@ public class GooglePlaces {
 			request.getUrl().put("sensor", "false");
 
 			PlaceDetails place = request.execute().parseAs(PlaceDetails.class);
-			
+
 			return place;
 
 		} catch (HttpResponseException e) {
@@ -121,7 +131,6 @@ public class GooglePlaces {
 			throw e;
 		}
 	}
-	
 
 	/**
 	 * Creating http request Factory
@@ -138,14 +147,8 @@ public class GooglePlaces {
 			}
 		});
 	}
-	
-	
-	
-	
 
-	
-	//----------------------------------end of photo code --------------------------------
-
-	
+	// ----------------------------------end of photo code
+	// --------------------------------
 
 }

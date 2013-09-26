@@ -1,0 +1,367 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.4.7-20061004">
+  <compounddef id="classcom_1_1placesandplaces_1_1_message_consumer" kind="class" prot="public">
+    <compoundname>com::placesandplaces::MessageConsumer</compoundname>
+    <basecompoundref refid="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q" prot="public" virt="non-virtual">com.placesandplaces.IConnectToRabbitMQ</basecompoundref>
+    <innerclass refid="interfacecom_1_1placesandplaces_1_1_message_consumer_1_1_on_receive_message_handler" prot="public">com::placesandplaces::MessageConsumer::OnReceiveMessageHandler</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_message_consumer_196e975657b6ab0c8bda7231a38f4ab69" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.placesandplaces.MessageConsumer.mQueue</definition>
+        <argsstring></argsstring>
+        <name>mQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" line="20" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" bodystart="20" bodyend="-1"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_message_consumer_1898c853a3d89e67d47339bcf4477e306" compoundref="_message_consumer_8java" startline="96" endline="103">com.placesandplaces.MessageConsumer::AddBinding</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_message_consumer_1883fdd6a71406dc4f66b8557998ce185" compoundref="_message_consumer_8java" startline="67" endline="87">com.placesandplaces.MessageConsumer::connectToRabbitMQ</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_message_consumer_16409eca8a199695da8b144967d6d1d99" compoundref="_message_consumer_8java" startline="112" endline="119">com.placesandplaces.MessageConsumer::RemoveBinding</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_message_consumer_18d6e4737db76fd085059ea9a6b4c927d" prot="private" static="no" mutable="no">
+        <type>QueueingConsumer</type>
+        <definition>QueueingConsumer com.placesandplaces.MessageConsumer.MySubscription</definition>
+        <argsstring></argsstring>
+        <name>MySubscription</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" line="21" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" bodystart="21" bodyend="-1"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_message_consumer_1883fdd6a71406dc4f66b8557998ce185" compoundref="_message_consumer_8java" startline="67" endline="87">com.placesandplaces.MessageConsumer::connectToRabbitMQ</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_message_consumer_1a1b6e6e026bacefd01858fd12f8a9ede" compoundref="_message_consumer_8java" startline="121" endline="146">com.placesandplaces.MessageConsumer::Consume</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_message_consumer_1800fbaf00af4663231506321ede831b0" prot="private" static="no" mutable="no">
+        <type>byte[]</type>
+        <definition>byte [] com.placesandplaces.MessageConsumer.mLastMessage</definition>
+        <argsstring></argsstring>
+        <name>mLastMessage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" line="24" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" bodystart="24" bodyend="-1"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_message_consumer_1a1b6e6e026bacefd01858fd12f8a9ede" compoundref="_message_consumer_8java" startline="121" endline="146">com.placesandplaces.MessageConsumer::Consume</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_message_consumer_1055d0246580dd61e3e2bb3a6229d057d" prot="private" static="no" mutable="no">
+        <type><ref refid="interfacecom_1_1placesandplaces_1_1_message_consumer_1_1_on_receive_message_handler" kindref="compound">OnReceiveMessageHandler</ref></type>
+        <definition>OnReceiveMessageHandler com.placesandplaces.MessageConsumer.mOnReceiveMessageHandler</definition>
+        <argsstring></argsstring>
+        <name>mOnReceiveMessageHandler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" line="33" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" bodystart="30" bodyend="-1"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_message_consumer_1549954c342ceff945b655bc9322551bd" compoundref="_message_consumer_8java" startline="42" endline="44">com.placesandplaces.MessageConsumer::setOnReceiveMessageHandler</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_message_consumer_1e023477ca36fa473fed0c0bc113b0ab2" prot="private" static="no" mutable="no">
+        <type>Handler</type>
+        <definition>Handler com.placesandplaces.MessageConsumer.mMessageHandler</definition>
+        <argsstring></argsstring>
+        <name>mMessageHandler</name>
+        <initializer> new Handler()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" line="46" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" bodystart="46" bodyend="-1"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_message_consumer_1a1b6e6e026bacefd01858fd12f8a9ede" compoundref="_message_consumer_8java" startline="121" endline="146">com.placesandplaces.MessageConsumer::Consume</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_message_consumer_128f126d7c69e4ad03502a7b9c653ed61" prot="private" static="no" mutable="no">
+        <type>Handler</type>
+        <definition>Handler com.placesandplaces.MessageConsumer.mConsumeHandler</definition>
+        <argsstring></argsstring>
+        <name>mConsumeHandler</name>
+        <initializer> new Handler()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" line="47" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" bodystart="47" bodyend="-1"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_message_consumer_1883fdd6a71406dc4f66b8557998ce185" compoundref="_message_consumer_8java" startline="67" endline="87">com.placesandplaces.MessageConsumer::connectToRabbitMQ</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_message_consumer_1113a8109b60647ad63618e7fc3f0e577" prot="package" static="no" mutable="no">
+        <type>final Runnable</type>
+        <definition>final Runnable com.placesandplaces.MessageConsumer.mReturnMessage</definition>
+        <argsstring></argsstring>
+        <name>mReturnMessage</name>
+        <initializer> new Runnable() {
+		public void run() {
+			mOnReceiveMessageHandler.onReceiveMessage(<ref refid="classcom_1_1placesandplaces_1_1_message_consumer_1800fbaf00af4663231506321ede831b0" kindref="member">mLastMessage</ref>);
+		}
+	}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" line="54" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" bodystart="50" bodyend="-1"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_message_consumer_1a1b6e6e026bacefd01858fd12f8a9ede" compoundref="_message_consumer_8java" startline="121" endline="146">com.placesandplaces.MessageConsumer::Consume</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_message_consumer_148cb8e5245dd8aac62f8d7610b1df761" prot="package" static="no" mutable="no">
+        <type>final Runnable</type>
+        <definition>final Runnable com.placesandplaces.MessageConsumer.mConsumeRunner</definition>
+        <argsstring></argsstring>
+        <name>mConsumeRunner</name>
+        <initializer> new Runnable() {
+		public void run() {
+			Consume();
+		}
+	}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" line="60" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" bodystart="56" bodyend="-1"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_message_consumer_1883fdd6a71406dc4f66b8557998ce185" compoundref="_message_consumer_8java" startline="67" endline="87">com.placesandplaces.MessageConsumer::connectToRabbitMQ</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_message_consumer_12b56e6f2147dbc81e537a30a7fb2b1e0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>com.placesandplaces.MessageConsumer.MessageConsumer</definition>
+        <argsstring>(String server, String exchange, String exchangeType)</argsstring>
+        <name>MessageConsumer</name>
+        <param>
+          <type>String</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>exchange</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>exchangeType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" line="15" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" bodystart="15" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_message_consumer_1549954c342ceff945b655bc9322551bd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.placesandplaces.MessageConsumer.setOnReceiveMessageHandler</definition>
+        <argsstring>(OnReceiveMessageHandler handler)</argsstring>
+        <name>setOnReceiveMessageHandler</name>
+        <param>
+          <type><ref refid="interfacecom_1_1placesandplaces_1_1_message_consumer_1_1_on_receive_message_handler" kindref="compound">OnReceiveMessageHandler</ref></type>
+          <declname>handler</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the callback for received messages</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handler</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callback </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" line="42" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" bodystart="42" bodyend="44"/>
+        <references refid="classcom_1_1placesandplaces_1_1_message_consumer_1055d0246580dd61e3e2bb3a6229d057d" compoundref="_message_consumer_8java" startline="30">com.placesandplaces.MessageConsumer::mOnReceiveMessageHandler</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_message_consumer_1883fdd6a71406dc4f66b8557998ce185" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Override boolean</type>
+        <definition>Override boolean com.placesandplaces.MessageConsumer.connectToRabbitMQ</definition>
+        <argsstring>()</argsstring>
+        <name>connectToRabbitMQ</name>
+        <reimplements refid="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q_185d328c030725752ffcd559466e0ec42">connectToRabbitMQ</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create Exchange and then start consuming. A binding needs to be added before any messages will be delivered </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" line="67" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" bodystart="67" bodyend="87"/>
+        <references refid="classcom_1_1placesandplaces_1_1_message_consumer_1898c853a3d89e67d47339bcf4477e306" compoundref="_message_consumer_8java" startline="96" endline="103">com.placesandplaces.MessageConsumer::AddBinding</references>
+        <references refid="classcom_1_1placesandplaces_1_1_message_consumer_128f126d7c69e4ad03502a7b9c653ed61" compoundref="_message_consumer_8java" startline="47">com.placesandplaces.MessageConsumer::mConsumeHandler</references>
+        <references refid="classcom_1_1placesandplaces_1_1_message_consumer_148cb8e5245dd8aac62f8d7610b1df761" compoundref="_message_consumer_8java" startline="56">com.placesandplaces.MessageConsumer::mConsumeRunner</references>
+        <references refid="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q_1bcf8199fa590889c9ce43c503ece5fcb" compoundref="_i_connect_to_rabbit_m_q_8java" startline="17">com.placesandplaces.IConnectToRabbitMQ::mModel</references>
+        <references refid="classcom_1_1placesandplaces_1_1_message_consumer_196e975657b6ab0c8bda7231a38f4ab69" compoundref="_message_consumer_8java" startline="20">com.placesandplaces.MessageConsumer::mQueue</references>
+        <references refid="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q_1b2a3837162211a8331f30dbd0a5187b5" compoundref="_i_connect_to_rabbit_m_q_8java" startline="22">com.placesandplaces.IConnectToRabbitMQ::MyExchangeType</references>
+        <references refid="classcom_1_1placesandplaces_1_1_message_consumer_18d6e4737db76fd085059ea9a6b4c927d" compoundref="_message_consumer_8java" startline="21">com.placesandplaces.MessageConsumer::MySubscription</references>
+        <references refid="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q_1f24ce088a8e12e794e6d4c3dd4a3fb72" compoundref="_i_connect_to_rabbit_m_q_8java" startline="20">com.placesandplaces.IConnectToRabbitMQ::Running</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_message_consumer_1898c853a3d89e67d47339bcf4477e306" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.placesandplaces.MessageConsumer.AddBinding</definition>
+        <argsstring>(String routingKey)</argsstring>
+        <name>AddBinding</name>
+        <param>
+          <type>String</type>
+          <declname>routingKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add a binding between this consumers Queue and the Exchange with routingKey</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>routingKey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the binding key eg GOOG </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" line="96" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" bodystart="96" bodyend="103"/>
+        <references refid="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q_1db4ab527d09ee6e0290f1f247ed15180" compoundref="_i_connect_to_rabbit_m_q_8java" startline="15">com.placesandplaces.IConnectToRabbitMQ::mExchange</references>
+        <references refid="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q_1bcf8199fa590889c9ce43c503ece5fcb" compoundref="_i_connect_to_rabbit_m_q_8java" startline="17">com.placesandplaces.IConnectToRabbitMQ::mModel</references>
+        <references refid="classcom_1_1placesandplaces_1_1_message_consumer_196e975657b6ab0c8bda7231a38f4ab69" compoundref="_message_consumer_8java" startline="20">com.placesandplaces.MessageConsumer::mQueue</references>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_message_consumer_1883fdd6a71406dc4f66b8557998ce185" compoundref="_message_consumer_8java" startline="67" endline="87">com.placesandplaces.MessageConsumer::connectToRabbitMQ</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_message_consumer_16409eca8a199695da8b144967d6d1d99" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.placesandplaces.MessageConsumer.RemoveBinding</definition>
+        <argsstring>(String routingKey)</argsstring>
+        <name>RemoveBinding</name>
+        <param>
+          <type>String</type>
+          <declname>routingKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Remove binding between this consumers Queue and the Exchange with routingKey</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>routingKey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the binding key eg GOOG </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" line="112" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" bodystart="112" bodyend="119"/>
+        <references refid="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q_1db4ab527d09ee6e0290f1f247ed15180" compoundref="_i_connect_to_rabbit_m_q_8java" startline="15">com.placesandplaces.IConnectToRabbitMQ::mExchange</references>
+        <references refid="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q_1bcf8199fa590889c9ce43c503ece5fcb" compoundref="_i_connect_to_rabbit_m_q_8java" startline="17">com.placesandplaces.IConnectToRabbitMQ::mModel</references>
+        <references refid="classcom_1_1placesandplaces_1_1_message_consumer_196e975657b6ab0c8bda7231a38f4ab69" compoundref="_message_consumer_8java" startline="20">com.placesandplaces.MessageConsumer::mQueue</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_message_consumer_10a457e7c42c206e9496dc9e48deb11cb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.placesandplaces.MessageConsumer.dispose</definition>
+        <argsstring>()</argsstring>
+        <name>dispose</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" line="148" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" bodystart="148" bodyend="150"/>
+        <references refid="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q_1f24ce088a8e12e794e6d4c3dd4a3fb72" compoundref="_i_connect_to_rabbit_m_q_8java" startline="20">com.placesandplaces.IConnectToRabbitMQ::Running</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_message_consumer_1a1b6e6e026bacefd01858fd12f8a9ede" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.placesandplaces.MessageConsumer.Consume</definition>
+        <argsstring>()</argsstring>
+        <name>Consume</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" line="121" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" bodystart="121" bodyend="146"/>
+        <references refid="classcom_1_1placesandplaces_1_1_message_consumer_1800fbaf00af4663231506321ede831b0" compoundref="_message_consumer_8java" startline="24">com.placesandplaces.MessageConsumer::mLastMessage</references>
+        <references refid="classcom_1_1placesandplaces_1_1_message_consumer_1e023477ca36fa473fed0c0bc113b0ab2" compoundref="_message_consumer_8java" startline="46">com.placesandplaces.MessageConsumer::mMessageHandler</references>
+        <references refid="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q_1bcf8199fa590889c9ce43c503ece5fcb" compoundref="_i_connect_to_rabbit_m_q_8java" startline="17">com.placesandplaces.IConnectToRabbitMQ::mModel</references>
+        <references refid="classcom_1_1placesandplaces_1_1_message_consumer_1113a8109b60647ad63618e7fc3f0e577" compoundref="_message_consumer_8java" startline="50">com.placesandplaces.MessageConsumer::mReturnMessage</references>
+        <references refid="classcom_1_1placesandplaces_1_1_message_consumer_18d6e4737db76fd085059ea9a6b4c927d" compoundref="_message_consumer_8java" startline="21">com.placesandplaces.MessageConsumer::MySubscription</references>
+        <references refid="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q_1f24ce088a8e12e794e6d4c3dd4a3fb72" compoundref="_i_connect_to_rabbit_m_q_8java" startline="20">com.placesandplaces.IConnectToRabbitMQ::Running</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Consumes messages from a RabbitMQ broker </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="35">
+        <label>com.placesandplaces.IConnectToRabbitMQ</label>
+        <link refid="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q"/>
+      </node>
+      <node id="34">
+        <label>com.placesandplaces.MessageConsumer</label>
+        <link refid="classcom_1_1placesandplaces_1_1_message_consumer"/>
+        <childnode refid="35" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="37">
+        <label>com.placesandplaces.IConnectToRabbitMQ</label>
+        <link refid="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q"/>
+      </node>
+      <node id="36">
+        <label>com.placesandplaces.MessageConsumer</label>
+        <link refid="classcom_1_1placesandplaces_1_1_message_consumer"/>
+        <childnode refid="37" relation="public-inheritance">
+        </childnode>
+        <childnode refid="38" relation="usage">
+          <edgelabel>mOnReceiveMessageHandler</edgelabel>
+        </childnode>
+      </node>
+      <node id="38">
+        <label>com.placesandplaces.MessageConsumer.OnReceiveMessageHandler</label>
+        <link refid="interfacecom_1_1placesandplaces_1_1_message_consumer_1_1_on_receive_message_handler"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" line="13" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" bodystart="13" bodyend="151"/>
+    <listofallmembers>
+      <member refid="classcom_1_1placesandplaces_1_1_message_consumer_1898c853a3d89e67d47339bcf4477e306" prot="public" virt="non-virtual"><scope>com::placesandplaces::MessageConsumer</scope><name>AddBinding</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_message_consumer_1883fdd6a71406dc4f66b8557998ce185" prot="public" virt="non-virtual"><scope>com::placesandplaces::MessageConsumer</scope><name>connectToRabbitMQ</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_message_consumer_1a1b6e6e026bacefd01858fd12f8a9ede" prot="private" virt="non-virtual"><scope>com::placesandplaces::MessageConsumer</scope><name>Consume</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q_134485ff15609cad559c6f9008c72ed63" prot="public" virt="non-virtual"><scope>com::placesandplaces::MessageConsumer</scope><name>Dispose</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_message_consumer_10a457e7c42c206e9496dc9e48deb11cb" prot="public" virt="non-virtual"><scope>com::placesandplaces::MessageConsumer</scope><name>dispose</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q_14a9619f23e9a90bed16196eb99421d7a" prot="public" virt="non-virtual"><scope>com::placesandplaces::MessageConsumer</scope><name>IConnectToRabbitMQ</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q_1eecdbe25dee1a9c953e2360f99ec14fc" prot="protected" virt="non-virtual"><scope>com::placesandplaces::MessageConsumer</scope><name>mConnection</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_message_consumer_128f126d7c69e4ad03502a7b9c653ed61" prot="private" virt="non-virtual"><scope>com::placesandplaces::MessageConsumer</scope><name>mConsumeHandler</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_message_consumer_148cb8e5245dd8aac62f8d7610b1df761" prot="package" virt="non-virtual"><scope>com::placesandplaces::MessageConsumer</scope><name>mConsumeRunner</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_message_consumer_12b56e6f2147dbc81e537a30a7fb2b1e0" prot="public" virt="non-virtual"><scope>com::placesandplaces::MessageConsumer</scope><name>MessageConsumer</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q_1db4ab527d09ee6e0290f1f247ed15180" prot="public" virt="non-virtual"><scope>com::placesandplaces::MessageConsumer</scope><name>mExchange</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_message_consumer_1800fbaf00af4663231506321ede831b0" prot="private" virt="non-virtual"><scope>com::placesandplaces::MessageConsumer</scope><name>mLastMessage</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_message_consumer_1e023477ca36fa473fed0c0bc113b0ab2" prot="private" virt="non-virtual"><scope>com::placesandplaces::MessageConsumer</scope><name>mMessageHandler</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q_1bcf8199fa590889c9ce43c503ece5fcb" prot="protected" virt="non-virtual"><scope>com::placesandplaces::MessageConsumer</scope><name>mModel</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_message_consumer_1055d0246580dd61e3e2bb3a6229d057d" prot="private" virt="non-virtual"><scope>com::placesandplaces::MessageConsumer</scope><name>mOnReceiveMessageHandler</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_message_consumer_196e975657b6ab0c8bda7231a38f4ab69" prot="private" virt="non-virtual"><scope>com::placesandplaces::MessageConsumer</scope><name>mQueue</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_message_consumer_1113a8109b60647ad63618e7fc3f0e577" prot="package" virt="non-virtual"><scope>com::placesandplaces::MessageConsumer</scope><name>mReturnMessage</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q_12c887bcd7fd29ff488fcf12a4a28e2a2" prot="public" virt="non-virtual"><scope>com::placesandplaces::MessageConsumer</scope><name>mServer</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q_1b2a3837162211a8331f30dbd0a5187b5" prot="protected" virt="non-virtual"><scope>com::placesandplaces::MessageConsumer</scope><name>MyExchangeType</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_message_consumer_18d6e4737db76fd085059ea9a6b4c927d" prot="private" virt="non-virtual"><scope>com::placesandplaces::MessageConsumer</scope><name>MySubscription</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_message_consumer_16409eca8a199695da8b144967d6d1d99" prot="public" virt="non-virtual"><scope>com::placesandplaces::MessageConsumer</scope><name>RemoveBinding</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q_1f24ce088a8e12e794e6d4c3dd4a3fb72" prot="protected" virt="non-virtual"><scope>com::placesandplaces::MessageConsumer</scope><name>Running</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_message_consumer_1549954c342ceff945b655bc9322551bd" prot="public" virt="non-virtual"><scope>com::placesandplaces::MessageConsumer</scope><name>setOnReceiveMessageHandler</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

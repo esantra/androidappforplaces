@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.4.7-20061004">
+  <compounddef id="_global_variables_8java" kind="file">
+    <compoundname>GlobalVariables.java</compoundname>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_global_variables" prot="public">com::placesandplaces::GlobalVariables</innerclass>
+    <innernamespace refid="namespacecom_1_1placesandplaces">com::placesandplaces</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">package<sp/></highlight><highlight class="normal">com.placesandplaces;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.app.Application;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="classcom_1_1placesandplaces_1_1_global_variables" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcom_1_1placesandplaces_1_1_global_variables" kindref="compound">GlobalVariables</ref><sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/>Application<sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="classcom_1_1placesandplaces_1_1_global_variables_18c1a899b583aa381f4a82e06c12decf2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classcom_1_1placesandplaces_1_1_global_variables_18c1a899b583aa381f4a82e06c12decf2" kindref="member">type1</ref>;</highlight></codeline>
+<codeline lineno="8" refid="classcom_1_1placesandplaces_1_1_global_variables_16f8ee51aad160e4648121177cdee0082" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classcom_1_1placesandplaces_1_1_global_variables_16f8ee51aad160e4648121177cdee0082" kindref="member">type2</ref>;</highlight></codeline>
+<codeline lineno="9" refid="classcom_1_1placesandplaces_1_1_global_variables_1acc4e6b8a4dd87fdb4a1875aee6d053a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classcom_1_1placesandplaces_1_1_global_variables_1acc4e6b8a4dd87fdb4a1875aee6d053a" kindref="member">strPlaces1</ref>;</highlight></codeline>
+<codeline lineno="10" refid="classcom_1_1placesandplaces_1_1_global_variables_170334aa0828918b068c31e5298e738a2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classcom_1_1placesandplaces_1_1_global_variables_170334aa0828918b068c31e5298e738a2" kindref="member">strPlaces2</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="classcom_1_1placesandplaces_1_1_global_variables_146f3d1a250413038f7adeb5ef63c0299" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classcom_1_1placesandplaces_1_1_global_variables_15a8d8cb3b1901fdcb41753cefba904ae" kindref="member">someVariable</ref>,<sp/><ref refid="classcom_1_1placesandplaces_1_1_global_variables_146f3d1a250413038f7adeb5ef63c0299" kindref="member">someVariable2</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="classcom_1_1placesandplaces_1_1_global_variables_16534fe4b07b7ee95457a025dfaaab05d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1placesandplaces_1_1_global_variables_16534fe4b07b7ee95457a025dfaaab05d" kindref="member">setStrPlaces1</ref>(String<sp/><ref refid="classcom_1_1placesandplaces_1_1_global_variables_15a8d8cb3b1901fdcb41753cefba904ae" kindref="member">someVariable</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcom_1_1placesandplaces_1_1_global_variables_1acc4e6b8a4dd87fdb4a1875aee6d053a" kindref="member">strPlaces1</ref><sp/>=<sp/>someVariable;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="classcom_1_1placesandplaces_1_1_global_variables_1871c6dbe07cc7d3f6378c7e3c6e95c43" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classcom_1_1placesandplaces_1_1_global_variables_1871c6dbe07cc7d3f6378c7e3c6e95c43" kindref="member">getStrPlaces1</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1placesandplaces_1_1_global_variables_1acc4e6b8a4dd87fdb4a1875aee6d053a" kindref="member">strPlaces1</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="classcom_1_1placesandplaces_1_1_global_variables_1830756086881f350afeaf5070a4373bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1placesandplaces_1_1_global_variables_1830756086881f350afeaf5070a4373bf" kindref="member">setStrPlaces2</ref>(String<sp/><ref refid="classcom_1_1placesandplaces_1_1_global_variables_146f3d1a250413038f7adeb5ef63c0299" kindref="member">someVariable2</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcom_1_1placesandplaces_1_1_global_variables_1acc4e6b8a4dd87fdb4a1875aee6d053a" kindref="member">strPlaces1</ref><sp/>=<sp/>someVariable2;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classcom_1_1placesandplaces_1_1_global_variables_1b96480aedea16b459138f9e5f70a4dff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classcom_1_1placesandplaces_1_1_global_variables_1b96480aedea16b459138f9e5f70a4dff" kindref="member">getStrPlaces2</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1placesandplaces_1_1_global_variables_1acc4e6b8a4dd87fdb4a1875aee6d053a" kindref="member">strPlaces1</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GlobalVariables.java"/>
+  </compounddef>
+</doxygen>

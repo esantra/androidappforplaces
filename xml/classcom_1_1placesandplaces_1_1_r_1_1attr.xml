@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.4.7-20061004">
+  <compounddef id="classcom_1_1placesandplaces_1_1_r_1_1attr" kind="class" prot="public">
+    <compoundname>com::placesandplaces::R::attr</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/desktop/workspace/PlacesandPlaces/gen/com/placesandplaces/R.java" line="11" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/gen/com/placesandplaces/R.java" bodystart="11" bodyend="12"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.4.7-20061004">
+  <compounddef id="classcom_1_1placesandplaces_1_1_distance_calculation" kind="class" prot="public">
+    <compoundname>com::placesandplaces::DistanceCalculation</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_distance_calculation_16bed22b2cd342eba0518c15555c9fa56" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void com.placesandplaces.DistanceCalculation.main</definition>
+        <argsstring>(String[] args)</argsstring>
+        <name>main</name>
+        <param>
+          <type>String[]</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DistanceCalculation.java" line="9" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DistanceCalculation.java" bodystart="9" bodyend="19"/>
+        <references refid="classcom_1_1placesandplaces_1_1_distance_calculation_11acd89e553184d47171f48ca25993e6e" compoundref="_distance_calculation_8java" startline="21" endline="35">com.placesandplaces.DistanceCalculation::distFrom</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_distance_calculation_11acd89e553184d47171f48ca25993e6e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>static double com.placesandplaces.DistanceCalculation.distFrom</definition>
+        <argsstring>(double lat1, double lng1, double lat2, double lng2)</argsstring>
+        <name>distFrom</name>
+        <param>
+          <type>double</type>
+          <declname>lat1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lng1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lat2</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lng2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DistanceCalculation.java" line="22" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DistanceCalculation.java" bodystart="21" bodyend="35"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_distance_calculation_16bed22b2cd342eba0518c15555c9fa56" compoundref="_distance_calculation_8java" startline="9" endline="19">com.placesandplaces.DistanceCalculation::main</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DistanceCalculation.java" line="7" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DistanceCalculation.java" bodystart="7" bodyend="36"/>
+    <listofallmembers>
+      <member refid="classcom_1_1placesandplaces_1_1_distance_calculation_11acd89e553184d47171f48ca25993e6e" prot="public" virt="non-virtual"><scope>com::placesandplaces::DistanceCalculation</scope><name>distFrom</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_distance_calculation_16bed22b2cd342eba0518c15555c9fa56" prot="public" virt="non-virtual"><scope>com::placesandplaces::DistanceCalculation</scope><name>main</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

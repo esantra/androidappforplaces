@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.4.7-20061004">
+  <compounddef id="classcom_1_1placesandplaces_1_1_r_1_1menu" kind="class" prot="public">
+    <compoundname>com::placesandplaces::R::menu</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_r_1_1menu_16343f5574ba71f814ae641e89be42b00" prot="public" static="yes" mutable="no">
+        <type>final int</type>
+        <definition>final int com.placesandplaces.R.menu.activity_main</definition>
+        <argsstring></argsstring>
+        <name>activity_main</name>
+        <initializer>0x7f070000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/gen/com/placesandplaces/R.java" line="147" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/gen/com/placesandplaces/R.java" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/desktop/workspace/PlacesandPlaces/gen/com/placesandplaces/R.java" line="146" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/gen/com/placesandplaces/R.java" bodystart="146" bodyend="148"/>
+    <listofallmembers>
+      <member refid="classcom_1_1placesandplaces_1_1_r_1_1menu_16343f5574ba71f814ae641e89be42b00" prot="public" virt="non-virtual"><scope>com::placesandplaces::R::menu</scope><name>activity_main</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

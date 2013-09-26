@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.4.7-20061004">
+  <compounddef id="classcom_1_1placesandplaces_1_1_r_1_1layout" kind="class" prot="public">
+    <compoundname>com::placesandplaces::R::layout</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_r_1_1layout_1931749f76871ef5926714fa1365ae1ca" prot="public" static="yes" mutable="no">
+        <type>final int</type>
+        <definition>final int com.placesandplaces.R.layout.activity_main</definition>
+        <argsstring></argsstring>
+        <name>activity_main</name>
+        <initializer>0x7f030000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/gen/com/placesandplaces/R.java" line="137" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/gen/com/placesandplaces/R.java" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_r_1_1layout_1c49c5e9df7264d212be0c3c8947cf880" prot="public" static="yes" mutable="no">
+        <type>final int</type>
+        <definition>final int com.placesandplaces.R.layout.keywords</definition>
+        <argsstring></argsstring>
+        <name>keywords</name>
+        <initializer>0x7f030001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/gen/com/placesandplaces/R.java" line="138" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/gen/com/placesandplaces/R.java" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_r_1_1layout_1ff34802201c368662eccc9f0c7533e99" prot="public" static="yes" mutable="no">
+        <type>final int</type>
+        <definition>final int com.placesandplaces.R.layout.list_item</definition>
+        <argsstring></argsstring>
+        <name>list_item</name>
+        <initializer>0x7f030002</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/gen/com/placesandplaces/R.java" line="139" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/gen/com/placesandplaces/R.java" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_r_1_1layout_13fc8e34bf24fe2fa8f0eaa3ea44b286a" prot="public" static="yes" mutable="no">
+        <type>final int</type>
+        <definition>final int com.placesandplaces.R.layout.list_review</definition>
+        <argsstring></argsstring>
+        <name>list_review</name>
+        <initializer>0x7f030003</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/gen/com/placesandplaces/R.java" line="140" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/gen/com/placesandplaces/R.java" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_r_1_1layout_142c5bcda249fc9c036ebb8e485a099bc" prot="public" static="yes" mutable="no">
+        <type>final int</type>
+        <definition>final int com.placesandplaces.R.layout.map_places</definition>
+        <argsstring></argsstring>
+        <name>map_places</name>
+        <initializer>0x7f030004</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/gen/com/placesandplaces/R.java" line="141" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/gen/com/placesandplaces/R.java" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_r_1_1layout_197699f97bec2b2ff3596c536eb045953" prot="public" static="yes" mutable="no">
+        <type>final int</type>
+        <definition>final int com.placesandplaces.R.layout.map_popup</definition>
+        <argsstring></argsstring>
+        <name>map_popup</name>
+        <initializer>0x7f030005</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/gen/com/placesandplaces/R.java" line="142" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/gen/com/placesandplaces/R.java" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_r_1_1layout_18ca056e75fba51e8180a0da8b3141605" prot="public" static="yes" mutable="no">
+        <type>final int</type>
+        <definition>final int com.placesandplaces.R.layout.single_place</definition>
+        <argsstring></argsstring>
+        <name>single_place</name>
+        <initializer>0x7f030006</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/gen/com/placesandplaces/R.java" line="143" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/gen/com/placesandplaces/R.java" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_r_1_1layout_18e8d750a65446e1b7cce59934638526a" prot="public" static="yes" mutable="no">
+        <type>final int</type>
+        <definition>final int com.placesandplaces.R.layout.startup_screen</definition>
+        <argsstring></argsstring>
+        <name>startup_screen</name>
+        <initializer>0x7f030007</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/gen/com/placesandplaces/R.java" line="144" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/gen/com/placesandplaces/R.java" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/desktop/workspace/PlacesandPlaces/gen/com/placesandplaces/R.java" line="136" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/gen/com/placesandplaces/R.java" bodystart="136" bodyend="145"/>
+    <listofallmembers>
+      <member refid="classcom_1_1placesandplaces_1_1_r_1_1layout_1931749f76871ef5926714fa1365ae1ca" prot="public" virt="non-virtual"><scope>com::placesandplaces::R::layout</scope><name>activity_main</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_r_1_1layout_1c49c5e9df7264d212be0c3c8947cf880" prot="public" virt="non-virtual"><scope>com::placesandplaces::R::layout</scope><name>keywords</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_r_1_1layout_1ff34802201c368662eccc9f0c7533e99" prot="public" virt="non-virtual"><scope>com::placesandplaces::R::layout</scope><name>list_item</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_r_1_1layout_13fc8e34bf24fe2fa8f0eaa3ea44b286a" prot="public" virt="non-virtual"><scope>com::placesandplaces::R::layout</scope><name>list_review</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_r_1_1layout_142c5bcda249fc9c036ebb8e485a099bc" prot="public" virt="non-virtual"><scope>com::placesandplaces::R::layout</scope><name>map_places</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_r_1_1layout_197699f97bec2b2ff3596c536eb045953" prot="public" virt="non-virtual"><scope>com::placesandplaces::R::layout</scope><name>map_popup</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_r_1_1layout_18ca056e75fba51e8180a0da8b3141605" prot="public" virt="non-virtual"><scope>com::placesandplaces::R::layout</scope><name>single_place</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_r_1_1layout_18e8d750a65446e1b7cce59934638526a" prot="public" virt="non-virtual"><scope>com::placesandplaces::R::layout</scope><name>startup_screen</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

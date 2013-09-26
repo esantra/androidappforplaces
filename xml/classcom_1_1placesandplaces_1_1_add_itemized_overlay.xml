@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.4.7-20061004">
+  <compounddef id="classcom_1_1placesandplaces_1_1_add_itemized_overlay" kind="class" prot="public">
+    <compoundname>com::placesandplaces::AddItemizedOverlay</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_add_itemized_overlay_15de1312e0c79efaa7904444625c99701" prot="private" static="no" mutable="no">
+        <type>ArrayList&lt; OverlayItem &gt;</type>
+        <definition>ArrayList&lt;OverlayItem&gt; com.placesandplaces.AddItemizedOverlay.mapOverlays</definition>
+        <argsstring></argsstring>
+        <name>mapOverlays</name>
+        <initializer> new ArrayList&lt;OverlayItem&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AddItemizedOverlay.java" line="21" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AddItemizedOverlay.java" bodystart="21" bodyend="-1"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_add_itemized_overlay_17558b690147c6258cabb8df33343f651" compoundref="_add_itemized_overlay_8java" startline="74" endline="76">com.placesandplaces.AddItemizedOverlay::addOverlay</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_add_itemized_overlay_13c3ee2484dacc5998f06626cdabe6766" compoundref="_add_itemized_overlay_8java" startline="51" endline="53">com.placesandplaces.AddItemizedOverlay::createItem</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_add_itemized_overlay_1c493b3170c696f838848d341b071f316" compoundref="_add_itemized_overlay_8java" startline="61" endline="72">com.placesandplaces.AddItemizedOverlay::onTap</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_add_itemized_overlay_1288bba32dbcd6273ffe8d111bd427756" compoundref="_add_itemized_overlay_8java" startline="56" endline="58">com.placesandplaces.AddItemizedOverlay::size</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_add_itemized_overlay_16089f8dd1df4a21edc0b7a0258ffaa01" prot="private" static="no" mutable="no">
+        <type>Context</type>
+        <definition>Context com.placesandplaces.AddItemizedOverlay.context</definition>
+        <argsstring></argsstring>
+        <name>context</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AddItemizedOverlay.java" line="23" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AddItemizedOverlay.java" bodystart="23" bodyend="-1"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_add_itemized_overlay_1c493b3170c696f838848d341b071f316" compoundref="_add_itemized_overlay_8java" startline="61" endline="72">com.placesandplaces.AddItemizedOverlay::onTap</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_add_itemized_overlay_1058e7927cf1e60f308218d3ad63d7c65" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>com.placesandplaces.AddItemizedOverlay.AddItemizedOverlay</definition>
+        <argsstring>(Drawable defaultMarker)</argsstring>
+        <name>AddItemizedOverlay</name>
+        <param>
+          <type>Drawable</type>
+          <declname>defaultMarker</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AddItemizedOverlay.java" line="25" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AddItemizedOverlay.java" bodystart="25" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_add_itemized_overlay_13fdeb08836097c97a08a96c7017cf4b1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>com.placesandplaces.AddItemizedOverlay.AddItemizedOverlay</definition>
+        <argsstring>(Drawable defaultMarker, Context context)</argsstring>
+        <name>AddItemizedOverlay</name>
+        <param>
+          <type>Drawable</type>
+          <declname>defaultMarker</declname>
+        </param>
+        <param>
+          <type>Context</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AddItemizedOverlay.java" line="29" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AddItemizedOverlay.java" bodystart="29" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_add_itemized_overlay_171f8d0ca98d6795c3c85bae98977f88a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Override boolean</type>
+        <definition>Override boolean com.placesandplaces.AddItemizedOverlay.onTouchEvent</definition>
+        <argsstring>(MotionEvent event, MapView mapView)</argsstring>
+        <name>onTouchEvent</name>
+        <param>
+          <type>MotionEvent</type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <type>MapView</type>
+          <declname>mapView</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AddItemizedOverlay.java" line="35" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AddItemizedOverlay.java" bodystart="35" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_add_itemized_overlay_1288bba32dbcd6273ffe8d111bd427756" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Override int</type>
+        <definition>Override int com.placesandplaces.AddItemizedOverlay.size</definition>
+        <argsstring>()</argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AddItemizedOverlay.java" line="56" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AddItemizedOverlay.java" bodystart="56" bodyend="58"/>
+        <references refid="classcom_1_1placesandplaces_1_1_add_itemized_overlay_15de1312e0c79efaa7904444625c99701" compoundref="_add_itemized_overlay_8java" startline="21">com.placesandplaces.AddItemizedOverlay::mapOverlays</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_add_itemized_overlay_17558b690147c6258cabb8df33343f651" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.placesandplaces.AddItemizedOverlay.addOverlay</definition>
+        <argsstring>(OverlayItem overlay)</argsstring>
+        <name>addOverlay</name>
+        <param>
+          <type>OverlayItem</type>
+          <declname>overlay</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AddItemizedOverlay.java" line="74" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AddItemizedOverlay.java" bodystart="74" bodyend="76"/>
+        <references refid="classcom_1_1placesandplaces_1_1_add_itemized_overlay_15de1312e0c79efaa7904444625c99701" compoundref="_add_itemized_overlay_8java" startline="21">com.placesandplaces.AddItemizedOverlay::mapOverlays</references>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_places_map_activity_10ee3bf14126d04d7bf76eb354e667620" compoundref="_places_map_activity_8java" startline="39" endline="130">com.placesandplaces.PlacesMapActivity::onCreate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_add_itemized_overlay_10b0b394c659369b488cfeda200156ada" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.placesandplaces.AddItemizedOverlay.populateNow</definition>
+        <argsstring>()</argsstring>
+        <name>populateNow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AddItemizedOverlay.java" line="78" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AddItemizedOverlay.java" bodystart="78" bodyend="80"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_places_map_activity_10ee3bf14126d04d7bf76eb354e667620" compoundref="_places_map_activity_8java" startline="39" endline="130">com.placesandplaces.PlacesMapActivity::onCreate</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_add_itemized_overlay_13c3ee2484dacc5998f06626cdabe6766" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Override OverlayItem</type>
+        <definition>Override OverlayItem com.placesandplaces.AddItemizedOverlay.createItem</definition>
+        <argsstring>(int i)</argsstring>
+        <name>createItem</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AddItemizedOverlay.java" line="51" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AddItemizedOverlay.java" bodystart="51" bodyend="53"/>
+        <references refid="classcom_1_1placesandplaces_1_1_add_itemized_overlay_15de1312e0c79efaa7904444625c99701" compoundref="_add_itemized_overlay_8java" startline="21">com.placesandplaces.AddItemizedOverlay::mapOverlays</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_add_itemized_overlay_1c493b3170c696f838848d341b071f316" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Override boolean</type>
+        <definition>Override boolean com.placesandplaces.AddItemizedOverlay.onTap</definition>
+        <argsstring>(int index)</argsstring>
+        <name>onTap</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AddItemizedOverlay.java" line="61" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AddItemizedOverlay.java" bodystart="61" bodyend="72"/>
+        <references refid="classcom_1_1placesandplaces_1_1_add_itemized_overlay_16089f8dd1df4a21edc0b7a0258ffaa01" compoundref="_add_itemized_overlay_8java" startline="23">com.placesandplaces.AddItemizedOverlay::context</references>
+        <references refid="classcom_1_1placesandplaces_1_1_add_itemized_overlay_15de1312e0c79efaa7904444625c99701" compoundref="_add_itemized_overlay_8java" startline="21">com.placesandplaces.AddItemizedOverlay::mapOverlays</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Class used to place marker or any overlay items on Map </para>    </detaileddescription>
+    <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AddItemizedOverlay.java" line="19" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AddItemizedOverlay.java" bodystart="19" bodyend="82"/>
+    <listofallmembers>
+      <member refid="classcom_1_1placesandplaces_1_1_add_itemized_overlay_1058e7927cf1e60f308218d3ad63d7c65" prot="public" virt="non-virtual"><scope>com::placesandplaces::AddItemizedOverlay</scope><name>AddItemizedOverlay</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_add_itemized_overlay_13fdeb08836097c97a08a96c7017cf4b1" prot="public" virt="non-virtual"><scope>com::placesandplaces::AddItemizedOverlay</scope><name>AddItemizedOverlay</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_add_itemized_overlay_17558b690147c6258cabb8df33343f651" prot="public" virt="non-virtual"><scope>com::placesandplaces::AddItemizedOverlay</scope><name>addOverlay</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_add_itemized_overlay_16089f8dd1df4a21edc0b7a0258ffaa01" prot="private" virt="non-virtual"><scope>com::placesandplaces::AddItemizedOverlay</scope><name>context</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_add_itemized_overlay_13c3ee2484dacc5998f06626cdabe6766" prot="protected" virt="non-virtual"><scope>com::placesandplaces::AddItemizedOverlay</scope><name>createItem</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_add_itemized_overlay_15de1312e0c79efaa7904444625c99701" prot="private" virt="non-virtual"><scope>com::placesandplaces::AddItemizedOverlay</scope><name>mapOverlays</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_add_itemized_overlay_1c493b3170c696f838848d341b071f316" prot="protected" virt="non-virtual"><scope>com::placesandplaces::AddItemizedOverlay</scope><name>onTap</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_add_itemized_overlay_171f8d0ca98d6795c3c85bae98977f88a" prot="public" virt="non-virtual"><scope>com::placesandplaces::AddItemizedOverlay</scope><name>onTouchEvent</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_add_itemized_overlay_10b0b394c659369b488cfeda200156ada" prot="public" virt="non-virtual"><scope>com::placesandplaces::AddItemizedOverlay</scope><name>populateNow</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_add_itemized_overlay_1288bba32dbcd6273ffe8d111bd427756" prot="public" virt="non-virtual"><scope>com::placesandplaces::AddItemizedOverlay</scope><name>size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

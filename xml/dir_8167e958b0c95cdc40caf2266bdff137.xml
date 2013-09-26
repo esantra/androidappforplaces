@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.4.7-20061004">
+  <compounddef id="dir_8167e958b0c95cdc40caf2266bdff137" kind="dir">
+    <compoundname>src/</compoundname>
+    <innerdir refid="dir_369ac93fe18c61b1f02470b8267044e3">src/com/</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/"/>
+  </compounddef>
+</doxygen>

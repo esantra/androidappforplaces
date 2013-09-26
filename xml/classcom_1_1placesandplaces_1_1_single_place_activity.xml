@@ -1,0 +1,282 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.4.7-20061004">
+  <compounddef id="classcom_1_1placesandplaces_1_1_single_place_activity" kind="class" prot="public">
+    <compoundname>com::placesandplaces::SinglePlaceActivity</compoundname>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details" prot="package">com::placesandplaces::SinglePlaceActivity::LoadSinglePlaceDetails</innerclass>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_single_place_activity_161ba0b4c3414e753c67561b0d713480b" prot="package" static="no" mutable="no">
+        <type>Boolean</type>
+        <definition>Boolean com.placesandplaces.SinglePlaceActivity.isInternetPresent</definition>
+        <argsstring></argsstring>
+        <name>isInternetPresent</name>
+        <initializer> false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" line="47" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_single_place_activity_14275af20d925234c8689ed385959a643" prot="package" static="no" mutable="no">
+        <type><ref refid="classcom_1_1placesandplaces_1_1_connection_detector" kindref="compound">ConnectionDetector</ref></type>
+        <definition>ConnectionDetector com.placesandplaces.SinglePlaceActivity.cd</definition>
+        <argsstring></argsstring>
+        <name>cd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" line="50" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_single_place_activity_1ab622ae4edf43085675e65aae83c6def" prot="package" static="no" mutable="no">
+        <type><ref refid="classcom_1_1placesandplaces_1_1_alert_dialog_manager" kindref="compound">AlertDialogManager</ref></type>
+        <definition>AlertDialogManager com.placesandplaces.SinglePlaceActivity.alert</definition>
+        <argsstring></argsstring>
+        <name>alert</name>
+        <initializer> new <ref refid="classcom_1_1placesandplaces_1_1_alert_dialog_manager" kindref="compound">AlertDialogManager</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" line="53" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" bodystart="53" bodyend="-1"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="131" endline="396">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_single_place_activity_177ab4b48555c7fb2b16116693bab0acd" prot="package" static="no" mutable="no">
+        <type>GooglePlaces</type>
+        <definition>GooglePlaces com.placesandplaces.SinglePlaceActivity.googlePlaces</definition>
+        <argsstring></argsstring>
+        <name>googlePlaces</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" line="56" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" bodystart="56" bodyend="-1"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_1f91303c0c88d3ca24aaf97ffc55f81da" compoundref="_single_place_activity_8java" startline="112" endline="126">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::doInBackground</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="131" endline="396">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_single_place_activity_178f707cda679ab64ed12453bfe765f19" prot="package" static="no" mutable="no">
+        <type>ProgressDialog</type>
+        <definition>ProgressDialog com.placesandplaces.SinglePlaceActivity.pDialog</definition>
+        <argsstring></argsstring>
+        <name>pDialog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" line="62" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" bodystart="62" bodyend="-1"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="131" endline="396">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_19edc67334d96de0835c17586cd24bbd4" compoundref="_single_place_activity_8java" startline="100" endline="107">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPreExecute</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_single_place_activity_1d66c7bf0794a495f00557b9c3c3b29ac" prot="package" static="no" mutable="no">
+        <type><ref refid="classcom_1_1placesandplaces_1_1_places_list" kindref="compound">PlacesList</ref></type>
+        <definition>PlacesList com.placesandplaces.SinglePlaceActivity.nearPlaces</definition>
+        <argsstring></argsstring>
+        <name>nearPlaces</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" line="65" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" bodystart="65" bodyend="-1"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="131" endline="396">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_single_place_activity_16b964420dec42a3aa80fa61c0b188cc8" prot="public" static="yes" mutable="no">
+        <type><ref refid="classcom_1_1placesandplaces_1_1_place_details" kindref="compound">PlaceDetails</ref></type>
+        <definition>PlaceDetails com.placesandplaces.SinglePlaceActivity.placeDetails</definition>
+        <argsstring></argsstring>
+        <name>placeDetails</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" line="59" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" bodystart="59" bodyend="-1"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_1f91303c0c88d3ca24aaf97ffc55f81da" compoundref="_single_place_activity_8java" startline="112" endline="126">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::doInBackground</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="131" endline="396">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_single_place_activity_11278f479717ad47aa36fd8f465c165bc" prot="public" static="yes" mutable="no">
+        <type>String</type>
+        <definition>String com.placesandplaces.SinglePlaceActivity.KEY_REFERENCE</definition>
+        <argsstring></argsstring>
+        <name>KEY_REFERENCE</name>
+        <initializer> &quot;reference&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" line="68" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" bodystart="68" bodyend="-1"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1528986fbb1d00bc2decf8cb45b1dca05" compoundref="_single_place_activity_8java" startline="77" endline="89">com.placesandplaces.SinglePlaceActivity::onCreate</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_single_place_activity_1eec40111db6720e02e1acc0dc186a278" prot="public" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.placesandplaces.SinglePlaceActivity.phone</definition>
+        <argsstring></argsstring>
+        <name>phone</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" line="70" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" bodystart="70" bodyend="-1"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="131" endline="396">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_single_place_activity_1e5b5628adc9a412c5eaba6f593f00227" prot="public" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.placesandplaces.SinglePlaceActivity.address</definition>
+        <argsstring></argsstring>
+        <name>address</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" line="72" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" bodystart="72" bodyend="-1"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="131" endline="396">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_single_place_activity_13c6f1c0af86bdc065026a81d83b08bea" prot="public" static="no" mutable="no">
+        <type>Double</type>
+        <definition>Double com.placesandplaces.SinglePlaceActivity.rating</definition>
+        <argsstring></argsstring>
+        <name>rating</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" line="74" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" bodystart="74" bodyend="-1"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="131" endline="396">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_single_place_activity_1528986fbb1d00bc2decf8cb45b1dca05" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Override void</type>
+        <definition>Override void com.placesandplaces.SinglePlaceActivity.onCreate</definition>
+        <argsstring>(Bundle savedInstanceState)</argsstring>
+        <name>onCreate</name>
+        <param>
+          <type>Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" line="77" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" bodystart="77" bodyend="89"/>
+        <references refid="classcom_1_1placesandplaces_1_1_single_place_activity_11278f479717ad47aa36fd8f465c165bc" compoundref="_single_place_activity_8java" startline="68">com.placesandplaces.SinglePlaceActivity::KEY_REFERENCE</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_single_place_activity_1026038589ff8b9ddae623d8d8cb25b92" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.placesandplaces.SinglePlaceActivity.push2</definition>
+        <argsstring>()</argsstring>
+        <name>push2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" line="400" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" bodystart="400" bodyend="411"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="131" endline="396">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="94">
+        <label>com.placesandplaces.AlertDialogManager</label>
+        <link refid="classcom_1_1placesandplaces_1_1_alert_dialog_manager"/>
+      </node>
+      <node id="90">
+        <label>com.placesandplaces.PlaceDetails</label>
+        <link refid="classcom_1_1placesandplaces_1_1_place_details"/>
+        <childnode refid="91" relation="usage">
+          <edgelabel>result</edgelabel>
+        </childnode>
+      </node>
+      <node id="91">
+        <label>com.placesandplaces.Place</label>
+        <link refid="classcom_1_1placesandplaces_1_1_place"/>
+        <childnode refid="92" relation="usage">
+          <edgelabel>geometry</edgelabel>
+        </childnode>
+      </node>
+      <node id="93">
+        <label>com.placesandplaces.Place.Location</label>
+        <link refid="classcom_1_1placesandplaces_1_1_place_1_1_location"/>
+      </node>
+      <node id="92">
+        <label>com.placesandplaces.Place.Geometry</label>
+        <link refid="classcom_1_1placesandplaces_1_1_place_1_1_geometry"/>
+        <childnode refid="93" relation="usage">
+          <edgelabel>location</edgelabel>
+        </childnode>
+      </node>
+      <node id="88">
+        <label>com.placesandplaces.SinglePlaceActivity</label>
+        <link refid="classcom_1_1placesandplaces_1_1_single_place_activity"/>
+        <childnode refid="89" relation="usage">
+          <edgelabel>nearPlaces</edgelabel>
+        </childnode>
+        <childnode refid="90" relation="usage">
+          <edgelabel>placeDetails</edgelabel>
+        </childnode>
+        <childnode refid="94" relation="usage">
+          <edgelabel>alert</edgelabel>
+        </childnode>
+        <childnode refid="95" relation="usage">
+          <edgelabel>cd</edgelabel>
+        </childnode>
+      </node>
+      <node id="95">
+        <label>com.placesandplaces.ConnectionDetector</label>
+        <link refid="classcom_1_1placesandplaces_1_1_connection_detector"/>
+      </node>
+      <node id="89">
+        <label>com.placesandplaces.PlacesList</label>
+        <link refid="classcom_1_1placesandplaces_1_1_places_list"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" line="45" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" bodystart="45" bodyend="413"/>
+    <listofallmembers>
+      <member refid="classcom_1_1placesandplaces_1_1_single_place_activity_1e5b5628adc9a412c5eaba6f593f00227" prot="public" virt="non-virtual"><scope>com::placesandplaces::SinglePlaceActivity</scope><name>address</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_single_place_activity_1ab622ae4edf43085675e65aae83c6def" prot="package" virt="non-virtual"><scope>com::placesandplaces::SinglePlaceActivity</scope><name>alert</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_single_place_activity_14275af20d925234c8689ed385959a643" prot="package" virt="non-virtual"><scope>com::placesandplaces::SinglePlaceActivity</scope><name>cd</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_single_place_activity_177ab4b48555c7fb2b16116693bab0acd" prot="package" virt="non-virtual"><scope>com::placesandplaces::SinglePlaceActivity</scope><name>googlePlaces</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_single_place_activity_161ba0b4c3414e753c67561b0d713480b" prot="package" virt="non-virtual"><scope>com::placesandplaces::SinglePlaceActivity</scope><name>isInternetPresent</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_single_place_activity_11278f479717ad47aa36fd8f465c165bc" prot="public" virt="non-virtual"><scope>com::placesandplaces::SinglePlaceActivity</scope><name>KEY_REFERENCE</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_single_place_activity_1d66c7bf0794a495f00557b9c3c3b29ac" prot="package" virt="non-virtual"><scope>com::placesandplaces::SinglePlaceActivity</scope><name>nearPlaces</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_single_place_activity_1528986fbb1d00bc2decf8cb45b1dca05" prot="protected" virt="non-virtual"><scope>com::placesandplaces::SinglePlaceActivity</scope><name>onCreate</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_single_place_activity_178f707cda679ab64ed12453bfe765f19" prot="package" virt="non-virtual"><scope>com::placesandplaces::SinglePlaceActivity</scope><name>pDialog</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_single_place_activity_1eec40111db6720e02e1acc0dc186a278" prot="public" virt="non-virtual"><scope>com::placesandplaces::SinglePlaceActivity</scope><name>phone</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_single_place_activity_16b964420dec42a3aa80fa61c0b188cc8" prot="public" virt="non-virtual"><scope>com::placesandplaces::SinglePlaceActivity</scope><name>placeDetails</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_single_place_activity_1026038589ff8b9ddae623d8d8cb25b92" prot="public" virt="non-virtual"><scope>com::placesandplaces::SinglePlaceActivity</scope><name>push2</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_single_place_activity_13c6f1c0af86bdc065026a81d83b08bea" prot="public" virt="non-virtual"><scope>com::placesandplaces::SinglePlaceActivity</scope><name>rating</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

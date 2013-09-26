@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.androidhive.googleplacesandmaps"
+    package="com.placesandplaces"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -44,7 +44,7 @@
 		</activity>
 		
         <!--  second screen activity / was main activity -->
-        <activity android:name="com.androidhive.googleplacesandmaps.SecondActivity"></activity>
+        <activity android:name="com.placesandplaces.SecondActivity"></activity>
     </application>
     
     <!-- Internet Permissions -->

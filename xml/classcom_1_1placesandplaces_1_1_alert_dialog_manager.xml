@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.4.7-20061004">
+  <compounddef id="classcom_1_1placesandplaces_1_1_alert_dialog_manager" kind="class" prot="public">
+    <compoundname>com::placesandplaces::AlertDialogManager</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_alert_dialog_manager_15889deaacf772719f810328e79e4ce8d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.placesandplaces.AlertDialogManager.showAlertDialog</definition>
+        <argsstring>(Context context, String title, String message, Boolean status)</argsstring>
+        <name>showAlertDialog</name>
+        <param>
+          <type>Context</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>Boolean</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function to display simple Alert Dialog</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><itemizedlist>
+<listitem><para>application context </para></listitem></itemizedlist>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><itemizedlist>
+<listitem><para>alert dialog title </para></listitem></itemizedlist>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><itemizedlist>
+<listitem><para>alert message </para></listitem></itemizedlist>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><itemizedlist>
+<listitem><para>success/failure (used to set icon) - pass null if you don&apos;t want icon </para></listitem></itemizedlist>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AlertDialogManager.java" line="24" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AlertDialogManager.java" bodystart="23" bodyend="46"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="131" endline="396">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AlertDialogManager.java" line="9" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AlertDialogManager.java" bodystart="9" bodyend="47"/>
+    <listofallmembers>
+      <member refid="classcom_1_1placesandplaces_1_1_alert_dialog_manager_15889deaacf772719f810328e79e4ce8d" prot="public" virt="non-virtual"><scope>com::placesandplaces::AlertDialogManager</scope><name>showAlertDialog</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

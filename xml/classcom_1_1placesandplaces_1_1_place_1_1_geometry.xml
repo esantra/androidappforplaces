@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.4.7-20061004">
+  <compounddef id="classcom_1_1placesandplaces_1_1_place_1_1_geometry" kind="class" prot="public">
+    <compoundname>com::placesandplaces::Place::Geometry</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_place_1_1_geometry_16d6550580190f0c84b58cfcdc394fd50" prot="public" static="no" mutable="no">
+        <type>Key <ref refid="classcom_1_1placesandplaces_1_1_place_1_1_location" kindref="compound">Location</ref></type>
+        <definition>Key Location com.placesandplaces.Place.Geometry.location</definition>
+        <argsstring></argsstring>
+        <name>location</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Place.java" line="59" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Place.java" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="47">
+        <label>com.placesandplaces.Place.Location</label>
+        <link refid="classcom_1_1placesandplaces_1_1_place_1_1_location"/>
+      </node>
+      <node id="46">
+        <label>com.placesandplaces.Place.Geometry</label>
+        <link refid="classcom_1_1placesandplaces_1_1_place_1_1_geometry"/>
+        <childnode refid="47" relation="usage">
+          <edgelabel>location</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Place.java" line="57" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Place.java" bodystart="57" bodyend="60"/>
+    <listofallmembers>
+      <member refid="classcom_1_1placesandplaces_1_1_place_1_1_geometry_16d6550580190f0c84b58cfcdc394fd50" prot="public" virt="non-virtual"><scope>com::placesandplaces::Place::Geometry</scope><name>location</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

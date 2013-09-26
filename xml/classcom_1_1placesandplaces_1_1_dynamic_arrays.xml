@@ -1,0 +1,264 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.4.7-20061004">
+  <compounddef id="classcom_1_1placesandplaces_1_1_dynamic_arrays" kind="class" prot="public">
+    <compoundname>com::placesandplaces::DynamicArrays</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_dynamic_arrays_1db95c6c03bd6723d5d07cfd1d5a5a442" prot="private" static="no" mutable="no">
+        <type><ref refid="classcom_1_1placesandplaces_1_1_place" kindref="compound">Place</ref>[]</type>
+        <definition>Place [] com.placesandplaces.DynamicArrays.data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" line="10" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" bodystart="10" bodyend="-1"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_154d2d39e7edfeec464aafbc971bc7fca" compoundref="_dynamic_arrays_8java" startline="54" endline="58">com.placesandplaces.DynamicArrays::add</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_1a161397be48afef5b6d2d67e4682ff90" compoundref="_dynamic_arrays_8java" startline="73" endline="75">com.placesandplaces.DynamicArrays::capacity</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_18bc02555a0d051a64d9d8282c9558828" compoundref="_dynamic_arrays_8java" startline="17" endline="20">com.placesandplaces.DynamicArrays::DynamicArrays</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_11719e20d770a0cd42528fa61fad62508" compoundref="_dynamic_arrays_8java" startline="48" endline="51">com.placesandplaces.DynamicArrays::get</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_1c08fc1347e395102c728ed6b7dbc9e1d" compoundref="_dynamic_arrays_8java" startline="66" endline="71">com.placesandplaces.DynamicArrays::set</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_dynamic_arrays_1703aa1660a926fc2bfbcc728cd1a26d7" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int com.placesandplaces.DynamicArrays.size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" line="14" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_dynamic_arrays_18bc02555a0d051a64d9d8282c9558828" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>com.placesandplaces.DynamicArrays.DynamicArrays</definition>
+        <argsstring>()</argsstring>
+        <name>DynamicArrays</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" line="17" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" bodystart="17" bodyend="20"/>
+        <references refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_1db95c6c03bd6723d5d07cfd1d5a5a442" compoundref="_dynamic_arrays_8java" startline="10">com.placesandplaces.DynamicArrays::data</references>
+        <references refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_11ac92f0087263550b9184c1b0e7546aa" compoundref="_dynamic_arrays_8java" startline="32" endline="34">com.placesandplaces.DynamicArrays::size</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_dynamic_arrays_1c6ccc3ac25379b8f1da08c6f30f894c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>com.placesandplaces.DynamicArrays.DynamicArrays</definition>
+        <argsstring>(int capacity)</argsstring>
+        <name>DynamicArrays</name>
+        <param>
+          <type>int</type>
+          <declname>capacity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" line="24" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" bodystart="24" bodyend="29"/>
+        <references refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_1db95c6c03bd6723d5d07cfd1d5a5a442" compoundref="_dynamic_arrays_8java" startline="10">com.placesandplaces.DynamicArrays::data</references>
+        <references refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_11ac92f0087263550b9184c1b0e7546aa" compoundref="_dynamic_arrays_8java" startline="32" endline="34">com.placesandplaces.DynamicArrays::size</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_dynamic_arrays_11ac92f0087263550b9184c1b0e7546aa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int com.placesandplaces.DynamicArrays.size</definition>
+        <argsstring>()</argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" line="32" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" bodystart="32" bodyend="34"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_154d2d39e7edfeec464aafbc971bc7fca" compoundref="_dynamic_arrays_8java" startline="54" endline="58">com.placesandplaces.DynamicArrays::add</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_1eaaf4401c48646df3be1ad256a8d6dab" compoundref="_dynamic_arrays_8java" startline="61" endline="63">com.placesandplaces.DynamicArrays::clear</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_18bc02555a0d051a64d9d8282c9558828" compoundref="_dynamic_arrays_8java" startline="17" endline="20">com.placesandplaces.DynamicArrays::DynamicArrays</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_1dc05204e2e9e4db0269afdbc28f740d2" compoundref="_dynamic_arrays_8java" startline="36" endline="38">com.placesandplaces.DynamicArrays::isEmpty</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_1b0f4f8b1a993c59c035921590d46aae9" compoundref="_dynamic_arrays_8java" startline="41" endline="45">com.placesandplaces.DynamicArrays::rangeCheck</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_dynamic_arrays_1dc05204e2e9e4db0269afdbc28f740d2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean com.placesandplaces.DynamicArrays.isEmpty</definition>
+        <argsstring>()</argsstring>
+        <name>isEmpty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" line="36" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" bodystart="36" bodyend="38"/>
+        <references refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_11ac92f0087263550b9184c1b0e7546aa" compoundref="_dynamic_arrays_8java" startline="32" endline="34">com.placesandplaces.DynamicArrays::size</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_dynamic_arrays_11719e20d770a0cd42528fa61fad62508" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classcom_1_1placesandplaces_1_1_place" kindref="compound">Place</ref></type>
+        <definition>Place com.placesandplaces.DynamicArrays.get</definition>
+        <argsstring>(int index)</argsstring>
+        <name>get</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" line="48" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" bodystart="48" bodyend="51"/>
+        <references refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_1db95c6c03bd6723d5d07cfd1d5a5a442" compoundref="_dynamic_arrays_8java" startline="10">com.placesandplaces.DynamicArrays::data</references>
+        <references refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_1b0f4f8b1a993c59c035921590d46aae9" compoundref="_dynamic_arrays_8java" startline="41" endline="45">com.placesandplaces.DynamicArrays::rangeCheck</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_dynamic_arrays_154d2d39e7edfeec464aafbc971bc7fca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean com.placesandplaces.DynamicArrays.add</definition>
+        <argsstring>(Place element)</argsstring>
+        <name>add</name>
+        <param>
+          <type><ref refid="classcom_1_1placesandplaces_1_1_place" kindref="compound">Place</ref></type>
+          <declname>element</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" line="54" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" bodystart="54" bodyend="58"/>
+        <references refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_1db95c6c03bd6723d5d07cfd1d5a5a442" compoundref="_dynamic_arrays_8java" startline="10">com.placesandplaces.DynamicArrays::data</references>
+        <references refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_11ac92f0087263550b9184c1b0e7546aa" compoundref="_dynamic_arrays_8java" startline="32" endline="34">com.placesandplaces.DynamicArrays::size</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_dynamic_arrays_1eaaf4401c48646df3be1ad256a8d6dab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.placesandplaces.DynamicArrays.clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" line="61" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" bodystart="61" bodyend="63"/>
+        <references refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_11ac92f0087263550b9184c1b0e7546aa" compoundref="_dynamic_arrays_8java" startline="32" endline="34">com.placesandplaces.DynamicArrays::size</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_dynamic_arrays_1c08fc1347e395102c728ed6b7dbc9e1d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classcom_1_1placesandplaces_1_1_place" kindref="compound">Place</ref></type>
+        <definition>Place com.placesandplaces.DynamicArrays.set</definition>
+        <argsstring>(int index, Place element)</argsstring>
+        <name>set</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type><ref refid="classcom_1_1placesandplaces_1_1_place" kindref="compound">Place</ref></type>
+          <declname>element</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" line="66" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" bodystart="66" bodyend="71"/>
+        <references refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_1db95c6c03bd6723d5d07cfd1d5a5a442" compoundref="_dynamic_arrays_8java" startline="10">com.placesandplaces.DynamicArrays::data</references>
+        <references refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_1b0f4f8b1a993c59c035921590d46aae9" compoundref="_dynamic_arrays_8java" startline="41" endline="45">com.placesandplaces.DynamicArrays::rangeCheck</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_dynamic_arrays_1a161397be48afef5b6d2d67e4682ff90" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int com.placesandplaces.DynamicArrays.capacity</definition>
+        <argsstring>()</argsstring>
+        <name>capacity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" line="73" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" bodystart="73" bodyend="75"/>
+        <references refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_1db95c6c03bd6723d5d07cfd1d5a5a442" compoundref="_dynamic_arrays_8java" startline="10">com.placesandplaces.DynamicArrays::data</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_dynamic_arrays_1b0f4f8b1a993c59c035921590d46aae9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.placesandplaces.DynamicArrays.rangeCheck</definition>
+        <argsstring>(int index)</argsstring>
+        <name>rangeCheck</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" line="41" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" bodystart="41" bodyend="45"/>
+        <references refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_11ac92f0087263550b9184c1b0e7546aa" compoundref="_dynamic_arrays_8java" startline="32" endline="34">com.placesandplaces.DynamicArrays::size</references>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_11719e20d770a0cd42528fa61fad62508" compoundref="_dynamic_arrays_8java" startline="48" endline="51">com.placesandplaces.DynamicArrays::get</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_1c08fc1347e395102c728ed6b7dbc9e1d" compoundref="_dynamic_arrays_8java" startline="66" endline="71">com.placesandplaces.DynamicArrays::set</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="13">
+        <label>com.placesandplaces.DynamicArrays</label>
+        <link refid="classcom_1_1placesandplaces_1_1_dynamic_arrays"/>
+        <childnode refid="14" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>com.placesandplaces.Place</label>
+        <link refid="classcom_1_1placesandplaces_1_1_place"/>
+        <childnode refid="15" relation="usage">
+          <edgelabel>geometry</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>com.placesandplaces.Place.Location</label>
+        <link refid="classcom_1_1placesandplaces_1_1_place_1_1_location"/>
+      </node>
+      <node id="15">
+        <label>com.placesandplaces.Place.Geometry</label>
+        <link refid="classcom_1_1placesandplaces_1_1_place_1_1_geometry"/>
+        <childnode refid="16" relation="usage">
+          <edgelabel>location</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" line="7" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/DynamicArrays.java" bodystart="7" bodyend="76"/>
+    <listofallmembers>
+      <member refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_154d2d39e7edfeec464aafbc971bc7fca" prot="public" virt="non-virtual"><scope>com::placesandplaces::DynamicArrays</scope><name>add</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_1a161397be48afef5b6d2d67e4682ff90" prot="public" virt="non-virtual"><scope>com::placesandplaces::DynamicArrays</scope><name>capacity</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_1eaaf4401c48646df3be1ad256a8d6dab" prot="public" virt="non-virtual"><scope>com::placesandplaces::DynamicArrays</scope><name>clear</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_1db95c6c03bd6723d5d07cfd1d5a5a442" prot="private" virt="non-virtual"><scope>com::placesandplaces::DynamicArrays</scope><name>data</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_18bc02555a0d051a64d9d8282c9558828" prot="public" virt="non-virtual"><scope>com::placesandplaces::DynamicArrays</scope><name>DynamicArrays</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_1c6ccc3ac25379b8f1da08c6f30f894c2" prot="public" virt="non-virtual"><scope>com::placesandplaces::DynamicArrays</scope><name>DynamicArrays</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_11719e20d770a0cd42528fa61fad62508" prot="public" virt="non-virtual"><scope>com::placesandplaces::DynamicArrays</scope><name>get</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_1dc05204e2e9e4db0269afdbc28f740d2" prot="public" virt="non-virtual"><scope>com::placesandplaces::DynamicArrays</scope><name>isEmpty</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_1b0f4f8b1a993c59c035921590d46aae9" prot="private" virt="non-virtual"><scope>com::placesandplaces::DynamicArrays</scope><name>rangeCheck</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_1c08fc1347e395102c728ed6b7dbc9e1d" prot="public" virt="non-virtual"><scope>com::placesandplaces::DynamicArrays</scope><name>set</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_1703aa1660a926fc2bfbcc728cd1a26d7" prot="private" virt="non-virtual"><scope>com::placesandplaces::DynamicArrays</scope><name>size</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_dynamic_arrays_11ac92f0087263550b9184c1b0e7546aa" prot="public" virt="non-virtual"><scope>com::placesandplaces::DynamicArrays</scope><name>size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

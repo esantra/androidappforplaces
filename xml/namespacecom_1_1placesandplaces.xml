@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.4.7-20061004">
+  <compounddef id="namespacecom_1_1placesandplaces" kind="namespace">
+    <compoundname>com::placesandplaces</compoundname>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_add_itemized_overlay" prot="public">com::placesandplaces::AddItemizedOverlay</innerclass>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_alert_dialog_manager" prot="public">com::placesandplaces::AlertDialogManager</innerclass>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_connection_detector" prot="public">com::placesandplaces::ConnectionDetector</innerclass>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_distance_calculation" prot="public">com::placesandplaces::DistanceCalculation</innerclass>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_dynamic_arrays" prot="public">com::placesandplaces::DynamicArrays</innerclass>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_globals" prot="public">com::placesandplaces::Globals</innerclass>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_global_variables" prot="public">com::placesandplaces::GlobalVariables</innerclass>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_g_p_s_tracker" prot="public">com::placesandplaces::GPSTracker</innerclass>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q" prot="public">com::placesandplaces::IConnectToRabbitMQ</innerclass>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_keyword_activity" prot="public">com::placesandplaces::KeywordActivity</innerclass>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_main_activity" prot="public">com::placesandplaces::MainActivity</innerclass>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_message_consumer" prot="public">com::placesandplaces::MessageConsumer</innerclass>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_place" prot="public">com::placesandplaces::Place</innerclass>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_place_details" prot="public">com::placesandplaces::PlaceDetails</innerclass>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_place_review" prot="public">com::placesandplaces::PlaceReview</innerclass>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_places_list" prot="public">com::placesandplaces::PlacesList</innerclass>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_places_map_activity" prot="public">com::placesandplaces::PlacesMapActivity</innerclass>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_second_activity" prot="public">com::placesandplaces::SecondActivity</innerclass>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_single_place_activity" prot="public">com::placesandplaces::SinglePlaceActivity</innerclass>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_build_config" prot="public">com::placesandplaces::BuildConfig</innerclass>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_r" prot="public">com::placesandplaces::R</innerclass>
+      <sectiondef kind="">
+      <memberdef kind="function" id="namespacecom_1_1placesandplaces_1b9695f03fbb85d7142435849d4b65bb5" prot="package" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>com.placesandplaces.SuppressWarnings</definition>
+        <argsstring>(&quot;deprecation&quot;) public class GooglePlaces</argsstring>
+        <name>SuppressWarnings</name>
+        <param>
+          <type>&quot;deprecation&quot;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Global instance of the HTTP transport.</para><para>Searching places</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>latitude</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><itemizedlist>
+<listitem><para>latitude of place  longitude - longitude of place </para></listitem></itemizedlist>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>radius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><itemizedlist>
+<listitem><para>radius of searchable area </para></listitem></itemizedlist>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>types</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><itemizedlist>
+<listitem><para>type of place to search </para></listitem></itemizedlist>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>list of places</para></simplesect>
+Searching single place full details</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>refrence</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><itemizedlist>
+<listitem><para>reference id of place - which you will get in search api request</para></listitem></itemizedlist>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Creating http request Factory </para>        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GooglePlaces.java" line="19" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GooglePlaces.java" bodystart="18" bodyend="154"/>
+        <references refid="classcom_1_1placesandplaces_1_1_places_list_118744abc34dd7f022535ae1ccd7864da" compoundref="_places_list_8java" startline="14">com.placesandplaces.PlacesList::status</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="">
+      <memberdef kind="function" id="namespacecom_1_1placesandplaces_1b9695f03fbb85d7142435849d4b65bb5" prot="package" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>com.placesandplaces.SuppressWarnings</definition>
+        <argsstring>(&quot;deprecation&quot;) public class GooglePlaces</argsstring>
+        <name>SuppressWarnings</name>
+        <param>
+          <type>&quot;deprecation&quot;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Global instance of the HTTP transport.</para><para>Searching places</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>latitude</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><itemizedlist>
+<listitem><para>latitude of place  longitude - longitude of place </para></listitem></itemizedlist>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>radius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><itemizedlist>
+<listitem><para>radius of searchable area </para></listitem></itemizedlist>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>types</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><itemizedlist>
+<listitem><para>type of place to search </para></listitem></itemizedlist>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>list of places</para></simplesect>
+Searching single place full details</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>refrence</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><itemizedlist>
+<listitem><para>reference id of place - which you will get in search api request</para></listitem></itemizedlist>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Creating http request Factory </para>        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GooglePlaces.java" line="19" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GooglePlaces.java" bodystart="18" bodyend="154"/>
+        <references refid="classcom_1_1placesandplaces_1_1_places_list_118744abc34dd7f022535ae1ccd7864da" compoundref="_places_list_8java" startline="14">com.placesandplaces.PlacesList::status</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Automatically generated file. DO NOT MODIFY </para>    </detaileddescription>
+    <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AddItemizedOverlay.java" line="1"/>
+  </compounddef>
+</doxygen>

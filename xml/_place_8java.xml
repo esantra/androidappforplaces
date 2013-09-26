@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.4.7-20061004">
+  <compounddef id="_place_8java" kind="file">
+    <compoundname>Place.java</compoundname>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_place" prot="public">com::placesandplaces::Place</innerclass>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_place_1_1_geometry" prot="public">com::placesandplaces::Place::Geometry</innerclass>
+    <innerclass refid="classcom_1_1placesandplaces_1_1_place_1_1_location" prot="public">com::placesandplaces::Place::Location</innerclass>
+    <innernamespace refid="namespacecom_1_1placesandplaces">com::placesandplaces</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">package<sp/></highlight><highlight class="normal">com.placesandplaces;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>java.io.Serializable;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>org.json.JSONArray;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>com.google.api.client.util.Key;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="classcom_1_1placesandplaces_1_1_place" refkind="compound"><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcom_1_1placesandplaces_1_1_place" kindref="compound">Place</ref><sp/></highlight><highlight class="keyword">implements</highlight><highlight class="normal"><sp/>Serializable<sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Key</highlight></codeline>
+<codeline lineno="16" refid="classcom_1_1placesandplaces_1_1_place_1a7b086dae4b5f99cb7f0961ec476b8dd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classcom_1_1placesandplaces_1_1_place_1a7b086dae4b5f99cb7f0961ec476b8dd" kindref="member">id</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Key</highlight></codeline>
+<codeline lineno="19" refid="classcom_1_1placesandplaces_1_1_place_1e2b78025d3c17b30a4293bc22677109f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classcom_1_1placesandplaces_1_1_place_1e2b78025d3c17b30a4293bc22677109f" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Key</highlight></codeline>
+<codeline lineno="22" refid="classcom_1_1placesandplaces_1_1_place_1af69a09ed0a2998886989e1defb4d144" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classcom_1_1placesandplaces_1_1_place_1af69a09ed0a2998886989e1defb4d144" kindref="member">reference</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Key</highlight></codeline>
+<codeline lineno="25" refid="classcom_1_1placesandplaces_1_1_place_17e71dd0ddf9542a7533feac78ebddf09" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classcom_1_1placesandplaces_1_1_place_17e71dd0ddf9542a7533feac78ebddf09" kindref="member">icon</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Key</highlight></codeline>
+<codeline lineno="28" refid="classcom_1_1placesandplaces_1_1_place_158c77e2c35a8b2d7f937cf0f32abbbbf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classcom_1_1placesandplaces_1_1_place_158c77e2c35a8b2d7f937cf0f32abbbbf" kindref="member">vicinity</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Key</highlight></codeline>
+<codeline lineno="31" refid="classcom_1_1placesandplaces_1_1_place_187e8f3733179efb452c16228b0e4d94b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1placesandplaces_1_1_place_1_1_geometry" kindref="compound">Geometry</ref><sp/><ref refid="classcom_1_1placesandplaces_1_1_place_187e8f3733179efb452c16228b0e4d94b" kindref="member">geometry</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Key</highlight></codeline>
+<codeline lineno="34" refid="classcom_1_1placesandplaces_1_1_place_1d640ad427d71fdf0864943f29ecb5713" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classcom_1_1placesandplaces_1_1_place_1d640ad427d71fdf0864943f29ecb5713" kindref="member">formatted_address</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Key</highlight></codeline>
+<codeline lineno="37" refid="classcom_1_1placesandplaces_1_1_place_13748ee6571485873354c038f1b119442" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classcom_1_1placesandplaces_1_1_place_13748ee6571485873354c038f1b119442" kindref="member">formatted_phone_number</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Key</highlight></codeline>
+<codeline lineno="40" refid="classcom_1_1placesandplaces_1_1_place_1355f31950dca55060952e72abeab54ec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>JSONArray[]<sp/><ref refid="classcom_1_1placesandplaces_1_1_place_1355f31950dca55060952e72abeab54ec" kindref="member">reviews</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Key</highlight></codeline>
+<codeline lineno="43" refid="classcom_1_1placesandplaces_1_1_place_148dd5bb93aa92180073054f47abead74" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classcom_1_1placesandplaces_1_1_place_148dd5bb93aa92180073054f47abead74" kindref="member">website</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Key</highlight></codeline>
+<codeline lineno="46" refid="classcom_1_1placesandplaces_1_1_place_199cf686986f74dd63f5eed8e897bc363" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Double<sp/><ref refid="classcom_1_1placesandplaces_1_1_place_199cf686986f74dd63f5eed8e897bc363" kindref="member">rating</ref>;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>@Key<sp/>public<sp/>Aspects<sp/>aspects;</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Override</highlight></codeline>
+<codeline lineno="53" refid="classcom_1_1placesandplaces_1_1_place_120c3be265d209cb2501f429ae9267b7d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classcom_1_1placesandplaces_1_1_place_120c3be265d209cb2501f429ae9267b7d" kindref="member">toString</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1placesandplaces_1_1_place_1e2b78025d3c17b30a4293bc22677109f" kindref="member">name</ref><sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>-<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>-<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classcom_1_1placesandplaces_1_1_place_1af69a09ed0a2998886989e1defb4d144" kindref="member">reference</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="classcom_1_1placesandplaces_1_1_place_1_1_geometry" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcom_1_1placesandplaces_1_1_place_1_1_geometry" kindref="compound">Geometry</ref><sp/></highlight><highlight class="keyword">implements</highlight><highlight class="normal"><sp/>Serializable<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Key</highlight></codeline>
+<codeline lineno="59" refid="classcom_1_1placesandplaces_1_1_place_1_1_geometry_16d6550580190f0c84b58cfcdc394fd50" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1placesandplaces_1_1_place_1_1_location" kindref="compound">Location</ref><sp/><ref refid="classcom_1_1placesandplaces_1_1_place_1_1_geometry_16d6550580190f0c84b58cfcdc394fd50" kindref="member">location</ref>;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="classcom_1_1placesandplaces_1_1_place_1_1_location" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcom_1_1placesandplaces_1_1_place_1_1_location" kindref="compound">Location</ref><sp/></highlight><highlight class="keyword">implements</highlight><highlight class="normal"><sp/>Serializable<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Key</highlight></codeline>
+<codeline lineno="64" refid="classcom_1_1placesandplaces_1_1_place_1_1_location_1be9542c42381942520f22338ac0f8e21" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1placesandplaces_1_1_place_1_1_location_1be9542c42381942520f22338ac0f8e21" kindref="member">lat</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@Key</highlight></codeline>
+<codeline lineno="67" refid="classcom_1_1placesandplaces_1_1_place_1_1_location_102d0537424088a9a0c71da235971f8b3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1placesandplaces_1_1_place_1_1_location_102d0537424088a9a0c71da235971f8b3" kindref="member">lng</ref>;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Place.java"/>
+  </compounddef>
+</doxygen>

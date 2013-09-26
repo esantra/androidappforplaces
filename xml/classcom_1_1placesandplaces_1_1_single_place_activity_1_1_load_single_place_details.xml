@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.4.7-20061004">
+  <compounddef id="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details" kind="class" prot="package">
+    <compoundname>com::placesandplaces::SinglePlaceActivity::LoadSinglePlaceDetails</compoundname>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_19edc67334d96de0835c17586cd24bbd4" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Override void</type>
+        <definition>Override void com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails.onPreExecute</definition>
+        <argsstring>()</argsstring>
+        <name>onPreExecute</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Before starting background thread Show Progress Dialog </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" line="100" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" bodystart="100" bodyend="107"/>
+        <references refid="classcom_1_1placesandplaces_1_1_single_place_activity_178f707cda679ab64ed12453bfe765f19" compoundref="_single_place_activity_8java" startline="62">com.placesandplaces.SinglePlaceActivity::pDialog</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_1f91303c0c88d3ca24aaf97ffc55f81da" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails.doInBackground</definition>
+        <argsstring>(String...args)</argsstring>
+        <name>doInBackground</name>
+        <param>
+          <type>String...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getting Profile JSON </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" line="112" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" bodystart="112" bodyend="126"/>
+        <references refid="classcom_1_1placesandplaces_1_1_single_place_activity_177ab4b48555c7fb2b16116693bab0acd" compoundref="_single_place_activity_8java" startline="56">com.placesandplaces.SinglePlaceActivity::googlePlaces</references>
+        <references refid="classcom_1_1placesandplaces_1_1_single_place_activity_16b964420dec42a3aa80fa61c0b188cc8" compoundref="_single_place_activity_8java" startline="59">com.placesandplaces.SinglePlaceActivity::placeDetails</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails.onPostExecute</definition>
+        <argsstring>(String file_url)</argsstring>
+        <name>onPostExecute</name>
+        <param>
+          <type>String</type>
+          <declname>file_url</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>After completing background task Dismiss the progress dialog </para>        </detaileddescription>
+        <inbodydescription>
+<para>Updating parsed Places into LISTVIEW</para><para>Button click event for shown on map</para><para>Button click event for shown on map</para><para>Button click event for shown on map</para><para>Button click event for shown on map </para>        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" line="131" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" bodystart="131" bodyend="396"/>
+        <references refid="classcom_1_1placesandplaces_1_1_single_place_activity_1e5b5628adc9a412c5eaba6f593f00227" compoundref="_single_place_activity_8java" startline="72">com.placesandplaces.SinglePlaceActivity::address</references>
+        <references refid="classcom_1_1placesandplaces_1_1_single_place_activity_1ab622ae4edf43085675e65aae83c6def" compoundref="_single_place_activity_8java" startline="53">com.placesandplaces.SinglePlaceActivity::alert</references>
+        <references refid="classcom_1_1placesandplaces_1_1_place_1d640ad427d71fdf0864943f29ecb5713" compoundref="_place_8java" startline="34">com.placesandplaces.Place::formatted_address</references>
+        <references refid="classcom_1_1placesandplaces_1_1_place_13748ee6571485873354c038f1b119442" compoundref="_place_8java" startline="37">com.placesandplaces.Place::formatted_phone_number</references>
+        <references refid="classcom_1_1placesandplaces_1_1_place_187e8f3733179efb452c16228b0e4d94b" compoundref="_place_8java" startline="31">com.placesandplaces.Place::geometry</references>
+        <references refid="classcom_1_1placesandplaces_1_1_single_place_activity_177ab4b48555c7fb2b16116693bab0acd" compoundref="_single_place_activity_8java" startline="56">com.placesandplaces.SinglePlaceActivity::googlePlaces</references>
+        <references refid="classcom_1_1placesandplaces_1_1_place_17e71dd0ddf9542a7533feac78ebddf09" compoundref="_place_8java" startline="25">com.placesandplaces.Place::icon</references>
+        <references refid="classcom_1_1placesandplaces_1_1_place_1e2b78025d3c17b30a4293bc22677109f" compoundref="_place_8java" startline="19">com.placesandplaces.Place::name</references>
+        <references refid="classcom_1_1placesandplaces_1_1_single_place_activity_1d66c7bf0794a495f00557b9c3c3b29ac" compoundref="_single_place_activity_8java" startline="65">com.placesandplaces.SinglePlaceActivity::nearPlaces</references>
+        <references refid="classcom_1_1placesandplaces_1_1_single_place_activity_178f707cda679ab64ed12453bfe765f19" compoundref="_single_place_activity_8java" startline="62">com.placesandplaces.SinglePlaceActivity::pDialog</references>
+        <references refid="classcom_1_1placesandplaces_1_1_single_place_activity_1eec40111db6720e02e1acc0dc186a278" compoundref="_single_place_activity_8java" startline="70">com.placesandplaces.SinglePlaceActivity::phone</references>
+        <references refid="classcom_1_1placesandplaces_1_1_single_place_activity_16b964420dec42a3aa80fa61c0b188cc8" compoundref="_single_place_activity_8java" startline="59">com.placesandplaces.SinglePlaceActivity::placeDetails</references>
+        <references refid="classcom_1_1placesandplaces_1_1_single_place_activity_1026038589ff8b9ddae623d8d8cb25b92" compoundref="_single_place_activity_8java" startline="400" endline="411">com.placesandplaces.SinglePlaceActivity::push2</references>
+        <references refid="classcom_1_1placesandplaces_1_1_place_199cf686986f74dd63f5eed8e897bc363" compoundref="_place_8java" startline="46">com.placesandplaces.Place::rating</references>
+        <references refid="classcom_1_1placesandplaces_1_1_single_place_activity_13c6f1c0af86bdc065026a81d83b08bea" compoundref="_single_place_activity_8java" startline="74">com.placesandplaces.SinglePlaceActivity::rating</references>
+        <references refid="classcom_1_1placesandplaces_1_1_place_details_18487fb5cb38348c53651d609629bc608" compoundref="_place_details_8java" startline="17">com.placesandplaces.PlaceDetails::result</references>
+        <references refid="classcom_1_1placesandplaces_1_1_alert_dialog_manager_15889deaacf772719f810328e79e4ce8d" compoundref="_alert_dialog_manager_8java" startline="23" endline="46">com.placesandplaces.AlertDialogManager::showAlertDialog</references>
+        <references refid="classcom_1_1placesandplaces_1_1_place_details_174ef30e6f9dde6459a4cce9d5a740e71" compoundref="_place_details_8java" startline="14">com.placesandplaces.PlaceDetails::status</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Background Async Task to Load Google places </para>    </detaileddescription>
+    <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" line="94" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" bodystart="94" bodyend="398"/>
+    <listofallmembers>
+      <member refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_1f91303c0c88d3ca24aaf97ffc55f81da" prot="protected" virt="non-virtual"><scope>com::placesandplaces::SinglePlaceActivity::LoadSinglePlaceDetails</scope><name>doInBackground</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" prot="protected" virt="non-virtual"><scope>com::placesandplaces::SinglePlaceActivity::LoadSinglePlaceDetails</scope><name>onPostExecute</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_19edc67334d96de0835c17586cd24bbd4" prot="protected" virt="non-virtual"><scope>com::placesandplaces::SinglePlaceActivity::LoadSinglePlaceDetails</scope><name>onPreExecute</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

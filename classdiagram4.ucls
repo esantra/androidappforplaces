@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true">  
-  <class id="1" language="java" name="com.androidhive.googleplacesandmaps.Place.Location" project="PlacesandPlaces" 
-    file="/PlacesandPlaces/src/com/androidhive/googleplacesandmaps/Place.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="1" language="java" name="com.placesandplaces.Place.Location" project="PlacesandPlaces" 
+    file="/PlacesandPlaces/src/com/placesandplaces/Place.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="76" width="174" x="653" y="1067"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -10,8 +10,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="com.androidhive.googleplacesandmaps.Place.Geometry" project="PlacesandPlaces" 
-    file="/PlacesandPlaces/src/com/androidhive/googleplacesandmaps/Place.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="2" language="java" name="com.placesandplaces.Place.Geometry" project="PlacesandPlaces" 
+    file="/PlacesandPlaces/src/com/placesandplaces/Place.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="76" width="174" x="458" y="951"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -19,8 +19,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="com.androidhive.googleplacesandmaps.Place" project="PlacesandPlaces" 
-    file="/PlacesandPlaces/src/com/androidhive/googleplacesandmaps/Place.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="3" language="java" name="com.placesandplaces.Place" project="PlacesandPlaces" 
+    file="/PlacesandPlaces/src/com/placesandplaces/Place.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="94" width="174" x="556" y="817"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -28,9 +28,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="com.androidhive.googleplacesandmaps.PlaceDetails" project="PlacesandPlaces" 
-    file="/PlacesandPlaces/src/com/androidhive/googleplacesandmaps/PlaceDetails.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
+  <class id="4" language="java" name="com.placesandplaces.PlaceDetails" project="PlacesandPlaces" 
+    file="/PlacesandPlaces/src/com/placesandplaces/PlaceDetails.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="94" width="174" x="1659" y="307"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -38,9 +37,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="com.androidhive.googleplacesandmaps.GooglePlaces" project="PlacesandPlaces" 
-    file="/PlacesandPlaces/src/com/androidhive/googleplacesandmaps/GooglePlaces.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
+  <class id="5" language="java" name="com.placesandplaces.GooglePlaces" project="PlacesandPlaces" 
+    file="/PlacesandPlaces/src/com/placesandplaces/GooglePlaces.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="148" width="307" x="1312" y="307"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -48,9 +46,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="com.androidhive.googleplacesandmaps.SinglePlaceActivity.LoadSinglePlaceDetails" 
-    project="PlacesandPlaces" file="/PlacesandPlaces/src/com/androidhive/googleplacesandmaps/SinglePlaceActivity.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
+  <class id="6" language="java" name="com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails" 
+    project="PlacesandPlaces" file="/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
     <position height="130" width="177" x="1873" y="307"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -58,9 +56,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="com.androidhive.googleplacesandmaps.SinglePlaceActivity" project="PlacesandPlaces" 
-    file="/PlacesandPlaces/src/com/androidhive/googleplacesandmaps/SinglePlaceActivity.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
+  <class id="7" language="java" name="com.placesandplaces.SinglePlaceActivity" project="PlacesandPlaces" 
+    file="/PlacesandPlaces/src/com/placesandplaces/SinglePlaceActivity.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="94" width="174" x="1194" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -68,9 +65,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="com.androidhive.googleplacesandmaps.SecondActivity" project="PlacesandPlaces" 
-    file="/PlacesandPlaces/src/com/androidhive/googleplacesandmaps/SecondActivity.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
+  <class id="8" language="java" name="com.placesandplaces.SecondActivity" project="PlacesandPlaces" 
+    file="/PlacesandPlaces/src/com/placesandplaces/SecondActivity.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="130" width="208" x="556" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -78,9 +74,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="com.androidhive.googleplacesandmaps.SecondActivity.LoadPlaces" 
-    project="PlacesandPlaces" file="/PlacesandPlaces/src/com/androidhive/googleplacesandmaps/SecondActivity.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
+  <class id="9" language="java" name="com.placesandplaces.SecondActivity.LoadPlaces" project="PlacesandPlaces" 
+    file="/PlacesandPlaces/src/com/placesandplaces/SecondActivity.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="130" width="177" x="41" y="307"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -88,9 +83,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="com.androidhive.googleplacesandmaps.PlacesMapActivity" project="PlacesandPlaces" 
-    file="/PlacesandPlaces/src/com/androidhive/googleplacesandmaps/PlacesMapActivity.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
+  <class id="10" language="java" name="com.placesandplaces.PlacesMapActivity" project="PlacesandPlaces" 
+    file="/PlacesandPlaces/src/com/placesandplaces/PlacesMapActivity.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="112" width="174" x="342" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -98,8 +92,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="com.androidhive.googleplacesandmaps.PlacesList" project="PlacesandPlaces" 
-    file="/PlacesandPlaces/src/com/androidhive/googleplacesandmaps/PlacesList.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="11" language="java" name="com.placesandplaces.PlacesList" project="PlacesandPlaces" 
+    file="/PlacesandPlaces/src/com/placesandplaces/PlacesList.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="76" width="174" x="556" y="307"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -107,9 +101,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="12" language="java" name="com.androidhive.googleplacesandmaps.MessageConsumer.OnReceiveMessageHandler" 
-    project="PlacesandPlaces" file="/PlacesandPlaces/src/com/androidhive/googleplacesandmaps/MessageConsumer.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="12" language="java" name="com.placesandplaces.MessageConsumer.OnReceiveMessageHandler" 
+    project="PlacesandPlaces" file="/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
     <position height="76" width="181" x="2090" y="817"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -117,9 +111,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="13" language="java" name="com.androidhive.googleplacesandmaps.MessageConsumer" project="PlacesandPlaces" 
-    file="/PlacesandPlaces/src/com/androidhive/googleplacesandmaps/MessageConsumer.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
+  <class id="13" language="java" name="com.placesandplaces.MessageConsumer" project="PlacesandPlaces" 
+    file="/PlacesandPlaces/src/com/placesandplaces/MessageConsumer.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="184" width="340" x="2090" y="307"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -127,9 +120,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="com.androidhive.googleplacesandmaps.KeywordActivity" project="PlacesandPlaces" 
-    file="/PlacesandPlaces/src/com/androidhive/googleplacesandmaps/KeywordActivity.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
+  <class id="14" language="java" name="com.placesandplaces.KeywordActivity" project="PlacesandPlaces" 
+    file="/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="112" width="208" x="804" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -137,9 +129,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="15" language="java" name="com.androidhive.googleplacesandmaps.IConnectToRabbitMQ" project="PlacesandPlaces" 
-    file="/PlacesandPlaces/src/com/androidhive/googleplacesandmaps/IConnectToRabbitMQ.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
+  <class id="15" language="java" name="com.placesandplaces.IConnectToRabbitMQ" project="PlacesandPlaces" 
+    file="/PlacesandPlaces/src/com/placesandplaces/IConnectToRabbitMQ.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="112" width="223" x="2090" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -147,8 +138,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="16" language="java" name="com.androidhive.googleplacesandmaps.GPSTracker" project="PlacesandPlaces" 
-    file="/PlacesandPlaces/src/com/androidhive/googleplacesandmaps/GPSTracker.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="16" language="java" name="com.placesandplaces.GPSTracker" project="PlacesandPlaces" 
+    file="/PlacesandPlaces/src/com/placesandplaces/GPSTracker.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="470" width="237" x="258" y="307"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -156,9 +147,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="17" language="java" name="com.androidhive.googleplacesandmaps.ConnectionDetector" project="PlacesandPlaces" 
-    file="/PlacesandPlaces/src/com/androidhive/googleplacesandmaps/ConnectionDetector.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
+  <class id="17" language="java" name="com.placesandplaces.ConnectionDetector" project="PlacesandPlaces" 
+    file="/PlacesandPlaces/src/com/placesandplaces/ConnectionDetector.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="94" width="184" x="770" y="307"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -166,9 +156,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="18" language="java" name="com.androidhive.googleplacesandmaps.AlertDialogManager" project="PlacesandPlaces" 
-    file="/PlacesandPlaces/src/com/androidhive/googleplacesandmaps/AlertDialogManager.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
+  <class id="18" language="java" name="com.placesandplaces.AlertDialogManager" project="PlacesandPlaces" 
+    file="/PlacesandPlaces/src/com/placesandplaces/AlertDialogManager.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="94" width="278" x="994" y="307"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -176,9 +165,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="19" language="java" name="com.androidhive.googleplacesandmaps.MainActivity" project="PlacesandPlaces" 
-    file="/PlacesandPlaces/src/com/androidhive/googleplacesandmaps/MainActivity.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
+  <class id="19" language="java" name="com.placesandplaces.MainActivity" project="PlacesandPlaces" 
+    file="/PlacesandPlaces/src/com/placesandplaces/MainActivity.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="220" width="214" x="60" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      

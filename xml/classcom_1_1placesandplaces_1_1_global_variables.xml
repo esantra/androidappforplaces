@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.4.7-20061004">
+  <compounddef id="classcom_1_1placesandplaces_1_1_global_variables" kind="class" prot="public">
+    <compoundname>com::placesandplaces::GlobalVariables</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_global_variables_18c1a899b583aa381f4a82e06c12decf2" prot="public" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.placesandplaces.GlobalVariables.type1</definition>
+        <argsstring></argsstring>
+        <name>type1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GlobalVariables.java" line="7" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GlobalVariables.java" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_global_variables_16f8ee51aad160e4648121177cdee0082" prot="public" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.placesandplaces.GlobalVariables.type2</definition>
+        <argsstring></argsstring>
+        <name>type2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GlobalVariables.java" line="8" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GlobalVariables.java" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_global_variables_1acc4e6b8a4dd87fdb4a1875aee6d053a" prot="public" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.placesandplaces.GlobalVariables.strPlaces1</definition>
+        <argsstring></argsstring>
+        <name>strPlaces1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GlobalVariables.java" line="9" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GlobalVariables.java" bodystart="9" bodyend="-1"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_global_variables_1871c6dbe07cc7d3f6378c7e3c6e95c43" compoundref="_global_variables_8java" startline="18" endline="20">com.placesandplaces.GlobalVariables::getStrPlaces1</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_global_variables_1b96480aedea16b459138f9e5f70a4dff" compoundref="_global_variables_8java" startline="26" endline="28">com.placesandplaces.GlobalVariables::getStrPlaces2</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_global_variables_16534fe4b07b7ee95457a025dfaaab05d" compoundref="_global_variables_8java" startline="14" endline="16">com.placesandplaces.GlobalVariables::setStrPlaces1</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_global_variables_1830756086881f350afeaf5070a4373bf" compoundref="_global_variables_8java" startline="22" endline="24">com.placesandplaces.GlobalVariables::setStrPlaces2</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_global_variables_170334aa0828918b068c31e5298e738a2" prot="public" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.placesandplaces.GlobalVariables.strPlaces2</definition>
+        <argsstring></argsstring>
+        <name>strPlaces2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GlobalVariables.java" line="10" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GlobalVariables.java" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_global_variables_15a8d8cb3b1901fdcb41753cefba904ae" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.placesandplaces.GlobalVariables.someVariable</definition>
+        <argsstring></argsstring>
+        <name>someVariable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GlobalVariables.java" line="12" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GlobalVariables.java" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_global_variables_146f3d1a250413038f7adeb5ef63c0299" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.placesandplaces.GlobalVariables.someVariable2</definition>
+        <argsstring></argsstring>
+        <name>someVariable2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GlobalVariables.java" line="12" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GlobalVariables.java" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_global_variables_16534fe4b07b7ee95457a025dfaaab05d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.placesandplaces.GlobalVariables.setStrPlaces1</definition>
+        <argsstring>(String someVariable)</argsstring>
+        <name>setStrPlaces1</name>
+        <param>
+          <type>String</type>
+          <declname>someVariable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GlobalVariables.java" line="14" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GlobalVariables.java" bodystart="14" bodyend="16"/>
+        <references refid="classcom_1_1placesandplaces_1_1_global_variables_1acc4e6b8a4dd87fdb4a1875aee6d053a" compoundref="_global_variables_8java" startline="9">com.placesandplaces.GlobalVariables::strPlaces1</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_global_variables_1871c6dbe07cc7d3f6378c7e3c6e95c43" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String com.placesandplaces.GlobalVariables.getStrPlaces1</definition>
+        <argsstring>()</argsstring>
+        <name>getStrPlaces1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GlobalVariables.java" line="18" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GlobalVariables.java" bodystart="18" bodyend="20"/>
+        <references refid="classcom_1_1placesandplaces_1_1_global_variables_1acc4e6b8a4dd87fdb4a1875aee6d053a" compoundref="_global_variables_8java" startline="9">com.placesandplaces.GlobalVariables::strPlaces1</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_global_variables_1830756086881f350afeaf5070a4373bf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.placesandplaces.GlobalVariables.setStrPlaces2</definition>
+        <argsstring>(String someVariable2)</argsstring>
+        <name>setStrPlaces2</name>
+        <param>
+          <type>String</type>
+          <declname>someVariable2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GlobalVariables.java" line="22" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GlobalVariables.java" bodystart="22" bodyend="24"/>
+        <references refid="classcom_1_1placesandplaces_1_1_global_variables_1acc4e6b8a4dd87fdb4a1875aee6d053a" compoundref="_global_variables_8java" startline="9">com.placesandplaces.GlobalVariables::strPlaces1</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_global_variables_1b96480aedea16b459138f9e5f70a4dff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String com.placesandplaces.GlobalVariables.getStrPlaces2</definition>
+        <argsstring>()</argsstring>
+        <name>getStrPlaces2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GlobalVariables.java" line="26" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GlobalVariables.java" bodystart="26" bodyend="28"/>
+        <references refid="classcom_1_1placesandplaces_1_1_global_variables_1acc4e6b8a4dd87fdb4a1875aee6d053a" compoundref="_global_variables_8java" startline="9">com.placesandplaces.GlobalVariables::strPlaces1</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GlobalVariables.java" line="5" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GlobalVariables.java" bodystart="5" bodyend="30"/>
+    <listofallmembers>
+      <member refid="classcom_1_1placesandplaces_1_1_global_variables_1871c6dbe07cc7d3f6378c7e3c6e95c43" prot="public" virt="non-virtual"><scope>com::placesandplaces::GlobalVariables</scope><name>getStrPlaces1</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_global_variables_1b96480aedea16b459138f9e5f70a4dff" prot="public" virt="non-virtual"><scope>com::placesandplaces::GlobalVariables</scope><name>getStrPlaces2</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_global_variables_16534fe4b07b7ee95457a025dfaaab05d" prot="public" virt="non-virtual"><scope>com::placesandplaces::GlobalVariables</scope><name>setStrPlaces1</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_global_variables_1830756086881f350afeaf5070a4373bf" prot="public" virt="non-virtual"><scope>com::placesandplaces::GlobalVariables</scope><name>setStrPlaces2</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_global_variables_15a8d8cb3b1901fdcb41753cefba904ae" prot="private" virt="non-virtual"><scope>com::placesandplaces::GlobalVariables</scope><name>someVariable</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_global_variables_146f3d1a250413038f7adeb5ef63c0299" prot="private" virt="non-virtual"><scope>com::placesandplaces::GlobalVariables</scope><name>someVariable2</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_global_variables_1acc4e6b8a4dd87fdb4a1875aee6d053a" prot="public" virt="non-virtual"><scope>com::placesandplaces::GlobalVariables</scope><name>strPlaces1</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_global_variables_170334aa0828918b068c31e5298e738a2" prot="public" virt="non-virtual"><scope>com::placesandplaces::GlobalVariables</scope><name>strPlaces2</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_global_variables_18c1a899b583aa381f4a82e06c12decf2" prot="public" virt="non-virtual"><scope>com::placesandplaces::GlobalVariables</scope><name>type1</name></member>
+      <member refid="classcom_1_1placesandplaces_1_1_global_variables_16f8ee51aad160e4648121177cdee0082" prot="public" virt="non-virtual"><scope>com::placesandplaces::GlobalVariables</scope><name>type2</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

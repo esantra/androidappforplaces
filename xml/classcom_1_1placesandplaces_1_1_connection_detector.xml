@@ -49,6 +49,7 @@
         </inbodydescription>
         <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/ConnectionDetector.java" line="18" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/ConnectionDetector.java" bodystart="18" bodyend="31"/>
         <references refid="classcom_1_1placesandplaces_1_1_connection_detector_195baa3f747bfa2b55c0ba772dd182efe" compoundref="_connection_detector_8java" startline="9">com.placesandplaces.ConnectionDetector::_context</references>
+        <referencedby refid="namespacecom_1_1placesandplaces_1b051492c305aa824780eb6751add84c1" compoundref="_second_activity_8java" startline="26" endline="780">com.placesandplaces::SuppressLint</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>

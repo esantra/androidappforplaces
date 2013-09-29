@@ -15,7 +15,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="6" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="6" bodyend="-1"/>
-        <referencedby refid="classcom_1_1placesandplaces_1_1_globals_10e58fa3a90f541cd0bf1da21dfa0ee39" compoundref="_globals_8java" startline="99" endline="104">com.placesandplaces.Globals::getInstance</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_globals_10e58fa3a90f541cd0bf1da21dfa0ee39" compoundref="_globals_8java" startline="97" endline="102">com.placesandplaces.Globals::getInstance</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -45,32 +45,6 @@
         </inbodydescription>
         <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="10" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="10" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_globals_18ccd0a3da1114cdc6fe991eca77861e0" prot="private" static="no" mutable="no">
-        <type>String</type>
-        <definition>String com.placesandplaces.Globals.location3</definition>
-        <argsstring></argsstring>
-        <name>location3</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="11" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="11" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_globals_1e77799703f236a664b2c0e08284fd420" prot="private" static="no" mutable="no">
-        <type>String</type>
-        <definition>String com.placesandplaces.Globals.locationi</definition>
-        <argsstring></argsstring>
-        <name>locationi</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="12" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="12" bodyend="-1"/>
-      </memberdef>
       <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_globals_1403e1168d95ff88c0ed76003e13b532d" prot="private" static="no" mutable="no">
         <type>CharSequence</type>
         <definition>CharSequence com.placesandplaces.Globals.textKey1</definition>
@@ -83,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="16" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="16" bodyend="-1"/>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="14" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="14" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-attrib">
@@ -98,9 +72,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="13" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="13" bodyend="-1"/>
-        <referencedby refid="classcom_1_1placesandplaces_1_1_globals_1db5279d9d40f3702ac622f69036aacbb" compoundref="_globals_8java" startline="94" endline="97">com.placesandplaces.Globals::getCounterVar</referencedby>
-        <referencedby refid="classcom_1_1placesandplaces_1_1_globals_18ba77a9232ca9cffdf6ccbff1e8304e3" compoundref="_globals_8java" startline="60" endline="64">com.placesandplaces.Globals::setLocationi</referencedby>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="11" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="11" bodyend="-1"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_globals_1db5279d9d40f3702ac622f69036aacbb" compoundref="_globals_8java" startline="92" endline="95">com.placesandplaces.Globals::getCounterVar</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_globals_18ba77a9232ca9cffdf6ccbff1e8304e3" compoundref="_globals_8java" startline="58" endline="62">com.placesandplaces.Globals::setLocationi</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_globals_11d80d06d0d26fe80a31ace3ecae58eef" prot="public" static="yes" mutable="no">
         <type>int</type>
@@ -114,8 +88,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="17" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="17" bodyend="-1"/>
-        <referencedby refid="classcom_1_1placesandplaces_1_1_main_activity_1017096a72e807e2893e946d293f13f56" compoundref="_main_activity_8java" startline="100" endline="272">com.placesandplaces.MainActivity::onCreate</referencedby>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="15" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="15" bodyend="-1"/>
+        <referencedby refid="namespacecom_1_1placesandplaces_1b051492c305aa824780eb6751add84c1" compoundref="_second_activity_8java" startline="26" endline="780">com.placesandplaces::SuppressLint</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_globals_151b6e1746bae5dbd753bdb848854872a" prot="public" static="yes" mutable="no">
         <type>int</type>
@@ -129,7 +103,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="18" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="18" bodyend="-1"/>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="16" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="16" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_globals_1652a8d69bf1330de9dffcd4b0bde6528" prot="public" static="yes" mutable="no">
         <type>int</type>
@@ -143,7 +117,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="19" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="19" bodyend="-1"/>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="17" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="17" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_globals_152d8d14ca98fd705aaa945a34aa6315e" prot="public" static="yes" mutable="no">
         <type>int</type>
@@ -157,7 +131,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="20" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="20" bodyend="-1"/>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="18" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="18" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-attrib">
@@ -173,9 +147,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="14" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="14" bodyend="-1"/>
-        <referencedby refid="classcom_1_1placesandplaces_1_1_globals_12877ebb8581f53a34f10abf1360a412d" compoundref="_globals_8java" startline="55" endline="58">com.placesandplaces.Globals::getLocationVari</referencedby>
-        <referencedby refid="classcom_1_1placesandplaces_1_1_globals_1cba08c10903b4ec3521c40384d5072d1" compoundref="_globals_8java" startline="50" endline="53">com.placesandplaces.Globals::setLocationVari</referencedby>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="12" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="12" bodyend="-1"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_globals_12877ebb8581f53a34f10abf1360a412d" compoundref="_globals_8java" startline="53" endline="56">com.placesandplaces.Globals::getLocationVari</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_globals_1cba08c10903b4ec3521c40384d5072d1" compoundref="_globals_8java" startline="48" endline="51">com.placesandplaces.Globals::setLocationVari</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_globals_124ce7f7f66ad9ac625b9644ebe2fd3a0" prot="public" static="no" mutable="no">
         <type>String[]</type>
@@ -189,8 +163,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="15" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="15" bodyend="-1"/>
-        <referencedby refid="classcom_1_1placesandplaces_1_1_globals_1c49da6aa471a60b1bbb5ff17befd35d3" compoundref="_globals_8java" startline="66" endline="87">com.placesandplaces.Globals::getLocationi</referencedby>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="13" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="13" bodyend="-1"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_globals_1c49da6aa471a60b1bbb5ff17befd35d3" compoundref="_globals_8java" startline="64" endline="85">com.placesandplaces.Globals::getLocationi</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -205,8 +179,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="23" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="23" bodyend="24"/>
-        <referencedby refid="classcom_1_1placesandplaces_1_1_globals_10e58fa3a90f541cd0bf1da21dfa0ee39" compoundref="_globals_8java" startline="99" endline="104">com.placesandplaces.Globals::getInstance</referencedby>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="21" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="21" bodyend="22"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_globals_10e58fa3a90f541cd0bf1da21dfa0ee39" compoundref="_globals_8java" startline="97" endline="102">com.placesandplaces.Globals::getInstance</referencedby>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_globals_117567d9b11edd84a0c4ba3da6d528b29" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -223,8 +197,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="26" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="26" bodyend="28"/>
-        <referencedby refid="classcom_1_1placesandplaces_1_1_main_activity_1017096a72e807e2893e946d293f13f56" compoundref="_main_activity_8java" startline="100" endline="272">com.placesandplaces.MainActivity::onCreate</referencedby>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="24" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="24" bodyend="26"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_main_activity_1017096a72e807e2893e946d293f13f56" compoundref="_main_activity_8java" startline="63" endline="222">com.placesandplaces.MainActivity::onCreate</referencedby>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_globals_1f8e3e0e33ce7df6226be13558fefcb85" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>String</type>
@@ -237,7 +211,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="30" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="30" bodyend="32"/>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="28" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="28" bodyend="30"/>
+        <referencedby refid="namespacecom_1_1placesandplaces_1b051492c305aa824780eb6751add84c1" compoundref="_second_activity_8java" startline="26" endline="780">com.placesandplaces::SuppressLint</referencedby>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_globals_11966f41f136016b2ca07879415941a24" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -254,8 +229,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="34" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="34" bodyend="36"/>
-        <referencedby refid="classcom_1_1placesandplaces_1_1_main_activity_1017096a72e807e2893e946d293f13f56" compoundref="_main_activity_8java" startline="100" endline="272">com.placesandplaces.MainActivity::onCreate</referencedby>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="32" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="32" bodyend="34"/>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_main_activity_1017096a72e807e2893e946d293f13f56" compoundref="_main_activity_8java" startline="63" endline="222">com.placesandplaces.MainActivity::onCreate</referencedby>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_globals_1071d4ddb2e772bbb6667aa2985dfa5a6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>String</type>
@@ -268,7 +243,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="38" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="38" bodyend="40"/>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="36" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="36" bodyend="38"/>
+        <referencedby refid="namespacecom_1_1placesandplaces_1b051492c305aa824780eb6751add84c1" compoundref="_second_activity_8java" startline="26" endline="780">com.placesandplaces::SuppressLint</referencedby>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_globals_1d094e41813872b413a90c70bea77de55" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>CharSequence</type>
@@ -281,7 +257,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="42" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="42" bodyend="44"/>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="40" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="40" bodyend="42"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_globals_1e85936d179854a86c159542fdb47cb16" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -298,7 +274,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="46" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="46" bodyend="48"/>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="44" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="44" bodyend="46"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_globals_1cba08c10903b4ec3521c40384d5072d1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -311,9 +287,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="50" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="50" bodyend="53"/>
-        <references refid="classcom_1_1placesandplaces_1_1_globals_100176fd487ae3beb12cd71e6ae2da819" compoundref="_globals_8java" startline="14">com.placesandplaces.Globals::counterLocVar</references>
-        <referencedby refid="classcom_1_1placesandplaces_1_1_main_activity_161c68b54d52e93a08c5c4c4da6568eeb" compoundref="_main_activity_8java" startline="315" endline="339">com.placesandplaces.MainActivity::addTextView</referencedby>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="48" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="48" bodyend="51"/>
+        <references refid="classcom_1_1placesandplaces_1_1_globals_100176fd487ae3beb12cd71e6ae2da819" compoundref="_globals_8java" startline="12">com.placesandplaces.Globals::counterLocVar</references>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_main_activity_161c68b54d52e93a08c5c4c4da6568eeb" compoundref="_main_activity_8java" startline="265" endline="289">com.placesandplaces.MainActivity::addTextView</referencedby>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_globals_12877ebb8581f53a34f10abf1360a412d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -326,8 +302,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="55" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="55" bodyend="58"/>
-        <references refid="classcom_1_1placesandplaces_1_1_globals_100176fd487ae3beb12cd71e6ae2da819" compoundref="_globals_8java" startline="14">com.placesandplaces.Globals::counterLocVar</references>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="53" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="53" bodyend="56"/>
+        <references refid="classcom_1_1placesandplaces_1_1_globals_100176fd487ae3beb12cd71e6ae2da819" compoundref="_globals_8java" startline="12">com.placesandplaces.Globals::counterLocVar</references>
+        <referencedby refid="namespacecom_1_1placesandplaces_1b051492c305aa824780eb6751add84c1" compoundref="_second_activity_8java" startline="26" endline="780">com.placesandplaces::SuppressLint</referencedby>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_globals_18ba77a9232ca9cffdf6ccbff1e8304e3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -348,9 +325,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="60" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="60" bodyend="64"/>
-        <references refid="classcom_1_1placesandplaces_1_1_globals_13329f2d5437d7cafbcb350d72b7a69e5" compoundref="_globals_8java" startline="13">com.placesandplaces.Globals::counterVar</references>
-        <referencedby refid="classcom_1_1placesandplaces_1_1_main_activity_19827ff3e030a0f83f8a0defa7cdfebdc" compoundref="_main_activity_8java" startline="341" endline="343">com.placesandplaces.MainActivity::setTextMethod</referencedby>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="58" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="58" bodyend="62"/>
+        <references refid="classcom_1_1placesandplaces_1_1_globals_13329f2d5437d7cafbcb350d72b7a69e5" compoundref="_globals_8java" startline="11">com.placesandplaces.Globals::counterVar</references>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_main_activity_19827ff3e030a0f83f8a0defa7cdfebdc" compoundref="_main_activity_8java" startline="291" endline="293">com.placesandplaces.MainActivity::setTextMethod</referencedby>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_globals_1c49da6aa471a60b1bbb5ff17befd35d3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>String</type>
@@ -367,8 +344,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="66" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="66" bodyend="87"/>
-        <references refid="classcom_1_1placesandplaces_1_1_globals_124ce7f7f66ad9ac625b9644ebe2fd3a0" compoundref="_globals_8java" startline="15">com.placesandplaces.Globals::location_i</references>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="64" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="64" bodyend="85"/>
+        <references refid="classcom_1_1placesandplaces_1_1_globals_124ce7f7f66ad9ac625b9644ebe2fd3a0" compoundref="_globals_8java" startline="13">com.placesandplaces.Globals::location_i</references>
+        <referencedby refid="namespacecom_1_1placesandplaces_1b051492c305aa824780eb6751add84c1" compoundref="_second_activity_8java" startline="26" endline="780">com.placesandplaces::SuppressLint</referencedby>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_globals_12906e05434e8045e3ddc83fe1f76131c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -385,7 +363,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="89" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="89" bodyend="92"/>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="87" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="87" bodyend="90"/>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_globals_1db5279d9d40f3702ac622f69036aacbb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -398,8 +376,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="94" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="94" bodyend="97"/>
-        <references refid="classcom_1_1placesandplaces_1_1_globals_13329f2d5437d7cafbcb350d72b7a69e5" compoundref="_globals_8java" startline="13">com.placesandplaces.Globals::counterVar</references>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="92" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="92" bodyend="95"/>
+        <references refid="classcom_1_1placesandplaces_1_1_globals_13329f2d5437d7cafbcb350d72b7a69e5" compoundref="_globals_8java" startline="11">com.placesandplaces.Globals::counterVar</references>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -414,8 +392,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="99" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="99" bodyend="104"/>
-        <references refid="classcom_1_1placesandplaces_1_1_globals_1e059c8f9e9e3b7fe1a691a99fa89b6cf" compoundref="_globals_8java" startline="23" endline="24">com.placesandplaces.Globals::Globals</references>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="97" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="97" bodyend="102"/>
+        <references refid="classcom_1_1placesandplaces_1_1_globals_1e059c8f9e9e3b7fe1a691a99fa89b6cf" compoundref="_globals_8java" startline="21" endline="22">com.placesandplaces.Globals::Globals</references>
         <references refid="classcom_1_1placesandplaces_1_1_globals_104a5f96a2cfb4545d6afd61dc18426bd" compoundref="_globals_8java" startline="6">com.placesandplaces.Globals::instance</references>
       </memberdef>
       </sectiondef>
@@ -432,7 +410,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="5" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="5" bodyend="105"/>
+    <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" line="5" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Globals.java" bodystart="5" bodyend="103"/>
     <listofallmembers>
       <member refid="classcom_1_1placesandplaces_1_1_globals_11d80d06d0d26fe80a31ace3ecae58eef" prot="public" virt="non-virtual"><scope>com::placesandplaces::Globals</scope><name>buttonPushCount</name></member>
       <member refid="classcom_1_1placesandplaces_1_1_globals_100176fd487ae3beb12cd71e6ae2da819" prot="public" virt="non-virtual"><scope>com::placesandplaces::Globals</scope><name>counterLocVar</name></member>
@@ -448,9 +426,7 @@
       <member refid="classcom_1_1placesandplaces_1_1_globals_104a5f96a2cfb4545d6afd61dc18426bd" prot="private" virt="non-virtual"><scope>com::placesandplaces::Globals</scope><name>instance</name></member>
       <member refid="classcom_1_1placesandplaces_1_1_globals_11e78775a901ff4e0e3bd0032090e997a" prot="private" virt="non-virtual"><scope>com::placesandplaces::Globals</scope><name>location1</name></member>
       <member refid="classcom_1_1placesandplaces_1_1_globals_1cb748b1f12cff1c4477df84e31410770" prot="private" virt="non-virtual"><scope>com::placesandplaces::Globals</scope><name>location2</name></member>
-      <member refid="classcom_1_1placesandplaces_1_1_globals_18ccd0a3da1114cdc6fe991eca77861e0" prot="private" virt="non-virtual"><scope>com::placesandplaces::Globals</scope><name>location3</name></member>
       <member refid="classcom_1_1placesandplaces_1_1_globals_124ce7f7f66ad9ac625b9644ebe2fd3a0" prot="public" virt="non-virtual"><scope>com::placesandplaces::Globals</scope><name>location_i</name></member>
-      <member refid="classcom_1_1placesandplaces_1_1_globals_1e77799703f236a664b2c0e08284fd420" prot="private" virt="non-virtual"><scope>com::placesandplaces::Globals</scope><name>locationi</name></member>
       <member refid="classcom_1_1placesandplaces_1_1_globals_151b6e1746bae5dbd753bdb848854872a" prot="public" virt="non-virtual"><scope>com::placesandplaces::Globals</scope><name>nameCount</name></member>
       <member refid="classcom_1_1placesandplaces_1_1_globals_152d8d14ca98fd705aaa945a34aa6315e" prot="public" virt="non-virtual"><scope>com::placesandplaces::Globals</scope><name>push</name></member>
       <member refid="classcom_1_1placesandplaces_1_1_globals_1652a8d69bf1330de9dffcd4b0bde6528" prot="public" virt="non-virtual"><scope>com::placesandplaces::Globals</scope><name>pushID</name></member>

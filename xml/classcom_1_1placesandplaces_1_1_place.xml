@@ -30,7 +30,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Place.java" line="19" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Place.java" bodystart="19" bodyend="-1"/>
-        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="131" endline="396">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="102" endline="325">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
+        <referencedby refid="namespacecom_1_1placesandplaces_1b051492c305aa824780eb6751add84c1" compoundref="_second_activity_8java" startline="26" endline="780">com.placesandplaces::SuppressLint</referencedby>
         <referencedby refid="classcom_1_1placesandplaces_1_1_place_120c3be265d209cb2501f429ae9267b7d" compoundref="_place_8java" startline="53" endline="55">com.placesandplaces.Place::toString</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_place_1af69a09ed0a2998886989e1defb4d144" prot="public" static="no" mutable="no">
@@ -59,7 +60,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Place.java" line="25" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Place.java" bodystart="25" bodyend="-1"/>
-        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="131" endline="396">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="102" endline="325">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_place_158c77e2c35a8b2d7f937cf0f32abbbbf" prot="public" static="no" mutable="no">
         <type>Key String</type>
@@ -86,7 +87,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Place.java" line="31" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Place.java" bodystart="31" bodyend="-1"/>
-        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="131" endline="396">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="102" endline="325">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
+        <referencedby refid="namespacecom_1_1placesandplaces_1b051492c305aa824780eb6751add84c1" compoundref="_second_activity_8java" startline="26" endline="780">com.placesandplaces::SuppressLint</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_place_1d640ad427d71fdf0864943f29ecb5713" prot="public" static="no" mutable="no">
         <type>Key String</type>
@@ -100,7 +102,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Place.java" line="34" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Place.java" bodystart="34" bodyend="-1"/>
-        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="131" endline="396">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="102" endline="325">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_place_13748ee6571485873354c038f1b119442" prot="public" static="no" mutable="no">
         <type>Key String</type>
@@ -114,7 +116,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Place.java" line="37" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Place.java" bodystart="37" bodyend="-1"/>
-        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="131" endline="396">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="102" endline="325">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_place_1355f31950dca55060952e72abeab54ec" prot="public" static="no" mutable="no">
         <type>Key JSONArray[]</type>
@@ -154,7 +156,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Place.java" line="46" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/Place.java" bodystart="46" bodyend="-1"/>
-        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="131" endline="396">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="102" endline="325">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">

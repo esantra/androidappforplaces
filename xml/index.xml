@@ -57,8 +57,6 @@
     <member refid="classcom_1_1placesandplaces_1_1_globals_104a5f96a2cfb4545d6afd61dc18426bd" kind="variable"><name>instance</name></member>
     <member refid="classcom_1_1placesandplaces_1_1_globals_11e78775a901ff4e0e3bd0032090e997a" kind="variable"><name>location1</name></member>
     <member refid="classcom_1_1placesandplaces_1_1_globals_1cb748b1f12cff1c4477df84e31410770" kind="variable"><name>location2</name></member>
-    <member refid="classcom_1_1placesandplaces_1_1_globals_18ccd0a3da1114cdc6fe991eca77861e0" kind="variable"><name>location3</name></member>
-    <member refid="classcom_1_1placesandplaces_1_1_globals_1e77799703f236a664b2c0e08284fd420" kind="variable"><name>locationi</name></member>
     <member refid="classcom_1_1placesandplaces_1_1_globals_1403e1168d95ff88c0ed76003e13b532d" kind="variable"><name>textKey1</name></member>
     <member refid="classcom_1_1placesandplaces_1_1_globals_13329f2d5437d7cafbcb350d72b7a69e5" kind="variable"><name>counterVar</name></member>
     <member refid="classcom_1_1placesandplaces_1_1_globals_11d80d06d0d26fe80a31ace3ecae58eef" kind="variable"><name>buttonPushCount</name></member>
@@ -163,10 +161,6 @@
     <member refid="classcom_1_1placesandplaces_1_1_main_activity_162b9d4293653df3b87f575c482360950" kind="variable"><name>firstPlace</name></member>
     <member refid="classcom_1_1placesandplaces_1_1_main_activity_1b25b225f4e1ceedbe1aa9b3320f295fd" kind="variable"><name>secondPlace</name></member>
     <member refid="classcom_1_1placesandplaces_1_1_main_activity_153692747919d6f9748a55dbb74a67314" kind="variable"><name>screenDialog</name></member>
-    <member refid="classcom_1_1placesandplaces_1_1_main_activity_1136ea0d23855315a0e8ff0d12140b028" kind="variable"><name>PLACES_API_BASE</name></member>
-    <member refid="classcom_1_1placesandplaces_1_1_main_activity_10063e2cbbd2d25f3234f164ff4edd0d4" kind="variable"><name>TYPE_AUTOCOMPLETE</name></member>
-    <member refid="classcom_1_1placesandplaces_1_1_main_activity_141460f946acc6fb9f0ee123930946e5c" kind="variable"><name>OUT_JSON</name></member>
-    <member refid="classcom_1_1placesandplaces_1_1_main_activity_1bfa1b509443d104bcc5a3a2a842bb8be" kind="variable"><name>RPC_QUEUE_NAME</name></member>
     <member refid="classcom_1_1placesandplaces_1_1_main_activity_1b01c4a6d62e0d1073f3c50bef88be09a" kind="variable"><name>connection</name></member>
     <member refid="classcom_1_1placesandplaces_1_1_main_activity_14171ec8d911d8a861021d8d3daa14bcb" kind="variable"><name>channel</name></member>
     <member refid="classcom_1_1placesandplaces_1_1_main_activity_186f0938049dbbadc8087413b9c1b292f" kind="variable"><name>requestQueueName</name></member>
@@ -179,7 +173,6 @@
     <member refid="classcom_1_1placesandplaces_1_1_main_activity_19827ff3e030a0f83f8a0defa7cdfebdc" kind="function"><name>setTextMethod</name></member>
     <member refid="classcom_1_1placesandplaces_1_1_main_activity_19c1a43b3b5099588e94fee7bd9cc8b33" kind="function"><name>SetLocations</name></member>
     <member refid="classcom_1_1placesandplaces_1_1_main_activity_1bbaeb30cf02b8dae5a5d460e37968b70" kind="function"><name>OpenScreenDialog</name></member>
-    <member refid="classcom_1_1placesandplaces_1_1_main_activity_1e1dcd764ac3d5d486632c25a96a3774b" kind="function"><name>autocomplete</name></member>
   </compound>
   <compound refid="classcom_1_1placesandplaces_1_1_message_consumer" kind="class"><name>com::placesandplaces::MessageConsumer</name>
     <member refid="classcom_1_1placesandplaces_1_1_message_consumer_196e975657b6ab0c8bda7231a38f4ab69" kind="variable"><name>mQueue</name></member>
@@ -406,22 +399,6 @@
   <compound refid="classcom_1_1placesandplaces_1_1_r_1_1style" kind="class"><name>com::placesandplaces::R::style</name>
     <member refid="classcom_1_1placesandplaces_1_1_r_1_1style_177e716ae631c664d13953302c18fd8ac" kind="variable"><name>AppTheme</name></member>
   </compound>
-  <compound refid="classcom_1_1placesandplaces_1_1_second_activity" kind="class"><name>com::placesandplaces::SecondActivity</name>
-    <member refid="classcom_1_1placesandplaces_1_1_second_activity_139ada488221bd0220a39d9f9762223b5" kind="variable"><name>isInternetPresent</name></member>
-    <member refid="classcom_1_1placesandplaces_1_1_second_activity_1e88c6f6f67824011aae38ec0bf0e060a" kind="variable"><name>cd</name></member>
-    <member refid="classcom_1_1placesandplaces_1_1_second_activity_139adcd27b1fe54c91d5d8f5ac82c1753" kind="variable"><name>alert</name></member>
-    <member refid="classcom_1_1placesandplaces_1_1_second_activity_1782db7d58f2e89344a2efa97190cb676" kind="variable"><name>googlePlaces</name></member>
-    <member refid="classcom_1_1placesandplaces_1_1_second_activity_159c03eb8bf7bd75d24b1400ad596bfbf" kind="variable"><name>nearPlaces</name></member>
-    <member refid="classcom_1_1placesandplaces_1_1_second_activity_1346beccf06cd5af518a64d9c67fc8990" kind="variable"><name>nearPlaces2</name></member>
-    <member refid="classcom_1_1placesandplaces_1_1_second_activity_18a3a8aadf79a1aeeacb5926acd15938f" kind="variable"><name>nearPlaces_i</name></member>
-    <member refid="classcom_1_1placesandplaces_1_1_second_activity_1ff3c8146c33d9e79e39a7a6d99e9f77c" kind="variable"><name>gps</name></member>
-    <member refid="classcom_1_1placesandplaces_1_1_second_activity_143832905d161493833b20aae18fa3664" kind="variable"><name>btnShowOnMap</name></member>
-    <member refid="classcom_1_1placesandplaces_1_1_second_activity_1002188bbfce329ca5883f457028957e8" kind="variable"><name>pDialog</name></member>
-    <member refid="classcom_1_1placesandplaces_1_1_second_activity_17b23fdefc36592deab946babd97a79d8" kind="variable"><name>lv</name></member>
-    <member refid="classcom_1_1placesandplaces_1_1_second_activity_129145695642080bddee1a2e6408dee10" kind="variable"><name>name</name></member>
-    <member refid="classcom_1_1placesandplaces_1_1_second_activity_10e307a8b0e5bcb5713f8baf27380c330" kind="variable"><name>secondPlaceReference</name></member>
-    <member refid="classcom_1_1placesandplaces_1_1_second_activity_192b0448b594a3c3cfa12c81c47cb4100" kind="variable"><name>lv2</name></member>
-  </compound>
   <compound refid="classcom_1_1placesandplaces_1_1_single_place_activity" kind="class"><name>com::placesandplaces::SinglePlaceActivity</name>
     <member refid="classcom_1_1placesandplaces_1_1_single_place_activity_161ba0b4c3414e753c67561b0d713480b" kind="variable"><name>isInternetPresent</name></member>
     <member refid="classcom_1_1placesandplaces_1_1_single_place_activity_14275af20d925234c8689ed385959a643" kind="variable"><name>cd</name></member>
@@ -454,6 +431,8 @@
   </compound>
   <compound refid="namespacecom_1_1placesandplaces" kind="namespace"><name>com::placesandplaces</name>
     <member refid="namespacecom_1_1placesandplaces_1b9695f03fbb85d7142435849d4b65bb5" kind="function"><name>SuppressWarnings</name></member>
+    <member refid="namespacecom_1_1placesandplaces_1b051492c305aa824780eb6751add84c1" kind="function"><name>SuppressLint</name></member>
+    <member refid="namespacecom_1_1placesandplaces_1b051492c305aa824780eb6751add84c1" kind="function"><name>SuppressLint</name></member>
     <member refid="namespacecom_1_1placesandplaces_1b9695f03fbb85d7142435849d4b65bb5" kind="function"><name>SuppressWarnings</name></member>
   </compound>
   <compound refid="namespacejava_1_1io" kind="namespace"><name>java::io</name>

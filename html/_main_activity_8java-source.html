@@ -19,435 +19,333 @@
   </ul></div>
 <h1>src/com/placesandplaces/MainActivity.java</h1><a href="_main_activity_8java.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="keyword">package </span>com.placesandplaces;
 <a name="l00002"></a>00002 
-<a name="l00003"></a>00003 <span class="keyword">import</span> java.io.BufferedReader;
-<a name="l00004"></a>00004 <span class="keyword">import</span> java.io.IOException;
-<a name="l00005"></a>00005 <span class="keyword">import</span> java.io.InputStreamReader;
-<a name="l00006"></a>00006 <span class="keyword">import</span> java.io.UnsupportedEncodingException;
-<a name="l00007"></a>00007 <span class="keyword">import</span> java.net.HttpURLConnection;
-<a name="l00008"></a>00008 <span class="keyword">import</span> java.net.MalformedURLException;
-<a name="l00009"></a>00009 <span class="keyword">import</span> java.net.URL;
-<a name="l00010"></a>00010 <span class="keyword">import</span> java.net.URLEncoder;
-<a name="l00011"></a>00011 <span class="keyword">import</span> java.util.ArrayList;
-<a name="l00012"></a>00012 <span class="keyword">import</span> java.util.Arrays;
-<a name="l00013"></a>00013 <span class="keyword">import</span> java.util.HashMap;
-<a name="l00014"></a>00014 <span class="keyword">import</span> java.util.UUID;
-<a name="l00015"></a>00015 
-<a name="l00016"></a>00016 <span class="keyword">import</span> org.json.JSONArray;
-<a name="l00017"></a>00017 <span class="keyword">import</span> org.json.JSONException;
-<a name="l00018"></a>00018 <span class="keyword">import</span> org.json.JSONObject;
-<a name="l00019"></a>00019 
-<a name="l00020"></a>00020 <span class="keyword">import</span> android.app.Activity;
-<a name="l00021"></a>00021 <span class="keyword">import</span> android.app.AlertDialog;
-<a name="l00022"></a>00022 <span class="keyword">import</span> android.app.ProgressDialog;
-<a name="l00023"></a>00023 <span class="keyword">import</span> android.content.ContentValues;
-<a name="l00024"></a>00024 <span class="keyword">import</span> android.content.DialogInterface;
-<a name="l00025"></a>00025 <span class="keyword">import</span> android.content.Intent;
-<a name="l00026"></a>00026 <span class="keyword">import</span> android.database.sqlite.SQLiteDatabase;
-<a name="l00027"></a>00027 <span class="keyword">import</span> android.graphics.Bitmap;
-<a name="l00028"></a>00028 <span class="keyword">import</span> android.graphics.Color;
-<a name="l00029"></a>00029 <span class="keyword">import</span> android.net.Uri;
-<a name="l00030"></a>00030 <span class="keyword">import</span> android.os.Bundle;
-<a name="l00031"></a>00031 <span class="keyword">import</span> android.support.v4.widget.CursorAdapter;
-<a name="l00032"></a>00032 <span class="keyword">import</span> android.support.v4.widget.SimpleCursorAdapter;
-<a name="l00033"></a>00033 <span class="keyword">import</span> android.util.Log;
-<a name="l00034"></a>00034 <span class="keyword">import</span> android.view.Gravity;
-<a name="l00035"></a>00035 <span class="keyword">import</span> android.view.View;
-<a name="l00036"></a>00036 <span class="keyword">import</span> android.view.ViewGroup;
-<a name="l00037"></a>00037 <span class="keyword">import</span> android.widget.ArrayAdapter;
-<a name="l00038"></a>00038 <span class="keyword">import</span> android.widget.AutoCompleteTextView;
-<a name="l00039"></a>00039 <span class="keyword">import</span> android.widget.Button;
-<a name="l00040"></a>00040 <span class="keyword">import</span> android.widget.EditText;
-<a name="l00041"></a>00041 <span class="keyword">import</span> android.widget.ImageView;
-<a name="l00042"></a>00042 <span class="keyword">import</span> android.widget.LinearLayout;
-<a name="l00043"></a>00043 <span class="keyword">import</span> android.widget.ListAdapter;
-<a name="l00044"></a>00044 <span class="keyword">import</span> android.widget.ListView;
-<a name="l00045"></a>00045 <span class="keyword">import</span> android.widget.RelativeLayout;
-<a name="l00046"></a>00046 <span class="keyword">import</span> android.widget.SimpleAdapter;
-<a name="l00047"></a>00047 <span class="keyword">import</span> android.widget.TextView;
-<a name="l00048"></a>00048 <span class="keyword">import</span> android.view.ViewGroup.LayoutParams;
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050 <span class="keyword">import</span> com.placesandplaces.R;
-<a name="l00051"></a>00051 <span class="keyword">import</span> com.placesandplaces.MessageConsumer.OnReceiveMessageHandler;
-<a name="l00052"></a>00052 <span class="comment">//import com.newrelic.agent.android.NewRelic;</span>
-<a name="l00053"></a>00053 <span class="keyword">import</span> com.rabbitmq.client.AMQP.BasicProperties;
-<a name="l00054"></a>00054 <span class="keyword">import</span> com.rabbitmq.client.Channel;
-<a name="l00055"></a>00055 <span class="keyword">import</span> com.rabbitmq.client.Connection;
-<a name="l00056"></a>00056 <span class="keyword">import</span> com.rabbitmq.client.ConnectionFactory;
-<a name="l00057"></a>00057 <span class="keyword">import</span> com.rabbitmq.client.QueueingConsumer;
-<a name="l00058"></a>00058 <span class="keyword">import</span> com.rabbitmq.client.ShutdownSignalException;
-<a name="l00059"></a>00059 
-<a name="l00060"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html">00060</a> <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html">MainActivity</a> <span class="keyword">extends</span> Activity {
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062         <span class="comment">// Button</span>
-<a name="l00063"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#57d9bd4166121d1a75dec4f7bf5daf2f">00063</a>         Button <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#57d9bd4166121d1a75dec4f7bf5daf2f">btnFindIt</a>;
-<a name="l00064"></a>00064 
-<a name="l00065"></a>00065         <span class="comment">// declares an array of editText for dynamic form creation</span>
-<a name="l00066"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#89a37c1c53b4744e749deea1d4950360">00066</a>         <span class="keyword">public</span> EditText[] <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#89a37c1c53b4744e749deea1d4950360">et</a> = <span class="keyword">new</span> EditText[100];
-<a name="l00067"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#fb538a493862bc9c6af27f744adb2adc">00067</a>         <span class="keyword">public</span> String[] <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#fb538a493862bc9c6af27f744adb2adc">stringArray</a> = <span class="keyword">new</span> String[100];
+<a name="l00003"></a>00003 <span class="keyword">import</span> java.util.ArrayList;
+<a name="l00004"></a>00004 <span class="keyword">import</span> android.app.Activity;
+<a name="l00005"></a>00005 <span class="keyword">import</span> android.app.AlertDialog;
+<a name="l00006"></a>00006 <span class="keyword">import</span> android.content.DialogInterface;
+<a name="l00007"></a>00007 <span class="keyword">import</span> android.content.Intent;
+<a name="l00008"></a>00008 <span class="keyword">import</span> android.graphics.Bitmap;
+<a name="l00009"></a>00009 <span class="keyword">import</span> android.graphics.Color;
+<a name="l00010"></a>00010 <span class="keyword">import</span> android.os.Bundle;
+<a name="l00011"></a>00011 <span class="keyword">import</span> android.util.Log;
+<a name="l00012"></a>00012 <span class="keyword">import</span> android.view.View;
+<a name="l00013"></a>00013 <span class="keyword">import</span> android.widget.Button;
+<a name="l00014"></a>00014 <span class="keyword">import</span> android.widget.EditText;
+<a name="l00015"></a>00015 <span class="keyword">import</span> android.widget.ImageView;
+<a name="l00016"></a>00016 <span class="keyword">import</span> android.widget.LinearLayout;
+<a name="l00017"></a>00017 <span class="keyword">import</span> android.widget.RelativeLayout;
+<a name="l00018"></a>00018 <span class="keyword">import</span> android.widget.TextView;
+<a name="l00019"></a>00019 <span class="keyword">import</span> android.view.ViewGroup.LayoutParams;
+<a name="l00020"></a>00020 <span class="keyword">import</span> com.placesandplaces.R;
+<a name="l00021"></a>00021 <span class="keyword">import</span> com.rabbitmq.client.AMQP.BasicProperties;
+<a name="l00022"></a>00022 <span class="keyword">import</span> com.rabbitmq.client.Channel;
+<a name="l00023"></a>00023 <span class="keyword">import</span> com.rabbitmq.client.Connection;
+<a name="l00024"></a>00024 <span class="keyword">import</span> com.rabbitmq.client.ConnectionFactory;
+<a name="l00025"></a>00025 <span class="keyword">import</span> com.rabbitmq.client.QueueingConsumer;
+<a name="l00026"></a>00026 
+<a name="l00027"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html">00027</a> <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html">MainActivity</a> <span class="keyword">extends</span> Activity {
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029         <span class="comment">// Button</span>
+<a name="l00030"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#57d9bd4166121d1a75dec4f7bf5daf2f">00030</a>         Button <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#57d9bd4166121d1a75dec4f7bf5daf2f">btnFindIt</a>;
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032         <span class="comment">// declares an array of editText for dynamic form creation</span>
+<a name="l00033"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#89a37c1c53b4744e749deea1d4950360">00033</a>         <span class="keyword">public</span> EditText[] <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#89a37c1c53b4744e749deea1d4950360">et</a> = <span class="keyword">new</span> EditText[100];
+<a name="l00034"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#fb538a493862bc9c6af27f744adb2adc">00034</a>         <span class="keyword">public</span> String[] <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#fb538a493862bc9c6af27f744adb2adc">stringArray</a> = <span class="keyword">new</span> String[100];
+<a name="l00035"></a>00035 
+<a name="l00036"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#a6798cbf95c0210e122c7499f12680e8">00036</a>         <span class="keyword">public</span> <span class="keyword">static</span> String <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#a6798cbf95c0210e122c7499f12680e8">KEY_INFORMATION</a> = <span class="stringliteral">"information"</span>; <span class="comment">// Place area name</span>
+<a name="l00037"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#e1a9809556de31400940cd5baeb972b4">00037</a>         <span class="keyword">public</span> <span class="keyword">static</span> String <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#e1a9809556de31400940cd5baeb972b4">KEY_REFERENCE</a> = <span class="stringliteral">"reference"</span>; <span class="comment">// id of the place</span>
+<a name="l00038"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#99e257af3baeb7313f4a1f9b8a5a0779">00038</a>         <span class="keyword">public</span> <span class="keyword">static</span> String <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#99e257af3baeb7313f4a1f9b8a5a0779">KEY_NAME</a> = <span class="stringliteral">"name"</span>; <span class="comment">// name of the place</span>
+<a name="l00039"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#d4e3b4706106768543a02293eab02c2b">00039</a>         <span class="keyword">public</span> <span class="keyword">static</span> String <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#d4e3b4706106768543a02293eab02c2b">KEY_VICINITY</a> = <span class="stringliteral">"vicinity"</span>; <span class="comment">// Place area name</span>
+<a name="l00040"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#e97a6b08dc4b61e99d46205431d40c44">00040</a>         <span class="keyword">public</span> <span class="keyword">static</span> <a class="code" href="classcom_1_1placesandplaces_1_1_globals.html">Globals</a> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#e97a6b08dc4b61e99d46205431d40c44">g</a> = <a class="code" href="classcom_1_1placesandplaces_1_1_globals.html">Globals</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_globals.html#0e58fa3a90f541cd0bf1da21dfa0ee39">getInstance</a>();
+<a name="l00041"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#124a76b8e3bc6c5f50d47d6c45fef6a4">00041</a>         ArrayList&lt;String&gt; <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#124a76b8e3bc6c5f50d47d6c45fef6a4">resultList</a> = null;
+<a name="l00042"></a>00042 
+<a name="l00043"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#52fc10801e9691faf5486139de3d9c74">00043</a>         <span class="keyword">public</span> String <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#52fc10801e9691faf5486139de3d9c74">strPlaces1</a> = <span class="stringliteral">""</span>; <span class="comment">// Place type</span>
+<a name="l00044"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#fbe77f6b003bd273df04fb0e6e283cd9">00044</a>         <span class="keyword">public</span> String <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#fbe77f6b003bd273df04fb0e6e283cd9">strPlaces2</a> = <span class="stringliteral">""</span>; <span class="comment">// Place type</span>
+<a name="l00045"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#b01c4a6d62e0d1073f3c50bef88be09a">00045</a>         <span class="keyword">private</span> Connection <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#b01c4a6d62e0d1073f3c50bef88be09a">connection</a>;
+<a name="l00046"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4171ec8d911d8a861021d8d3daa14bcb">00046</a>         <span class="keyword">private</span> Channel <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4171ec8d911d8a861021d8d3daa14bcb">channel</a>;
+<a name="l00047"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#86f0938049dbbadc8087413b9c1b292f">00047</a>         <span class="keyword">private</span> String <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#86f0938049dbbadc8087413b9c1b292f">requestQueueName</a> = <span class="stringliteral">"rpc_queue"</span>;
+<a name="l00048"></a>00048         <span class="comment">// public static final ByteString emptyString = "";</span>
+<a name="l00049"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#79cbf8dbee73ee233f8d5bf17162427d">00049</a>         <span class="keyword">private</span> String <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#79cbf8dbee73ee233f8d5bf17162427d">replyQueueName</a>;
+<a name="l00050"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#93156ef656bf6bbe12537cce2c05dec5">00050</a>         <span class="keyword">private</span> QueueingConsumer <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#93156ef656bf6bbe12537cce2c05dec5">consumer</a>;
+<a name="l00051"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#3dcf8d48145461bb9816c34ecdf05c1c">00051</a>         <span class="keyword">public</span> <span class="keyword">static</span> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html">MainActivity</a> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#3dcf8d48145461bb9816c34ecdf05c1c">ma</a> = <span class="keyword">new</span> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html">MainActivity</a>();
+<a name="l00052"></a>00052 
+<a name="l00053"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#ab4c929d6e81adf46ffb63fc9401fc81">00053</a>         <span class="keyword">public</span> TextView <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#ab4c929d6e81adf46ffb63fc9401fc81">mOutput</a>;
+<a name="l00054"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#48081be3b44257d4b0b95b45fadc6556">00054</a>         <span class="keyword">public</span> TextView <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#48081be3b44257d4b0b95b45fadc6556">mOutput2</a>;
+<a name="l00055"></a>00055 
+<a name="l00056"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#5c971168a06288d10aa3dc41154a90a3">00056</a>         Bitmap <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#5c971168a06288d10aa3dc41154a90a3">bmScreen</a>;
+<a name="l00057"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#23c4eb77513273a1afe721f2697530a2">00057</a>         View <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#23c4eb77513273a1afe721f2697530a2">screen</a>;
+<a name="l00058"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#1224633670c2769dd37a9f1333a7c3ad">00058</a>         EditText <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#1224633670c2769dd37a9f1333a7c3ad">EditTextIn</a>;
+<a name="l00059"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#62b9d4293653df3b87f575c482360950">00059</a>         <span class="keyword">public</span> <span class="keyword">static</span> EditText <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#62b9d4293653df3b87f575c482360950">firstPlace</a>;
+<a name="l00060"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#b25b225f4e1ceedbe1aa9b3320f295fd">00060</a>         <span class="keyword">public</span> <span class="keyword">static</span> EditText <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#b25b225f4e1ceedbe1aa9b3320f295fd">secondPlace</a>;
+<a name="l00061"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#53692747919d6f9748a55dbb74a67314">00061</a>         <span class="keyword">public</span> <span class="keyword">static</span> AlertDialog.Builder <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#53692747919d6f9748a55dbb74a67314">screenDialog</a>;
+<a name="l00062"></a>00062 
+<a name="l00063"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#017096a72e807e2893e946d293f13f56">00063</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#017096a72e807e2893e946d293f13f56">onCreate</a>(Bundle savedInstanceState) {
+<a name="l00064"></a>00064                 super.onCreate(savedInstanceState);
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066                 <span class="comment">// replaced activity_main.xml with startup screen.xml</span>
+<a name="l00067"></a>00067                 setContentView(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.layout.startup_screen);
 <a name="l00068"></a>00068 
-<a name="l00069"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#a6798cbf95c0210e122c7499f12680e8">00069</a>         <span class="keyword">public</span> <span class="keyword">static</span> String <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#a6798cbf95c0210e122c7499f12680e8">KEY_INFORMATION</a> = <span class="stringliteral">"information"</span>; <span class="comment">// Place area name</span>
-<a name="l00070"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#e1a9809556de31400940cd5baeb972b4">00070</a>         <span class="keyword">public</span> <span class="keyword">static</span> String <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#e1a9809556de31400940cd5baeb972b4">KEY_REFERENCE</a> = <span class="stringliteral">"reference"</span>; <span class="comment">// id of the place</span>
-<a name="l00071"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#99e257af3baeb7313f4a1f9b8a5a0779">00071</a>         <span class="keyword">public</span> <span class="keyword">static</span> String <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#99e257af3baeb7313f4a1f9b8a5a0779">KEY_NAME</a> = <span class="stringliteral">"name"</span>; <span class="comment">// name of the place</span>
-<a name="l00072"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#d4e3b4706106768543a02293eab02c2b">00072</a>         <span class="keyword">public</span> <span class="keyword">static</span> String <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#d4e3b4706106768543a02293eab02c2b">KEY_VICINITY</a> = <span class="stringliteral">"vicinity"</span>; <span class="comment">// Place area name</span>
-<a name="l00073"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#136ea0d23855315a0e8ff0d12140b028">00073</a>         <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#136ea0d23855315a0e8ff0d12140b028">PLACES_API_BASE</a> = <span class="stringliteral">"https://maps.googleapis.com/maps/api/place"</span>;
-<a name="l00074"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#0063e2cbbd2d25f3234f164ff4edd0d4">00074</a>         <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#0063e2cbbd2d25f3234f164ff4edd0d4">TYPE_AUTOCOMPLETE</a> = <span class="stringliteral">"/autocomplete"</span>;
-<a name="l00075"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#41460f946acc6fb9f0ee123930946e5c">00075</a>         <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#41460f946acc6fb9f0ee123930946e5c">OUT_JSON</a> = <span class="stringliteral">"/json"</span>;
-<a name="l00076"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#e97a6b08dc4b61e99d46205431d40c44">00076</a>         <span class="keyword">public</span> <span class="keyword">static</span> <a class="code" href="classcom_1_1placesandplaces_1_1_globals.html">Globals</a> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#e97a6b08dc4b61e99d46205431d40c44">g</a> = <a class="code" href="classcom_1_1placesandplaces_1_1_globals.html">Globals</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_globals.html#0e58fa3a90f541cd0bf1da21dfa0ee39">getInstance</a>();
-<a name="l00077"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#124a76b8e3bc6c5f50d47d6c45fef6a4">00077</a>         ArrayList&lt;String&gt; <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#124a76b8e3bc6c5f50d47d6c45fef6a4">resultList</a> = null;
-<a name="l00078"></a>00078 
-<a name="l00079"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#52fc10801e9691faf5486139de3d9c74">00079</a>         <span class="keyword">public</span> String <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#52fc10801e9691faf5486139de3d9c74">strPlaces1</a> = <span class="stringliteral">""</span>; <span class="comment">// Place type</span>
-<a name="l00080"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#fbe77f6b003bd273df04fb0e6e283cd9">00080</a>         <span class="keyword">public</span> String <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#fbe77f6b003bd273df04fb0e6e283cd9">strPlaces2</a> = <span class="stringliteral">""</span>; <span class="comment">// Place type</span>
-<a name="l00081"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#b01c4a6d62e0d1073f3c50bef88be09a">00081</a>         <span class="keyword">private</span> Connection <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#b01c4a6d62e0d1073f3c50bef88be09a">connection</a>;
-<a name="l00082"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4171ec8d911d8a861021d8d3daa14bcb">00082</a>         <span class="keyword">private</span> Channel <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4171ec8d911d8a861021d8d3daa14bcb">channel</a>;
-<a name="l00083"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#86f0938049dbbadc8087413b9c1b292f">00083</a>         <span class="keyword">private</span> String <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#86f0938049dbbadc8087413b9c1b292f">requestQueueName</a> = <span class="stringliteral">"rpc_queue"</span>;
-<a name="l00084"></a>00084         <span class="comment">// public static final ByteString emptyString = "";</span>
-<a name="l00085"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#79cbf8dbee73ee233f8d5bf17162427d">00085</a>         <span class="keyword">private</span> String <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#79cbf8dbee73ee233f8d5bf17162427d">replyQueueName</a>;
-<a name="l00086"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#93156ef656bf6bbe12537cce2c05dec5">00086</a>         <span class="keyword">private</span> QueueingConsumer <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#93156ef656bf6bbe12537cce2c05dec5">consumer</a>;
-<a name="l00087"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#3dcf8d48145461bb9816c34ecdf05c1c">00087</a>         <span class="keyword">public</span> <span class="keyword">static</span> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html">MainActivity</a> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#3dcf8d48145461bb9816c34ecdf05c1c">ma</a> = <span class="keyword">new</span> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html">MainActivity</a>();
-<a name="l00088"></a>00088 
-<a name="l00089"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#ab4c929d6e81adf46ffb63fc9401fc81">00089</a>         <span class="keyword">public</span> TextView <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#ab4c929d6e81adf46ffb63fc9401fc81">mOutput</a>;
-<a name="l00090"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#48081be3b44257d4b0b95b45fadc6556">00090</a>         <span class="keyword">public</span> TextView <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#48081be3b44257d4b0b95b45fadc6556">mOutput2</a>;
-<a name="l00091"></a>00091 
-<a name="l00092"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#5c971168a06288d10aa3dc41154a90a3">00092</a>         Bitmap <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#5c971168a06288d10aa3dc41154a90a3">bmScreen</a>;
-<a name="l00093"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#23c4eb77513273a1afe721f2697530a2">00093</a>         View <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#23c4eb77513273a1afe721f2697530a2">screen</a>;
-<a name="l00094"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#1224633670c2769dd37a9f1333a7c3ad">00094</a>         EditText <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#1224633670c2769dd37a9f1333a7c3ad">EditTextIn</a>;
-<a name="l00095"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#62b9d4293653df3b87f575c482360950">00095</a>         <span class="keyword">public</span> <span class="keyword">static</span> EditText <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#62b9d4293653df3b87f575c482360950">firstPlace</a>;
-<a name="l00096"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#b25b225f4e1ceedbe1aa9b3320f295fd">00096</a>         <span class="keyword">public</span> <span class="keyword">static</span> EditText <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#b25b225f4e1ceedbe1aa9b3320f295fd">secondPlace</a>;
-<a name="l00097"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#bfa1b509443d104bcc5a3a2a842bb8be">00097</a>         <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#bfa1b509443d104bcc5a3a2a842bb8be">RPC_QUEUE_NAME</a> = <span class="stringliteral">"rpc_queue"</span>;
-<a name="l00098"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#53692747919d6f9748a55dbb74a67314">00098</a>         <span class="keyword">public</span> <span class="keyword">static</span> AlertDialog.Builder <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#53692747919d6f9748a55dbb74a67314">screenDialog</a>;
-<a name="l00099"></a>00099 
-<a name="l00100"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#017096a72e807e2893e946d293f13f56">00100</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#017096a72e807e2893e946d293f13f56">onCreate</a>(Bundle savedInstanceState) {
-<a name="l00101"></a>00101                 super.onCreate(savedInstanceState);
+<a name="l00069"></a>00069                 <span class="comment">/*</span>
+<a name="l00070"></a>00070 <span class="comment">                 * NewRelic.withApplicationToken(</span>
+<a name="l00071"></a>00071 <span class="comment">                 * "AA36f12720d4267840d700de32f8aed7bdd0e2439d"</span>
+<a name="l00072"></a>00072 <span class="comment">                 * ).start(this.getApplication());</span>
+<a name="l00073"></a>00073 <span class="comment">                 */</span>
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075                 <span class="comment">// button show on map</span>
+<a name="l00076"></a>00076                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#57d9bd4166121d1a75dec4f7bf5daf2f">btnFindIt</a> = (Button) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.btn_find);
+<a name="l00077"></a>00077                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#62b9d4293653df3b87f575c482360950">firstPlace</a> = (EditText) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.txtPlaces2);
+<a name="l00078"></a>00078                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#b25b225f4e1ceedbe1aa9b3320f295fd">secondPlace</a> = (EditText) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.txtPlaces1);
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#62b9d4293653df3b87f575c482360950">firstPlace</a>.setText(<span class="stringliteral">"shopping_mall"</span>);
+<a name="l00081"></a>00081                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#b25b225f4e1ceedbe1aa9b3320f295fd">secondPlace</a>.setText(<span class="stringliteral">"bar"</span>);
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083                 ImageView imgAidm = (ImageView) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.imgAidm);
+<a name="l00085"></a>00085                 imgAidm.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() {
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087                         @Override
+<a name="l00088"></a>00088                         <span class="keyword">public</span> <span class="keywordtype">void</span> onClick(View arg0) {
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090                                 <span class="comment">// The output TextView we'll use to display messages</span>
+<a name="l00091"></a>00091                                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#ab4c929d6e81adf46ffb63fc9401fc81">mOutput</a> = (TextView) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.txtPlaces1);
+<a name="l00092"></a>00092                                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#48081be3b44257d4b0b95b45fadc6556">mOutput2</a> = (TextView) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.txtPlaces2);
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094                                 <span class="comment">// Create the consumer</span>
+<a name="l00095"></a>00095 
+<a name="l00096"></a>00096                                 <span class="keywordflow">try</span> {
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098                                         ConnectionFactory factory = <span class="keyword">new</span> ConnectionFactory();
+<a name="l00099"></a>00099                                         factory.setHost(<span class="stringliteral">"54.225.112.221"</span>);
+<a name="l00100"></a>00100                                         <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#b01c4a6d62e0d1073f3c50bef88be09a">connection</a> = factory.newConnection();
+<a name="l00101"></a>00101                                         <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4171ec8d911d8a861021d8d3daa14bcb">channel</a> = <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#b01c4a6d62e0d1073f3c50bef88be09a">connection</a>.createChannel();
 <a name="l00102"></a>00102 
-<a name="l00103"></a>00103                 RelativeLayout r1 = (RelativeLayout) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.RelativeLayout1);
-<a name="l00104"></a>00104                 LinearLayout l1 = (LinearLayout) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.LLTexts);
-<a name="l00105"></a>00105 
-<a name="l00106"></a>00106                 <span class="comment">// replaced activity_main.xml with startup screen.xml</span>
-<a name="l00107"></a>00107                 setContentView(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.layout.startup_screen);
-<a name="l00108"></a>00108 
-<a name="l00109"></a>00109                 <span class="comment">/*</span>
-<a name="l00110"></a>00110 <span class="comment">                 * NewRelic.withApplicationToken(</span>
-<a name="l00111"></a>00111 <span class="comment">                 * "AA36f12720d4267840d700de32f8aed7bdd0e2439d"</span>
-<a name="l00112"></a>00112 <span class="comment">                 * ).start(this.getApplication());</span>
-<a name="l00113"></a>00113 <span class="comment">                 */</span>
+<a name="l00103"></a>00103                                         <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#79cbf8dbee73ee233f8d5bf17162427d">replyQueueName</a> = <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4171ec8d911d8a861021d8d3daa14bcb">channel</a>.queueDeclare().getQueue();
+<a name="l00104"></a>00104                                         <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#93156ef656bf6bbe12537cce2c05dec5">consumer</a> = <span class="keyword">new</span> QueueingConsumer(<a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4171ec8d911d8a861021d8d3daa14bcb">channel</a>);
+<a name="l00105"></a>00105                                         <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4171ec8d911d8a861021d8d3daa14bcb">channel</a>.basicConsume(<a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#79cbf8dbee73ee233f8d5bf17162427d">replyQueueName</a>, <span class="keyword">true</span>, <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#93156ef656bf6bbe12537cce2c05dec5">consumer</a>);
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107                                         System.out.println(<span class="stringliteral">" [x] Requesting places()"</span>);
+<a name="l00108"></a>00108                                         String response = <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#1bd053fb388005bd09f5621a4116f390">call</a>(<span class="stringliteral">"30"</span>);
+<a name="l00109"></a>00109                                         System.out.println(<span class="stringliteral">" [.] Got '"</span> + response + <span class="stringliteral">"'"</span>);
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111                                         String[] str = response.split(<span class="stringliteral">","</span>);
+<a name="l00112"></a>00112                                         String place1 = str[0].toString();
+<a name="l00113"></a>00113                                         String place2 = str[1].toString();
 <a name="l00114"></a>00114 
-<a name="l00115"></a>00115                 <span class="comment">// button show on map</span>
-<a name="l00116"></a>00116                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#57d9bd4166121d1a75dec4f7bf5daf2f">btnFindIt</a> = (Button) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.btn_find);
-<a name="l00117"></a>00117                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#62b9d4293653df3b87f575c482360950">firstPlace</a> = (EditText) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.txtPlaces2);
-<a name="l00118"></a>00118                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#b25b225f4e1ceedbe1aa9b3320f295fd">secondPlace</a> = (EditText) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.txtPlaces1);
+<a name="l00115"></a>00115                                         place1 = place1.replace(<span class="stringliteral">"\'"</span>, <span class="stringliteral">""</span>);
+<a name="l00116"></a>00116                                         place2 = place2.replace(<span class="stringliteral">"\'"</span>, <span class="stringliteral">""</span>);
+<a name="l00117"></a>00117                                         place1 = place1.trim();
+<a name="l00118"></a>00118                                         place2 = place2.trim();
 <a name="l00119"></a>00119 
-<a name="l00120"></a>00120                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#62b9d4293653df3b87f575c482360950">firstPlace</a>.setText(<span class="stringliteral">"shopping_mall"</span>);
-<a name="l00121"></a>00121                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#b25b225f4e1ceedbe1aa9b3320f295fd">secondPlace</a>.setText(<span class="stringliteral">"bar"</span>);
+<a name="l00120"></a>00120                                         System.out.println(place1);
+<a name="l00121"></a>00121                                         System.out.println(place2);
 <a name="l00122"></a>00122 
-<a name="l00123"></a>00123                 ImageView imgAidm = (ImageView) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.imgAidm);
-<a name="l00125"></a>00125                 imgAidm.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() {
-<a name="l00126"></a>00126 
-<a name="l00127"></a>00127                         @Override
-<a name="l00128"></a>00128                         <span class="keyword">public</span> <span class="keywordtype">void</span> onClick(View arg0) {
+<a name="l00123"></a>00123                                         <span class="comment">// variable that you would use to fill text box</span>
+<a name="l00124"></a>00124                                         <span class="comment">// response example</span>
+<a name="l00125"></a>00125                                         <span class="comment">// 'movie_rental' (31)'spa' (12), 'church' (36), 'school'</span>
+<a name="l00126"></a>00126                                         <span class="comment">// (48), '</span>
+<a name="l00127"></a>00127                                         <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#ab4c929d6e81adf46ffb63fc9401fc81">mOutput</a>.setText(place1.toString());
+<a name="l00128"></a>00128                                         <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#48081be3b44257d4b0b95b45fadc6556">mOutput2</a>.setText(place2.toString());
 <a name="l00129"></a>00129 
-<a name="l00130"></a>00130                                 RelativeLayout r1 = (RelativeLayout) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.RelativeLayout1);
-<a name="l00131"></a>00131                                 <span class="comment">// MessageConsumer mConsumer2;</span>
-<a name="l00132"></a>00132 
-<a name="l00133"></a>00133                                 <span class="comment">// The output TextView we'll use to display messages</span>
-<a name="l00134"></a>00134                                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#ab4c929d6e81adf46ffb63fc9401fc81">mOutput</a> = (TextView) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.txtPlaces1);
-<a name="l00135"></a>00135                                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#48081be3b44257d4b0b95b45fadc6556">mOutput2</a> = (TextView) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.txtPlaces2);
+<a name="l00130"></a>00130                                         <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#b01c4a6d62e0d1073f3c50bef88be09a">connection</a>.close();
+<a name="l00131"></a>00131 
+<a name="l00132"></a>00132                                 } <span class="keywordflow">catch</span> (Exception e) {
+<a name="l00133"></a>00133                                         <span class="comment">// TODO Auto-generated catch block</span>
+<a name="l00134"></a>00134                                         e.printStackTrace();
+<a name="l00135"></a>00135                                 }
 <a name="l00136"></a>00136 
-<a name="l00137"></a>00137                                 <span class="comment">// Create the consumer</span>
+<a name="l00137"></a>00137                         }<span class="comment">// end on click</span>
 <a name="l00138"></a>00138 
-<a name="l00139"></a>00139                                 <span class="keywordflow">try</span> {
+<a name="l00139"></a>00139                 });
 <a name="l00140"></a>00140 
-<a name="l00141"></a>00141                                         ConnectionFactory factory = <span class="keyword">new</span> ConnectionFactory();
-<a name="l00142"></a>00142                                         factory.setHost(<span class="stringliteral">"54.225.112.221"</span>);
-<a name="l00143"></a>00143                                         <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#b01c4a6d62e0d1073f3c50bef88be09a">connection</a> = factory.newConnection();
-<a name="l00144"></a>00144                                         <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4171ec8d911d8a861021d8d3daa14bcb">channel</a> = <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#b01c4a6d62e0d1073f3c50bef88be09a">connection</a>.createChannel();
-<a name="l00145"></a>00145 
-<a name="l00146"></a>00146                                         <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#79cbf8dbee73ee233f8d5bf17162427d">replyQueueName</a> = <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4171ec8d911d8a861021d8d3daa14bcb">channel</a>.queueDeclare().getQueue();
-<a name="l00147"></a>00147                                         <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#93156ef656bf6bbe12537cce2c05dec5">consumer</a> = <span class="keyword">new</span> QueueingConsumer(<a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4171ec8d911d8a861021d8d3daa14bcb">channel</a>);
-<a name="l00148"></a>00148                                         <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4171ec8d911d8a861021d8d3daa14bcb">channel</a>.basicConsume(<a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#79cbf8dbee73ee233f8d5bf17162427d">replyQueueName</a>, <span class="keyword">true</span>, <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#93156ef656bf6bbe12537cce2c05dec5">consumer</a>);
+<a name="l00141"></a>00141                 <span class="comment">// -- pull global variable where needed</span>
+<a name="l00143"></a>00143 <span class="comment"></span>                <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#57d9bd4166121d1a75dec4f7bf5daf2f">btnFindIt</a>.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() {
+<a name="l00144"></a>00144 
+<a name="l00145"></a>00145                         @Override
+<a name="l00146"></a>00146                         <span class="keyword">public</span> <span class="keywordtype">void</span> onClick(View arg0) {
+<a name="l00147"></a>00147 
+<a name="l00148"></a>00148                                 <span class="comment">// change this</span>
 <a name="l00149"></a>00149 
-<a name="l00150"></a>00150                                         System.out.println(<span class="stringliteral">" [x] Requesting places()"</span>);
-<a name="l00151"></a>00151                                         String response = <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#1bd053fb388005bd09f5621a4116f390">call</a>(<span class="stringliteral">"30"</span>);
-<a name="l00152"></a>00152                                         System.out.println(<span class="stringliteral">" [.] Got '"</span> + response + <span class="stringliteral">"'"</span>);
-<a name="l00153"></a>00153 
-<a name="l00154"></a>00154                                         String[] str = response.split(<span class="stringliteral">","</span>);
-<a name="l00155"></a>00155                                         String str1 = str[0].toString();
-<a name="l00156"></a>00156 
-<a name="l00157"></a>00157                                         String place1 = str[0].toString();
-<a name="l00158"></a>00158                                         String place2 = str[1].toString();
-<a name="l00159"></a>00159 
-<a name="l00160"></a>00160                                         place1 = place1.replace(<span class="stringliteral">"\'"</span>, <span class="stringliteral">""</span>);
-<a name="l00161"></a>00161                                         place2 = place2.replace(<span class="stringliteral">"\'"</span>, <span class="stringliteral">""</span>);
-<a name="l00162"></a>00162                                         place1 = place1.trim();
-<a name="l00163"></a>00163                                         place2 = place2.trim();
+<a name="l00150"></a>00150                                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#e97a6b08dc4b61e99d46205431d40c44">g</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_globals.html#17567d9b11edd84a0c4ba3da6d528b29">setLocation1</a>(<a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#62b9d4293653df3b87f575c482360950">firstPlace</a>.getText().toString());
+<a name="l00151"></a>00151                                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#e97a6b08dc4b61e99d46205431d40c44">g</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_globals.html#1966f41f136016b2ca07879415941a24">setLocation2</a>(<a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#b25b225f4e1ceedbe1aa9b3320f295fd">secondPlace</a>.getText().toString());
+<a name="l00152"></a>00152 
+<a name="l00153"></a>00153                                 <span class="keywordflow">try</span> {
+<a name="l00154"></a>00154                                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> u = 0; u &lt; 4; u++) {
+<a name="l00155"></a>00155 
+<a name="l00156"></a>00156                                                 <span class="keywordflow">if</span> (<a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#89a37c1c53b4744e749deea1d4950360">et</a>[u].getText().toString() != null) {
+<a name="l00157"></a>00157                                                         <span class="comment">// changed code from 0 to u</span>
+<a name="l00158"></a>00158                                                         <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#9827ff3e030a0f83f8a0defa7cdfebdc">setTextMethod</a>(<a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#89a37c1c53b4744e749deea1d4950360">et</a>[u].getText().toString(), u);
+<a name="l00159"></a>00159                                                         Log.d(<span class="stringliteral">"types"</span>, <span class="stringliteral">"types u value "</span> + u);
+<a name="l00160"></a>00160                                                         Log.d(<span class="stringliteral">"types"</span>,
+<a name="l00161"></a>00161                                                                         <span class="stringliteral">"types variable to set text strings "</span>
+<a name="l00162"></a>00162                                                                                         + <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#89a37c1c53b4744e749deea1d4950360">et</a>[u].getText().toString());
+<a name="l00163"></a>00163                                                 }<span class="comment">// end if</span>
 <a name="l00164"></a>00164 
-<a name="l00165"></a>00165                                         String arr[] = <span class="keyword">new</span> String[100];
-<a name="l00166"></a>00166 
-<a name="l00167"></a>00167                                         System.out.println(place1);
-<a name="l00168"></a>00168                                         System.out.println(place2);
-<a name="l00169"></a>00169 
-<a name="l00170"></a>00170                                         <span class="comment">// variable that you would use to fill text box</span>
-<a name="l00171"></a>00171                                         <span class="comment">// response example</span>
-<a name="l00172"></a>00172                                         <span class="comment">// 'movie_rental' (31)'spa' (12), 'church' (36), 'school'</span>
-<a name="l00173"></a>00173                                         <span class="comment">// (48), '</span>
-<a name="l00174"></a>00174                                         <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#ab4c929d6e81adf46ffb63fc9401fc81">mOutput</a>.setText(place1.toString());
-<a name="l00175"></a>00175                                         <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#48081be3b44257d4b0b95b45fadc6556">mOutput2</a>.setText(place2.toString());
-<a name="l00176"></a>00176 
-<a name="l00177"></a>00177                                         <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#b01c4a6d62e0d1073f3c50bef88be09a">connection</a>.close();
-<a name="l00178"></a>00178 
-<a name="l00179"></a>00179                                 } <span class="keywordflow">catch</span> (Exception e) {
-<a name="l00180"></a>00180                                         <span class="comment">// TODO Auto-generated catch block</span>
-<a name="l00181"></a>00181                                         e.printStackTrace();
-<a name="l00182"></a>00182                                 }
-<a name="l00183"></a>00183 
-<a name="l00184"></a>00184                         }<span class="comment">// end on click</span>
+<a name="l00165"></a>00165                                         }<span class="comment">// end for</span>
+<a name="l00166"></a>00166                                 }<span class="comment">// end try</span>
+<a name="l00167"></a>00167                                 <span class="keywordflow">catch</span> (Exception e) {
+<a name="l00168"></a>00168                                         Log.d(<span class="stringliteral">"one"</span>, <span class="stringliteral">"This is a set global variable null pointer."</span>);
+<a name="l00169"></a>00169                                 }<span class="comment">// end catch</span>
+<a name="l00170"></a>00170 
+<a name="l00171"></a>00171                                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#9c1a43b3b5099588e94fee7bd9cc8b33">SetLocations</a>();
+<a name="l00172"></a>00172 
+<a name="l00173"></a>00173                         }
+<a name="l00174"></a>00174                 });
+<a name="l00175"></a>00175 
+<a name="l00176"></a>00176                 ImageView imgQ1 = (ImageView) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.imgQ1);
+<a name="l00178"></a>00178                 imgQ1.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() {
+<a name="l00179"></a>00179 
+<a name="l00180"></a>00180                         @Override
+<a name="l00181"></a>00181                         <span class="keyword">public</span> <span class="keywordtype">void</span> onClick(View arg0) {
+<a name="l00182"></a>00182                                 <span class="comment">// this is the android way of starting a new activity</span>
+<a name="l00183"></a>00183                                 Intent <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4264d8c394d0864772ec83623bd9cc47">i</a> = <span class="keyword">new</span> Intent(getApplicationContext(),
+<a name="l00184"></a>00184                                                 <a class="code" href="classcom_1_1placesandplaces_1_1_keyword_activity.html">KeywordActivity</a>.class);
 <a name="l00185"></a>00185 
-<a name="l00186"></a>00186                 });
+<a name="l00186"></a>00186                                 startActivity(i);
 <a name="l00187"></a>00187 
-<a name="l00188"></a>00188                 <span class="comment">// -- pull global variable where needed</span>
-<a name="l00190"></a>00190 <span class="comment"></span>                <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#57d9bd4166121d1a75dec4f7bf5daf2f">btnFindIt</a>.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() {
-<a name="l00191"></a>00191 
-<a name="l00192"></a>00192                         @Override
-<a name="l00193"></a>00193                         <span class="keyword">public</span> <span class="keywordtype">void</span> onClick(View arg0) {
+<a name="l00188"></a>00188                         }
+<a name="l00189"></a>00189                 });
+<a name="l00190"></a>00190 
+<a name="l00191"></a>00191                 ImageView imgPlus = (ImageView) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.imgPlus);
+<a name="l00193"></a>00193                 imgPlus.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() {
 <a name="l00194"></a>00194 
-<a name="l00195"></a>00195                                 <span class="comment">// change this</span>
-<a name="l00196"></a>00196 
-<a name="l00197"></a>00197                                 String loc1 = <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#62b9d4293653df3b87f575c482360950">firstPlace</a>.getText().toString();
-<a name="l00198"></a>00198                                 String loc2 = <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#b25b225f4e1ceedbe1aa9b3320f295fd">secondPlace</a>.getText().toString();
-<a name="l00199"></a>00199 
-<a name="l00200"></a>00200                                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#e97a6b08dc4b61e99d46205431d40c44">g</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_globals.html#17567d9b11edd84a0c4ba3da6d528b29">setLocation1</a>(<a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#62b9d4293653df3b87f575c482360950">firstPlace</a>.getText().toString());
-<a name="l00201"></a>00201                                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#e97a6b08dc4b61e99d46205431d40c44">g</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_globals.html#1966f41f136016b2ca07879415941a24">setLocation2</a>(<a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#b25b225f4e1ceedbe1aa9b3320f295fd">secondPlace</a>.getText().toString());
-<a name="l00202"></a>00202 
-<a name="l00203"></a>00203                                 <span class="keywordflow">try</span> {
-<a name="l00204"></a>00204                                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> u = 0; u &lt; 4; u++) {
-<a name="l00205"></a>00205 
-<a name="l00206"></a>00206                                                 <span class="keywordflow">if</span> (<a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#89a37c1c53b4744e749deea1d4950360">et</a>[u].getText().toString() != null) {
-<a name="l00207"></a>00207                                                         <span class="comment">// changed code from 0 to u</span>
-<a name="l00208"></a>00208                                                         <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#9827ff3e030a0f83f8a0defa7cdfebdc">setTextMethod</a>(<a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#89a37c1c53b4744e749deea1d4950360">et</a>[u].getText().toString(), u);
-<a name="l00209"></a>00209                                                         Log.d(<span class="stringliteral">"types"</span>, <span class="stringliteral">"types u value "</span> + u);
-<a name="l00210"></a>00210                                                         Log.d(<span class="stringliteral">"types"</span>,
-<a name="l00211"></a>00211                                                                         <span class="stringliteral">"types variable to set text strings "</span>
-<a name="l00212"></a>00212                                                                                         + <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#89a37c1c53b4744e749deea1d4950360">et</a>[u].getText().toString());
-<a name="l00213"></a>00213                                                 }<span class="comment">// end if</span>
-<a name="l00214"></a>00214 
-<a name="l00215"></a>00215                                         }<span class="comment">// end for</span>
-<a name="l00216"></a>00216                                 }<span class="comment">// end try</span>
-<a name="l00217"></a>00217                                 <span class="keywordflow">catch</span> (Exception e) {
-<a name="l00218"></a>00218                                         Log.d(<span class="stringliteral">"one"</span>, <span class="stringliteral">"This is a set global variable null pointer."</span>);
-<a name="l00219"></a>00219                                 }<span class="comment">// end catch</span>
-<a name="l00220"></a>00220 
-<a name="l00221"></a>00221                                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#9c1a43b3b5099588e94fee7bd9cc8b33">SetLocations</a>();
-<a name="l00222"></a>00222 
-<a name="l00223"></a>00223                         }
-<a name="l00224"></a>00224                 });
-<a name="l00225"></a>00225 
-<a name="l00226"></a>00226                 ImageView imgQ1 = (ImageView) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.imgQ1);
-<a name="l00228"></a>00228                 imgQ1.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() {
+<a name="l00195"></a>00195                         @Override
+<a name="l00196"></a>00196                         <span class="keyword">public</span> <span class="keywordtype">void</span> onClick(View arg0) {
+<a name="l00197"></a>00197 
+<a name="l00198"></a>00198                                 RelativeLayout r1 = (RelativeLayout) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.RelativeLayout1);
+<a name="l00199"></a>00199                                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#61c68b54d52e93a08c5c4c4da6568eeb">addTextView</a>(r1, <a class="code" href="classcom_1_1placesandplaces_1_1_globals.html">Globals</a>.buttonPushCount);
+<a name="l00200"></a>00200                                 <a class="code" href="classcom_1_1placesandplaces_1_1_globals.html">Globals</a>.buttonPushCount++;
+<a name="l00201"></a>00201 
+<a name="l00202"></a>00202                         }
+<a name="l00203"></a>00203                 });
+<a name="l00204"></a>00204 
+<a name="l00205"></a>00205                 ImageView imgReload = (ImageView) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.imgRR);
+<a name="l00207"></a>00207                 imgReload.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() {
+<a name="l00208"></a>00208 
+<a name="l00209"></a>00209                         @Override
+<a name="l00210"></a>00210                         <span class="keyword">public</span> <span class="keywordtype">void</span> onClick(View arg0) {
+<a name="l00211"></a>00211 
+<a name="l00212"></a>00212                                 <a class="code" href="classcom_1_1placesandplaces_1_1_globals.html">Globals</a>.buttonPushCount = 0;
+<a name="l00213"></a>00213 
+<a name="l00214"></a>00214                                 Intent <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4264d8c394d0864772ec83623bd9cc47">i</a> = getBaseContext().getPackageManager()
+<a name="l00215"></a>00215                                                 .getLaunchIntentForPackage(
+<a name="l00216"></a>00216                                                                 getBaseContext().getPackageName());
+<a name="l00217"></a>00217                                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+<a name="l00218"></a>00218                                 startActivity(i);
+<a name="l00219"></a>00219                         }
+<a name="l00220"></a>00220                 });
+<a name="l00221"></a>00221 
+<a name="l00222"></a>00222         }
+<a name="l00223"></a>00223 
+<a name="l00224"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#1bd053fb388005bd09f5621a4116f390">00224</a>         <span class="keyword">public</span> String <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#1bd053fb388005bd09f5621a4116f390">call</a>(String message) <span class="keywordflow">throws</span> Exception {
+<a name="l00225"></a>00225                 String response = null;
+<a name="l00226"></a>00226                 String corrId = java.util.UUID.randomUUID().toString();
+<a name="l00227"></a>00227                 BasicProperties props = <span class="keyword">new</span> BasicProperties.Builder()
+<a name="l00228"></a>00228                                 .correlationId(corrId).replyTo(<a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#79cbf8dbee73ee233f8d5bf17162427d">replyQueueName</a>).build();
 <a name="l00229"></a>00229 
-<a name="l00230"></a>00230                         @Override
-<a name="l00231"></a>00231                         <span class="keyword">public</span> <span class="keywordtype">void</span> onClick(View arg0) {
-<a name="l00232"></a>00232                                 <span class="comment">// this is the android way of starting a new activity</span>
-<a name="l00233"></a>00233                                 Intent <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4264d8c394d0864772ec83623bd9cc47">i</a> = <span class="keyword">new</span> Intent(getApplicationContext(),
-<a name="l00234"></a>00234                                                 <a class="code" href="classcom_1_1placesandplaces_1_1_keyword_activity.html">KeywordActivity</a>.class);
-<a name="l00235"></a>00235 
-<a name="l00236"></a>00236                                 startActivity(i);
-<a name="l00237"></a>00237 
-<a name="l00238"></a>00238                         }
-<a name="l00239"></a>00239                 });
+<a name="l00230"></a>00230                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4171ec8d911d8a861021d8d3daa14bcb">channel</a>.basicPublish(<span class="stringliteral">""</span>, <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#86f0938049dbbadc8087413b9c1b292f">requestQueueName</a>, props, message.getBytes());
+<a name="l00231"></a>00231                 <span class="keywordtype">int</span> timeout_ms = 30000;
+<a name="l00232"></a>00232 
+<a name="l00233"></a>00233                 <span class="keywordflow">while</span> (<span class="keyword">true</span>) {
+<a name="l00234"></a>00234 
+<a name="l00235"></a>00235                         QueueingConsumer.Delivery delivery = <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#93156ef656bf6bbe12537cce2c05dec5">consumer</a>
+<a name="l00236"></a>00236                                         .nextDelivery(timeout_ms);
+<a name="l00237"></a>00237                         <span class="keywordflow">if</span> (delivery == null) {
+<a name="l00238"></a>00238                                 <span class="keywordflow">if</span> (<a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4171ec8d911d8a861021d8d3daa14bcb">channel</a>.isOpen() == <span class="keyword">false</span>) <span class="comment">// Seems to always return true</span>
+<a name="l00239"></a>00239                                 {
 <a name="l00240"></a>00240 
-<a name="l00241"></a>00241                 ImageView imgPlus = (ImageView) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.imgPlus);
-<a name="l00243"></a>00243                 imgPlus.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() {
+<a name="l00241"></a>00241                                         System.out.println(<span class="stringliteral">"Channel is not open"</span>);
+<a name="l00242"></a>00242                                 }
+<a name="l00243"></a>00243                         } <span class="keywordflow">else</span> {
 <a name="l00244"></a>00244 
-<a name="l00245"></a>00245                         @Override
-<a name="l00246"></a>00246                         <span class="keyword">public</span> <span class="keywordtype">void</span> onClick(View arg0) {
-<a name="l00247"></a>00247 
-<a name="l00248"></a>00248                                 RelativeLayout r1 = (RelativeLayout) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.RelativeLayout1);
-<a name="l00249"></a>00249                                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#61c68b54d52e93a08c5c4c4da6568eeb">addTextView</a>(r1, <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#e97a6b08dc4b61e99d46205431d40c44">g</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_globals.html#1d80d06d0d26fe80a31ace3ecae58eef">buttonPushCount</a>);
-<a name="l00250"></a>00250                                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#e97a6b08dc4b61e99d46205431d40c44">g</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_globals.html#1d80d06d0d26fe80a31ace3ecae58eef">buttonPushCount</a>++;
-<a name="l00251"></a>00251 
-<a name="l00252"></a>00252                         }
-<a name="l00253"></a>00253                 });
-<a name="l00254"></a>00254 
-<a name="l00255"></a>00255                 ImageView imgReload = (ImageView) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.imgRR);
-<a name="l00257"></a>00257                 imgReload.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() {
-<a name="l00258"></a>00258 
-<a name="l00259"></a>00259                         @Override
-<a name="l00260"></a>00260                         <span class="keyword">public</span> <span class="keywordtype">void</span> onClick(View arg0) {
-<a name="l00261"></a>00261 
-<a name="l00262"></a>00262                                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#e97a6b08dc4b61e99d46205431d40c44">g</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_globals.html#1d80d06d0d26fe80a31ace3ecae58eef">buttonPushCount</a> = 0;
-<a name="l00263"></a>00263 
-<a name="l00264"></a>00264                                 Intent <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4264d8c394d0864772ec83623bd9cc47">i</a> = getBaseContext().getPackageManager()
-<a name="l00265"></a>00265                                                 .getLaunchIntentForPackage(
-<a name="l00266"></a>00266                                                                 getBaseContext().getPackageName());
-<a name="l00267"></a>00267                                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-<a name="l00268"></a>00268                                 startActivity(i);
-<a name="l00269"></a>00269                         }
-<a name="l00270"></a>00270                 });
-<a name="l00271"></a>00271 
-<a name="l00272"></a>00272         }
-<a name="l00273"></a>00273 
-<a name="l00274"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#1bd053fb388005bd09f5621a4116f390">00274</a>         <span class="keyword">public</span> String <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#1bd053fb388005bd09f5621a4116f390">call</a>(String message) <span class="keywordflow">throws</span> Exception {
-<a name="l00275"></a>00275                 String response = null;
-<a name="l00276"></a>00276                 String corrId = java.util.UUID.randomUUID().toString();
-<a name="l00277"></a>00277                 BasicProperties props = <span class="keyword">new</span> BasicProperties.Builder()
-<a name="l00278"></a>00278                                 .correlationId(corrId).replyTo(<a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#79cbf8dbee73ee233f8d5bf17162427d">replyQueueName</a>).build();
-<a name="l00279"></a>00279 
-<a name="l00280"></a>00280                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4171ec8d911d8a861021d8d3daa14bcb">channel</a>.basicPublish(<span class="stringliteral">""</span>, <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#86f0938049dbbadc8087413b9c1b292f">requestQueueName</a>, props, message.getBytes());
-<a name="l00281"></a>00281                 <span class="keywordtype">int</span> timeout_ms = 30000;
-<a name="l00282"></a>00282 
-<a name="l00283"></a>00283                 <span class="keywordflow">while</span> (<span class="keyword">true</span>) {
-<a name="l00284"></a>00284 
-<a name="l00285"></a>00285                         QueueingConsumer.Delivery delivery = <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#93156ef656bf6bbe12537cce2c05dec5">consumer</a>
-<a name="l00286"></a>00286                                         .nextDelivery(timeout_ms);
-<a name="l00287"></a>00287                         <span class="keywordflow">if</span> (delivery == null) {
-<a name="l00288"></a>00288                                 <span class="keywordflow">if</span> (<a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4171ec8d911d8a861021d8d3daa14bcb">channel</a>.isOpen() == <span class="keyword">false</span>) <span class="comment">// Seems to always return true</span>
-<a name="l00289"></a>00289                                 {
+<a name="l00245"></a>00245                                 <span class="comment">// ... Process message - delivery.getBody()</span>
+<a name="l00246"></a>00246                                 <span class="keywordflow">if</span> (delivery.getProperties().getCorrelationId().equals(corrId)) {
+<a name="l00247"></a>00247                                         response = <span class="keyword">new</span> String(delivery.getBody());
+<a name="l00248"></a>00248                                         <span class="keywordflow">break</span>;
+<a name="l00249"></a>00249                                 }
+<a name="l00250"></a>00250                         }
+<a name="l00251"></a>00251                 }
+<a name="l00252"></a>00252 
+<a name="l00253"></a>00253                 <span class="keywordflow">return</span> response;
+<a name="l00254"></a>00254                 <span class="comment">// return "response";</span>
+<a name="l00255"></a>00255         }
+<a name="l00256"></a>00256 
+<a name="l00257"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#6a0c7e2c5c5b261a4aafb61369e2e908">00257</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#6a0c7e2c5c5b261a4aafb61369e2e908">close</a>() throws Exception {
+<a name="l00258"></a>00258                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#b01c4a6d62e0d1073f3c50bef88be09a">connection</a>.close();
+<a name="l00259"></a>00259         }
+<a name="l00260"></a>00260 
+<a name="l00261"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#1c43d62358d9a2ad309938dfc63132f6">00261</a>         <span class="keywordtype">int</span> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#1c43d62358d9a2ad309938dfc63132f6">icount1</a> = 0;
+<a name="l00262"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#0ab2beddc9e2623284b54d76a58cadca">00262</a>         <span class="keywordtype">int</span> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#0ab2beddc9e2623284b54d76a58cadca">textViewCount</a> = 10;
+<a name="l00263"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4264d8c394d0864772ec83623bd9cc47">00263</a>         <span class="keywordtype">int</span> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4264d8c394d0864772ec83623bd9cc47">i</a> = 0;
+<a name="l00264"></a>00264 
+<a name="l00265"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#61c68b54d52e93a08c5c4c4da6568eeb">00265</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#61c68b54d52e93a08c5c4c4da6568eeb">addTextView</a>(RelativeLayout r1, <span class="keywordtype">int</span> buttoncount) {
+<a name="l00266"></a>00266 
+<a name="l00267"></a>00267                 <span class="keywordtype">int</span> width = 100;
+<a name="l00268"></a>00268                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#89a37c1c53b4744e749deea1d4950360">et</a>[buttoncount] = <span class="keyword">new</span> EditText(<span class="keyword">this</span>);
+<a name="l00269"></a>00269                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#89a37c1c53b4744e749deea1d4950360">et</a>[buttoncount].setText(<span class="stringliteral">""</span>);
+<a name="l00270"></a>00270                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#89a37c1c53b4744e749deea1d4950360">et</a>[buttoncount].setGravity(<a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#1c43d62358d9a2ad309938dfc63132f6">icount1</a> * 25);
+<a name="l00271"></a>00271                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#89a37c1c53b4744e749deea1d4950360">et</a>[buttoncount].setWidth(width);
+<a name="l00272"></a>00272                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#89a37c1c53b4744e749deea1d4950360">et</a>[buttoncount].setId(buttoncount);
+<a name="l00273"></a>00273                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#e97a6b08dc4b61e99d46205431d40c44">g</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_globals.html#cba08c10903b4ec3521c40384d5072d1">setLocationVari</a>();
+<a name="l00274"></a>00274 
+<a name="l00275"></a>00275                 <span class="comment">// must set dynamic names like this so that they can be reached:</span>
+<a name="l00276"></a>00276                 <span class="comment">// txtPlaces1</span>
+<a name="l00277"></a>00277                 <span class="comment">// and induction can be started</span>
+<a name="l00278"></a>00278 
+<a name="l00279"></a>00279                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#89a37c1c53b4744e749deea1d4950360">et</a>[buttoncount].setTag(<span class="stringliteral">"txtPlaces"</span> + buttoncount);
+<a name="l00280"></a>00280 
+<a name="l00281"></a>00281                 LinearLayout l1 = (LinearLayout) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.LLTexts);
+<a name="l00282"></a>00282                 l1.addView(<a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#89a37c1c53b4744e749deea1d4950360">et</a>[buttoncount]);
+<a name="l00283"></a>00283 
+<a name="l00284"></a>00284                 Log.d(<span class="stringliteral">"types"</span>, <span class="stringliteral">"types button count "</span> + buttoncount);
+<a name="l00285"></a>00285 
+<a name="l00286"></a>00286                 <span class="comment">// increment counter</span>
+<a name="l00287"></a>00287                 <span class="comment">// i++;</span>
+<a name="l00288"></a>00288 
+<a name="l00289"></a>00289         }<span class="comment">// end addTextView method</span>
 <a name="l00290"></a>00290 
-<a name="l00291"></a>00291                                         System.out.println(<span class="stringliteral">"Channel is not open"</span>);
-<a name="l00292"></a>00292                                 }
-<a name="l00293"></a>00293                         } <span class="keywordflow">else</span> {
+<a name="l00291"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#9827ff3e030a0f83f8a0defa7cdfebdc">00291</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#9827ff3e030a0f83f8a0defa7cdfebdc">setTextMethod</a>(String ivalue, <span class="keywordtype">int</span> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4264d8c394d0864772ec83623bd9cc47">i</a>) {
+<a name="l00292"></a>00292                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#e97a6b08dc4b61e99d46205431d40c44">g</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_globals.html#8ba77a9232ca9cffdf6ccbff1e8304e3">setLocationi</a>(ivalue, i);
+<a name="l00293"></a>00293         }<span class="comment">// end setTextMethod</span>
 <a name="l00294"></a>00294 
-<a name="l00295"></a>00295                                 <span class="comment">// ... Process message - delivery.getBody()</span>
-<a name="l00296"></a>00296                                 <span class="keywordflow">if</span> (delivery.getProperties().getCorrelationId().equals(corrId)) {
-<a name="l00297"></a>00297                                         response = <span class="keyword">new</span> String(delivery.getBody());
-<a name="l00298"></a>00298                                         <span class="keywordflow">break</span>;
-<a name="l00299"></a>00299                                 }
-<a name="l00300"></a>00300                         }
-<a name="l00301"></a>00301                 }
-<a name="l00302"></a>00302 
-<a name="l00303"></a>00303                 <span class="keywordflow">return</span> response;
-<a name="l00304"></a>00304                 <span class="comment">// return "response";</span>
-<a name="l00305"></a>00305         }
-<a name="l00306"></a>00306 
-<a name="l00307"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#6a0c7e2c5c5b261a4aafb61369e2e908">00307</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#6a0c7e2c5c5b261a4aafb61369e2e908">close</a>() throws Exception {
-<a name="l00308"></a>00308                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#b01c4a6d62e0d1073f3c50bef88be09a">connection</a>.close();
-<a name="l00309"></a>00309         }
-<a name="l00310"></a>00310 
-<a name="l00311"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#1c43d62358d9a2ad309938dfc63132f6">00311</a>         <span class="keywordtype">int</span> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#1c43d62358d9a2ad309938dfc63132f6">icount1</a> = 0;
-<a name="l00312"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#0ab2beddc9e2623284b54d76a58cadca">00312</a>         <span class="keywordtype">int</span> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#0ab2beddc9e2623284b54d76a58cadca">textViewCount</a> = 10;
-<a name="l00313"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4264d8c394d0864772ec83623bd9cc47">00313</a>         <span class="keywordtype">int</span> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4264d8c394d0864772ec83623bd9cc47">i</a> = 0;
-<a name="l00314"></a>00314 
-<a name="l00315"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#61c68b54d52e93a08c5c4c4da6568eeb">00315</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#61c68b54d52e93a08c5c4c4da6568eeb">addTextView</a>(RelativeLayout r1, <span class="keywordtype">int</span> buttoncount) {
-<a name="l00316"></a>00316 
-<a name="l00317"></a>00317                 <span class="keywordtype">int</span> width = 100;
-<a name="l00318"></a>00318                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#89a37c1c53b4744e749deea1d4950360">et</a>[buttoncount] = <span class="keyword">new</span> EditText(<span class="keyword">this</span>);
-<a name="l00319"></a>00319                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#89a37c1c53b4744e749deea1d4950360">et</a>[buttoncount].setText(<span class="stringliteral">""</span>);
-<a name="l00320"></a>00320                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#89a37c1c53b4744e749deea1d4950360">et</a>[buttoncount].setGravity(<a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#1c43d62358d9a2ad309938dfc63132f6">icount1</a> * 25);
-<a name="l00321"></a>00321                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#89a37c1c53b4744e749deea1d4950360">et</a>[buttoncount].setWidth(width);
-<a name="l00322"></a>00322                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#89a37c1c53b4744e749deea1d4950360">et</a>[buttoncount].setId(buttoncount);
-<a name="l00323"></a>00323                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#e97a6b08dc4b61e99d46205431d40c44">g</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_globals.html#cba08c10903b4ec3521c40384d5072d1">setLocationVari</a>();
-<a name="l00324"></a>00324 
-<a name="l00325"></a>00325                 <span class="comment">// must set dynamic names like this so that they can be reached:</span>
-<a name="l00326"></a>00326                 <span class="comment">// txtPlaces1</span>
-<a name="l00327"></a>00327                 <span class="comment">// and induction can be started</span>
-<a name="l00328"></a>00328 
-<a name="l00329"></a>00329                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#89a37c1c53b4744e749deea1d4950360">et</a>[buttoncount].setTag(<span class="stringliteral">"txtPlaces"</span> + buttoncount);
+<a name="l00295"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#bbaeb30cf02b8dae5a5d460e37968b70">00295</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#bbaeb30cf02b8dae5a5d460e37968b70">OpenScreenDialog</a>() {
+<a name="l00296"></a>00296                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#53692747919d6f9748a55dbb74a67314">screenDialog</a> = <span class="keyword">new</span> AlertDialog.Builder(<span class="keyword">this</span>);
+<a name="l00297"></a>00297                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#53692747919d6f9748a55dbb74a67314">screenDialog</a>.setTitle(<span class="stringliteral">"Finding Places"</span>);
+<a name="l00298"></a>00298                 TextView TextOut = <span class="keyword">new</span> TextView(<a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html">MainActivity</a>.this);
+<a name="l00299"></a>00299                 TextOut.setBackgroundColor(Color.WHITE);
+<a name="l00300"></a>00300 
+<a name="l00301"></a>00301                 LayoutParams textOutLayoutParams = <span class="keyword">new</span> LayoutParams(
+<a name="l00302"></a>00302                                 LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+<a name="l00303"></a>00303                 TextOut.setLayoutParams(textOutLayoutParams);
+<a name="l00304"></a>00304 
+<a name="l00305"></a>00305                 RelativeLayout dialogLayout = <span class="keyword">new</span> RelativeLayout(<span class="keyword">this</span>);
+<a name="l00306"></a>00306                 dialogLayout.addView(TextOut);
+<a name="l00307"></a>00307                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#53692747919d6f9748a55dbb74a67314">screenDialog</a>.setView(dialogLayout);
+<a name="l00308"></a>00308 
+<a name="l00309"></a>00309                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#53692747919d6f9748a55dbb74a67314">screenDialog</a>.setPositiveButton(<span class="stringliteral">"OK"</span>,
+<a name="l00310"></a>00310                                 <span class="keyword">new</span> DialogInterface.OnClickListener() {
+<a name="l00311"></a>00311                                         <span class="comment">// do something when the button is clicked</span>
+<a name="l00312"></a>00312                                         <span class="keyword">public</span> <span class="keywordtype">void</span> onClick(DialogInterface arg0, <span class="keywordtype">int</span> arg1) {
+<a name="l00313"></a>00313 
+<a name="l00314"></a>00314                                                 <span class="comment">// this is the android way of starting a new activity</span>
+<a name="l00315"></a>00315                                                 Intent in = <span class="keyword">new</span> Intent(getApplicationContext(),
+<a name="l00316"></a>00316                                                                 SecondActivity.class);
+<a name="l00317"></a>00317 
+<a name="l00318"></a>00318                                                 <span class="comment">// startActivity(i);</span>
+<a name="l00319"></a>00319                                                 <span class="comment">// in.putExtra(arrayreferences);</span>
+<a name="l00320"></a>00320                                                 startActivity(in);
+<a name="l00321"></a>00321 
+<a name="l00322"></a>00322                                         }
+<a name="l00323"></a>00323                                 });
+<a name="l00324"></a>00324                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#53692747919d6f9748a55dbb74a67314">screenDialog</a>.show();
+<a name="l00325"></a>00325         }
+<a name="l00326"></a>00326 
+<a name="l00327"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#9c1a43b3b5099588e94fee7bd9cc8b33">00327</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#9c1a43b3b5099588e94fee7bd9cc8b33">SetLocations</a>() {
+<a name="l00328"></a>00328                 <span class="comment">// open a pop up screen</span>
+<a name="l00329"></a>00329                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#bbaeb30cf02b8dae5a5d460e37968b70">OpenScreenDialog</a>();
 <a name="l00330"></a>00330 
-<a name="l00331"></a>00331                 LinearLayout l1 = (LinearLayout) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.LLTexts);
-<a name="l00332"></a>00332                 l1.addView(<a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#89a37c1c53b4744e749deea1d4950360">et</a>[buttoncount]);
-<a name="l00333"></a>00333 
-<a name="l00334"></a>00334                 Log.d(<span class="stringliteral">"types"</span>, <span class="stringliteral">"types button count "</span> + buttoncount);
-<a name="l00335"></a>00335 
-<a name="l00336"></a>00336                 <span class="comment">// increment counter</span>
-<a name="l00337"></a>00337                 <span class="comment">// i++;</span>
-<a name="l00338"></a>00338 
-<a name="l00339"></a>00339         }<span class="comment">// end addTextView method</span>
-<a name="l00340"></a>00340 
-<a name="l00341"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#9827ff3e030a0f83f8a0defa7cdfebdc">00341</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#9827ff3e030a0f83f8a0defa7cdfebdc">setTextMethod</a>(String ivalue, <span class="keywordtype">int</span> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4264d8c394d0864772ec83623bd9cc47">i</a>) {
-<a name="l00342"></a>00342                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#e97a6b08dc4b61e99d46205431d40c44">g</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_globals.html#8ba77a9232ca9cffdf6ccbff1e8304e3">setLocationi</a>(ivalue, i);
-<a name="l00343"></a>00343         }<span class="comment">// end setTextMethod</span>
-<a name="l00344"></a>00344 
-<a name="l00345"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#bbaeb30cf02b8dae5a5d460e37968b70">00345</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#bbaeb30cf02b8dae5a5d460e37968b70">OpenScreenDialog</a>() {
-<a name="l00346"></a>00346                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#53692747919d6f9748a55dbb74a67314">screenDialog</a> = <span class="keyword">new</span> AlertDialog.Builder(<span class="keyword">this</span>);
-<a name="l00347"></a>00347                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#53692747919d6f9748a55dbb74a67314">screenDialog</a>.setTitle(<span class="stringliteral">"Finding Places"</span>);
-<a name="l00348"></a>00348                 TextView TextOut = <span class="keyword">new</span> TextView(<a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html">MainActivity</a>.this);
-<a name="l00349"></a>00349                 TextOut.setBackgroundColor(Color.WHITE);
-<a name="l00350"></a>00350 
-<a name="l00351"></a>00351                 LayoutParams textOutLayoutParams = <span class="keyword">new</span> LayoutParams(
-<a name="l00352"></a>00352                                 LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-<a name="l00353"></a>00353                 TextOut.setLayoutParams(textOutLayoutParams);
-<a name="l00354"></a>00354 
-<a name="l00355"></a>00355                 RelativeLayout dialogLayout = <span class="keyword">new</span> RelativeLayout(<span class="keyword">this</span>);
-<a name="l00356"></a>00356                 dialogLayout.addView(TextOut);
-<a name="l00357"></a>00357                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#53692747919d6f9748a55dbb74a67314">screenDialog</a>.setView(dialogLayout);
-<a name="l00358"></a>00358 
-<a name="l00359"></a>00359                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#53692747919d6f9748a55dbb74a67314">screenDialog</a>.setPositiveButton(<span class="stringliteral">"OK"</span>,
-<a name="l00360"></a>00360                                 <span class="keyword">new</span> DialogInterface.OnClickListener() {
-<a name="l00361"></a>00361                                         <span class="comment">// do something when the button is clicked</span>
-<a name="l00362"></a>00362                                         <span class="keyword">public</span> <span class="keywordtype">void</span> onClick(DialogInterface arg0, <span class="keywordtype">int</span> arg1) {
-<a name="l00363"></a>00363 
-<a name="l00364"></a>00364                                                 <span class="comment">// this is the android way of starting a new activity</span>
-<a name="l00365"></a>00365                                                 Intent in = <span class="keyword">new</span> Intent(getApplicationContext(),
-<a name="l00366"></a>00366                                                                 <a class="code" href="classcom_1_1placesandplaces_1_1_second_activity.html">SecondActivity</a>.class);
-<a name="l00367"></a>00367 
-<a name="l00368"></a>00368                                                 <span class="comment">// startActivity(i);</span>
-<a name="l00369"></a>00369                                                 <span class="comment">// in.putExtra(arrayreferences);</span>
-<a name="l00370"></a>00370                                                 startActivity(in);
-<a name="l00371"></a>00371 
-<a name="l00372"></a>00372                                         }
-<a name="l00373"></a>00373                                 });
-<a name="l00374"></a>00374                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#53692747919d6f9748a55dbb74a67314">screenDialog</a>.show();
-<a name="l00375"></a>00375         }
-<a name="l00376"></a>00376 
-<a name="l00377"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#9c1a43b3b5099588e94fee7bd9cc8b33">00377</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#9c1a43b3b5099588e94fee7bd9cc8b33">SetLocations</a>() {
-<a name="l00378"></a>00378                 <span class="comment">// open a pop up screen</span>
-<a name="l00379"></a>00379                 <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#bbaeb30cf02b8dae5a5d460e37968b70">OpenScreenDialog</a>();
-<a name="l00380"></a>00380 
-<a name="l00381"></a>00381         }<span class="comment">// end setActivity</span>
-<a name="l00382"></a>00382 
-<a name="l00383"></a><a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#e1dcd764ac3d5d486632c25a96a3774b">00383</a>         <span class="keyword">private</span> ArrayList&lt;String&gt; <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#e1dcd764ac3d5d486632c25a96a3774b">autocomplete</a>(String input) {
-<a name="l00384"></a>00384                 ArrayList&lt;String&gt; <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#124a76b8e3bc6c5f50d47d6c45fef6a4">resultList</a> = null;
-<a name="l00385"></a>00385 
-<a name="l00386"></a>00386                 HttpURLConnection conn = null;
-<a name="l00387"></a>00387                 StringBuilder jsonResults = <span class="keyword">new</span> StringBuilder();
-<a name="l00388"></a>00388                 <span class="keywordflow">try</span> {
-<a name="l00389"></a>00389                         StringBuilder sb = <span class="keyword">new</span> StringBuilder(<a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#136ea0d23855315a0e8ff0d12140b028">PLACES_API_BASE</a>
-<a name="l00390"></a>00390                                         + <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#0063e2cbbd2d25f3234f164ff4edd0d4">TYPE_AUTOCOMPLETE</a> + <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#41460f946acc6fb9f0ee123930946e5c">OUT_JSON</a>);
-<a name="l00391"></a>00391                         sb.append(<span class="stringliteral">"?sensor=false&amp;key="</span> + GooglePlaces.API_KEY);
-<a name="l00392"></a>00392                         sb.append(<span class="stringliteral">"&amp;components=country:us"</span>);
-<a name="l00393"></a>00393                         sb.append(<span class="stringliteral">"&amp;input="</span> + URLEncoder.encode(input, <span class="stringliteral">"utf8"</span>));
-<a name="l00394"></a>00394 
-<a name="l00395"></a>00395                         URL url = <span class="keyword">new</span> URL(sb.toString());
-<a name="l00396"></a>00396                         conn = (HttpURLConnection) url.openConnection();
-<a name="l00397"></a>00397                         InputStreamReader in = <span class="keyword">new</span> InputStreamReader(conn.getInputStream());
-<a name="l00398"></a>00398 
-<a name="l00399"></a>00399                         <span class="comment">// Load the results into a StringBuilder</span>
-<a name="l00400"></a>00400                         <span class="keywordtype">int</span> read;
-<a name="l00401"></a>00401                         <span class="keywordtype">char</span>[] buff = <span class="keyword">new</span> <span class="keywordtype">char</span>[1024];
-<a name="l00402"></a>00402                         <span class="keywordflow">while</span> ((read = in.read(buff)) != -1) {
-<a name="l00403"></a>00403                                 jsonResults.append(buff, 0, read);
-<a name="l00404"></a>00404                         }
-<a name="l00405"></a>00405                 } <span class="keywordflow">catch</span> (MalformedURLException e) {
-<a name="l00406"></a>00406                         Log.e(<span class="stringliteral">"LOG_TAG"</span>, <span class="stringliteral">"Error processing Places API URL"</span>, e);
-<a name="l00407"></a>00407                         <span class="keywordflow">return</span> resultList;
-<a name="l00408"></a>00408                 } <span class="keywordflow">catch</span> (IOException e) {
-<a name="l00409"></a>00409                         Log.e(<span class="stringliteral">"LOG_TAG"</span>, <span class="stringliteral">"Error connecting to Places API"</span>, e);
-<a name="l00410"></a>00410                         <span class="keywordflow">return</span> resultList;
-<a name="l00411"></a>00411                 } finally {
-<a name="l00412"></a>00412                         <span class="keywordflow">if</span> (conn != null) {
-<a name="l00413"></a>00413                                 conn.disconnect();
-<a name="l00414"></a>00414                         }
-<a name="l00415"></a>00415                 }
-<a name="l00416"></a>00416 
-<a name="l00417"></a>00417                 <span class="keywordflow">try</span> {
-<a name="l00418"></a>00418                         <span class="comment">// Create a JSON object hierarchy from the results</span>
-<a name="l00419"></a>00419                         JSONObject jsonObj = <span class="keyword">new</span> JSONObject(jsonResults.toString());
-<a name="l00420"></a>00420                         JSONArray predsJsonArray = jsonObj.getJSONArray(<span class="stringliteral">"predictions"</span>);
-<a name="l00421"></a>00421 
-<a name="l00422"></a>00422                         <span class="comment">// Extract the Place descriptions from the results</span>
-<a name="l00423"></a>00423                         resultList = <span class="keyword">new</span> ArrayList&lt;String&gt;(predsJsonArray.length());
-<a name="l00424"></a>00424                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4264d8c394d0864772ec83623bd9cc47">i</a> = 0; <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4264d8c394d0864772ec83623bd9cc47">i</a> &lt; predsJsonArray.length(); <a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4264d8c394d0864772ec83623bd9cc47">i</a>++) {
-<a name="l00425"></a>00425                                 resultList.add(predsJsonArray.getJSONObject(<a class="code" href="classcom_1_1placesandplaces_1_1_main_activity.html#4264d8c394d0864772ec83623bd9cc47">i</a>).getString(
-<a name="l00426"></a>00426                                                 <span class="stringliteral">"description"</span>));
-<a name="l00427"></a>00427                         }
-<a name="l00428"></a>00428                 } <span class="keywordflow">catch</span> (JSONException e) {
-<a name="l00429"></a>00429                         Log.e(<span class="stringliteral">"LOG_TAG"</span>, <span class="stringliteral">"Cannot process JSON results"</span>, e);
-<a name="l00430"></a>00430                 }
-<a name="l00431"></a>00431 
-<a name="l00432"></a>00432                 <span class="keywordflow">return</span> resultList;
-<a name="l00433"></a>00433         }
-<a name="l00434"></a>00434 
-<a name="l00435"></a>00435 }
-</pre></div><hr size="1"><address style="align: right;"><small>Generated on Thu Sep 26 00:25:01 2013 for PlacesAndPlaces by&nbsp;
+<a name="l00331"></a>00331         }<span class="comment">// end setActivity</span>
+<a name="l00332"></a>00332 
+<a name="l00333"></a>00333 }
+</pre></div><hr size="1"><address style="align: right;"><small>Generated on Sun Sep 29 14:48:08 2013 for PlacesAndPlaces by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.7-20061004 </small></address>
 </body>

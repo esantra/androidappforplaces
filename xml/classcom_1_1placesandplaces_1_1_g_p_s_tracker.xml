@@ -63,6 +63,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GPSTracker.java" line="27" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GPSTracker.java" bodystart="27" bodyend="-1"/>
+        <referencedby refid="namespacecom_1_1placesandplaces_1b051492c305aa824780eb6751add84c1" compoundref="_second_activity_8java" startline="26" endline="780">com.placesandplaces::SuppressLint</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_g_p_s_tracker_147f2cdba19cfbce96d0949aa01b1a334" prot="package" static="no" mutable="no">
         <type>Location</type>
@@ -231,6 +232,7 @@
         <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GPSTracker.java" line="119" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GPSTracker.java" bodystart="119" bodyend="126"/>
         <references refid="classcom_1_1placesandplaces_1_1_g_p_s_tracker_10dc90c55b371cd1bd463341849d582c3" compoundref="_g_p_s_tracker_8java" startline="30">com.placesandplaces.GPSTracker::latitude</references>
         <references refid="classcom_1_1placesandplaces_1_1_g_p_s_tracker_147f2cdba19cfbce96d0949aa01b1a334" compoundref="_g_p_s_tracker_8java" startline="29">com.placesandplaces.GPSTracker::location</references>
+        <referencedby refid="namespacecom_1_1placesandplaces_1b051492c305aa824780eb6751add84c1" compoundref="_second_activity_8java" startline="26" endline="780">com.placesandplaces::SuppressLint</referencedby>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_g_p_s_tracker_1a6c2ecce8e16a0cdb15a0e1f1cbd9789" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>double</type>
@@ -246,6 +248,7 @@
         <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GPSTracker.java" line="131" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/GPSTracker.java" bodystart="131" bodyend="138"/>
         <references refid="classcom_1_1placesandplaces_1_1_g_p_s_tracker_147f2cdba19cfbce96d0949aa01b1a334" compoundref="_g_p_s_tracker_8java" startline="29">com.placesandplaces.GPSTracker::location</references>
         <references refid="classcom_1_1placesandplaces_1_1_g_p_s_tracker_1701f8302c335289003bcc10fcd214fdb" compoundref="_g_p_s_tracker_8java" startline="31">com.placesandplaces.GPSTracker::longitude</references>
+        <referencedby refid="namespacecom_1_1placesandplaces_1b051492c305aa824780eb6751add84c1" compoundref="_second_activity_8java" startline="26" endline="780">com.placesandplaces::SuppressLint</referencedby>
       </memberdef>
       <memberdef kind="function" id="classcom_1_1placesandplaces_1_1_g_p_s_tracker_12d318d60ee77b663334b374e66ad7686" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>boolean</type>

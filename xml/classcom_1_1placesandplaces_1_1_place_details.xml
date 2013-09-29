@@ -15,7 +15,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/PlaceDetails.java" line="14" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/PlaceDetails.java" bodystart="14" bodyend="-1"/>
-        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="131" endline="396">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="102" endline="325">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_place_details_18487fb5cb38348c53651d609629bc608" prot="public" static="no" mutable="no">
         <type>Key <ref refid="classcom_1_1placesandplaces_1_1_place" kindref="compound">Place</ref></type>
@@ -29,7 +29,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/PlaceDetails.java" line="17" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/PlaceDetails.java" bodystart="17" bodyend="-1"/>
-        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="131" endline="396">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="102" endline="325">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
         <referencedby refid="classcom_1_1placesandplaces_1_1_place_details_12b45932234a99e27e593833176713b80" compoundref="_place_details_8java" startline="20" endline="25">com.placesandplaces.PlaceDetails::toString</referencedby>
       </memberdef>
       </sectiondef>

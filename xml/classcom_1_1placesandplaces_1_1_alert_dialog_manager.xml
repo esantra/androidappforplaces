@@ -68,7 +68,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AlertDialogManager.java" line="24" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/AlertDialogManager.java" bodystart="23" bodyend="46"/>
-        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="131" endline="396">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
+        <referencedby refid="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details_18ec9c705f291e1a595b5185c8a06d374" compoundref="_single_place_activity_8java" startline="102" endline="325">com.placesandplaces.SinglePlaceActivity.LoadSinglePlaceDetails::onPostExecute</referencedby>
+        <referencedby refid="namespacecom_1_1placesandplaces_1b051492c305aa824780eb6751add84c1" compoundref="_second_activity_8java" startline="26" endline="780">com.placesandplaces::SuppressLint</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>

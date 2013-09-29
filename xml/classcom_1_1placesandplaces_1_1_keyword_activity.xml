@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" line="32" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" bodystart="32" bodyend="-1"/>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" line="22" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" bodystart="22" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_keyword_activity_19c3c016ebdde57b8e43950dbb7a6322c" prot="package" static="no" mutable="no">
         <type><ref refid="classcom_1_1placesandplaces_1_1_connection_detector" kindref="compound">ConnectionDetector</ref></type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" line="35" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" bodystart="35" bodyend="-1"/>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" line="25" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" bodystart="25" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_keyword_activity_192c905460fcdd05f75cfdc1005f46227" prot="package" static="no" mutable="no">
         <type><ref refid="classcom_1_1placesandplaces_1_1_alert_dialog_manager" kindref="compound">AlertDialogManager</ref></type>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" line="38" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" bodystart="38" bodyend="-1"/>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" line="28" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_keyword_activity_1e7805eb10b606a91a12739b4b292fc2c" prot="package" static="no" mutable="no">
         <type>GooglePlaces</type>
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" line="41" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" bodystart="41" bodyend="-1"/>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" line="31" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" bodystart="31" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_keyword_activity_1faa3aae7c3824f2926f1987fea0b5672" prot="package" static="no" mutable="no">
         <type><ref refid="classcom_1_1placesandplaces_1_1_places_list" kindref="compound">PlacesList</ref></type>
@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" line="44" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" bodystart="44" bodyend="-1"/>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" line="34" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_keyword_activity_1cb5910e31ea67665675004a966589b09" prot="package" static="no" mutable="no">
         <type><ref refid="classcom_1_1placesandplaces_1_1_places_list" kindref="compound">PlacesList</ref></type>
@@ -81,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" line="45" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" bodystart="45" bodyend="-1"/>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" line="35" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_keyword_activity_117a8d15ecace79ad771a7fb9eb5ac429" prot="package" static="no" mutable="no">
         <type>Button</type>
@@ -94,7 +94,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" line="48" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" bodystart="48" bodyend="-1"/>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" line="38" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" bodystart="38" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcom_1_1placesandplaces_1_1_keyword_activity_1cecee367acf6ffe498601189b9bda149" prot="package" static="no" mutable="no">
         <type>ProgressDialog</type>
@@ -107,7 +107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" line="51" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" bodystart="51" bodyend="-1"/>
+        <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" line="41" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" bodystart="41" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -142,7 +142,7 @@ nearPlaces2</edgelabel>
         <link refid="classcom_1_1placesandplaces_1_1_places_list"/>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" line="29" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" bodystart="29" bodyend="220"/>
+    <location file="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" line="19" bodyfile="C:/Users/desktop/workspace/PlacesandPlaces/src/com/placesandplaces/KeywordActivity.java" bodystart="19" bodyend="208"/>
     <listofallmembers>
       <member refid="classcom_1_1placesandplaces_1_1_keyword_activity_192c905460fcdd05f75cfdc1005f46227" prot="package" virt="non-virtual"><scope>com::placesandplaces::KeywordActivity</scope><name>alert</name></member>
       <member refid="classcom_1_1placesandplaces_1_1_keyword_activity_117a8d15ecace79ad771a7fb9eb5ac429" prot="package" virt="non-virtual"><scope>com::placesandplaces::KeywordActivity</scope><name>btnShowOnMap</name></member>

@@ -85,7 +85,7 @@ public class Globals {
 	}
 
 	public void setCounterVar(int i) {
-
+        //establishes a global counter variable
 		Globals.counterVar = i;
 	}
 

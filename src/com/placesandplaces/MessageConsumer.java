@@ -10,7 +10,7 @@ import com.rabbitmq.client.QueueingConsumer;
  * Consumes messages from a RabbitMQ broker
  * 
  */
-public class MessageConsumer extends IConnectToRabbitMQ {
+public class MessageConsumer extends RabbitMQConn {
 
 	public MessageConsumer(String server, String exchange, String exchangeType) {
 		super(server, exchange, exchangeType);
@@ -75,7 +75,7 @@ public class MessageConsumer extends IConnectToRabbitMQ {
 				e.printStackTrace();
 				return false;
 			}
-			if (MyExchangeType == "fanout")
+			if (ExchangeType == "fanout")
 				AddBinding("");// fanout has default binding
 
 			Running = true;

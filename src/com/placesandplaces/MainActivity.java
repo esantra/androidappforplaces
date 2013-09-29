@@ -331,3 +331,5 @@ public class MainActivity extends Activity {
 	}// end setActivity
 
 }
+
+//code inspired and built upon: http://www.androidhive.info/2012/08/android-working-with-google-places-and-maps-tutorial/

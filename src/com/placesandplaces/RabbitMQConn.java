@@ -6,10 +6,8 @@ import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 
-/**
- *  * Base class for objects that connect to a RabbitMQ Broker  
- */
-public abstract class IConnectToRabbitMQ {
+//code inspired and built upon: http://simonwdixon.wordpress.com/2011/06/03/getting-started-with-rabbitmq-on-android-part-1/
+public abstract class RabbitMQConn {
 	// declare rabbitmq variables
 	public String mServer;
 	public String mExchange;
@@ -19,13 +17,13 @@ public abstract class IConnectToRabbitMQ {
 
 	protected boolean Running;
 
-	protected String MyExchangeType;
+	protected String ExchangeType;
 
-	public IConnectToRabbitMQ(String server, String exchange,
+	public RabbitMQConn(String server, String exchange,
 			String exchangeType) {
 		mServer = server;
 		mExchange = exchange;
-		MyExchangeType = exchangeType;
+		ExchangeType = exchangeType;
 	}
 
 	public void Dispose() {
@@ -53,7 +51,7 @@ public abstract class IConnectToRabbitMQ {
 			connectionFactory.setHost(mServer);
 			mConnection = connectionFactory.newConnection();
 			mModel = mConnection.createChannel();
-			mModel.exchangeDeclare(mExchange, MyExchangeType, true);
+			mModel.exchangeDeclare(mExchange, ExchangeType, true);
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();

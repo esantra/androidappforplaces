@@ -1,46 +1,17 @@
 package com.placesandplaces;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.ArrayList;
-
-import org.apache.http.HttpEntity;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.json.JSONArray;
-import org.json.JSONException;
-
-import com.google.api.client.googleapis.auth.oauth.GoogleOAuthDomainWideDelegation.Url;
 import com.placesandplaces.R;
-
 import android.app.Activity;
-import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.Html;
 import android.util.Log;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.RatingBar;
 import android.widget.TextView;
 import android.view.View;
-import android.view.View.OnClickListener;
 
 public class SinglePlaceActivity extends Activity {
 	// flag for Internet connection status
@@ -188,29 +159,6 @@ public class SinglePlaceActivity extends Activity {
 								lbl_address.setTextColor(Color
 										.parseColor("#000000"));
 
-								// ----- check to see if this is an api call and
-								// not an image url
-								String imageString2 = "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBegAAAFg5U0y-iQEtUVMfqw4KpXYe60QwJC-wl59NZlcaxSQZNgAhGrjmUKD2NkXatfQF1QRap-PQCx3kMfsKQCcxtkZqQ&sensor=true&key=AIzaSyCRLa4LQZWNQBcjCYcIVYA45i9i8zfClqc";
-								// imgString.setText("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CoQBegAAAFg5U0y-iQEtUVMfqw4KpXYe60QwJC-wl59NZlcaxSQZNgAhGrjmUKD2NkXatfQF1QRap-PQCx3kMfsKQCcxtkZqQ&sensor=true&key=AIzaSyCRLa4LQZWNQBcjCYcIVYA45i9i8zfClqc");
-
-								String imageString1 = "http://maps.googleapis.com/maps/api/streetview?size=150x150&location="
-										+ Double.toString(placeDetails.result.geometry.location.lat)
-										+ ","
-										+ Double.toString(placeDetails.result.geometry.location.lng)
-										+ "&heading=235&sensor=false";
-
-								URL url;
-								InputStream content;
-								try {
-									url = new URL(imageString1);
-
-									content = (InputStream) url.getContent();
-
-								} catch (IOException e) {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
-								}
-
 								// get nearest places
 								try {
 									nearPlaces = googlePlaces
@@ -228,13 +176,6 @@ public class SinglePlaceActivity extends Activity {
 
 									@Override
 									public void onClick(View arg0) {
-
-										// if this is more than the first time
-										// that the button has been pushed
-										int lvcount = SecondActivity.lv2
-												.getCount();
-										ListView lv2 = SecondActivity.lv2;
-										// int id = SecondActivity.lvid;
 
 										String a;
 
@@ -378,18 +319,6 @@ public class SinglePlaceActivity extends Activity {
 								"Places Error", "Sorry error occured.", false);
 					}
 
-				}
-
-				public Drawable drawableFromUrl(String url) throws IOException {
-					Bitmap x;
-
-					HttpURLConnection connection = (HttpURLConnection) new URL(
-							url).openConnection();
-					connection.connect();
-					InputStream input = connection.getInputStream();
-
-					x = BitmapFactory.decodeStream(input);
-					return new BitmapDrawable(x);
 				}
 			});
 

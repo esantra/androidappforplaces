@@ -1,15 +1,11 @@
 package com.placesandplaces;
 
-import java.lang.reflect.Array;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
-import com.google.common.collect.ArrayListMultimap;
-import com.google.common.collect.Multimap;
 import com.placesandplaces.R;
-
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -27,97 +23,97 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+@SuppressLint("UseSparseArrays")
 public class SecondActivity extends Activity {
 
 	// flag for Internet connection status
 	Boolean isInternetPresent = false;
-
 	// Connection detector class
 	ConnectionDetector cd;
-
 	// Alert Dialog Manager
 	AlertDialogManager alert = new AlertDialogManager();
-
 	// Google Places
 	GooglePlaces googlePlaces;
-
 	// Places List
 	PlacesList nearPlaces;
 	PlacesList nearPlaces2;
-	PlacesList[] nearPlaces_i = new PlacesList[100];
-
 	// GPS Location
 	GPSTracker gps;
-
 	// Button
 	Button btnShowOnMap;
-
 	// Progress dialog
 	ProgressDialog pDialog;
-
 	// name of place 2
 	public static String name;
-
-	// name of second place - well reference to it
-	public static String[] secondPlaceReference = new String[10000];
-
-	// Places ListView
+	// Places ListViews
 	ListView lv;
 	public static ListView lv2;
+	// Variable to hold place types such as cafe or bar
+	public static String types;
+	// New object to access global variables
+	// mostly counter variables used for induction
+	public Globals g = Globals.getInstance();
+	// Constant value to hold size of arrays so that induction is true
+	// this setting is multiplied each time the user presses the button to add a
+	// location
+	// so that induction is truly possible without using lists and collections -
+	// some are
+	// still utilized
+	public static final Integer ARRAYLENGTH = (Globals.buttonPushCount + 1) * 1000;
+	// counter and increment variables
+	public static int rr;
+	public static int wcounter = 0;
+	public static int nameCount = 2;
+	public static int lvid;
+	int counter = 0;
+
+	// KEY Strings - strings that hold references for API access
+	public static String KEY_REFERENCE = "reference"; // id of the place
+	public static String KEY_NAME = "name"; // name of the place
+	public static String KEY_VICINITY = "vicinity"; // Place area name
+	public static String KEY_INFORMATION = "information"; // Place area name
+
+	// ARRAYS are all sized via the constant so that the size can be altered
+	// declare a variable array to hold places
+	// these variables perform better as arrays and lists because of the way
+	// they
+	// are accessed for induction
+	public static Double[] placesArrayLat = new Double[ARRAYLENGTH];
+	public static Double[] placesArrayLng = new Double[ARRAYLENGTH];
+	public static Double[] placesArrayLat2 = new Double[ARRAYLENGTH];
+	public static Double[] placesArrayLng2 = new Double[ARRAYLENGTH];
+	public Double[] p_i_lat = new Double[ARRAYLENGTH];
+	public Double[] p_i_lng = new Double[ARRAYLENGTH];
+	public static String[] placesName = new String[ARRAYLENGTH];
+	public static String[] placesName2 = new String[ARRAYLENGTH];
+	public static String nameArr[] = new String[ARRAYLENGTH];
+	public static String[] distanceVariable_i = new String[ARRAYLENGTH];
+	public static Place place_i[] = new Place[ARRAYLENGTH];
+	public Place place_ii[] = new Place[ARRAYLENGTH];
+	// name of second place - well reference to it
+	public static String[] secondPlaceReference = new String[ARRAYLENGTH];
+	public static Double[] distance_i = new Double[ARRAYLENGTH];
+
+	PlacesList[] nearPlaces_i = new PlacesList[ARRAYLENGTH];
 
 	// ListItems data
 	ArrayList<HashMap<String, String>> placesListItems = new ArrayList<HashMap<String, String>>();
 	// ListItems data to hold secondary list
 	ArrayList<HashMap<String, String>> placesListItems2 = new ArrayList<HashMap<String, String>>();
-
-	public static String types;
-
-	// KEY Strings
-	public static String KEY_REFERENCE = "reference"; // id of the place
-	public static String KEY_NAME = "name"; // name of the place
-	public static String KEY_VICINITY = "vicinity"; // Place area name
-	public static String KEY_INFORMATION = "information"; // Place area name
-	// declare a variable array to hold places
-	public static Double[] placesArrayLat = new Double[1000];
-	public static Double[] placesArrayLng = new Double[1000];
-	public static Double[] placesArrayLat2 = new Double[1000];
-	public static Double[] placesArrayLng2 = new Double[1000];
-	public Double[] p_i_lat = new Double[1000];
-	public Double[] p_i_lng = new Double[1000];
-	public static String[] placesName = new String[1000];
-	public static String[] placesName2 = new String[1000];
-	public static String[] refArray = new String[1000];
-	public String name_i;
-	public static String nameArr[] = new String[100];
-	public static String[] distanceVariable_i = new String[100];
-	public Globals g = Globals.getInstance();
-	public static Place place_i[] = new Place[100];
-	public Place place_ii[] = new Place[100];
-	public static int rr;
-	public static int wcounter = 0;
-	
-	
-	public static Double[] distance_i = new Double[100];
-	public static DecimalFormat[] myFormat_i = new DecimalFormat[100];
-	
-	
-	//this array holds the location of variable and can be static for induction
-	public static String[] types_i = new String[100];
-	
-	//list arrays to hold names and references of searched places
+	// hashmaps and collections to hold names and references of searched places
+	@SuppressLint("UseSparseArrays")
 	public static HashMap<Integer, ArrayList<String>> arraynames = new HashMap<Integer, ArrayList<String>>();
+	@SuppressLint("UseSparseArrays")
 	public static HashMap<Integer, ArrayList<String>> arrayreferences = new HashMap<Integer, ArrayList<String>>();
-	
-	
+	@SuppressLint("UseSparseArrays")
 	public HashMap<Integer, ArrayList<Place>> arrayplaces = new HashMap<Integer, ArrayList<Place>>();
 	public static HashMap<Integer, Place> hm = new HashMap<Integer, Place>();
-	public static int nameCount = 2;
-
-	
-	//placeholder string list variable
+	// placeholder string list variable
 	public static List<String> mapstring = new ArrayList<String>();
-	public static int lvid;
-	int counter = 0;
+	public static List<String> types_i = new ArrayList<String>();
+	// public static DecimalFormat[] myFormat_i = new
+	// DecimalFormat[ARRAYLENGTH];
+	public static List<DecimalFormat> myFormat_i = new ArrayList<DecimalFormat>();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -212,8 +208,6 @@ public class SecondActivity extends Activity {
 				Log.d("position", "The counter is:" + counter);
 				counter++;
 
-				refArray[0] = "";
-
 				// getting values from selected ListItem
 				String reference = ((TextView) view
 						.findViewById(R.id.reference)).getText().toString();
@@ -280,12 +274,12 @@ public class SecondActivity extends Activity {
 					for (int r = 0; r < g.getLocationVari(); r++) {
 
 						// this needs to be made into an array for INDUCTION
-						types_i[r] = g.getLocationi(r);
+						types_i.add(g.getLocationi(r));
 
 						// this needs to be made into an array for INDUCTION
 						nearPlaces_i[r] = googlePlaces.search(
 								gps.getLatitude(), gps.getLongitude(),
-								types_i[r]);
+								types_i.get(r));
 
 					}// end for
 				}// end try
@@ -314,7 +308,7 @@ public class SecondActivity extends Activity {
 				public void run() {
 					/**
 					 * Updating parsed Places into LISTVIEW
-					 * */ 
+					 * */
 					// Get json response status
 					String status1 = nearPlaces.status;
 					String status2 = nearPlaces2.status;
@@ -518,10 +512,11 @@ public class SecondActivity extends Activity {
 															+ distance_i[n]
 																	.toString());
 
-											myFormat_i[n] = new DecimalFormat(
-													"0.0");
-											distanceVariable_i[n] = myFormat_i[n]
-													.format(distance_i[n]);
+											myFormat_i.add(new DecimalFormat(
+													"0.0"));
+											distanceVariable_i[n] = myFormat_i
+													.get(n).format(
+															distance_i[n]);
 
 											Log.d("filter",
 													"this is the place name"
@@ -720,8 +715,8 @@ public class SecondActivity extends Activity {
 	}
 
 	private static String distanceVar(int n, int i, int uk) {
-		Double[] distance_i = new Double[100];
-		DecimalFormat[] myFormat_i = new DecimalFormat[100];
+		Double[] distance_i = new Double[ARRAYLENGTH];
+		DecimalFormat[] myFormat_i = new DecimalFormat[ARRAYLENGTH];
 		place_i[n] = hm.get(uk);
 
 		int befkey = uk;

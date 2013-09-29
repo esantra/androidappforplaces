@@ -1,61 +1,28 @@
 package com.placesandplaces;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLEncoder;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.UUID;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
-import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.widget.CursorAdapter;
-import android.support.v4.widget.SimpleCursorAdapter;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.view.ViewGroup.LayoutParams;
-
 import com.placesandplaces.R;
-import com.placesandplaces.MessageConsumer.OnReceiveMessageHandler;
-//import com.newrelic.agent.android.NewRelic;
 import com.rabbitmq.client.AMQP.BasicProperties;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.QueueingConsumer;
-import com.rabbitmq.client.ShutdownSignalException;
 
 public class MainActivity extends Activity {
 
@@ -70,9 +37,6 @@ public class MainActivity extends Activity {
 	public static String KEY_REFERENCE = "reference"; // id of the place
 	public static String KEY_NAME = "name"; // name of the place
 	public static String KEY_VICINITY = "vicinity"; // Place area name
-	private static final String PLACES_API_BASE = "https://maps.googleapis.com/maps/api/place";
-	private static final String TYPE_AUTOCOMPLETE = "/autocomplete";
-	private static final String OUT_JSON = "/json";
 	public static Globals g = Globals.getInstance();
 	ArrayList<String> resultList = null;
 
@@ -94,14 +58,10 @@ public class MainActivity extends Activity {
 	EditText EditTextIn;
 	public static EditText firstPlace;
 	public static EditText secondPlace;
-	private static final String RPC_QUEUE_NAME = "rpc_queue";
 	public static AlertDialog.Builder screenDialog;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
-		RelativeLayout r1 = (RelativeLayout) findViewById(R.id.RelativeLayout1);
-		LinearLayout l1 = (LinearLayout) findViewById(R.id.LLTexts);
 
 		// replaced activity_main.xml with startup screen.xml
 		setContentView(R.layout.startup_screen);
@@ -127,9 +87,6 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View arg0) {
 
-				RelativeLayout r1 = (RelativeLayout) findViewById(R.id.RelativeLayout1);
-				// MessageConsumer mConsumer2;
-
 				// The output TextView we'll use to display messages
 				mOutput = (TextView) findViewById(R.id.txtPlaces1);
 				mOutput2 = (TextView) findViewById(R.id.txtPlaces2);
@@ -152,8 +109,6 @@ public class MainActivity extends Activity {
 					System.out.println(" [.] Got '" + response + "'");
 
 					String[] str = response.split(",");
-					String str1 = str[0].toString();
-
 					String place1 = str[0].toString();
 					String place2 = str[1].toString();
 
@@ -161,8 +116,6 @@ public class MainActivity extends Activity {
 					place2 = place2.replace("\'", "");
 					place1 = place1.trim();
 					place2 = place2.trim();
-
-					String arr[] = new String[100];
 
 					System.out.println(place1);
 					System.out.println(place2);
@@ -193,9 +146,6 @@ public class MainActivity extends Activity {
 			public void onClick(View arg0) {
 
 				// change this
-
-				String loc1 = firstPlace.getText().toString();
-				String loc2 = secondPlace.getText().toString();
 
 				g.setLocation1(firstPlace.getText().toString());
 				g.setLocation2(secondPlace.getText().toString());
@@ -246,8 +196,8 @@ public class MainActivity extends Activity {
 			public void onClick(View arg0) {
 
 				RelativeLayout r1 = (RelativeLayout) findViewById(R.id.RelativeLayout1);
-				addTextView(r1, g.buttonPushCount);
-				g.buttonPushCount++;
+				addTextView(r1, Globals.buttonPushCount);
+				Globals.buttonPushCount++;
 
 			}
 		});
@@ -259,7 +209,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View arg0) {
 
-				g.buttonPushCount = 0;
+				Globals.buttonPushCount = 0;
 
 				Intent i = getBaseContext().getPackageManager()
 						.getLaunchIntentForPackage(
@@ -379,57 +329,5 @@ public class MainActivity extends Activity {
 		OpenScreenDialog();
 
 	}// end setActivity
-
-	private ArrayList<String> autocomplete(String input) {
-		ArrayList<String> resultList = null;
-
-		HttpURLConnection conn = null;
-		StringBuilder jsonResults = new StringBuilder();
-		try {
-			StringBuilder sb = new StringBuilder(PLACES_API_BASE
-					+ TYPE_AUTOCOMPLETE + OUT_JSON);
-			sb.append("?sensor=false&key=" + GooglePlaces.API_KEY);
-			sb.append("&components=country:us");
-			sb.append("&input=" + URLEncoder.encode(input, "utf8"));
-
-			URL url = new URL(sb.toString());
-			conn = (HttpURLConnection) url.openConnection();
-			InputStreamReader in = new InputStreamReader(conn.getInputStream());
-
-			// Load the results into a StringBuilder
-			int read;
-			char[] buff = new char[1024];
-			while ((read = in.read(buff)) != -1) {
-				jsonResults.append(buff, 0, read);
-			}
-		} catch (MalformedURLException e) {
-			Log.e("LOG_TAG", "Error processing Places API URL", e);
-			return resultList;
-		} catch (IOException e) {
-			Log.e("LOG_TAG", "Error connecting to Places API", e);
-			return resultList;
-		} finally {
-			if (conn != null) {
-				conn.disconnect();
-			}
-		}
-
-		try {
-			// Create a JSON object hierarchy from the results
-			JSONObject jsonObj = new JSONObject(jsonResults.toString());
-			JSONArray predsJsonArray = jsonObj.getJSONArray("predictions");
-
-			// Extract the Place descriptions from the results
-			resultList = new ArrayList<String>(predsJsonArray.length());
-			for (int i = 0; i < predsJsonArray.length(); i++) {
-				resultList.add(predsJsonArray.getJSONObject(i).getString(
-						"description"));
-			}
-		} catch (JSONException e) {
-			Log.e("LOG_TAG", "Cannot process JSON results", e);
-		}
-
-		return resultList;
-	}
 
 }

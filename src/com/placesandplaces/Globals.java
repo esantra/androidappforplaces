@@ -8,8 +8,6 @@ public class Globals {
 	// Global variable
 	private String location1;
 	private String location2;
-	private String location3;
-	private String locationi;
 	public static int counterVar;
 	public int counterLocVar = 0;
 	public String[] location_i = new String[100];
@@ -88,7 +86,7 @@ public class Globals {
 
 	public void setCounterVar(int i) {
 
-		this.counterVar = i;
+		Globals.counterVar = i;
 	}
 
 	public int getCounterVar() {

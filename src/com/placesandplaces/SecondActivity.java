@@ -186,9 +186,6 @@ public class SecondActivity extends Activity {
 		 * */
 		lv.setOnItemClickListener(new OnItemClickListener() {
 
-			// this part of code is probably inapplicable to the project version
-			// as lv is removed from the class project version
-
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
@@ -259,9 +256,9 @@ public class SecondActivity extends Activity {
 			googlePlaces = new GooglePlaces();
 
 			try {
+				
 				types = g.getLocation1();
 				String types2 = g.getLocation2();
-
 				int u = 0; // should be the number of generated texts
 
 				nearPlaces = googlePlaces.search(gps.getLatitude(),
@@ -270,7 +267,7 @@ public class SecondActivity extends Activity {
 				nearPlaces2 = googlePlaces.search(gps.getLatitude(),
 						gps.getLongitude(), types2);
 
-				try {
+				
 					for (int r = 0; r < g.getLocationVari(); r++) {
 
 						// this needs to be made into an array for INDUCTION
@@ -282,11 +279,9 @@ public class SecondActivity extends Activity {
 								types_i.get(r));
 
 					}// end for
-				}// end try
-				catch (Exception e) {
-					Log.d("one", "this is a null pointer exception");
-
-				}// end catch
+				
+		   typesCompare(types, types2, types_i);
+				
 
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -463,7 +458,7 @@ public class SecondActivity extends Activity {
 								// loop through each place
 								for (Place p : nearPlaces2.results) {
 
-									if (i < 10) {
+									
 										HashMap<String, String> map2 = new HashMap<String, String>();
 
 										// Place reference won't display in
@@ -616,10 +611,8 @@ public class SecondActivity extends Activity {
 										n++;
 										i = i + 1;
 										yy++;
-									}// end for
-									else {
-
-									}// do nothing
+									
+								
 								}// end map
 
 								// list adapter
@@ -710,10 +703,6 @@ public class SecondActivity extends Activity {
 		return true;
 	}
 
-	private static Place[] createDynamicStringArray(Place... items) {
-		return items;
-	}
-
 	private static String distanceVar(int n, int i, int uk) {
 		Double[] distance_i = new Double[ARRAYLENGTH];
 		DecimalFormat[] myFormat_i = new DecimalFormat[ARRAYLENGTH];
@@ -758,6 +747,34 @@ public class SecondActivity extends Activity {
 					+ secondPlaceReference[1]);
 		}
 		return distanceVariable_i[n];
+	}
+	
+	private static Integer typesCompare(String types, String types2, List types_i){
+		String[] typesStringArray = new String[ARRAYLENGTH];
+		
+		if(types == types2){
+			return 1;
+		}
+		for (int co = 2; co < types_i.size(); co++){
+			
+			typesStringArray[co] = types_i.get(co).toString();
+
+		}
+		
+
+	        for (int i = 0; i < types_i.size(); i++){  
+	            for (int j = 0; j < types_i.size(); j++){  
+	                if ((types_i.get(i) == types_i.get(j)) && (i != j)){  
+	                	Log.d("distance", "repeated value = " + types_i.get(i));  
+	                	Log.d("distance", "duplicate location found at indices: " + i + " " + j);  
+	                }  
+	            }  
+           
+	        } 
+		
+		
+		return 0;
+		
 	}
 
 }

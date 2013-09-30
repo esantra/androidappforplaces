@@ -8,6 +8,15 @@ import java.util.SortedSet;
 import java.util.StringTokenizer;
 import java.util.TreeSet;
 
+
+
+/*----------------
+
+this class used as a working example - not 
+for final submission or evaluation/grading purposes.
+
+----------------*/
+
 class DataStructure {
 	public DataStructure(int type, ArrayList<Integer> indexPos,
 			ArrayList<Integer> zeroOne, ArrayList<String> fullString,

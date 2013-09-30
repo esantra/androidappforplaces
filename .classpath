@@ -7,5 +7,6 @@
 	<classpathentry kind="lib" path="C:/Users/desktop/Downloads/rabbitmq-java-client-3.1.5/rabbitmq-java-client-3.1.5/lib/commons-cli-1.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/desktop/Downloads/rabbitmq-java-client-3.1.5/rabbitmq-java-client-3.1.5/lib/commons-io-1.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/desktop/Downloads/rabbitmq-java-client-3.1.5/rabbitmq-java-client-3.1.5/lib/junit.jar"/>
+	<classpathentry kind="lib" path="C:/Users/desktop/workspace/PlacesandPlaces/weka.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

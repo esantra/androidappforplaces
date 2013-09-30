@@ -457,7 +457,7 @@ public class SecondActivity extends Activity {
 							if (nearPlaces2.results != null) {
 								// loop through each place
 								for (Place p : nearPlaces2.results) {
-
+									if (i < 10) {
 									
 										HashMap<String, String> map2 = new HashMap<String, String>();
 
@@ -612,7 +612,10 @@ public class SecondActivity extends Activity {
 										i = i + 1;
 										yy++;
 									
-								
+									}// end i < 10
+									else {
+
+									}// do nothing
 								}// end map
 
 								// list adapter

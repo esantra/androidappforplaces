@@ -128,6 +128,13 @@ public class MainActivity extends Activity {
 					mOutput2.setText(place2.toString());
 
 					connection.close();
+					
+					/*Apriori ap = new Apriori();
+					ap.aprioriMethod();
+					mOutput.setText(ap.text1);
+					mOutput2.setText(ap.text2);
+					*/
+					
 
 				} catch (Exception e) {
 					// TODO Auto-generated catch block

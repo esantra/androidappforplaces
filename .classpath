@@ -8,5 +8,8 @@
 	<classpathentry kind="lib" path="C:/Users/desktop/Downloads/rabbitmq-java-client-3.1.5/rabbitmq-java-client-3.1.5/lib/commons-io-1.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/desktop/Downloads/rabbitmq-java-client-3.1.5/rabbitmq-java-client-3.1.5/lib/junit.jar"/>
 	<classpathentry kind="lib" path="C:/Users/desktop/workspace/PlacesandPlaces/weka.jar"/>
+	<classpathentry kind="lib" path="C:/adt-bundle-windows-x86/sdk/add-ons/addon-google_apis-google-8/libs/maps.jar"/>
+	<classpathentry kind="lib" path="C:/Users/desktop/Downloads/android-maps-extensions.1.6.0/android-maps-extensions.1.6.0/android-maps-extensions/libs/android-support-v4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/desktop/Downloads/android-maps-extensions.1.6.0/android-maps-extensions.1.6.0/android-maps-extensions"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

@@ -25,7 +25,7 @@
 <a name="l00006"></a>00006 
 <a name="l00007"></a>00007 <span class="keyword">import</span> com.rabbitmq.client.QueueingConsumer;
 <a name="l00008"></a>00008 
-<a name="l00013"></a><a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html">00013</a> <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html">MessageConsumer</a> <span class="keyword">extends</span> <a class="code" href="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q.html">IConnectToRabbitMQ</a> {
+<a name="l00013"></a><a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html">00013</a> <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html">MessageConsumer</a> <span class="keyword">extends</span> <a class="code" href="classcom_1_1placesandplaces_1_1_rabbit_m_q_conn.html">RabbitMQConn</a> {
 <a name="l00014"></a>00014 
 <a name="l00015"></a><a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#2b56e6f2147dbc81e537a30a7fb2b1e0">00015</a>         <span class="keyword">public</span> <a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#2b56e6f2147dbc81e537a30a7fb2b1e0">MessageConsumer</a>(String server, String exchange, String exchangeType) {
 <a name="l00016"></a>00016                 super(server, exchange, exchangeType);
@@ -72,17 +72,17 @@
 <a name="l00068"></a>00068                 <span class="keywordflow">if</span> (super.connectToRabbitMQ()) {
 <a name="l00069"></a>00069 
 <a name="l00070"></a>00070                         <span class="keywordflow">try</span> {
-<a name="l00071"></a>00071                                 <a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#96e975657b6ab0c8bda7231a38f4ab69">mQueue</a> = <a class="code" href="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q.html#bcf8199fa590889c9ce43c503ece5fcb">mModel</a>.queueDeclare().getQueue();
-<a name="l00072"></a>00072                                 <a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#8d6e4737db76fd085059ea9a6b4c927d">MySubscription</a> = <span class="keyword">new</span> QueueingConsumer(<a class="code" href="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q.html#bcf8199fa590889c9ce43c503ece5fcb">mModel</a>);
-<a name="l00073"></a>00073                                 <a class="code" href="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q.html#bcf8199fa590889c9ce43c503ece5fcb">mModel</a>.basicConsume(<a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#96e975657b6ab0c8bda7231a38f4ab69">mQueue</a>, <span class="keyword">false</span>, <a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#8d6e4737db76fd085059ea9a6b4c927d">MySubscription</a>);
+<a name="l00071"></a>00071                                 <a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#96e975657b6ab0c8bda7231a38f4ab69">mQueue</a> = <a class="code" href="classcom_1_1placesandplaces_1_1_rabbit_m_q_conn.html#12bec6847a71a3461798edf9f2cf4a72">mModel</a>.queueDeclare().getQueue();
+<a name="l00072"></a>00072                                 <a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#8d6e4737db76fd085059ea9a6b4c927d">MySubscription</a> = <span class="keyword">new</span> QueueingConsumer(<a class="code" href="classcom_1_1placesandplaces_1_1_rabbit_m_q_conn.html#12bec6847a71a3461798edf9f2cf4a72">mModel</a>);
+<a name="l00073"></a>00073                                 <a class="code" href="classcom_1_1placesandplaces_1_1_rabbit_m_q_conn.html#12bec6847a71a3461798edf9f2cf4a72">mModel</a>.basicConsume(<a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#96e975657b6ab0c8bda7231a38f4ab69">mQueue</a>, <span class="keyword">false</span>, <a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#8d6e4737db76fd085059ea9a6b4c927d">MySubscription</a>);
 <a name="l00074"></a>00074                         } <span class="keywordflow">catch</span> (IOException e) {
 <a name="l00075"></a>00075                                 e.printStackTrace();
 <a name="l00076"></a>00076                                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
 <a name="l00077"></a>00077                         }
-<a name="l00078"></a>00078                         <span class="keywordflow">if</span> (<a class="code" href="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q.html#b2a3837162211a8331f30dbd0a5187b5">MyExchangeType</a> == <span class="stringliteral">"fanout"</span>)
+<a name="l00078"></a>00078                         <span class="keywordflow">if</span> (<a class="code" href="classcom_1_1placesandplaces_1_1_rabbit_m_q_conn.html#0c1c1bd029dbfb84d258cafc853775f8">ExchangeType</a> == <span class="stringliteral">"fanout"</span>)
 <a name="l00079"></a>00079                                 <a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#898c853a3d89e67d47339bcf4477e306">AddBinding</a>(<span class="stringliteral">""</span>);<span class="comment">// fanout has default binding</span>
 <a name="l00080"></a>00080 
-<a name="l00081"></a>00081                         <a class="code" href="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q.html#f24ce088a8e12e794e6d4c3dd4a3fb72">Running</a> = <span class="keyword">true</span>;
+<a name="l00081"></a>00081                         <a class="code" href="classcom_1_1placesandplaces_1_1_rabbit_m_q_conn.html#acaa1bcd4ad47e81abf4a385bcc40071">Running</a> = <span class="keyword">true</span>;
 <a name="l00082"></a>00082                         <a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#28f126d7c69e4ad03502a7b9c653ed61">mConsumeHandler</a>.post(<a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#48cb8e5245dd8aac62f8d7610b1df761">mConsumeRunner</a>);
 <a name="l00083"></a>00083 
 <a name="l00084"></a>00084                         <span class="keywordflow">return</span> <span class="keyword">true</span>;
@@ -92,7 +92,7 @@
 <a name="l00088"></a>00088 
 <a name="l00096"></a><a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#898c853a3d89e67d47339bcf4477e306">00096</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#898c853a3d89e67d47339bcf4477e306">AddBinding</a>(String routingKey) {
 <a name="l00097"></a>00097                 <span class="keywordflow">try</span> {
-<a name="l00098"></a>00098                         <a class="code" href="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q.html#bcf8199fa590889c9ce43c503ece5fcb">mModel</a>.queueBind(<a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#96e975657b6ab0c8bda7231a38f4ab69">mQueue</a>, <a class="code" href="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q.html#db4ab527d09ee6e0290f1f247ed15180">mExchange</a>, routingKey);
+<a name="l00098"></a>00098                         <a class="code" href="classcom_1_1placesandplaces_1_1_rabbit_m_q_conn.html#12bec6847a71a3461798edf9f2cf4a72">mModel</a>.queueBind(<a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#96e975657b6ab0c8bda7231a38f4ab69">mQueue</a>, <a class="code" href="classcom_1_1placesandplaces_1_1_rabbit_m_q_conn.html#2eaac0a7ca0d07a0351b293b4d1984cd">mExchange</a>, routingKey);
 <a name="l00099"></a>00099                 } <span class="keywordflow">catch</span> (IOException e) {
 <a name="l00100"></a>00100                         <span class="comment">// TODO Auto-generated catch block</span>
 <a name="l00101"></a>00101                         e.printStackTrace();
@@ -101,7 +101,7 @@
 <a name="l00104"></a>00104 
 <a name="l00112"></a><a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#6409eca8a199695da8b144967d6d1d99">00112</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#6409eca8a199695da8b144967d6d1d99">RemoveBinding</a>(String routingKey) {
 <a name="l00113"></a>00113                 <span class="keywordflow">try</span> {
-<a name="l00114"></a>00114                         <a class="code" href="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q.html#bcf8199fa590889c9ce43c503ece5fcb">mModel</a>.queueUnbind(<a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#96e975657b6ab0c8bda7231a38f4ab69">mQueue</a>, <a class="code" href="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q.html#db4ab527d09ee6e0290f1f247ed15180">mExchange</a>, routingKey);
+<a name="l00114"></a>00114                         <a class="code" href="classcom_1_1placesandplaces_1_1_rabbit_m_q_conn.html#12bec6847a71a3461798edf9f2cf4a72">mModel</a>.queueUnbind(<a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#96e975657b6ab0c8bda7231a38f4ab69">mQueue</a>, <a class="code" href="classcom_1_1placesandplaces_1_1_rabbit_m_q_conn.html#2eaac0a7ca0d07a0351b293b4d1984cd">mExchange</a>, routingKey);
 <a name="l00115"></a>00115                 } <span class="keywordflow">catch</span> (IOException e) {
 <a name="l00116"></a>00116                         <span class="comment">// TODO Auto-generated catch block</span>
 <a name="l00117"></a>00117                         e.printStackTrace();
@@ -113,14 +113,14 @@
 <a name="l00123"></a>00123 
 <a name="l00124"></a>00124                         @Override
 <a name="l00125"></a>00125                         <span class="keyword">public</span> <span class="keywordtype">void</span> run() {
-<a name="l00126"></a>00126                                 <span class="keywordflow">while</span> (<a class="code" href="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q.html#f24ce088a8e12e794e6d4c3dd4a3fb72">Running</a>) {
+<a name="l00126"></a>00126                                 <span class="keywordflow">while</span> (<a class="code" href="classcom_1_1placesandplaces_1_1_rabbit_m_q_conn.html#acaa1bcd4ad47e81abf4a385bcc40071">Running</a>) {
 <a name="l00127"></a>00127                                         QueueingConsumer.Delivery delivery;
 <a name="l00128"></a>00128                                         <span class="keywordflow">try</span> {
 <a name="l00129"></a>00129                                                 delivery = <a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#8d6e4737db76fd085059ea9a6b4c927d">MySubscription</a>.nextDelivery();
 <a name="l00130"></a>00130                                                 <a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#800fbaf00af4663231506321ede831b0">mLastMessage</a> = delivery.getBody();
 <a name="l00131"></a>00131                                                 <a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#e023477ca36fa473fed0c0bc113b0ab2">mMessageHandler</a>.post(<a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#113a8109b60647ad63618e7fc3f0e577">mReturnMessage</a>);
 <a name="l00132"></a>00132                                                 <span class="keywordflow">try</span> {
-<a name="l00133"></a>00133                                                         <a class="code" href="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q.html#bcf8199fa590889c9ce43c503ece5fcb">mModel</a>.basicAck(delivery.getEnvelope()
+<a name="l00133"></a>00133                                                         <a class="code" href="classcom_1_1placesandplaces_1_1_rabbit_m_q_conn.html#12bec6847a71a3461798edf9f2cf4a72">mModel</a>.basicAck(delivery.getEnvelope()
 <a name="l00134"></a>00134                                                                         .getDeliveryTag(), <span class="keyword">false</span>);
 <a name="l00135"></a>00135                                                 } <span class="keywordflow">catch</span> (IOException e) {
 <a name="l00136"></a>00136                                                         e.printStackTrace();
@@ -136,10 +136,10 @@
 <a name="l00146"></a>00146         }
 <a name="l00147"></a>00147 
 <a name="l00148"></a><a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#0a457e7c42c206e9496dc9e48deb11cb">00148</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classcom_1_1placesandplaces_1_1_message_consumer.html#0a457e7c42c206e9496dc9e48deb11cb">dispose</a>() {
-<a name="l00149"></a>00149                 <a class="code" href="classcom_1_1placesandplaces_1_1_i_connect_to_rabbit_m_q.html#f24ce088a8e12e794e6d4c3dd4a3fb72">Running</a> = <span class="keyword">false</span>;
+<a name="l00149"></a>00149                 <a class="code" href="classcom_1_1placesandplaces_1_1_rabbit_m_q_conn.html#acaa1bcd4ad47e81abf4a385bcc40071">Running</a> = <span class="keyword">false</span>;
 <a name="l00150"></a>00150         }
 <a name="l00151"></a>00151 }
-</pre></div><hr size="1"><address style="align: right;"><small>Generated on Sun Sep 29 14:48:08 2013 for PlacesAndPlaces by&nbsp;
+</pre></div><hr size="1"><address style="align: right;"><small>Generated on Mon Sep 30 19:23:31 2013 for PlacesAndPlaces by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.7-20061004 </small></address>
 </body>

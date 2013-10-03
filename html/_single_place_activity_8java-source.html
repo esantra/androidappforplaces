@@ -241,106 +241,128 @@
 <a name="l00239"></a>00239 
 <a name="l00240"></a>00240                                                                         @Override
 <a name="l00241"></a>00241                                                                         <span class="keyword">public</span> <span class="keywordtype">void</span> onClick(View arg0) {
-<a name="l00242"></a>00242 
-<a name="l00243"></a>00243                                                                                 String map = <span class="stringliteral">"geo:0,0?q="</span> + <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#e5b5628adc9a412c5eaba6f593f00227">address</a>;
-<a name="l00244"></a>00244                                                                                 Intent callIntent = <span class="keyword">new</span> Intent(
-<a name="l00245"></a>00245                                                                                                 Intent.ACTION_VIEW);
-<a name="l00246"></a>00246                                                                                 callIntent.setData(Uri.parse(map));
-<a name="l00247"></a>00247                                                                                 startActivity(callIntent);
-<a name="l00248"></a>00248                                                                         }
-<a name="l00249"></a>00249 
-<a name="l00250"></a>00250                                                                 });
-<a name="l00251"></a>00251 
-<a name="l00252"></a>00252                                                                 ImageButton btnPhone = (ImageButton) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.btnCall);
-<a name="l00254"></a>00254                                                                 btnPhone.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() {
-<a name="l00255"></a>00255 
-<a name="l00256"></a>00256                                                                         @Override
-<a name="l00257"></a>00257                                                                         <span class="keyword">public</span> <span class="keywordtype">void</span> onClick(View arg0) {
-<a name="l00258"></a>00258 
-<a name="l00259"></a>00259                                                                                 <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#eec40111db6720e02e1acc0dc186a278">phone</a> = <span class="stringliteral">"tel:"</span> + <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#eec40111db6720e02e1acc0dc186a278">phone</a>;
-<a name="l00260"></a>00260                                                                                 Intent callIntent = <span class="keyword">new</span> Intent(
-<a name="l00261"></a>00261                                                                                                 Intent.ACTION_CALL);
-<a name="l00262"></a>00262                                                                                 callIntent.setData(Uri.parse(<a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#eec40111db6720e02e1acc0dc186a278">phone</a>));
-<a name="l00263"></a>00263                                                                                 startActivity(callIntent);
-<a name="l00264"></a>00264                                                                         }
-<a name="l00265"></a>00265                                                                 });
-<a name="l00266"></a>00266 
-<a name="l00267"></a>00267                                                                 ImageButton btnNavigate = (ImageButton) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.btnNavigate);
-<a name="l00269"></a>00269                                                                 btnNavigate
-<a name="l00270"></a>00270                                                                                 .setOnClickListener(<span class="keyword">new</span> View.OnClickListener() {
+<a name="l00242"></a>00242                                                                                 
+<a name="l00243"></a>00243                                                                                 
+<a name="l00244"></a>00244                                                                                 <span class="comment">/*private GoogleMap mMap;</span>
+<a name="l00245"></a>00245 <span class="comment">                                                                                mMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();</span>
+<a name="l00246"></a>00246 <span class="comment">                                                                                mMap.addMarker(new MarkerOptions()</span>
+<a name="l00247"></a>00247 <span class="comment">                                                                                        .position(new LatLng(0, 0))</span>
+<a name="l00248"></a>00248 <span class="comment">                                                                                        .title("Hello world"));</span>
+<a name="l00249"></a>00249 <span class="comment">                                                                                </span>
+<a name="l00250"></a>00250 <span class="comment">                                                                                 Intent intent = new Intent();</span>
+<a name="l00251"></a>00251 <span class="comment">                                                                                 intent.setAction(Intent.ACTION_VIEW);</span>
+<a name="l00252"></a>00252 <span class="comment">                                                                                 String data = String.format("geo:%s,%s", latitude, longitude);</span>
+<a name="l00253"></a>00253 <span class="comment">                                                                                 if (zoomLevel != null) {</span>
+<a name="l00254"></a>00254 <span class="comment">                                                                                     data = String.format("%s?z=%s", data, zoomLevel);</span>
+<a name="l00255"></a>00255 <span class="comment">                                                                                 }</span>
+<a name="l00256"></a>00256 <span class="comment">                                                                                 intent.setData(Uri.parse(data));</span>
+<a name="l00257"></a>00257 <span class="comment">                                                                                 startActivity(intent);</span>
+<a name="l00258"></a>00258 <span class="comment"></span>
+<a name="l00259"></a>00259 <span class="comment">                                                                                String map = "geo:0,0?q=" + address;</span>
+<a name="l00260"></a>00260 <span class="comment">                                                                                Intent callIntent = new Intent(</span>
+<a name="l00261"></a>00261 <span class="comment">                                                                                                Intent.ACTION_VIEW);</span>
+<a name="l00262"></a>00262 <span class="comment">                                                                                callIntent.setData(Uri.parse(map));</span>
+<a name="l00263"></a>00263 <span class="comment">                                                                                startActivity(callIntent);*/</span>
+<a name="l00264"></a>00264                                                                                 
+<a name="l00265"></a>00265                                                                                 
+<a name="l00266"></a>00266                                                                                 Intent mapIntent = <span class="keyword">new</span> Intent(getBaseContext(), <a class="code" href="classcom_1_1placesandplaces_1_1_map_activity.html">MapActivity</a>.class);
+<a name="l00267"></a>00267                                                                                 mapIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+<a name="l00268"></a>00268                                                                                 startActivity(mapIntent);
+<a name="l00269"></a>00269                                                                                 
+<a name="l00270"></a>00270                                                                         }
 <a name="l00271"></a>00271 
-<a name="l00272"></a>00272                                                                                         @Override
-<a name="l00273"></a>00273                                                                                         <span class="keyword">public</span> <span class="keywordtype">void</span> onClick(View arg0) {
-<a name="l00274"></a>00274 
-<a name="l00275"></a>00275                                                                                                 Intent intent = <span class="keyword">new</span> Intent(
-<a name="l00276"></a>00276                                                                                                                 Intent.ACTION_VIEW,
-<a name="l00277"></a>00277                                                                                                                 Uri.parse(<span class="stringliteral">"google.navigation:q="</span>
-<a name="l00278"></a>00278                                                                                                                                 + <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#6b964420dec42a3aa80fa61c0b188cc8">placeDetails</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_place_details.html#8487fb5cb38348c53651d609629bc608">result</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_place.html#87e8f3733179efb452c16228b0e4d94b">geometry</a>.location.lat
-<a name="l00279"></a>00279                                                                                                                                 + <span class="stringliteral">","</span>
-<a name="l00280"></a>00280                                                                                                                                 + <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#6b964420dec42a3aa80fa61c0b188cc8">placeDetails</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_place_details.html#8487fb5cb38348c53651d609629bc608">result</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_place.html#87e8f3733179efb452c16228b0e4d94b">geometry</a>.location.lng));
-<a name="l00281"></a>00281                                                                                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-<a name="l00282"></a>00282                                                                                                 startActivity(intent);
-<a name="l00283"></a>00283 
-<a name="l00284"></a>00284                                                                                         }
-<a name="l00285"></a>00285                                                                                 });
-<a name="l00286"></a>00286 
-<a name="l00287"></a>00287                                                         }
-<a name="l00288"></a>00288                                                 } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (status.equals(<span class="stringliteral">"ZERO_RESULTS"</span>)) {
-<a name="l00289"></a>00289                                                         <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#ab622ae4edf43085675e65aae83c6def">alert</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_alert_dialog_manager.html#5889deaacf772719f810328e79e4ce8d">showAlertDialog</a>(<a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html">SinglePlaceActivity</a>.this,
-<a name="l00290"></a>00290                                                                         <span class="stringliteral">"Near Places"</span>, <span class="stringliteral">"Sorry no place found."</span>,
-<a name="l00291"></a>00291                                                                         <span class="keyword">false</span>);
-<a name="l00292"></a>00292                                                 } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (status.equals(<span class="stringliteral">"UNKNOWN_ERROR"</span>)) {
-<a name="l00293"></a>00293                                                         <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#ab622ae4edf43085675e65aae83c6def">alert</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_alert_dialog_manager.html#5889deaacf772719f810328e79e4ce8d">showAlertDialog</a>(<a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html">SinglePlaceActivity</a>.this,
-<a name="l00294"></a>00294                                                                         <span class="stringliteral">"Places Error"</span>,
-<a name="l00295"></a>00295                                                                         <span class="stringliteral">"Sorry unknown error occured."</span>, <span class="keyword">false</span>);
-<a name="l00296"></a>00296                                                 } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (status.equals(<span class="stringliteral">"OVER_QUERY_LIMIT"</span>)) {
-<a name="l00297"></a>00297                                                         <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#ab622ae4edf43085675e65aae83c6def">alert</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_alert_dialog_manager.html#5889deaacf772719f810328e79e4ce8d">showAlertDialog</a>(
-<a name="l00298"></a>00298                                                                         <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html">SinglePlaceActivity</a>.this,
-<a name="l00299"></a>00299                                                                         <span class="stringliteral">"Places Error"</span>,
-<a name="l00300"></a>00300                                                                         <span class="stringliteral">"Sorry query limit to google places is reached"</span>,
-<a name="l00301"></a>00301                                                                         <span class="keyword">false</span>);
-<a name="l00302"></a>00302                                                 } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (status.equals(<span class="stringliteral">"REQUEST_DENIED"</span>)) {
-<a name="l00303"></a>00303                                                         <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#ab622ae4edf43085675e65aae83c6def">alert</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_alert_dialog_manager.html#5889deaacf772719f810328e79e4ce8d">showAlertDialog</a>(<a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html">SinglePlaceActivity</a>.this,
-<a name="l00304"></a>00304                                                                         <span class="stringliteral">"Places Error"</span>,
-<a name="l00305"></a>00305                                                                         <span class="stringliteral">"Sorry error occured. Request is denied"</span>,
-<a name="l00306"></a>00306                                                                         <span class="keyword">false</span>);
-<a name="l00307"></a>00307                                                 } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (status.equals(<span class="stringliteral">"INVALID_REQUEST"</span>)) {
-<a name="l00308"></a>00308                                                         <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#ab622ae4edf43085675e65aae83c6def">alert</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_alert_dialog_manager.html#5889deaacf772719f810328e79e4ce8d">showAlertDialog</a>(<a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html">SinglePlaceActivity</a>.this,
-<a name="l00309"></a>00309                                                                         <span class="stringliteral">"Places Error"</span>,
-<a name="l00310"></a>00310                                                                         <span class="stringliteral">"Sorry error occured. Invalid Request"</span>,
-<a name="l00311"></a>00311                                                                         <span class="keyword">false</span>);
-<a name="l00312"></a>00312                                                 } <span class="keywordflow">else</span> {
-<a name="l00313"></a>00313                                                         <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#ab622ae4edf43085675e65aae83c6def">alert</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_alert_dialog_manager.html#5889deaacf772719f810328e79e4ce8d">showAlertDialog</a>(<a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html">SinglePlaceActivity</a>.this,
-<a name="l00314"></a>00314                                                                         <span class="stringliteral">"Places Error"</span>, <span class="stringliteral">"Sorry error occured."</span>,
-<a name="l00315"></a>00315                                                                         <span class="keyword">false</span>);
-<a name="l00316"></a>00316                                                 }
-<a name="l00317"></a>00317                                         } <span class="keywordflow">else</span> {
-<a name="l00318"></a>00318                                                 <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#ab622ae4edf43085675e65aae83c6def">alert</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_alert_dialog_manager.html#5889deaacf772719f810328e79e4ce8d">showAlertDialog</a>(<a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html">SinglePlaceActivity</a>.this,
-<a name="l00319"></a>00319                                                                 <span class="stringliteral">"Places Error"</span>, <span class="stringliteral">"Sorry error occured."</span>, <span class="keyword">false</span>);
-<a name="l00320"></a>00320                                         }
-<a name="l00321"></a>00321 
-<a name="l00322"></a>00322                                 }
-<a name="l00323"></a>00323                         });
-<a name="l00324"></a>00324 
-<a name="l00325"></a>00325                 }
-<a name="l00326"></a>00326 
-<a name="l00327"></a>00327         }
-<a name="l00328"></a>00328 
-<a name="l00329"></a><a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#026038589ff8b9ddae623d8d8cb25b92">00329</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#026038589ff8b9ddae623d8d8cb25b92">push2</a>() {
-<a name="l00330"></a>00330                 <a class="code" href="classcom_1_1placesandplaces_1_1_globals.html">Globals</a>.pushID = SecondActivity.lvid;
-<a name="l00331"></a>00331                 <span class="keyword">new</span> <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details.html">LoadSinglePlaceDetails</a>()
-<a name="l00332"></a>00332                                 .execute(SecondActivity.secondPlaceReference[<a class="code" href="classcom_1_1placesandplaces_1_1_globals.html">Globals</a>.nameCount
-<a name="l00333"></a>00333                                                 + <a class="code" href="classcom_1_1placesandplaces_1_1_globals.html">Globals</a>.pushID]);
-<a name="l00334"></a>00334 
-<a name="l00335"></a>00335                 <span class="keywordtype">int</span> addint = <a class="code" href="classcom_1_1placesandplaces_1_1_globals.html">Globals</a>.nameCount + <a class="code" href="classcom_1_1placesandplaces_1_1_globals.html">Globals</a>.pushID;
-<a name="l00336"></a>00336 
-<a name="l00337"></a>00337                 Log.d(<span class="stringliteral">"LV"</span>, <span class="stringliteral">"one two namecount is "</span> + addint);
-<a name="l00338"></a>00338 
-<a name="l00339"></a>00339                 <a class="code" href="classcom_1_1placesandplaces_1_1_globals.html">Globals</a>.nameCount++;
-<a name="l00340"></a>00340         }
-<a name="l00341"></a>00341 
-<a name="l00342"></a>00342 }
-</pre></div><hr size="1"><address style="align: right;"><small>Generated on Sun Sep 29 14:48:08 2013 for PlacesAndPlaces by&nbsp;
+<a name="l00272"></a>00272                                                                 });
+<a name="l00273"></a>00273 
+<a name="l00274"></a>00274                                                                 ImageButton btnPhone = (ImageButton) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.btnCall);
+<a name="l00276"></a>00276                                                                 btnPhone.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() {
+<a name="l00277"></a>00277 
+<a name="l00278"></a>00278                                                                         @Override
+<a name="l00279"></a>00279                                                                         <span class="keyword">public</span> <span class="keywordtype">void</span> onClick(View arg0) {
+<a name="l00280"></a>00280 
+<a name="l00281"></a>00281                                                                                 <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#eec40111db6720e02e1acc0dc186a278">phone</a> = <span class="stringliteral">"tel:"</span> + <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#eec40111db6720e02e1acc0dc186a278">phone</a>;
+<a name="l00282"></a>00282                                                                                 Intent callIntent = <span class="keyword">new</span> Intent(
+<a name="l00283"></a>00283                                                                                                 Intent.ACTION_CALL);
+<a name="l00284"></a>00284                                                                                 callIntent.setData(Uri.parse(<a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#eec40111db6720e02e1acc0dc186a278">phone</a>));
+<a name="l00285"></a>00285                                                                                 startActivity(callIntent);
+<a name="l00286"></a>00286                                                                         }
+<a name="l00287"></a>00287                                                                 });
+<a name="l00288"></a>00288 
+<a name="l00289"></a>00289                                                                 ImageButton btnNavigate = (ImageButton) findViewById(<a class="code" href="classcom_1_1placesandplaces_1_1_r.html">R</a>.id.btnNavigate);
+<a name="l00291"></a>00291                                                                 btnNavigate
+<a name="l00292"></a>00292                                                                                 .setOnClickListener(<span class="keyword">new</span> View.OnClickListener() {
+<a name="l00293"></a>00293 
+<a name="l00294"></a>00294                                                                                         @Override
+<a name="l00295"></a>00295                                                                                         <span class="keyword">public</span> <span class="keywordtype">void</span> onClick(View arg0) {
+<a name="l00296"></a>00296 
+<a name="l00297"></a>00297                                                                                                 Intent intent = <span class="keyword">new</span> Intent(
+<a name="l00298"></a>00298                                                                                                                 Intent.ACTION_VIEW,
+<a name="l00299"></a>00299                                                                                                                 Uri.parse(<span class="stringliteral">"google.navigation:q="</span>
+<a name="l00300"></a>00300                                                                                                                                 + <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#6b964420dec42a3aa80fa61c0b188cc8">placeDetails</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_place_details.html#8487fb5cb38348c53651d609629bc608">result</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_place.html#87e8f3733179efb452c16228b0e4d94b">geometry</a>.location.lat
+<a name="l00301"></a>00301                                                                                                                                 + <span class="stringliteral">","</span>
+<a name="l00302"></a>00302                                                                                                                                 + <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#6b964420dec42a3aa80fa61c0b188cc8">placeDetails</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_place_details.html#8487fb5cb38348c53651d609629bc608">result</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_place.html#87e8f3733179efb452c16228b0e4d94b">geometry</a>.location.lng));
+<a name="l00303"></a>00303                                                                                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+<a name="l00304"></a>00304                                                                                                 startActivity(intent);
+<a name="l00305"></a>00305 
+<a name="l00306"></a>00306                                                                                         }
+<a name="l00307"></a>00307                                                                                 });
+<a name="l00308"></a>00308 
+<a name="l00309"></a>00309                                                         }
+<a name="l00310"></a>00310                                                 } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (status.equals(<span class="stringliteral">"ZERO_RESULTS"</span>)) {
+<a name="l00311"></a>00311                                                         <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#ab622ae4edf43085675e65aae83c6def">alert</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_alert_dialog_manager.html#5889deaacf772719f810328e79e4ce8d">showAlertDialog</a>(<a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html">SinglePlaceActivity</a>.this,
+<a name="l00312"></a>00312                                                                         <span class="stringliteral">"Near Places"</span>, <span class="stringliteral">"Sorry no place found."</span>,
+<a name="l00313"></a>00313                                                                         <span class="keyword">false</span>);
+<a name="l00314"></a>00314                                                 } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (status.equals(<span class="stringliteral">"UNKNOWN_ERROR"</span>)) {
+<a name="l00315"></a>00315                                                         <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#ab622ae4edf43085675e65aae83c6def">alert</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_alert_dialog_manager.html#5889deaacf772719f810328e79e4ce8d">showAlertDialog</a>(<a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html">SinglePlaceActivity</a>.this,
+<a name="l00316"></a>00316                                                                         <span class="stringliteral">"Places Error"</span>,
+<a name="l00317"></a>00317                                                                         <span class="stringliteral">"Sorry unknown error occured."</span>, <span class="keyword">false</span>);
+<a name="l00318"></a>00318                                                 } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (status.equals(<span class="stringliteral">"OVER_QUERY_LIMIT"</span>)) {
+<a name="l00319"></a>00319                                                         <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#ab622ae4edf43085675e65aae83c6def">alert</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_alert_dialog_manager.html#5889deaacf772719f810328e79e4ce8d">showAlertDialog</a>(
+<a name="l00320"></a>00320                                                                         <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html">SinglePlaceActivity</a>.this,
+<a name="l00321"></a>00321                                                                         <span class="stringliteral">"Places Error"</span>,
+<a name="l00322"></a>00322                                                                         <span class="stringliteral">"Sorry query limit to google places is reached"</span>,
+<a name="l00323"></a>00323                                                                         <span class="keyword">false</span>);
+<a name="l00324"></a>00324                                                 } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (status.equals(<span class="stringliteral">"REQUEST_DENIED"</span>)) {
+<a name="l00325"></a>00325                                                         <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#ab622ae4edf43085675e65aae83c6def">alert</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_alert_dialog_manager.html#5889deaacf772719f810328e79e4ce8d">showAlertDialog</a>(<a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html">SinglePlaceActivity</a>.this,
+<a name="l00326"></a>00326                                                                         <span class="stringliteral">"Places Error"</span>,
+<a name="l00327"></a>00327                                                                         <span class="stringliteral">"Sorry error occured. Request is denied"</span>,
+<a name="l00328"></a>00328                                                                         <span class="keyword">false</span>);
+<a name="l00329"></a>00329                                                 } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (status.equals(<span class="stringliteral">"INVALID_REQUEST"</span>)) {
+<a name="l00330"></a>00330                                                         <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#ab622ae4edf43085675e65aae83c6def">alert</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_alert_dialog_manager.html#5889deaacf772719f810328e79e4ce8d">showAlertDialog</a>(<a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html">SinglePlaceActivity</a>.this,
+<a name="l00331"></a>00331                                                                         <span class="stringliteral">"Places Error"</span>,
+<a name="l00332"></a>00332                                                                         <span class="stringliteral">"Sorry error occured. Invalid Request"</span>,
+<a name="l00333"></a>00333                                                                         <span class="keyword">false</span>);
+<a name="l00334"></a>00334                                                 } <span class="keywordflow">else</span> {
+<a name="l00335"></a>00335                                                         <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#ab622ae4edf43085675e65aae83c6def">alert</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_alert_dialog_manager.html#5889deaacf772719f810328e79e4ce8d">showAlertDialog</a>(<a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html">SinglePlaceActivity</a>.this,
+<a name="l00336"></a>00336                                                                         <span class="stringliteral">"Places Error"</span>, <span class="stringliteral">"Sorry error occured."</span>,
+<a name="l00337"></a>00337                                                                         <span class="keyword">false</span>);
+<a name="l00338"></a>00338                                                 }
+<a name="l00339"></a>00339                                         } <span class="keywordflow">else</span> {
+<a name="l00340"></a>00340                                                 <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#ab622ae4edf43085675e65aae83c6def">alert</a>.<a class="code" href="classcom_1_1placesandplaces_1_1_alert_dialog_manager.html#5889deaacf772719f810328e79e4ce8d">showAlertDialog</a>(<a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html">SinglePlaceActivity</a>.this,
+<a name="l00341"></a>00341                                                                 <span class="stringliteral">"Places Error"</span>, <span class="stringliteral">"Sorry error occured."</span>, <span class="keyword">false</span>);
+<a name="l00342"></a>00342                                         }
+<a name="l00343"></a>00343 
+<a name="l00344"></a>00344                                 }
+<a name="l00345"></a>00345                         });
+<a name="l00346"></a>00346 
+<a name="l00347"></a>00347                 }
+<a name="l00348"></a>00348 
+<a name="l00349"></a>00349         }
+<a name="l00350"></a>00350 
+<a name="l00351"></a><a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#026038589ff8b9ddae623d8d8cb25b92">00351</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity.html#026038589ff8b9ddae623d8d8cb25b92">push2</a>() {
+<a name="l00352"></a>00352                 <a class="code" href="classcom_1_1placesandplaces_1_1_globals.html">Globals</a>.pushID = SecondActivity.lvid;
+<a name="l00353"></a>00353                 <span class="keyword">new</span> <a class="code" href="classcom_1_1placesandplaces_1_1_single_place_activity_1_1_load_single_place_details.html">LoadSinglePlaceDetails</a>()
+<a name="l00354"></a>00354                                 .execute(SecondActivity.secondPlaceReference[<a class="code" href="classcom_1_1placesandplaces_1_1_globals.html">Globals</a>.nameCount
+<a name="l00355"></a>00355                                                 + <a class="code" href="classcom_1_1placesandplaces_1_1_globals.html">Globals</a>.pushID]);
+<a name="l00356"></a>00356 
+<a name="l00357"></a>00357                 <span class="keywordtype">int</span> addint = <a class="code" href="classcom_1_1placesandplaces_1_1_globals.html">Globals</a>.nameCount + <a class="code" href="classcom_1_1placesandplaces_1_1_globals.html">Globals</a>.pushID;
+<a name="l00358"></a>00358 
+<a name="l00359"></a>00359                 Log.d(<span class="stringliteral">"LV"</span>, <span class="stringliteral">"one two namecount is "</span> + addint);
+<a name="l00360"></a>00360 
+<a name="l00361"></a>00361                 <a class="code" href="classcom_1_1placesandplaces_1_1_globals.html">Globals</a>.nameCount++;
+<a name="l00362"></a>00362         }
+<a name="l00363"></a>00363 
+<a name="l00364"></a>00364 }
+</pre></div><hr size="1"><address style="align: right;"><small>Generated on Mon Sep 30 19:23:31 2013 for PlacesAndPlaces by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.7-20061004 </small></address>
 </body>

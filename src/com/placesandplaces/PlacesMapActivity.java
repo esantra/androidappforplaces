@@ -50,7 +50,7 @@ public class PlacesMapActivity extends MapActivity {
 		// Nearplaces list
 		nearPlaces = (PlacesList) i.getSerializableExtra("near_places");
 
-		mapView = (MapView) findViewById(R.id.mapView);
+		mapView = (MapView) findViewById(R.id.map);
 		mapView.setBuiltInZoomControls(true);
 
 		mapOverlays = mapView.getOverlays();

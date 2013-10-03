@@ -16,6 +16,14 @@
         android:textStyle="bold"
         android:textSize="16dip"/>
     
+    <Button
+    android:id="@+id/mapbutton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/textView2"
+    android:layout_centerHorizontal="true"
+    android:text="Button" />
+    
     <!--  just added this code to the list_item.xml file for android places autocomplete -->
     <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content" android:layout_height="wrap_content" />

@@ -43,6 +43,9 @@ public class SinglePlaceActivity extends Activity {
 	public String address;
 
 	public Double rating;
+	
+	// GPS Location
+	GPSTracker gps;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -239,12 +242,36 @@ public class SinglePlaceActivity extends Activity {
 
 									@Override
 									public void onClick(View arg0) {
+										
+										
+										/*private GoogleMap mMap;
+										mMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+										mMap.addMarker(new MarkerOptions()
+										        .position(new LatLng(0, 0))
+										        .title("Hello world"));
+										
+										 Intent intent = new Intent();
+										 intent.setAction(Intent.ACTION_VIEW);
+										 String data = String.format("geo:%s,%s", latitude, longitude);
+										 if (zoomLevel != null) {
+										     data = String.format("%s?z=%s", data, zoomLevel);
+										 }
+										 intent.setData(Uri.parse(data));
+										 startActivity(intent);
 
 										String map = "geo:0,0?q=" + address;
 										Intent callIntent = new Intent(
 												Intent.ACTION_VIEW);
 										callIntent.setData(Uri.parse(map));
-										startActivity(callIntent);
+										startActivity(callIntent);*/
+										
+										
+										Intent mapIntent = new Intent(getBaseContext(), Map2Activity.class);
+										mapIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+										startActivity(mapIntent);
+										
+										
+										
 									}
 
 								});

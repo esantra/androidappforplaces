@@ -38,7 +38,7 @@ public class SecondActivity extends Activity {
 	PlacesList nearPlaces;
 	PlacesList nearPlaces2;
 	// GPS Location
-	GPSTracker gps;
+	public static GPSTracker gps;
 	// Button
 	Button btnShowOnMap;
 	// Progress dialog
@@ -217,7 +217,10 @@ public class SecondActivity extends Activity {
 				// Starting new intent
 				Intent in = new Intent(getApplicationContext(),
 						SinglePlaceActivity.class);
+				
+				
 
+				
 				// Sending place reference id to single place activity
 				// place reference id used to get "Place full details"
 				in.putExtra(KEY_REFERENCE, reference);

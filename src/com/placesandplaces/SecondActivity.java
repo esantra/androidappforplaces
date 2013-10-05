@@ -17,7 +17,9 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -37,6 +39,8 @@ public class SecondActivity extends Activity {
 	// Places List
 	PlacesList nearPlaces;
 	PlacesList nearPlaces2;
+	PlacesList[] nearPlaces_i = new PlacesList[ARRAYLENGTH];
+	
 	// GPS Location
 	public static GPSTracker gps;
 	// Button
@@ -65,10 +69,13 @@ public class SecondActivity extends Activity {
 	public static int wcounter = 0;
 	public static int nameCount = 2;
 	public static int lvid;
+	public static String reference;
 	int counter = 0;
+	public ListAdapter adapter2;
 
 	// KEY Strings - strings that hold references for API access
 	public static String KEY_REFERENCE = "reference"; // id of the place
+	public static String MAP_REFERENCE = "reference"; // id of the place
 	public static String KEY_NAME = "name"; // name of the place
 	public static String KEY_VICINITY = "vicinity"; // Place area name
 	public static String KEY_INFORMATION = "information"; // Place area name
@@ -87,6 +94,8 @@ public class SecondActivity extends Activity {
 	public static String[] placesName = new String[ARRAYLENGTH];
 	public static String[] placesName2 = new String[ARRAYLENGTH];
 	public static String nameArr[] = new String[ARRAYLENGTH];
+	public static String latArr[] = new String[ARRAYLENGTH];
+	public static String lngArr[] = new String[ARRAYLENGTH];
 	public static String[] distanceVariable_i = new String[ARRAYLENGTH];
 	public static Place place_i[] = new Place[ARRAYLENGTH];
 	public Place place_ii[] = new Place[ARRAYLENGTH];
@@ -94,7 +103,7 @@ public class SecondActivity extends Activity {
 	public static String[] secondPlaceReference = new String[ARRAYLENGTH];
 	public static Double[] distance_i = new Double[ARRAYLENGTH];
 
-	PlacesList[] nearPlaces_i = new PlacesList[ARRAYLENGTH];
+	
 
 	// ListItems data
 	ArrayList<HashMap<String, String>> placesListItems = new ArrayList<HashMap<String, String>>();
@@ -106,7 +115,9 @@ public class SecondActivity extends Activity {
 	@SuppressLint("UseSparseArrays")
 	public static HashMap<Integer, ArrayList<String>> arrayreferences = new HashMap<Integer, ArrayList<String>>();
 	@SuppressLint("UseSparseArrays")
-	public HashMap<Integer, ArrayList<Place>> arrayplaces = new HashMap<Integer, ArrayList<Place>>();
+	public static HashMap<Integer, ArrayList<Double>> arrayplaceslng = new HashMap<Integer, ArrayList<Double>>();
+	@SuppressLint("UseSparseArrays")
+	public static HashMap<Integer, ArrayList<Double>> arrayplaceslat = new HashMap<Integer, ArrayList<Double>>();
 	public static HashMap<Integer, Place> hm = new HashMap<Integer, Place>();
 	// placeholder string list variable
 	public static List<String> mapstring = new ArrayList<String>();
@@ -193,6 +204,9 @@ public class SecondActivity extends Activity {
 			}
 
 		});
+		
+		
+
 
 		lv2.setOnItemClickListener(new OnItemClickListener() {
 
@@ -205,30 +219,33 @@ public class SecondActivity extends Activity {
 				Log.d("position", "The counter is:" + counter);
 				counter++;
 
-				// getting values from selected ListItem
-				String reference = ((TextView) view
-						.findViewById(R.id.reference)).getText().toString();
 
 				Log.d("position", "The position is:" + counter + " key ref is "
 						+ KEY_REFERENCE.toString() + " Reference is "
 						+ reference);
 				counter++;
+				
+				
+				
+				reference = lv2.getItemAtPosition(position).toString();
+	     		//display in short period of time
+	     		Log.d("Your Location", "This is the maput original variable " + reference);
 
 				// Starting new intent
 				Intent in = new Intent(getApplicationContext(),
-						SinglePlaceActivity.class);
-				
-				
-
+						Map2Activity.class);
 				
 				// Sending place reference id to single place activity
 				// place reference id used to get "Place full details"
 				in.putExtra(KEY_REFERENCE, reference);
+				//in.putExtra(MAP_REFERENCE, maput);		
 				// in.putExtra(KEY_REFERENCE, arrayreferences);
 				startActivity(in);
 			}
 
 		});
+			
+		
 
 	}
 
@@ -318,6 +335,7 @@ public class SecondActivity extends Activity {
 						// Successfully got places details
 						if (nearPlaces.results != null) {
 							// loop through each place
+							//#### first set of place results
 							for (Place p : nearPlaces.results) {
 								HashMap<String, String> map = new HashMap<String, String>();
 
@@ -337,6 +355,7 @@ public class SecondActivity extends Activity {
 								map.put(KEY_REFERENCE, p.reference);
 								mapstring.add(KEY_REFERENCE.toString());
 								mapstring.add(p.reference.toString());
+								
 								Double distance = DistanceCalculation.distFrom(
 										gps.getLatitude(), gps.getLongitude(),
 										p.geometry.location.lat,
@@ -351,27 +370,25 @@ public class SecondActivity extends Activity {
 								// --- so one mile needs to be replaced with a
 								// variable that tells the
 								// distance from one point to another a
-								map.put(KEY_NAME, p.name + " "
+								map.put(KEY_NAME, p.name 
+										+ " lat:  " + p.geometry.location.lat
+										+ " lng:  " + p.geometry.location.lng + " " 
 										+ distanceVariable);
 								mapstring.add(KEY_REFERENCE);
 								mapstring.add(p.reference);
-								mapstring.add(distanceVariable.toString());
+								mapstring.add(" lat:  " + p.geometry.location.lat
+												+ " lng:  " + p.geometry.location.lng + " " +distanceVariable.toString());
 
 								// adding HashMap to ArrayList
 								placesListItems.add(map);
-								Log.d("map",
+								Log.d("map1",
 										"This is map  of items "
 												+ map.toString());
 
 								// increment counter
 								y = y + 1;
 							}
-							// list adapter
-							ListAdapter adapter = new SimpleAdapter(
-									SecondActivity.this, placesListItems,
-									R.layout.list_item, new String[] {
-											KEY_REFERENCE, KEY_NAME },
-									new int[] { R.id.reference, R.id.name });
+							// list adapter --deleted code from here
 
 							// Adding data into listview
 							// lv.setAdapter(adapter);
@@ -395,6 +412,10 @@ public class SecondActivity extends Activity {
 													+ placecount;
 											arraynames.put(uniqueKey,
 													new ArrayList<String>());
+											
+											arrayplaceslat.put(uniqueKey, new ArrayList<Double>());
+											arrayplaceslng.put(uniqueKey, new ArrayList<Double>());
+											
 											hm.put(uniqueKey, p_i);
 
 											// references skipping next
@@ -416,6 +437,8 @@ public class SecondActivity extends Activity {
 
 											// then simply access it with
 											arraynames.get(uniqueKey).add(pi);
+											arrayplaceslat.get(uniqueKey).add(p_i.geometry.location.lat);
+											arrayplaceslng.get(uniqueKey).add(p_i.geometry.location.lng);
 											arrayreferences.get(uniqueKeyRef)
 													.add(pi_ref);
 											place_i[m] = p_i;
@@ -456,7 +479,7 @@ public class SecondActivity extends Activity {
 							int n = 0;
 							int yy = 0;
 
-							// Successfully got places details
+							// ### Second set of places results --- loops for induction
 							if (nearPlaces2.results != null) {
 								// loop through each place
 								for (Place p : nearPlaces2.results) {
@@ -471,6 +494,9 @@ public class SecondActivity extends Activity {
 										map2.put(KEY_REFERENCE, p.reference);
 										mapstring.add(KEY_REFERENCE.toString());
 										mapstring.add(p.reference);
+										mapstring.add(" lat:  " + p.geometry.location.lat
+												+ " lng:  " + p.geometry.location.lng + " ");
+
 
 										Double distance2 = DistanceCalculation
 												.distFrom(
@@ -530,11 +556,12 @@ public class SecondActivity extends Activity {
 
 										// --- THIS NEEDS TO RUN ON A LOOP FOR
 										// INDUCTION PURPOSES
-										String strMapPut = (p.name + " "
+										String strMapPut = (p.name + " " + " lat:  " + p.geometry.location.lat
+												+ " lng:  " + p.geometry.location.lng + " "
 												+ distanceVariable2 + "\n"
 												+ name + " " + distanceFr + "\n");
 
-										mapstring.add(strMapPut);
+										//--just commented this out mapstring.add(strMapPut);
 
 										int uk = wcounter + 100;
 										int multiply = 100;
@@ -548,17 +575,21 @@ public class SecondActivity extends Activity {
 														n, i, wcounter);
 												if (distanceVariable_i[wcounter] != null) {
 													strMapPut = strMapPut
-															+ arraynames.get(
+															+ arraynames.get( 
 																	wcounter)
 																	.toString()
+															+ " lat:  " + arrayplaceslat.get(wcounter)
+															+ " lng:  " + arrayplaceslng.get(wcounter)
 															+ " "
 															+ distanceVariable_i[wcounter]
 															+ "\n";
 												}// end if
 												else {
 													strMapPut = strMapPut
-															+ arraynames
-																	.get(wcounter)
+															+ arraynames.get(wcounter)
+															+ " lat:  " + arrayplaceslat.get(wcounter)
+															+ " lng:  " + arrayplaceslng.get(wcounter)
+															+ " "
 															+ " " + "\n";
 												}// end else
 
@@ -573,24 +604,21 @@ public class SecondActivity extends Activity {
 													distanceVariable_i[wcounter] = distanceVar(
 															n, i, uk);
 													if (distanceVariable_i[wcounter] != null) {
-														strMapPut = strMapPut
-																+ arraynames
-																		.get(uk)
-																+ " "
+														strMapPut +=  arraynames.get(uk)
+																+ " " + " lat:  " + arrayplaceslat.get(uk)
+																+ " lng:  " + arrayplaceslng.get(uk) + " "
 																+ distanceVariable_i[wcounter]
 																+ "\n";
 													}// end if
 													else {
 
-														strMapPut = strMapPut
-																+ arraynames
-																		.get(uk)
-																+ " " + "\n";
+														strMapPut += arraynames.get(uk)
+																+ " " + " lat:  " + arrayplaceslat.get(uk)
+																+ " lng:  " + arrayplaceslng.get(uk) + " "
+																+ "\n";
 													}// end else
 
-													Log.d("key",
-															"this is the third unique key "
-																	+ uk);
+													Log.d("key", "this is the third unique key " + uk);
 												}// end if
 
 											}// end for
@@ -602,14 +630,15 @@ public class SecondActivity extends Activity {
 													"This is a null variable");
 										}// end catch
 
+										
 										map2.put(KEY_NAME, strMapPut);
+										
 										mapstring.add(KEY_NAME);
 										mapstring.add(strMapPut);
 
 										// adding HashMap to ArrayList
 										placesListItems2.add(map2);
-										Log.d("map", "This is map of items 2 "
-												+ map2.toString());
+										Log.d("map2121", "This is map of items 2121 "+ map2.toString());
 
 										n++;
 										i = i + 1;
@@ -622,12 +651,18 @@ public class SecondActivity extends Activity {
 								}// end map
 
 								// list adapter
-								ListAdapter adapter2 = new SimpleAdapter(
+								 adapter2 = new SimpleAdapter(
 										SecondActivity.this, placesListItems2,
 										R.layout.list_item, new String[] {
 												KEY_REFERENCE, KEY_NAME,
 												KEY_INFORMATION }, new int[] {
 												R.id.reference, R.id.name });
+								
+
+								    // Use your own layout
+								    ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(SecondActivity.this,
+								         R.id.label);
+								   
 
 								// Adding data into listview
 
@@ -754,6 +789,10 @@ public class SecondActivity extends Activity {
 		}
 		return distanceVariable_i[n];
 	}
+	
+	
+	
+	
 	
 	private static Integer typesCompare(String types, String types2, List types_i){
 		String[] typesStringArray = new String[ARRAYLENGTH];

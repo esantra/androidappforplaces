@@ -2,12 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:descendantFocusability="blocksDescendants" >
     
     <TextView android:id="@+id/reference"
         android:visibility="gone"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"/>
+
+    <ImageButton
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/mark_red"
+        android:focusable="false"
+  		android:focusableInTouchMode="false" />
     
     <TextView android:id="@+id/name"
         android:layout_width="fill_parent"
@@ -16,15 +25,5 @@
         android:textStyle="bold"
         android:textSize="16dip"/>
     
-    <Button
-    android:id="@+id/mapbutton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@+id/textView2"
-    android:layout_centerHorizontal="true"
-    android:text="Button" />
-    
-    <!--  just added this code to the list_item.xml file for android places autocomplete -->
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content" android:layout_height="wrap_content" />
+   
 </LinearLayout>

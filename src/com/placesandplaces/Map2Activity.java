@@ -35,13 +35,15 @@ public class Map2Activity extends Activity {
     
     //connection detector
     private ConnectionDetector cd;
-    
+    int ARRAYLENGTH = SecondActivity.ARRAYLENGTH;
 
 	public static String reference;
     
 	// KEY Strings
 	public static String KEY_REFERENCE = "reference"; // id of the place
 	public static String MAP_STRING = "maput";
+	public Double[] lat = new Double[ARRAYLENGTH];
+	public Double[] lng = new Double[ARRAYLENGTH];
 	public static List<Double> allMatcheslat = new ArrayList<Double>();
 	public static List<Double> allMatcheslng = new ArrayList<Double>();
 
@@ -216,7 +218,7 @@ public class Map2Activity extends Activity {
         
         //set the longitude and latitude for each marker
         googleMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title("You are here."));
-        googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+        googleMap.setMapType(googleMap.MAP_TYPE_HYBRID);
         googleMap.setTrafficEnabled(true);
         CameraPosition cameraPosition = new CameraPosition.Builder()
         .zoom(10)                   // Sets the zoom
@@ -224,6 +226,8 @@ public class Map2Activity extends Activity {
         .bearing(90)                // Sets the orientation of the camera to east
         .tilt(30)                   // Sets the tilt of the camera to 30 degrees
         .build();                   // Creates a CameraPosition from the builder
+        //googleMap.setMapTypeId(googleMap.maps.MapTypeId.ROADMAP);
+        //mapTypeId: googleMap.maps.MapTypeId.ROADMAP;
         googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));	
         
       //  Double lat1 = SinglePlaceActivity.placeDetails.result.geometry.location.lat;
@@ -234,38 +238,19 @@ public class Map2Activity extends Activity {
 	    
 	   
         //--------------need to put this in a loop for induction purposes
-        Double lat2 = allMatcheslat.get(0);
-        Double lng2 = allMatcheslng.get(0);
-        
-        Double lat3 = allMatcheslat.get(1);
-        Double lng3 = allMatcheslng.get(1);
-        
-        Double lat4 = null;
-        Double lng4 = null;
-        
-        Double lat5 = null;
-        Double lng5 = null;
-        
-        
+	    for(int point = 0; point < allMatcheslat.size(); point++){
+	    	
+	    	lat[point] = allMatcheslat.get(point);
+	    	lng[point] = allMatcheslng.get(point);
+	   
+
     
       //set the longitude and latitude for the marker for the place in the single view
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(lat2, lng2)).
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(lat[point], lng[point])).
         		title("Info Screen Location"));
         googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
         googleMap.setTrafficEnabled(true);
-        
-        //set the longitude and latitude for the marker for the place in the single view
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(lat3, lng3)).
-        		title("Info Screen Location"));
-        googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-        googleMap.setTrafficEnabled(true);
-        
-        /*set the longitude and latitude for the marker for the place in the single view
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(lat4, lng4)).
-        		title("Info Screen Location"));
-        googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-        googleMap.setTrafficEnabled(true);
-        */
+	    }
         
     	// button show on map
     	Button next = (Button) findViewById(R.id.infoButton);

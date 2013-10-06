@@ -8,21 +8,12 @@
 
     <!-- Show on Map button -->
 
-    <Button
-        android:id="@+id/btn_show_map"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="10dip"
-        android:text="Show Places on Map" />
-
     <!-- List view -->
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_show_map"
         android:layout_centerHorizontal="true"
         android:text="Search Results"
         android:textAppearance="?android:attr/textAppearanceLarge" />

@@ -12,23 +12,12 @@
     <!-- List view -->
 
     <Button
-        android:id="@+id/btn_instr"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="15dp"
-        android:text="Instructions" />
-
-    <Button
         android:id="@+id/btn_find"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:text="Find Places Close Together" />
-    
-    
-
 
     <!-- do you need this? -->
 
@@ -46,69 +35,6 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/txtPlaces2" />
 
-    <ImageView
-        android:id="@+id/imgPlus"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/btn_instr"
-        android:layout_marginLeft="25dp"
-        android:maxHeight="20dp"
-        android:maxWidth="20dp"
-        android:src="@drawable/plus" />
-
-    <EditText
-        android:id="@+id/txtPlaces1"
-        android:layout_width="270dp"
-        android:layout_height="50dp"
-        android:layout_alignLeft="@+id/imgPlus"
-        android:layout_below="@+id/imgPlus"
-        android:layout_marginTop="20dp"
-        android:ems="10" />
-
-    <ImageView
-        android:id="@+id/imgAidm"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/btn_instr"
-        android:layout_marginLeft="17dp"
-        android:layout_toRightOf="@+id/imgPlus"
-        android:maxHeight="20dp"
-        android:maxWidth="20dp"
-        android:src="@drawable/questionmark_green" />
-
-    <LinearLayout
-        android:id="@+id/LLTexts"
-        android:layout_width="270dp"
-        android:layout_height="130dp"
-        android:layout_above="@+id/btn_find"
-        android:layout_alignRight="@+id/txtPlaces2"
-        android:orientation="vertical" >
-    </LinearLayout>
-
-    <ImageView
-        android:id="@+id/imgRR"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btn_find"
-        android:layout_toLeftOf="@+id/Exit"
-        android:contentDescription="pic"
-        android:maxHeight="20dp"
-        android:maxWidth="20dp"
-        android:src="@drawable/sync" />
-
-    <ImageView
-        android:id="@+id/Exit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btn_find"
-        android:layout_alignParentRight="true"
-        android:contentDescription="pic"
-        android:maxHeight="20dp"
-        android:maxWidth="20dp"
-        android:onClick="selfDestruct"
-        android:src="@drawable/sync" />
-
     <EditText
         android:id="@+id/txtPlaces2"
         android:layout_width="270dp"
@@ -120,12 +46,77 @@
         <requestFocus />
     </EditText>
 
+    <EditText
+        android:id="@+id/txtPlaces1"
+        android:layout_width="270dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/txtPlaces2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="44dp"
+        android:ems="10" />
+
+    <LinearLayout
+        android:id="@+id/LLTexts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_find"
+        android:layout_alignLeft="@+id/txtPlaces2"
+        android:layout_alignRight="@+id/txtPlaces2"
+        android:layout_alignTop="@+id/autocomplete"
+        android:orientation="vertical" >
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/Exit"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/txtPlaces1"
+        android:contentDescription="pic"
+        android:maxHeight="20dp"
+        android:maxWidth="20dp"
+        android:src="@drawable/exit" />
+
     <ImageView
         android:id="@+id/imgQ1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/txtPlaces1"
-        android:layout_alignRight="@+id/txtPlaces1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/txtPlaces1"
+        android:layout_alignParentTop="true"
         android:src="@drawable/questionmark" />
+
+    <ImageView
+        android:id="@+id/imgPlus"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="18dp"
+        android:layout_toLeftOf="@+id/imgAidm"
+        android:maxHeight="20dp"
+        android:maxWidth="20dp"
+        android:src="@drawable/plus" />
+
+    <ImageView
+        android:id="@+id/imgAidm"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:maxHeight="20dp"
+        android:maxWidth="20dp"
+        android:src="@drawable/questionmark_green" />
+
+    <ImageView
+        android:id="@+id/imgRR"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="14dp"
+        android:layout_toRightOf="@+id/imgAidm"
+        android:contentDescription="pic"
+        android:maxHeight="20dp"
+        android:maxWidth="20dp"
+        android:src="@drawable/recycle" />
 
 </RelativeLayout>

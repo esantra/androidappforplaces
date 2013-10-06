@@ -26,7 +26,7 @@
     <ImageButton
         android:id="@+id/btnMap"
         android:layout_width="55dp"
-        android:layout_height="53dp"
+        android:layout_height="60dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_marginRight="48dp"
@@ -36,7 +36,7 @@
     <ImageButton
         android:id="@+id/btnCall"
         android:layout_width="61dp"
-        android:layout_height="54dp"
+        android:layout_height="60dp"
         android:layout_alignBottom="@+id/btnNavigate"
         android:layout_marginRight="36dp"
         android:layout_toLeftOf="@+id/btnNavigate"
@@ -45,7 +45,7 @@
     <ImageButton
         android:id="@+id/btnNavigate"
         android:layout_width="58dp"
-        android:layout_height="56dp"
+        android:layout_height="60dp"
         android:layout_alignTop="@+id/btnMap"
         android:layout_centerHorizontal="true"
         android:src="@drawable/nav2" />

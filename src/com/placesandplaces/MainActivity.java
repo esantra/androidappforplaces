@@ -28,6 +28,7 @@ public class MainActivity extends Activity {
 
 	// Button
 	Button btnFindIt;
+	ImageView imgExit;
 
 	// declares an array of editText for dynamic form creation
 	public EditText[] et = new EditText[100];
@@ -79,6 +80,18 @@ public class MainActivity extends Activity {
 
 		firstPlace.setText("shopping_mall");
 		secondPlace.setText("bar");
+		
+		imgExit = (ImageView) findViewById(R.id.Exit);
+		imgExit.setOnClickListener(new View.OnClickListener() {
+
+	        @Override
+	        public void onClick(View v) {
+	            // TODO Auto-generated method stub
+	            finish();
+	            System.exit(0);
+	        }
+	    });
+		
 
 		ImageView imgAidm = (ImageView) findViewById(R.id.imgAidm);
 		/** Button click event for shown on map */

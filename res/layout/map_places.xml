@@ -19,6 +19,6 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="65dp"
         android:maxWidth="@dimen/padding_large"
-        android:text="Next Screen" />
+        android:text="Places Info" />
  
 </RelativeLayout>

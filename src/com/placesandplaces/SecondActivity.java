@@ -9,6 +9,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Html;
@@ -72,6 +73,7 @@ public class SecondActivity extends Activity {
 	public static String reference;
 	int counter = 0;
 	public ListAdapter adapter2;
+	public static String referenceBefore;
 
 	// KEY Strings - strings that hold references for API access
 	public static String KEY_REFERENCE = "reference"; // id of the place
@@ -132,6 +134,9 @@ public class SecondActivity extends Activity {
 		setContentView(R.layout.activity_main);
 
 		cd = new ConnectionDetector(getApplicationContext());
+		
+		TextView white = (TextView) findViewById(R.id.name);
+		//white.setTextColor(Color.WHITE);
 
 		// Check if Internet present
 		isInternetPresent = cd.isConnectingToInternet();
@@ -165,31 +170,13 @@ public class SecondActivity extends Activity {
 		// Getting listview2
 		lv2 = (ListView) findViewById(R.id.list2);
 
-		// button show on map
-		btnShowOnMap = (Button) findViewById(R.id.btn_show_map);
+	
 
 		// calling background Async task to load Google Places
 		// After getting places from Google all the data is shown in listview
 		new LoadPlaces().execute();
 
-		/** Button click event for shown on map */
-		btnShowOnMap.setOnClickListener(new View.OnClickListener() {
 
-			@Override
-			public void onClick(View arg0) {
-				Intent i = new Intent(getApplicationContext(),
-						PlacesMapActivity.class);
-				// Sending user current geo location
-				i.putExtra("user_latitude", Double.toString(gps.getLatitude()));
-				i.putExtra("user_longitude",
-						Double.toString(gps.getLongitude()));
-
-				// passing near places to map activity
-				i.putExtra("near_places", nearPlaces);
-				// staring activity
-				startActivity(i);
-			}
-		});
 
 		/**
 		 * ListItem click event On selecting a listitem SinglePlaceActivity is
@@ -227,7 +214,11 @@ public class SecondActivity extends Activity {
 				
 				
 				
-				reference = lv2.getItemAtPosition(position).toString();
+				referenceBefore = lv2.getItemAtPosition(position).toString();
+				String referenceAfter[] = lv2.getItemAtPosition(position).toString().split("\n");
+				reference = referenceAfter[0].toString();
+				
+				
 	     		//display in short period of time
 	     		Log.d("Your Location", "This is the maput original variable " + reference);
 
@@ -237,7 +228,7 @@ public class SecondActivity extends Activity {
 				
 				// Sending place reference id to single place activity
 				// place reference id used to get "Place full details"
-				in.putExtra(KEY_REFERENCE, reference);
+				in.putExtra(KEY_REFERENCE, referenceBefore);
 				//in.putExtra(MAP_REFERENCE, maput);		
 				// in.putExtra(KEY_REFERENCE, arrayreferences);
 				startActivity(in);
@@ -370,14 +361,15 @@ public class SecondActivity extends Activity {
 								// --- so one mile needs to be replaced with a
 								// variable that tells the
 								// distance from one point to another a
-								map.put(KEY_NAME, p.name 
-										+ " lat:  " + p.geometry.location.lat
-										+ " lng:  " + p.geometry.location.lng + " " 
-										+ distanceVariable);
+								
+								String location1 = p.name + " " + distanceVariable + " miles \n"
+										+ "lat:  " + p.geometry.location.lat + " " 
+										+ "lng:  " + p.geometry.location.lng + " \n" ;
+								map.put(KEY_NAME, location1);
 								mapstring.add(KEY_REFERENCE);
 								mapstring.add(p.reference);
-								mapstring.add(" lat:  " + p.geometry.location.lat
-												+ " lng:  " + p.geometry.location.lng + " " +distanceVariable.toString());
+								mapstring.add("lat:  " + p.geometry.location.lat 
+												+ "lng:  " + p.geometry.location.lng + " "  +distanceVariable.toString());
 
 								// adding HashMap to ArrayList
 								placesListItems.add(map);
@@ -494,8 +486,8 @@ public class SecondActivity extends Activity {
 										map2.put(KEY_REFERENCE, p.reference);
 										mapstring.add(KEY_REFERENCE.toString());
 										mapstring.add(p.reference);
-										mapstring.add(" lat:  " + p.geometry.location.lat
-												+ " lng:  " + p.geometry.location.lng + " ");
+										mapstring.add("lat:  " + p.geometry.location.lat 
+												+ "lng:  " + p.geometry.location.lng + " " );
 
 
 										Double distance2 = DistanceCalculation
@@ -556,10 +548,14 @@ public class SecondActivity extends Activity {
 
 										// --- THIS NEEDS TO RUN ON A LOOP FOR
 										// INDUCTION PURPOSES
-										String strMapPut = (p.name + " " + " lat:  " + p.geometry.location.lat
-												+ " lng:  " + p.geometry.location.lng + " "
-												+ distanceVariable2 + "\n"
-												+ name + " " + distanceFr + "\n");
+										String strMapPut = (p.name + " " + distanceVariable2 + " miles \n"
+										        + "lat:  " + p.geometry.location.lat + " " 
+												+ "lng:  " + p.geometry.location.lng + " " 
+											
+												+ name + " " + distanceFr + " miles \n"
+												+ "lat:  " + placesArrayLat[yy].toString() + " "
+												+ "lng:  " + placesArrayLng[yy].toString()  + " \n" 
+											     );
 
 										//--just commented this out mapstring.add(strMapPut);
 
@@ -577,20 +573,19 @@ public class SecondActivity extends Activity {
 													strMapPut = strMapPut
 															+ arraynames.get( 
 																	wcounter)
-																	.toString()
-															+ " lat:  " + arrayplaceslat.get(wcounter)
-															+ " lng:  " + arrayplaceslng.get(wcounter)
-															+ " "
-															+ distanceVariable_i[wcounter]
-															+ "\n";
+																	.toString().replaceAll("^\\[|\\]$", "")
+															+ " " + distanceVariable_i[wcounter].toString().replaceAll("^\\[|\\]$", "") + " miles \n"
+															+ "lat:  " + arrayplaceslat.get(wcounter).toString().replaceAll("^\\[|\\]$", "") + " "
+															+ "lng:  " + arrayplaceslng.get(wcounter).toString().replaceAll("^\\[|\\]$", "") + " \n"
+															;
 												}// end if
 												else {
 													strMapPut = strMapPut
-															+ arraynames.get(wcounter)
-															+ " lat:  " + arrayplaceslat.get(wcounter)
-															+ " lng:  " + arrayplaceslng.get(wcounter)
-															+ " "
-															+ " " + "\n";
+															+ arraynames.get(wcounter).toString().replaceAll("^\\[|\\]$", "") + " " 
+															+ distanceVariable_i[wcounter].toString().replaceAll("^\\[|\\]$", "") + " miles \n"
+															+ "lat:  " + arrayplaceslat.get(wcounter).toString().replaceAll("^\\[|\\]$", "") + " " 
+															+ "lng:  " + arrayplaceslng.get(wcounter).toString().replaceAll("^\\[|\\]$", "")  
+															;
 												}// end else
 
 												Log.d("key",
@@ -604,18 +599,16 @@ public class SecondActivity extends Activity {
 													distanceVariable_i[wcounter] = distanceVar(
 															n, i, uk);
 													if (distanceVariable_i[wcounter] != null) {
-														strMapPut +=  arraynames.get(uk)
-																+ " " + " lat:  " + arrayplaceslat.get(uk)
-																+ " lng:  " + arrayplaceslng.get(uk) + " "
-																+ distanceVariable_i[wcounter]
-																+ "\n";
+														strMapPut +=  arraynames.get(uk).toString().replaceAll("^\\[|\\]$", "")  + " " + distanceVariable_i[wcounter].toString().replaceAll("^\\[|\\]$", "") + " miles \n"
+																+ "lat:  " + arrayplaceslat.get(uk).toString().replaceAll("^\\[|\\]$", "") + " " 
+																+ "lng:  " + arrayplaceslng.get(uk).toString().replaceAll("^\\[|\\]$", "") ;
 													}// end if
 													else {
 
-														strMapPut += arraynames.get(uk)
-																+ " " + " lat:  " + arrayplaceslat.get(uk)
-																+ " lng:  " + arrayplaceslng.get(uk) + " "
-																+ "\n";
+														strMapPut += arraynames.get(uk).toString().replaceAll("^\\[|\\]$", "")   + " " + distanceVariable_i[wcounter].toString().replaceAll("^\\[|\\]$", "") + " miles \n"
+																+ "lat:  " + arrayplaceslat.get(uk).toString().replaceAll("^\\[|\\]$", "")  + " " 
+																+ "lng:  " + arrayplaceslng.get(uk).toString().replaceAll("^\\[|\\]$", "") 
+																;
 													}// end else
 
 													Log.d("key", "this is the third unique key " + uk);
@@ -633,8 +626,7 @@ public class SecondActivity extends Activity {
 										
 										map2.put(KEY_NAME, strMapPut);
 										
-										mapstring.add(KEY_NAME);
-										mapstring.add(strMapPut);
+										mapstring.add(KEY_NAME + strMapPut);
 
 										// adding HashMap to ArrayList
 										placesListItems2.add(map2);
@@ -660,8 +652,7 @@ public class SecondActivity extends Activity {
 								
 
 								    // Use your own layout
-								    ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(SecondActivity.this,
-								         R.id.label);
+								//    ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(SecondActivity.this, R.id.label);
 								   
 
 								// Adding data into listview
@@ -671,6 +662,10 @@ public class SecondActivity extends Activity {
 								// 2 somehow
 
 								lv2.setAdapter(adapter2);
+								//lv2.setTextColor(Color.WHITE);
+							
+								
+								
 							}
 						}
 					}
@@ -790,8 +785,7 @@ public class SecondActivity extends Activity {
 		return distanceVariable_i[n];
 	}
 	
-	
-	
+
 	
 	
 	private static Integer typesCompare(String types, String types2, List types_i){
@@ -823,3 +817,5 @@ public class SecondActivity extends Activity {
 	}
 
 }
+
+

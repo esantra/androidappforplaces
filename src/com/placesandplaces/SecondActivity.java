@@ -127,6 +127,7 @@ public class SecondActivity extends Activity {
 	// public static DecimalFormat[] myFormat_i = new
 	// DecimalFormat[ARRAYLENGTH];
 	public static List<DecimalFormat> myFormat_i = new ArrayList<DecimalFormat>();
+	public static HashMap<Integer, Place> hmp = new HashMap<Integer, Place>();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -279,7 +280,7 @@ public class SecondActivity extends Activity {
 						gps.getLongitude(), types2);
 
 				
-					for (int r = 0; r < g.getLocationVari(); r++) {
+					for (int r = 0; r < MainActivity.buttonCounter; r++) {
 
 						// this needs to be made into an array for INDUCTION
 						types_i.add(g.getLocationi(r));
@@ -291,7 +292,7 @@ public class SecondActivity extends Activity {
 
 					}// end for
 				
-		   typesCompare(types, types2, types_i);
+		  // typesCompare(types, types2, types_i);
 				
 
 			} catch (Exception e) {
@@ -369,7 +370,7 @@ public class SecondActivity extends Activity {
 								mapstring.add(KEY_REFERENCE);
 								mapstring.add(p.reference);
 								mapstring.add("lat:  " + p.geometry.location.lat 
-												+ "lng:  " + p.geometry.location.lng + " "  +distanceVariable.toString());
+												+ "lng:  " + p.geometry.location.lng + " \n"  +distanceVariable.toString());
 
 								// adding HashMap to ArrayList
 								placesListItems.add(map);
@@ -388,8 +389,6 @@ public class SecondActivity extends Activity {
 
 							int i = 0; // places counter
 							int m = 0; // counter
-							Place place = new Place();
-
 							try {
 								for (int aa = 0; aa < Globals.counterVar; aa++) {
 									int placecount = 0;
@@ -445,22 +444,6 @@ public class SecondActivity extends Activity {
 
 										}// end for
 									}// end if
-
-									// ----added code
-									// --- THIS NEEDS TO RUN ON A LOOP FOR
-									// INDUCTION PURPOSES
-									if (nearPlaces_i[aa + 1].results != null) {
-										// loop through each place
-										for (Place p_ii : nearPlaces_i[aa + 1].results) {
-
-											// set Place p_i to a variable every
-											// time
-											place_ii[rr] = p_ii;
-											rr++;
-
-										}// end for
-									}// end if
-
 								}// end for
 
 							}// end try
@@ -487,7 +470,7 @@ public class SecondActivity extends Activity {
 										mapstring.add(KEY_REFERENCE.toString());
 										mapstring.add(p.reference);
 										mapstring.add("lat:  " + p.geometry.location.lat 
-												+ "lng:  " + p.geometry.location.lng + " " );
+												+ "lng:  " + p.geometry.location.lng + " \n" );
 
 
 										Double distance2 = DistanceCalculation
@@ -550,7 +533,7 @@ public class SecondActivity extends Activity {
 										// INDUCTION PURPOSES
 										String strMapPut = (p.name + " " + distanceVariable2 + " miles \n"
 										        + "lat:  " + p.geometry.location.lat + " " 
-												+ "lng:  " + p.geometry.location.lng + " " 
+												+ "lng:  " + p.geometry.location.lng + " \n" 
 											
 												+ name + " " + distanceFr + " miles \n"
 												+ "lat:  " + placesArrayLat[yy].toString() + " "
@@ -559,7 +542,10 @@ public class SecondActivity extends Activity {
 
 										//--just commented this out mapstring.add(strMapPut);
 
-										int uk = wcounter + 100;
+										
+										
+										
+										
 										int multiply = 100;
 										try {
 											// this is different places with the
@@ -584,7 +570,7 @@ public class SecondActivity extends Activity {
 															+ arraynames.get(wcounter).toString().replaceAll("^\\[|\\]$", "") + " " 
 															+ distanceVariable_i[wcounter].toString().replaceAll("^\\[|\\]$", "") + " miles \n"
 															+ "lat:  " + arrayplaceslat.get(wcounter).toString().replaceAll("^\\[|\\]$", "") + " " 
-															+ "lng:  " + arrayplaceslng.get(wcounter).toString().replaceAll("^\\[|\\]$", "")  
+															+ "lng:  " + arrayplaceslng.get(wcounter).toString().replaceAll("^\\[|\\]$", "")  + " \n"
 															;
 												}// end else
 
@@ -592,8 +578,12 @@ public class SecondActivity extends Activity {
 														"this is the second unique key "
 																+ wcounter);
 											}// end if
+											
+											
+											//hmp.add(wcounter, Place);
 
-											for (int loop = 1; loop < g.buttonPushCount + 1; loop++) {
+											for (int loop = 1; loop < 9; loop++) {
+												int uk =  100;
 												uk = uk * loop;
 												if (arraynames.get(uk) != null) {
 													distanceVariable_i[wcounter] = distanceVar(
@@ -601,13 +591,13 @@ public class SecondActivity extends Activity {
 													if (distanceVariable_i[wcounter] != null) {
 														strMapPut +=  arraynames.get(uk).toString().replaceAll("^\\[|\\]$", "")  + " " + distanceVariable_i[wcounter].toString().replaceAll("^\\[|\\]$", "") + " miles \n"
 																+ "lat:  " + arrayplaceslat.get(uk).toString().replaceAll("^\\[|\\]$", "") + " " 
-																+ "lng:  " + arrayplaceslng.get(uk).toString().replaceAll("^\\[|\\]$", "") ;
+																+ "lng:  " + arrayplaceslng.get(uk).toString().replaceAll("^\\[|\\]$", "") + " \n";
 													}// end if
 													else {
 
 														strMapPut += arraynames.get(uk).toString().replaceAll("^\\[|\\]$", "")   + " " + distanceVariable_i[wcounter].toString().replaceAll("^\\[|\\]$", "") + " miles \n"
 																+ "lat:  " + arrayplaceslat.get(uk).toString().replaceAll("^\\[|\\]$", "")  + " " 
-																+ "lng:  " + arrayplaceslng.get(uk).toString().replaceAll("^\\[|\\]$", "") 
+																+ "lng:  " + arrayplaceslng.get(uk).toString().replaceAll("^\\[|\\]$", "") + " \n"
 																;
 													}// end else
 
@@ -788,33 +778,7 @@ public class SecondActivity extends Activity {
 
 	
 	
-	private static Integer typesCompare(String types, String types2, List types_i){
-		String[] typesStringArray = new String[ARRAYLENGTH];
-		
-		if(types == types2){
-			return 1;
-		}
-		for (int co = 2; co < types_i.size(); co++){
-			
-			typesStringArray[co] = types_i.get(co).toString();
-
-		}
-		
-
-	        for (int i = 0; i < types_i.size(); i++){  
-	            for (int j = 0; j < types_i.size(); j++){  
-	                if ((types_i.get(i) == types_i.get(j)) && (i != j)){  
-	                	Log.d("distance", "repeated value = " + types_i.get(i));  
-	                	Log.d("distance", "duplicate location found at indices: " + i + " " + j);  
-	                }  
-	            }  
-           
-	        } 
-		
-		
-		return 0;
-		
-	}
+	
 
 }
 

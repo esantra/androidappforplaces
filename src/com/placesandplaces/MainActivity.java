@@ -39,6 +39,7 @@ public class MainActivity extends Activity {
 	public static String KEY_NAME = "name"; // name of the place
 	public static String KEY_VICINITY = "vicinity"; // Place area name
 	public static Globals g = Globals.getInstance();
+	public static int buttonCounter = 0;
 	ArrayList<String> resultList = null;
 
 	public String strPlaces1 = ""; // Place type
@@ -60,6 +61,7 @@ public class MainActivity extends Activity {
 	public static EditText firstPlace;
 	public static EditText secondPlace;
 	public static AlertDialog.Builder screenDialog;
+	private int countTv = 0;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -79,7 +81,7 @@ public class MainActivity extends Activity {
 		secondPlace = (EditText) findViewById(R.id.txtPlaces1);
 
 		firstPlace.setText("shopping_mall");
-		secondPlace.setText("bar");
+		secondPlace.setText("church");
 		
 		imgExit = (ImageView) findViewById(R.id.Exit);
 		imgExit.setOnClickListener(new View.OnClickListener() {
@@ -171,7 +173,7 @@ public class MainActivity extends Activity {
 				g.setLocation2(secondPlace.getText().toString());
 
 				try {
-					for (int u = 0; u < 4; u++) {
+					for (int u = 0; u < buttonCounter; u++) {
 
 						if (et[u].getText().toString() != null) {
 							// changed code from 0 to u
@@ -207,7 +209,9 @@ public class MainActivity extends Activity {
 
 			}
 		});
-
+        
+		
+		
 		ImageView imgPlus = (ImageView) findViewById(R.id.imgPlus);
 		/** Button click event for shown on map */
 		imgPlus.setOnClickListener(new View.OnClickListener() {
@@ -216,8 +220,10 @@ public class MainActivity extends Activity {
 			public void onClick(View arg0) {
 
 				RelativeLayout r1 = (RelativeLayout) findViewById(R.id.RelativeLayout1);
-				addTextView(r1, Globals.buttonPushCount);
+				addTextView(r1, countTv);
+				countTv++;
 				Globals.buttonPushCount++;
+				buttonCounter++;
 
 			}
 		});
@@ -286,25 +292,16 @@ public class MainActivity extends Activity {
 
 		int width = 100;
 		et[buttoncount] = new EditText(this);
-		et[buttoncount].setText("");
+		et[buttoncount].setText("atm");
 		et[buttoncount].setGravity(icount1 * 25);
 		et[buttoncount].setWidth(width);
 		et[buttoncount].setId(buttoncount);
-		g.setLocationVari();
-
-		// must set dynamic names like this so that they can be reached:
-		// txtPlaces1
-		// and induction can be started
-
 		et[buttoncount].setTag("txtPlaces" + buttoncount);
 
 		LinearLayout l1 = (LinearLayout) findViewById(R.id.LLTexts);
 		l1.addView(et[buttoncount]);
 
 		Log.d("types", "types button count " + buttoncount);
-
-		// increment counter
-		// i++;
 
 	}// end addTextView method
 

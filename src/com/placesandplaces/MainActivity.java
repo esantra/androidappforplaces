@@ -111,7 +111,7 @@ public class MainActivity extends Activity {
 				try {
 
 					ConnectionFactory factory = new ConnectionFactory();
-					factory.setHost("54.225.112.221");
+					factory.setHost("54.235.169.93");
 					connection = factory.newConnection();
 					channel = connection.createChannel();
 
@@ -132,8 +132,8 @@ public class MainActivity extends Activity {
 					place1 = place1.trim();
 					place2 = place2.trim();
 
-					System.out.println(place1);
-					System.out.println(place2);
+					//System.out.println(place1);
+					//System.out.println(place2);
 
 					// variable that you would use to fill text box
 					// response example
@@ -144,11 +144,11 @@ public class MainActivity extends Activity {
 
 					connection.close();
 					
-					/*Apriori ap = new Apriori();
-					ap.aprioriMethod();
-					mOutput.setText(ap.text1);
-					mOutput2.setText(ap.text2);
-					*/
+					//Apriori ap = new Apriori();
+					//ap.readFromFile("http://ec2-50-17-51-53.compute-1.amazonaws.com/PlacesandPlaces/goods.txt");
+					//mOutput.setText(ap.text1);
+					//mOutput2.setText(ap.text2);
+					
 					
 
 				} catch (Exception e) {

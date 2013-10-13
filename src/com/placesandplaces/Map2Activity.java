@@ -16,6 +16,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
@@ -94,8 +95,7 @@ public class Map2Activity extends Activity {
 
 			// Place reference id
      		String reference2 = i.getStringExtra(KEY_REFERENCE);
-     		//String maput = i.getStringExtra(MAP_STRING);
-     		
+     	
      		//display 
      		Log.d("Your Location", "This is the maput variable " + reference2);
      		
@@ -242,15 +242,29 @@ public class Map2Activity extends Activity {
 	    	
 	    	lat[point] = allMatcheslat.get(point);
 	    	lng[point] = allMatcheslng.get(point);
-	   
 
-    
-      //set the longitude and latitude for the marker for the place in the single view
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(lat[point], lng[point])).
-        		title("Info Screen Location"));
-        googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-        googleMap.setTrafficEnabled(true);
+	        //set the longitude and latitude for the marker for the place in the single view
+	        googleMap.addMarker(new MarkerOptions().position(new LatLng(lat[point], lng[point])).
+	        		title("Info Screen Location"));
+	        googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+	        googleMap.setTrafficEnabled(true);
 	    }
+	    
+        //--------------need to put this in a loop for induction purposes
+	    for(int point = 0; point < allMatcheslat.size() - 1; point++){	    
+			try{
+	    		new Routing(this,googleMap, Color.parseColor("#990000")).execute(new 
+	    						LatLng(lat[point], lng[point]), 
+	    						new LatLng(lat[point+1], lng[point+1]));
+	    	}catch(Exception e){
+	    		Log.d("exception", e.toString());
+	    	}//end exception
+			
+	    }//end for
+	    
+	    new Routing(this,googleMap, Color.parseColor("#990000")).execute(new 
+				LatLng(latitude, longitude), 
+				new LatLng(lat[0], lng[0]));
         
     	// button show on map
     	Button next = (Button) findViewById(R.id.infoButton);

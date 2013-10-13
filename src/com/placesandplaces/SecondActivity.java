@@ -68,6 +68,7 @@ public class SecondActivity extends Activity {
 	// counter and increment variables
 	public static int rr;
 	public static int wcounter = 0;
+	private int hh = 0;
 	public static int nameCount = 2;
 	public static int lvid;
 	public static String reference;
@@ -581,31 +582,35 @@ public class SecondActivity extends Activity {
 											
 											
 											//hmp.add(wcounter, Place);
-
-											for (int loop = 1; loop < 9; loop++) {
+											
+											for (int loop = 1; loop < MainActivity.buttonCounter; loop++) {
 												int uk =  100;
-												uk = uk * loop;
-												if (arraynames.get(uk) != null) {
-													distanceVariable_i[wcounter] = distanceVar(
-															n, i, uk);
-													if (distanceVariable_i[wcounter] != null) {
-														strMapPut +=  arraynames.get(uk).toString().replaceAll("^\\[|\\]$", "")  + " " + distanceVariable_i[wcounter].toString().replaceAll("^\\[|\\]$", "") + " miles \n"
-																+ "lat:  " + arrayplaceslat.get(uk).toString().replaceAll("^\\[|\\]$", "") + " " 
-																+ "lng:  " + arrayplaceslng.get(uk).toString().replaceAll("^\\[|\\]$", "") + " \n";
+												uk = uk * loop + hh;
+												
+													if (arraynames.get(uk) != null) {
+														distanceVariable_i[wcounter] = distanceVar(
+																n, i, uk);
+														if (distanceVariable_i[wcounter] != null) {
+															strMapPut +=  arraynames.get(uk).toString().replaceAll("^\\[|\\]$", "")  + " " + distanceVariable_i[wcounter].toString().replaceAll("^\\[|\\]$", "") + " miles \n"
+																	+ "lat:  " + arrayplaceslat.get(uk).toString().replaceAll("^\\[|\\]$", "") + " " 
+																	+ "lng:  " + arrayplaceslng.get(uk).toString().replaceAll("^\\[|\\]$", "") + " \n";
+														}// end if
+														else {
+	
+															strMapPut += arraynames.get(uk).toString().replaceAll("^\\[|\\]$", "")   + " " + distanceVariable_i[wcounter].toString().replaceAll("^\\[|\\]$", "") + " miles \n"
+																	+ "lat:  " + arrayplaceslat.get(uk).toString().replaceAll("^\\[|\\]$", "")  + " " 
+																	+ "lng:  " + arrayplaceslng.get(uk).toString().replaceAll("^\\[|\\]$", "") + " \n"
+																	;
+														}// end else
+	
+														Log.d("key", "this is the third unique key " + uk);
 													}// end if
-													else {
-
-														strMapPut += arraynames.get(uk).toString().replaceAll("^\\[|\\]$", "")   + " " + distanceVariable_i[wcounter].toString().replaceAll("^\\[|\\]$", "") + " miles \n"
-																+ "lat:  " + arrayplaceslat.get(uk).toString().replaceAll("^\\[|\\]$", "")  + " " 
-																+ "lng:  " + arrayplaceslng.get(uk).toString().replaceAll("^\\[|\\]$", "") + " \n"
-																;
-													}// end else
-
-													Log.d("key", "this is the third unique key " + uk);
-												}// end if
-
+													
 											}// end for
+												
 
+											
+											hh++;	
 											wcounter++;
 										}// end try
 										catch (Exception e) {
@@ -641,21 +646,8 @@ public class SecondActivity extends Activity {
 												R.id.reference, R.id.name });
 								
 
-								    // Use your own layout
-								//    ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(SecondActivity.this, R.id.label);
-								   
-
-								// Adding data into listview
-
-								// ---------------------------------------------------------------
-								// ------------may be able to manipulate adapter
-								// 2 somehow
-
 								lv2.setAdapter(adapter2);
-								//lv2.setTextColor(Color.WHITE);
-							
-								
-								
+
 							}
 						}
 					}
@@ -746,7 +738,7 @@ public class SecondActivity extends Activity {
 			Log.d("filter", "  place distance calc " + distance_i[n].toString());
 			myFormat_i[n] = new DecimalFormat("0.0");
 			distanceVariable_i[n] = myFormat_i[n].format(distance_i[n]);
-			nameArr[nameCount] = place_i[n].name;
+
 
 			// error - does not get second place reference here because loops
 			// through all to get to it

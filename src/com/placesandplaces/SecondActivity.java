@@ -82,6 +82,15 @@ public class SecondActivity extends Activity {
 	public static String KEY_NAME = "name"; // name of the place
 	public static String KEY_VICINITY = "vicinity"; // Place area name
 	public static String KEY_INFORMATION = "information"; // Place area name
+	private boolean[] near = new boolean[ARRAYLENGTH];
+	private boolean near1 = false;
+	private int nearcounter = 0;
+	private String n1 = "";
+	private String n2 = "";
+	private String n3 = "";
+	private String n4 = "";
+	private boolean[] nearArray = new boolean[ARRAYLENGTH];
+	private HashMap<Integer, Place> nearHm = new HashMap<Integer, Place>();
 
 	// ARRAYS are all sized via the constant so that the size can be altered
 	// declare a variable array to hold places
@@ -105,7 +114,7 @@ public class SecondActivity extends Activity {
 	// name of second place - well reference to it
 	public static String[] secondPlaceReference = new String[ARRAYLENGTH];
 	public static Double[] distance_i = new Double[ARRAYLENGTH];
-
+	private Double nearMaxDistance = 3.0;
 	
 
 	// ListItems data
@@ -364,9 +373,20 @@ public class SecondActivity extends Activity {
 								// variable that tells the
 								// distance from one point to another a
 								
+								near1 = nearInd(distanceVariable, 0);
+								n1 = "";
+								nearArray[0] = near1;
+								
+								if(near1 = true){
+										 n1 = "*Near*";
+										 
+								}//end if 
+								
 								String location1 = p.name + " " + distanceVariable + " miles \n"
 										+ "lat:  " + p.geometry.location.lat + " " 
-										+ "lng:  " + p.geometry.location.lng + " \n" ;
+										+ "lng:  " + p.geometry.location.lng + " \n";
+										
+								
 								map.put(KEY_NAME, location1);
 								mapstring.add(KEY_REFERENCE);
 								mapstring.add(p.reference);
@@ -517,6 +537,7 @@ public class SecondActivity extends Activity {
 											distanceVariable_i[n] = myFormat_i
 													.get(n).format(
 															distance_i[n]);
+											
 
 											Log.d("filter",
 													"this is the place name"
@@ -529,6 +550,22 @@ public class SecondActivity extends Activity {
 										catch (Exception e) {
 											Log.d("one", "this is an error");
 										}// end catch
+										
+										
+										near1 = nearInd(distanceVariable2, 1);
+										nearArray[1] = near1;
+										String n1 = "";
+										if(near1 = true){
+												 n1 = "*Near*";
+										}//end if 
+										
+										near1 = nearInd(distanceFr, 2);
+										nearArray[2] = near1;
+										 n2 = "";
+										if(near1 = true){
+												 n2 = "*Near*";
+										}//end if 
+										
 
 										// --- THIS NEEDS TO RUN ON A LOOP FOR
 										// INDUCTION PURPOSES
@@ -540,6 +577,8 @@ public class SecondActivity extends Activity {
 												+ "lat:  " + placesArrayLat[yy].toString() + " "
 												+ "lng:  " + placesArrayLng[yy].toString()  + " \n" 
 											     );
+										
+									
 
 										//--just commented this out mapstring.add(strMapPut);
 
@@ -552,6 +591,14 @@ public class SecondActivity extends Activity {
 											// this is different places with the
 											// same distance variable
 											// --------------------------------------------added
+											
+											near1 = nearInd(distanceVariable_i[wcounter], 3);
+											 n3 = "";
+											 nearArray[3] = near1;
+											if(near1 = true){
+													 n3 = "*Near*";
+											}//end if
+											
 
 											if (arraynames.get(wcounter) != null) {
 												distanceVariable_i[wcounter] = distanceVar(
@@ -564,7 +611,9 @@ public class SecondActivity extends Activity {
 															+ " " + distanceVariable_i[wcounter].toString().replaceAll("^\\[|\\]$", "") + " miles \n"
 															+ "lat:  " + arrayplaceslat.get(wcounter).toString().replaceAll("^\\[|\\]$", "") + " "
 															+ "lng:  " + arrayplaceslng.get(wcounter).toString().replaceAll("^\\[|\\]$", "") + " \n"
+															
 															;
+													
 												}// end if
 												else {
 													strMapPut = strMapPut
@@ -572,7 +621,9 @@ public class SecondActivity extends Activity {
 															+ distanceVariable_i[wcounter].toString().replaceAll("^\\[|\\]$", "") + " miles \n"
 															+ "lat:  " + arrayplaceslat.get(wcounter).toString().replaceAll("^\\[|\\]$", "") + " " 
 															+ "lng:  " + arrayplaceslng.get(wcounter).toString().replaceAll("^\\[|\\]$", "")  + " \n"
+															
 															;
+															
 												}// end else
 
 												Log.d("key",
@@ -587,20 +638,28 @@ public class SecondActivity extends Activity {
 												int uk =  100;
 												uk = uk * loop + hh;
 												
+												near1 = nearInd(distanceVariable_i[wcounter], 4);
+												nearArray[4] = near1;
+												 n4 = "";
+												if(near1 = true){
+														 n4 = "*Near*";
+												}//end if
+												
 													if (arraynames.get(uk) != null) {
 														distanceVariable_i[wcounter] = distanceVar(
 																n, i, uk);
 														if (distanceVariable_i[wcounter] != null) {
 															strMapPut +=  arraynames.get(uk).toString().replaceAll("^\\[|\\]$", "")  + " " + distanceVariable_i[wcounter].toString().replaceAll("^\\[|\\]$", "") + " miles \n"
 																	+ "lat:  " + arrayplaceslat.get(uk).toString().replaceAll("^\\[|\\]$", "") + " " 
-																	+ "lng:  " + arrayplaceslng.get(uk).toString().replaceAll("^\\[|\\]$", "") + " \n";
+																	+ "lng:  " + arrayplaceslng.get(uk).toString().replaceAll("^\\[|\\]$", "") + " \n"
+															        ;
 														}// end if
 														else {
 	
 															strMapPut += arraynames.get(uk).toString().replaceAll("^\\[|\\]$", "")   + " " + distanceVariable_i[wcounter].toString().replaceAll("^\\[|\\]$", "") + " miles \n"
 																	+ "lat:  " + arrayplaceslat.get(uk).toString().replaceAll("^\\[|\\]$", "")  + " " 
 																	+ "lng:  " + arrayplaceslng.get(uk).toString().replaceAll("^\\[|\\]$", "") + " \n"
-																	;
+																   ;
 														}// end else
 	
 														Log.d("key", "this is the third unique key " + uk);
@@ -617,9 +676,43 @@ public class SecondActivity extends Activity {
 											Log.d("one",
 													"This is a null variable");
 										}// end catch
-
 										
-										map2.put(KEY_NAME, strMapPut);
+										String nearVar;
+										Log.d("near", "" +  near1);
+										/*if (near1 == true){
+											nearVar = "*Near*";
+										}//end if 
+										else {
+											
+											nearVar = "*Not Near*";
+											
+										}*/
+										int countertrue = 0;int counterfalse=0;
+										for(int ww = 0; ww < 4; ww++){
+										Log.d("nearVar", "the nearArray is " + nearArray[ww] + " counter " + ww);
+
+												countertrue++;
+
+											if(nearArray[ww]==false){
+												counterfalse++;
+											}//end if 
+											
+										}//end for
+										
+									
+										Log.d("nearVar", "the nearVar is " + countertrue);
+										Log.d("nearVar", "the notnearVar is " + counterfalse);
+										
+										nearVar = "*Far*";
+										
+										if (counterfalse * 3 < countertrue){
+											nearVar = "*Near*";
+											
+										}//end if 
+										
+										
+										map2.put(KEY_NAME, strMapPut + nearVar);
+										near1 = false;
 										
 										mapstring.add(KEY_NAME + strMapPut);
 
@@ -767,7 +860,33 @@ public class SecondActivity extends Activity {
 		return distanceVariable_i[n];
 	}
 	
-
+	public boolean nearInd(String distanceVariable, int nearCounterIn){
+		nearcounter = nearCounterIn;
+		Double dv = Double.parseDouble(distanceVariable);
+		try{
+			if(dv < nearMaxDistance){
+				near[nearcounter] = true;
+				
+			}//end inductive if
+			else{
+				
+				if(nearcounter > nearMaxDistance & dv < nearMaxDistance){
+					near[nearcounter] = true;
+				}
+				else{
+					near[nearcounter] = false;
+				}
+				near[nearcounter] = false;
+				
+			}//end else
+			}catch(Exception e){
+				Log.d("exception", e.toString());
+			}//end catch
+		
+		Log.d("nearcounter", "near is " + near[nearcounter] + " and method accessed " + nearcounter + " times." );
+		return near[nearcounter];
+		
+	}//end method
 	
 	
 	

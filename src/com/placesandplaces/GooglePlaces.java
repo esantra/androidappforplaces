@@ -17,6 +17,8 @@ import com.google.api.client.json.jackson.JacksonFactory;
 
 @SuppressWarnings("deprecation")
 public class GooglePlaces {
+	
+	//code credit:http://www.androidhive.info/2012/08/android-working-with-google-places-and-maps-tutorial/
 
 	/** Global instance of the HTTP transport. */
 	private static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
@@ -39,7 +41,7 @@ public class GooglePlaces {
 
 	private double _latitude;
 	private double _longitude;
-	private double _radius;
+	private double _radius = 80;
 
 	/**
 	 * Searching places
@@ -60,7 +62,7 @@ public class GooglePlaces {
 
 		this._latitude = latitude;
 		this._longitude = longitude;
-		// this._radius = radius;
+		this._radius = 80;
 
 		try {
 

@@ -3,7 +3,7 @@
     android:id="@+id/RelativeLayout1"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/ab2"
+    android:background="@drawable/rainbowroad"
     android:orientation="vertical" >
 
     <!-- Show on Map button -->
@@ -76,7 +76,8 @@
         android:contentDescription="pic"
         android:maxHeight="20dp"
         android:maxWidth="20dp"
-        android:src="@drawable/exit" />
+        android:src="@drawable/navcancel"
+        android:visibility="invisible" />
 
     <ImageView
         android:id="@+id/imgQ1"
@@ -84,7 +85,8 @@
         android:layout_height="40dp"
         android:layout_alignLeft="@+id/txtPlaces1"
         android:layout_alignParentTop="true"
-        android:src="@drawable/questionmark" />
+        android:src="@drawable/navhelp"
+        android:visibility="invisible" />
 
     <ImageView
         android:id="@+id/imgPlus"
@@ -95,7 +97,8 @@
         android:layout_toLeftOf="@+id/imgAidm"
         android:maxHeight="20dp"
         android:maxWidth="20dp"
-        android:src="@drawable/plus" />
+        android:src="@drawable/navadd"
+        android:visibility="invisible" />
 
     <ImageView
         android:id="@+id/imgAidm"
@@ -105,7 +108,8 @@
         android:layout_centerHorizontal="true"
         android:maxHeight="20dp"
         android:maxWidth="20dp"
-        android:src="@drawable/questionmark_green" />
+        android:src="@drawable/navsearch"
+        android:visibility="invisible" />
 
     <ImageView
         android:id="@+id/imgRR"
@@ -117,6 +121,7 @@
         android:contentDescription="pic"
         android:maxHeight="20dp"
         android:maxWidth="20dp"
-        android:src="@drawable/recycle" />
+        android:src="@drawable/navref"
+        android:visibility="invisible" />
 
 </RelativeLayout>

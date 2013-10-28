@@ -9,6 +9,9 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.view.ViewGroup.LayoutParams;
 import com.placesandplaces.R;
 import com.rabbitmq.client.AMQP.BasicProperties;
@@ -65,6 +69,7 @@ public class MainActivity extends Activity {
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+	
 
 		// replaced activity_main.xml with startup screen.xml
 		setContentView(R.layout.startup_screen);
@@ -94,6 +99,7 @@ public class MainActivity extends Activity {
 	        }
 	    });
 		
+	
 
 		ImageView imgAidm = (ImageView) findViewById(R.id.imgAidm);
 		/** Button click event for shown on map */
@@ -101,60 +107,7 @@ public class MainActivity extends Activity {
 
 			@Override
 			public void onClick(View arg0) {
-
-				// The output TextView we'll use to display messages
-				mOutput = (TextView) findViewById(R.id.txtPlaces1);
-				mOutput2 = (TextView) findViewById(R.id.txtPlaces2);
-
-				// Create the consumer
-
-				try {
-
-					ConnectionFactory factory = new ConnectionFactory();
-					factory.setHost("54.235.169.93");
-					connection = factory.newConnection();
-					channel = connection.createChannel();
-
-					replyQueueName = channel.queueDeclare().getQueue();
-					consumer = new QueueingConsumer(channel);
-					channel.basicConsume(replyQueueName, true, consumer);
-
-					System.out.println(" [x] Requesting places()");
-					String response = call("30");
-					System.out.println(" [.] Got '" + response + "'");
-
-					String[] str = response.split(",");
-					String place1 = str[0].toString();
-					String place2 = str[1].toString();
-
-					place1 = place1.replace("\'", "");
-					place2 = place2.replace("\'", "");
-					place1 = place1.trim();
-					place2 = place2.trim();
-
-					//System.out.println(place1);
-					//System.out.println(place2);
-
-					// variable that you would use to fill text box
-					// response example
-					// 'movie_rental' (31)'spa' (12), 'church' (36), 'school'
-					// (48), '
-					mOutput.setText(place1.toString());
-					mOutput2.setText(place2.toString());
-
-					connection.close();
-					
-					//Apriori ap = new Apriori();
-					//ap.readFromFile("http://ec2-50-17-51-53.compute-1.amazonaws.com/PlacesandPlaces/goods.txt");
-					//mOutput.setText(ap.text1);
-					//mOutput2.setText(ap.text2);
-					
-					
-
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				aidm();
 
 			}// end on click
 
@@ -246,6 +199,59 @@ public class MainActivity extends Activity {
 		});
 
 	}
+	
+	public boolean onCreateOptionsMenu(Menu menu){
+		
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.mainmenu, menu);
+		return true;
+		
+	}
+	
+	 //NEW
+	  @Override
+	  public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	    case R.id.refresh:
+	      Toast.makeText(this, "Action refresh selected", Toast.LENGTH_SHORT)
+	          .show();
+	      	Globals.buttonPushCount = 0;
+
+			Intent i = getBaseContext().getPackageManager()
+					.getLaunchIntentForPackage(
+							getBaseContext().getPackageName());
+			i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(i);
+	      break;
+	    case R.id.help:
+	      Toast.makeText(this, "Help selected", Toast.LENGTH_SHORT)
+	          .show();
+			Intent i1 = new Intent(getApplicationContext(),
+					KeywordActivity.class);
+
+			startActivity(i1);
+	      break;
+	    case R.id.exit:
+	      finish();
+          System.exit(0);
+          break;
+	    case R.id.add:
+	    	RelativeLayout r1 = (RelativeLayout) findViewById(R.id.RelativeLayout1);
+			addTextView(r1, countTv);
+			countTv++;
+			Globals.buttonPushCount++;
+			buttonCounter++;
+	      break;
+	    case R.id.search:
+			  aidm();
+		      break;
+
+	    default:
+	      break;
+	    }
+
+	    return true;
+	  }
 
 	public String call(String message) throws Exception {
 		String response = null;
@@ -346,6 +352,64 @@ public class MainActivity extends Activity {
 		OpenScreenDialog();
 
 	}// end setActivity
+	
+	
+	public void aidm(){
+
+		// The output TextView we'll use to display messages
+		mOutput = (TextView) findViewById(R.id.txtPlaces1);
+		mOutput2 = (TextView) findViewById(R.id.txtPlaces2);
+
+		// Create the consumer
+
+		try {
+
+			ConnectionFactory factory = new ConnectionFactory();
+			factory.setHost("54.235.169.93");
+			connection = factory.newConnection();
+			channel = connection.createChannel();
+
+			replyQueueName = channel.queueDeclare().getQueue();
+			consumer = new QueueingConsumer(channel);
+			channel.basicConsume(replyQueueName, true, consumer);
+
+			System.out.println(" [x] Requesting places()");
+			String response = call("30");
+			System.out.println(" [.] Got '" + response + "'");
+
+			String[] str = response.split(",");
+			String place1 = str[0].toString();
+			String place2 = str[1].toString();
+
+			place1 = place1.replace("\'", "");
+			place2 = place2.replace("\'", "");
+			place1 = place1.trim();
+			place2 = place2.trim();
+
+			//System.out.println(place1);
+			//System.out.println(place2);
+
+			// variable that you would use to fill text box
+			// response example
+			// 'movie_rental' (31)'spa' (12), 'church' (36), 'school'
+			// (48), '
+			mOutput.setText(place1.toString());
+			mOutput2.setText(place2.toString());
+
+			connection.close();
+			
+			//Apriori ap = new Apriori();
+			//ap.readFromFile("http://ec2-50-17-51-53.compute-1.amazonaws.com/PlacesandPlaces/goods.txt");
+			//mOutput.setText(ap.text1);
+			//mOutput2.setText(ap.text2);
+			
+			
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 }
 

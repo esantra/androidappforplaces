@@ -39,6 +39,7 @@ public class Place implements Serializable {
 	@Key
 	public JSONArray[] reviews;
 
+
 	@Key
 	public String website;
 
@@ -54,6 +55,7 @@ public class Place implements Serializable {
 		return name + " - " + id + " - " + reference;
 	}
 
+
 	public static class Geometry implements Serializable {
 		@Key
 		public Location location;
@@ -66,5 +68,7 @@ public class Place implements Serializable {
 		@Key
 		public double lng;
 	}
+	
+	//so it would be like location for the individ location and then get url for lat almost
 
 }

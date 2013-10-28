@@ -1,16 +1,34 @@
 package com.placesandplaces;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.google.android.gms.maps.GoogleMap;
 import com.placesandplaces.R;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 public class SinglePlaceActivity extends Activity {
@@ -43,6 +61,15 @@ public class SinglePlaceActivity extends Activity {
 	public String address;
 
 	public Double rating;
+	
+	private String latitude;
+	
+	private String longitude;
+	
+	private static final String TAG_PHOTOS = "photos";
+	private static final String TAG_REFRENCE = "photo_reference";
+	
+	private String photo1;
 	
 	// GPS Location
 	GPSTracker gps;
@@ -123,17 +150,33 @@ public class SinglePlaceActivity extends Activity {
 								phone = placeDetails.result.formatted_phone_number;
 								rating = placeDetails.result.rating;
 
-								String latitude = Double
+								 latitude = Double
 										.toString(placeDetails.result.geometry.location.lat);
-								String longitude = Double
+								 longitude = Double
 										.toString(placeDetails.result.geometry.location.lng);
 								// String rating = placeDetails.result.rating;
-								String image = placeDetails.result.icon;
-
+								 
+								 
+								
+								//Log.d("photos", "Length is " +
+								//		Place.toStringphoto());
+								
+								
+								/*if(photo[0]!=null){
+								//JSONObject pc;
+								photo1 = photo[0].toString();
+								ImageView place1 = (ImageView) findViewById(R.id.imgPlace1);
+								place1.setImageURI(Uri.parse(photo1));
+								}
+								else{
+									//do nothing
+								}*/
+								
 								// Displaying all the details in the view
 								// single_place.xml
 								TextView lbl_name = (TextView) findViewById(R.id.name);
 								TextView lbl_address = (TextView) findViewById(R.id.address);
+								
 
 								// Check for null data from google
 								// Sometimes place details might missing
@@ -151,7 +194,8 @@ public class SinglePlaceActivity extends Activity {
 										: latitude;
 								longitude = longitude == null ? "Not present"
 										: longitude;
-								image = image == null ? "Not present" : image;
+								//image = image == null ? "Not present" : image;
+								//photo = photo[0] == null ? "Not present" : photo;
 								rating = rating == null ? 0 : rating;
 
 								lbl_name.setText(name);
@@ -161,6 +205,10 @@ public class SinglePlaceActivity extends Activity {
 										.parseColor("#000000"));
 								lbl_address.setTextColor(Color
 										.parseColor("#000000"));
+								
+								
+								
+							
 
 								// get nearest places
 								try {
@@ -236,39 +284,15 @@ public class SinglePlaceActivity extends Activity {
 									}
 								});
 
-								ImageButton btnMap = (ImageButton) findViewById(R.id.btnMap);
-								/** Button click event for shown on map */
+								/*ImageButton btnMap = (ImageButton) findViewById(R.id.btnMap);
+								
 								btnMap.setOnClickListener(new View.OnClickListener() {
 
 									@Override
 									public void onClick(View arg0) {
 										
 										
-										/*private GoogleMap mMap;
-										mMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
-										mMap.addMarker(new MarkerOptions()
-										        .position(new LatLng(0, 0))
-										        .title("Hello world"));
-										
-										 Intent intent = new Intent();
-										 intent.setAction(Intent.ACTION_VIEW);
-										 String data = String.format("geo:%s,%s", latitude, longitude);
-										 if (zoomLevel != null) {
-										     data = String.format("%s?z=%s", data, zoomLevel);
-										 }
-										 intent.setData(Uri.parse(data));
-										 startActivity(intent);
-
-										String map = "geo:0,0?q=" + address;
-										Intent callIntent = new Intent(
-												Intent.ACTION_VIEW);
-										callIntent.setData(Uri.parse(map));
-										startActivity(callIntent);*/
-										
-										
-										Intent mapIntent = new Intent(getBaseContext(), Map2Activity.class);
-										mapIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-										startActivity(mapIntent);
+										mapping();
 										
 										
 										
@@ -277,7 +301,7 @@ public class SinglePlaceActivity extends Activity {
 								});
 
 								ImageButton btnPhone = (ImageButton) findViewById(R.id.btnCall);
-								/** Button click event for shown on map */
+							
 								btnPhone.setOnClickListener(new View.OnClickListener() {
 
 									@Override
@@ -292,7 +316,7 @@ public class SinglePlaceActivity extends Activity {
 								});
 
 								ImageButton btnNavigate = (ImageButton) findViewById(R.id.btnNavigate);
-								/** Button click event for shown on map */
+								
 								btnNavigate
 										.setOnClickListener(new View.OnClickListener() {
 
@@ -309,7 +333,7 @@ public class SinglePlaceActivity extends Activity {
 												startActivity(intent);
 
 											}
-										});
+										});*/
 
 							}
 						} else if (status.equals("ZERO_RESULTS")) {
@@ -353,6 +377,51 @@ public class SinglePlaceActivity extends Activity {
 
 	}
 
+	public boolean onCreateOptionsMenu(Menu menu){
+		
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.spmenu, menu);
+		return true;
+		
+	}
+	
+	 //NEW
+	  @Override
+	  public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	    case R.id.call:
+	      Toast.makeText(this, "Calling...", Toast.LENGTH_SHORT)
+	          .show();
+	      	phone = "tel:" + phone;
+			Intent callIntent = new Intent(
+					Intent.ACTION_CALL);
+			callIntent.setData(Uri.parse(phone));
+			startActivity(callIntent);
+	      break;
+	    case R.id.map:
+	      Toast.makeText(this, "Mapping...", Toast.LENGTH_SHORT)
+	          .show();
+	      	mapping();
+	      break;
+	    case R.id.navig:
+	    	Intent intent = new Intent(
+					Intent.ACTION_VIEW,
+					Uri.parse("google.navigation:q="
+							+ placeDetails.result.geometry.location.lat
+							+ ","
+							+ placeDetails.result.geometry.location.lng));
+			intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			startActivity(intent);
+        break;
+
+
+	    default:
+	      break;
+	    }
+
+	    return true;
+	  }
+	
 	public void push2() {
 		Globals.pushID = SecondActivity.lvid;
 		new LoadSinglePlaceDetails()
@@ -366,4 +435,112 @@ public class SinglePlaceActivity extends Activity {
 		Globals.nameCount++;
 	}
 
+	public void mapping(){
+		/*private GoogleMap mMap;
+		mMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+		mMap.addMarker(new MarkerOptions()
+		        .position(new LatLng(0, 0))
+		        .title("Hello world"));*/
+		
+		String zoomLevel = "10";
+		
+		 Intent intent = new Intent();
+		 intent.setAction(Intent.ACTION_VIEW);
+		 String data = String.format("geo:%s,%s", latitude, longitude);
+		 if (zoomLevel != null) {
+		     data = String.format("%s?z=%s", data, zoomLevel);
+		 }
+		 intent.setData(Uri.parse(data));
+		 startActivity(intent);
+
+		String map = "geo:0,0?q=" + address;
+		Intent callIntent = new Intent(
+				Intent.ACTION_VIEW);
+		callIntent.setData(Uri.parse(map));
+		startActivity(callIntent);
+		
+		
+	}
+	
+	public void getImage(){
+		
+		 // Array of references of the photos
+        PlacePhoto[] photos = PlaceParcel.mPhotos;
+
+
+		
+		 // Creating an array of ImageDownloadTask to download photos
+        ImageDownloadTask[] imageDownloadTask = new ImageDownloadTask[photos.length];
+
+        int width = 90;
+        int height = 90;
+
+        String url = "https://maps.googleapis.com/maps/api/place/photo?";
+        String key = "key=AIzaSyAYlKYeI7SYOWMYmuYSu534-ESCeHldmd8";
+        String sensor = "sensor=true";
+        String maxWidth="maxwidth=" + width;
+        String maxHeight = "maxheight=" + height;
+        url = url + "&" + key + "&" + sensor + "&" + maxWidth + "&" + maxHeight;
+
+        // Traversing through all the photoreferences
+        for(int i=0;i<photos.length;i++){
+            // Creating a task to download i-th photo
+            imageDownloadTask[i] = new ImageDownloadTask();
+
+            String photoReference = "photoreference="+photos[i].mPhotoReference;
+
+            // URL for downloading the photo from Google Services
+            url = url + "&" + photoReference;
+
+            // Downloading i-th photo from the above url
+            imageDownloadTask[i].execute(url);
+        }
+		
+	}//end getimage
+
+	 
+	 
 }
+
+class ImageDownloadTask extends AsyncTask<String, Integer, Bitmap>{
+    Bitmap bitmap = null;
+    @Override
+    protected Bitmap doInBackground(String... url) {
+        try{
+            // Starting image download
+            bitmap = downloadImage(url[0]);
+        }catch(Exception e){
+            Log.d("Background Task",e.toString());
+        }
+        return bitmap;
+    }
+
+
+    
+    public static Bitmap downloadImage(String strUrl) throws IOException{
+        Bitmap bitmap=null;
+        InputStream iStream = null;
+        try{
+            URL url = new URL(strUrl);
+ 
+            /** Creating an http connection to communcate with url */
+            HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+ 
+            /** Connecting to url */
+            urlConnection.connect();
+ 
+            /** Reading data from url */
+            iStream = urlConnection.getInputStream();
+ 
+            /** Creating a bitmap from the stream returned from the url */
+            bitmap = BitmapFactory.decodeStream(iStream);
+ 
+        }catch(Exception e){
+            Log.d("Exception while downloading url", e.toString());
+        }finally{
+            iStream.close();
+        }
+        return bitmap;
+    }
+}
+

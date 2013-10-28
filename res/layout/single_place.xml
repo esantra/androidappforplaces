@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
+    android:background="@drawable/white"
     android:orientation="vertical"
     tools:context=".SecondActivity" >
 
@@ -23,51 +24,42 @@
             android:src="@drawable/ic_btn_search_go" />
     </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/btnMap"
-        android:layout_width="55dp"
-        android:layout_height="60dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="48dp"
-        android:layout_marginTop="19dp"
-        android:src="@drawable/maps2" />
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" >
 
-    <ImageButton
-        android:id="@+id/btnCall"
-        android:layout_width="61dp"
-        android:layout_height="60dp"
-        android:layout_alignBottom="@+id/btnNavigate"
-        android:layout_marginRight="36dp"
-        android:layout_toLeftOf="@+id/btnNavigate"
-        android:src="@drawable/phone2" />
+        <ImageView
+            android:id="@+id/imgPlace1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icons" />
 
-    <ImageButton
-        android:id="@+id/btnNavigate"
-        android:layout_width="58dp"
-        android:layout_height="60dp"
-        android:layout_alignTop="@+id/btnMap"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/nav2" />
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/btnNavigate"
-        android:layout_below="@+id/btnCall"
-        android:layout_marginTop="52dp"
+        android:layout_alignLeft="@+id/address"
+        android:layout_centerVertical="true"
         android:text="Name"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="@dimen/padding_medium" />
 
     <TextView
         android:id="@+id/address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/linearLayout2"
+        android:layout_below="@+id/name"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="78dp"
+        android:layout_marginTop="27dp"
         android:text="Address"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="@dimen/padding_medium" />
 
 </RelativeLayout>

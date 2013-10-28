@@ -78,6 +78,8 @@ public class SecondActivity extends Activity {
 
 	// KEY Strings - strings that hold references for API access
 	public static String KEY_REFERENCE = "reference"; // id of the place
+	public static String KEY_LATTITUDE = "lattitude"; // id of the place
+	public static String KEY_LONGITUDE = "longitude"; // id of the place
 	public static String MAP_REFERENCE = "reference"; // id of the place
 	public static String KEY_NAME = "name"; // name of the place
 	public static String KEY_VICINITY = "vicinity"; // Place area name
@@ -734,9 +736,9 @@ public class SecondActivity extends Activity {
 								 adapter2 = new SimpleAdapter(
 										SecondActivity.this, placesListItems2,
 										R.layout.list_item, new String[] {
-												KEY_REFERENCE, KEY_NAME,
+												KEY_REFERENCE, KEY_LATTITUDE, KEY_LONGITUDE, KEY_NAME,
 												KEY_INFORMATION }, new int[] {
-												R.id.reference, R.id.name });
+												R.id.reference, R.id.lattitude, R.id.longitude, R.id.name });
 								
 
 								lv2.setAdapter(adapter2);

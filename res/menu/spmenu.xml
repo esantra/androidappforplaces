@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/call" android:icon="@drawable/navwcall"></item>
+    <item android:id="@+id/map" android:icon="@drawable/navwmap"></item>
+    <item android:id="@+id/navig" android:icon="@drawable/navig"></item>
+    
+
+</menu>

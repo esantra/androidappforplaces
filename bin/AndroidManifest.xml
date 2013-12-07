@@ -72,6 +72,10 @@
         <activity android:name=".KeywordActivity" android:label="Keywords">
 		</activity>
 		
+        <!-- Keywords -->
+        <activity android:name=".Advice" android:label="Advice">
+		</activity>
+		
         <!--  second screen activity / was main activity -->
         <activity android:name="com.placesandplaces.SecondActivity"></activity>
         

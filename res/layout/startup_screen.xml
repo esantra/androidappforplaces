@@ -76,7 +76,7 @@
         android:contentDescription="pic"
         android:maxHeight="20dp"
         android:maxWidth="20dp"
-        android:src="@drawable/navcancel"
+        android:src="@drawable/person3"
         android:visibility="invisible" />
 
     <ImageView

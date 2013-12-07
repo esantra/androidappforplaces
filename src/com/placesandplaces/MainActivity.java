@@ -74,11 +74,6 @@ public class MainActivity extends Activity {
 		// replaced activity_main.xml with startup screen.xml
 		setContentView(R.layout.startup_screen);
 
-		/*
-		 * NewRelic.withApplicationToken(
-		 * "AA36f12720d4267840d700de32f8aed7bdd0e2439d"
-		 * ).start(this.getApplication());
-		 */
 
 		// button show on map
 		btnFindIt = (Button) findViewById(R.id.btn_find);
@@ -197,6 +192,20 @@ public class MainActivity extends Activity {
 				startActivity(i);
 			}
 		});
+		
+		ImageView advice = (ImageView) findViewById(R.id.Exit);
+		/** Button click event for shown on map */
+		advice.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+
+					Intent i11 = new Intent(getApplicationContext(),
+							Advice.class);
+					startActivity(i11);
+
+			}
+		});
 
 	}
 	
@@ -245,6 +254,17 @@ public class MainActivity extends Activity {
 	    case R.id.search:
 			  aidm();
 		      break;
+	    case R.id.advice:
+	    	Toast.makeText(this, "Get Advice", Toast.LENGTH_SHORT)
+	          .show();
+	    	
+	    	Intent i11 = new Intent(getApplicationContext(),
+					Advice.class);
+			startActivity(i11);
+
+		      break;
+		      
+	  
 
 	    default:
 	      break;

@@ -28,9 +28,9 @@
         android:textSize="16dip"/>
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/redMarker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/greenbarbottom" />
+        android:src="@drawable/markred" />
    
 </LinearLayout>

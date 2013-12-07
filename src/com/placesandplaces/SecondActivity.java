@@ -42,6 +42,7 @@ public class SecondActivity extends Activity {
 	PlacesList nearPlaces2;
 	PlacesList[] nearPlaces_i = new PlacesList[ARRAYLENGTH];
 	
+	
 	// GPS Location
 	public static GPSTracker gps;
 	// Button
@@ -91,7 +92,8 @@ public class SecondActivity extends Activity {
 	private String n2 = "";
 	private String n3 = "";
 	private String n4 = "";
-	private boolean[] nearArray = new boolean[ARRAYLENGTH];
+	//private boolean[] nearArray = new boolean[ARRAYLENGTH];
+	private ArrayList<Boolean> nearArray = new ArrayList<Boolean>();
 	private HashMap<Integer, Place> nearHm = new HashMap<Integer, Place>();
 
 	// ARRAYS are all sized via the constant so that the size can be altered
@@ -116,7 +118,7 @@ public class SecondActivity extends Activity {
 	// name of second place - well reference to it
 	public static String[] secondPlaceReference = new String[ARRAYLENGTH];
 	public static Double[] distance_i = new Double[ARRAYLENGTH];
-	private Double nearMaxDistance = 3.0;
+	private int nearMaxDistance = 3;
 	
 
 	// ListItems data
@@ -140,6 +142,7 @@ public class SecondActivity extends Activity {
 	// DecimalFormat[ARRAYLENGTH];
 	public static List<DecimalFormat> myFormat_i = new ArrayList<DecimalFormat>();
 	public static HashMap<Integer, Place> hmp = new HashMap<Integer, Place>();
+
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -377,7 +380,7 @@ public class SecondActivity extends Activity {
 								
 								near1 = nearInd(distanceVariable, 0);
 								n1 = "";
-								nearArray[0] = near1;
+								nearArray.add(near1);
 								
 								if(near1 = true){
 										 n1 = "*Near*";
@@ -555,18 +558,25 @@ public class SecondActivity extends Activity {
 										
 										
 										near1 = nearInd(distanceVariable2, 1);
-										nearArray[1] = near1;
+										nearArray.add(near1);
 										String n1 = "";
-										if(near1 = true){
+										if(near1 == true){
 												 n1 = "*Near*";
 										}//end if 
+										else{
+												n1 = "*False*";
+											}
 										
 										near1 = nearInd(distanceFr, 2);
-										nearArray[2] = near1;
+										nearArray.add(near1);
 										 n2 = "";
-										if(near1 = true){
+										if(near1 == true){
 												 n2 = "*Near*";
-										}//end if 
+										}//end if
+										else{
+												n2 = "*False*";
+											}										
+										
 										
 
 										// --- THIS NEEDS TO RUN ON A LOOP FOR
@@ -596,10 +606,13 @@ public class SecondActivity extends Activity {
 											
 											near1 = nearInd(distanceVariable_i[wcounter], 3);
 											 n3 = "";
-											 nearArray[3] = near1;
-											if(near1 = true){
+											 nearArray.add(near1);
+											if(near1 == true){
 													 n3 = "*Near*";
 											}//end if
+											else{
+													n3 = "*False*";
+												}
 											
 
 											if (arraynames.get(wcounter) != null) {
@@ -641,11 +654,15 @@ public class SecondActivity extends Activity {
 												uk = uk * loop + hh;
 												
 												near1 = nearInd(distanceVariable_i[wcounter], 4);
-												nearArray[4] = near1;
+												nearArray.add(near1);
 												 n4 = "";
-												if(near1 = true){
+												if(near1 == true){
 														 n4 = "*Near*";
 												}//end if
+												else{
+													n4 = "*Far*";
+												}
+										
 												
 													if (arraynames.get(uk) != null) {
 														distanceVariable_i[wcounter] = distanceVar(
@@ -681,21 +698,16 @@ public class SecondActivity extends Activity {
 										
 										String nearVar;
 										Log.d("near", "" +  near1);
-										/*if (near1 == true){
-											nearVar = "*Near*";
-										}//end if 
-										else {
-											
-											nearVar = "*Not Near*";
-											
-										}*/
+
 										int countertrue = 0;int counterfalse=0;
-										for(int ww = 0; ww < 4; ww++){
-										Log.d("nearVar", "the nearArray is " + nearArray[ww] + " counter " + ww);
+										for(int ww = 0; ww < nearArray.size(); ww++){
+										Log.d("nearVar", "the nearArray is " + nearArray.get(ww) + " counter " + ww);
 
+												
+											if(nearArray.get(ww)==true){
 												countertrue++;
-
-											if(nearArray[ww]==false){
+											}//end if 
+											if(nearArray.get(ww)==false){
 												counterfalse++;
 											}//end if 
 											
@@ -705,12 +717,25 @@ public class SecondActivity extends Activity {
 										Log.d("nearVar", "the nearVar is " + countertrue);
 										Log.d("nearVar", "the notnearVar is " + counterfalse);
 										
-										nearVar = "*Far*";
+										//set near array back to null as places set has been iterated through
+										nearArray.clear();
 										
-										if (counterfalse * 3 < countertrue){
+										int countertotal = countertrue + counterfalse;
+										
+										Log.d("nearVar3", "countertotal " + countertotal
+												+ "countertrue " + countertrue
+												+ "counterfalse " + counterfalse);
+										
+										
+										if (countertrue>(counterfalse*2)){
 											nearVar = "*Near*";
 											
 										}//end if 
+										else{
+											nearVar = "*Far*";
+											
+											
+										}
 										
 										
 										map2.put(KEY_NAME, strMapPut + nearVar);
@@ -739,7 +764,7 @@ public class SecondActivity extends Activity {
 												KEY_REFERENCE, KEY_LATTITUDE, KEY_LONGITUDE, KEY_NAME,
 												KEY_INFORMATION }, new int[] {
 												R.id.reference, R.id.lattitude, R.id.longitude, R.id.name });
-								
+							   
 
 								lv2.setAdapter(adapter2);
 
@@ -863,24 +888,20 @@ public class SecondActivity extends Activity {
 	}
 	
 	public boolean nearInd(String distanceVariable, int nearCounterIn){
-		nearcounter = nearCounterIn;
+	
+		nearcounter++;
 		Double dv = Double.parseDouble(distanceVariable);
 		try{
 			if(dv < nearMaxDistance){
 				near[nearcounter] = true;
+				Log.d("true distance", "true dv is " + dv + " and near max distance is " + nearMaxDistance);
 				
 			}//end inductive if
 			else{
-				
-				if(nearcounter > nearMaxDistance & dv < nearMaxDistance){
-					near[nearcounter] = true;
-				}
-				else{
 					near[nearcounter] = false;
-				}
-				near[nearcounter] = false;
-				
+					Log.d("true distance", "false dv is " + dv + " and near max distance is " + nearMaxDistance);
 			}//end else
+
 			}catch(Exception e){
 				Log.d("exception", e.toString());
 			}//end catch

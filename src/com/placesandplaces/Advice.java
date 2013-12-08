@@ -8,6 +8,7 @@ import java.util.Random;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.app.Activity;
 
 
@@ -25,7 +26,7 @@ public class Advice extends Activity {
       private static HashMap<String, Integer> count = new HashMap<String, Integer>();
       private static HashMap<String, Integer> multicount = new HashMap<String, Integer>();
       private static ArrayList<String> remove = new ArrayList<String>();
-      public static EditText  balloon;
+      public static TextView  balloon;
 	  
 	  
   	public void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class Advice extends Activity {
 		// replaced activity_main.xml with startup screen.xml
 		setContentView(R.layout.advices);
 		
-		 balloon = (EditText) findViewById(R.id.advice);
+		 balloon = (TextView) findViewById(R.id.advice);
 		 advice();
 
 	    }
